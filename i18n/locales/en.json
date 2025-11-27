@@ -1,0 +1,80 @@
+{
+    "leap": {
+    "section1": {
+      "title": "About LEAP Exhibition",
+      "subtitle": "The largest technology platform in the region... where ideas are made and the future is born.",
+      "description": "LEAP is a turning point in the global tech scene, offering deep insights into the digital future."
+    },
+    "section2": {
+      "title": "SDM's Role in LEAP Coverage",
+      "subtitle": "We capture the essence of the event... moments of awe, inspiring stories, and technologies worth telling.",
+      "description": "SDM's mission was to transform the physical experience of the exhibition into impactful digital visual content."
+    }
+  },
+  "Nabtha": "Overview",
+  "SDMRole": "SDM's Role",
+  "Category": {
+    "Nabtha": "Overview",
+    "SDMRole": "SDM Role"
+  },
+  "pif": {
+    "section1": {
+      "title": "Public Investment Fund",
+      "subtitle": "The largest investment arm in the Kingdom",
+      "description": "The largest investment arm in the Kingdom and a key driver of Vision 2030. Giant projects, international investments, and an economic impact that expands every year."
+    },
+    "section2": {
+      "title": "SDM",
+      "subtitle": "Translating the language of numbers into stories",
+      "description": "Translating the language of numbers into stories... and showcasing the impact of projects from a human and visual perspective that brings the picture closer to the audience."
+    }
+  },
+  "hajjumrah": {
+    "section1": {
+      "title": "Hajj and Umrah Conference & Exhibition",
+      "subtitle": "A platform showcasing everything that facilitates the journey of the pilgrims",
+      "description": "A platform showcasing everything that facilitates the journey of the pilgrims: technologies, solutions, and services presented in the spirit of the Kingdom. An event that brings together experts from around the world to develop the greatest religious experience."
+    },
+    "section2": {
+      "title": "SDM",
+      "subtitle": "Highlighting the beauty of the organization",
+      "description": "Highlighting the beauty of the organization... and telling the guest's story from the moment they enter the hall until the last smile they bid farewell to the event with."
+    }
+  },
+  "csr": {
+    "section1": {
+      "title": "Social Responsibility Forum",
+      "subtitle": "A forum celebrating impact",
+      "description": "A forum celebrating impact... actions that change people's lives, and initiatives that build a stronger society."
+    },
+    "section2": {
+      "title": "SDM",
+      "subtitle": "We showcase human stories before numbers",
+      "description": "We showcase human stories before numbers, documenting initiatives worthy of being seen and visually immortalized."
+    }
+  },
+  "financial": {
+    "section1": {
+      "title": "The Financial Conference",
+      "subtitle": "Where financial and investment leaders meet",
+      "description": "Where financial and investment leaders meet.... discussions, trends, and visions that shape the future of the Saudi economy."
+    },
+    "section2": {
+      "title": "SDM",
+      "subtitle": "Transforming the language of economics into easy content",
+      "description": "Transforming the language of economics into easy, visual, and attractive content... touching the audience and explaining the stories behind financial decisions."
+    }
+  },
+  "tourism": {
+    "section1": {
+      "title": "Tourism Forum",
+      "subtitle": "A platform bringing together tourism leaders and trip makers",
+      "description": "A platform bringing together tourism leaders and trip makers… Here, visions that shape the future of Saudi tourism are presented, and experiences that make visitors see the Kingdom through different eyes are showcased. Events, sessions, new destinations… all contribute to creating a global tourism sector that competes with its authenticity and uniqueness."
+    },
+    "section2": {
+      "title": "SDM",
+      "subtitle": "We capture moments that inspire",
+      "description": "We capture moments that inspire… We photograph the stories behind destinations and the ideas that redefine tourism. We visually produce the event in a way that befits the spirit of exploration…"
+    }
+  }
+}
