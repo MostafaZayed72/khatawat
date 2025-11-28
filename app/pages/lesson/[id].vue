@@ -196,22 +196,27 @@
 </template>
 
 <script setup lang="ts">
-import { lessons } from '~/utils/lessons';
+import { getLessons } from '~/utils/lessons';
 
+const { t } = useI18n();
 const route = useRoute();
 const lessonId = computed(() => parseInt(route.params.id as string));
-const lesson = computed(() => lessons.find(l => l.id === lessonId.value));
+
+// Make lessons reactive to language changes
+const lessons = computed(() => getLessons(t));
+
+const lesson = computed(() => lessons.value.find(l => l.id === lessonId.value));
 const allLessons = lessons; // For dropdown
 
 // Navigation Logic
 const prevLessonId = computed(() => {
-  const index = lessons.findIndex(l => l.id === lessonId.value);
-  return index > 0 ? lessons[index - 1].id : null;
+  const index = lessons.value.findIndex(l => l.id === lessonId.value);
+  return index > 0 ? lessons.value[index - 1].id : null;
 });
 
 const nextLessonId = computed(() => {
-  const index = lessons.findIndex(l => l.id === lessonId.value);
-  return index < lessons.length - 1 ? lessons[index + 1].id : null;
+  const index = lessons.value.findIndex(l => l.id === lessonId.value);
+  return index < lessons.value.length - 1 ? lessons.value[index + 1].id : null;
 });
 
 // Dropdown State
