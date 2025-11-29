@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       // 💡 يتم استخدام هذا القالب لجميع الصفحات
-      titleTemplate: 'SMD Digital Agency', 
+      titleTemplate: 'Khatwat - خطوات', 
       
     }
   },
