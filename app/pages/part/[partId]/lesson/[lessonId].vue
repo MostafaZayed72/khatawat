@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen w-screen bg-white p-2 font-sans flex flex-col" dir="rtl">
+  <div class="min-h-screen w-screen bg-white p-2 font-sans flex flex-col">
     
     <div v-if="lesson" class="flex flex-col relative z-10 pb-10">
       <!-- Header Section -->
@@ -47,9 +47,9 @@
           v-if="prevLessonId"
           :to="`/part/${partId}/lesson/${prevLessonId}`"
           class="mt-2 p-3 bg-white border border-gray-200 text-gray-600 rounded-full shadow-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
-          title="الدرس السابق"
+          :title="t('Previous Lesson')"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform rotate-180" viewBox="0 0 20 20" fill="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform rtl:rotate-180" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
           </svg>
         </NuxtLink>
@@ -62,9 +62,9 @@
             @click="toggleAudio"
             class="w-full flex items-center justify-center gap-4 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white py-2 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 border-b-4 border-yellow-700 mb-2"
           >
-            <span class="text-2xl font-black tracking-wide">{{ isPlaying ? 'إيقاف مؤقت' : 'تشغيل الصوت' }}</span>
+            <span class="text-2xl font-black tracking-wide">{{ isPlaying ? t('Pause') : t('Play Audio') }}</span>
             <div class="bg-white/20 p-2 rounded-full">
-               <svg v-if="!isPlaying" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+               <svg v-if="!isPlaying" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 rtl:rotate-180" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
               </svg>
               <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
@@ -98,17 +98,17 @@
               <button 
                 @click="restartAudio"
                 class="flex items-center gap-1 text-gray-600 hover:text-red-500 transition-colors text-sm font-bold"
-                title="إعادة من البداية"
+                :title="t('Restart')"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
                 </svg>
-                <span>إعادة</span>
+                <span>{{ t('Restart') }}</span>
               </button>
 
               <!-- Speed Control -->
               <div class="flex items-center gap-2">
-                <span class="text-xs text-gray-500 font-bold">السرعة:</span>
+                <span class="text-xs text-gray-500 font-bold">{{ t('Speed') }}:</span>
                 <div class="flex bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
                   <button 
                     v-for="rate in [0.5, 1, 1.5, 2]" 
@@ -131,10 +131,10 @@
           v-if="nextLessonId"
           :to="`/part/${partId}/lesson/${nextLessonId}`"
           class="mt-2 p-3 bg-white border border-gray-200 text-gray-600 rounded-full shadow-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
-          title="الدرس التالي"
+          :title="t('Next Lesson')"
         >
          
-           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform rotate-180" viewBox="0 0 20 20" fill="currentColor">
+           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform rtl:rotate-180" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
           </svg>
         </NuxtLink>
@@ -213,8 +213,8 @@
     </div>
 
     <div v-else class="text-center py-20">
-      <h2 class="text-2xl text-red-500">الدرس غير موجود</h2>
-      <NuxtLink :to="`/part/${partId}`" class="text-blue-500 hover:underline mt-4 block">العودة للقسم</NuxtLink>
+      <h2 class="text-2xl text-red-500">{{ t('Lesson Not Found') }}</h2>
+      <NuxtLink :to="`/part/${partId}`" class="text-blue-500 hover:underline mt-4 block">{{ t('Back to Part') }}</NuxtLink>
     </div>
   </div>
 </template>
@@ -222,13 +222,16 @@
 <script setup lang="ts">
 import { getParts } from '~/utils/lessons';
 
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const route = useRoute();
 const partId = computed(() => parseInt(route.params.partId as string));
 const lessonId = computed(() => parseInt(route.params.lessonId as string));
 
 // Make lessons reactive to language changes
-const parts = computed(() => getParts(t));
+const parts = computed(() => {
+  const l = locale.value;
+  return getParts(t);
+});
 const part = computed(() => parts.value.find(p => p.id === partId.value));
 const partLessons = computed(() => part.value?.lessons || []);
 const lesson = computed(() => partLessons.value.find(l => l.id === lessonId.value));
