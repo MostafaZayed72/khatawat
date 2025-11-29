@@ -13,9 +13,11 @@ export interface Lesson {
     title: string;
     subtitle?: string;
     description?: string;
-    type: 'text' | 'gallery' | 'numbers';
+    type: 'text' | 'gallery' | 'numbers' | 'diagram';
     items?: LessonItem[];
     audioUrl?: string;
+    mainImage?: string;
+    diagramImages?: string[];
 }
 
 export const getLessons = (t: (key: string) => string): Lesson[] => {
@@ -91,20 +93,138 @@ export const getLessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 4,
-            title: "مراحل تطور الإنسان",
-            subtitle: "المجموعة الرابعة",
+            title: t('Human Development Stages'),
+            subtitle: t('Group Four'),
             type: 'gallery',
             items: [
-                { id: 1, image: '/4/1.jpg', text: 'جنين' },
-                { id: 2, image: '/4/2.jpg', text: 'رضيع' },
-                { id: 2, image: '/4/3.jpg', text: 'فتى' },
-                { id: 2, image: '/4/4.jpg', text: 'فتاة' },
-                { id: 2, image: '/4/5.jpg', text: 'رجل' },
-                { id: 2, image: '/4/6.jpg', text: 'امرأة' },
-                { id: 2, image: '/4/7.jpg', text: 'عجوز' },
+                { id: 1, image: '/4/1.jpg', text: t('Fetus') },
+                { id: 2, image: '/4/2.jpg', text: t('Infant') },
+                { id: 2, image: '/4/3.jpg', text: t('Young Boy') },
+                { id: 2, image: '/4/4.jpg', text: t('Young Girl') },
+                { id: 2, image: '/4/5.jpg', text: t('Man') },
+                { id: 2, image: '/4/6.jpg', text: t('Woman') },
+                { id: 2, image: '/4/7.jpeg', text: t('Old Man') },
             ],
             audioUrl: '/4/4.wav',
         },
+        {
+            id: 5,
+            title: t('Family'),
+            subtitle: t('Group Five'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/5/1.jpeg', text: t('Grandfather') },
+                { id: 2, image: '/5/2.jpg', text: t('Grandmother') },
+                { id: 2, image: '/5/3.jpg', text: t('Father') },
+                { id: 2, image: '/5/4.jpg', text: t('Mother') },
+                { id: 2, image: '/5/5.jpg', text: t('Son') },
+                { id: 2, image: '/5/6.jpg', text: t('Daughter') },
+            ],
+            audioUrl: '/5/5.wav',
+        },
+        {
+            id: 6,
+            title: t('Main Body Parts'),
+            subtitle: t('Group Six'),
+            type: 'diagram',
+            diagramImages: ['/6/body.png', '/6/body2.png'],
+            items: [
+                { id: 1, text: t('Hair') },
+                { id: 2, text: t('Head') },
+                { id: 3, text: t('Eye') },
+                { id: 4, text: t('Nose') },
+                { id: 5, text: t('Ear') },
+                { id: 6, text: t('Teeth') },
+                { id: 7, text: t('Mouth') },
+                { id: 8, text: t('Neck') },
+                { id: 9, text: t('Back') },
+                { id: 10, text: t('Shoulder') },
+                { id: 11, text: t('Chest') },
+                { id: 12, text: t('Arm') },
+                { id: 13, text: t('Elbow') },
+                { id: 14, text: t('Stomach') },
+                { id: 15, text: t('Hand') },
+                { id: 16, text: t('Finger') },
+                { id: 17, text: t('Leg') },
+                { id: 18, text: t('Knee') },
+                { id: 19, text: t('Ankle') },
+                { id: 20, text: t('Foot') },
+            ],
+            audioUrl: '/6/6.wav',
+        },
+        {
+            id: 7,
+            title: t('Colors'),
+            subtitle: t('Group Seven'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/7/1.jpeg', text: t('Black') },
+                { id: 2, image: '/7/2.jpg', text: t('White') },
+                { id: 2, image: '/7/3.jpg', text: t('Blue') },
+                { id: 2, image: '/7/4.jpg', text: t('Purple') },
+                { id: 2, image: '/7/5.jpg', text: t('Green') },
+                { id: 2, image: '/7/6.jpg', text: t('Yellow') },
+                { id: 2, image: '/7/7.jpg', text: t('Brown') },
+                { id: 2, image: '/7/8.jpg', text: t('Red') },
+                { id: 2, image: '/7/9.jpg', text: t('Pink') },
+                { id: 2, image: '/7/10.jpg', text: t('Orange') },
+                { id: 2, image: '/7/11.jpg', text: t('Grey') },
+            ],
+            audioUrl: '/7/7.wav',
+        },
+        {
+            id: 8,
+            title: t('Clothing'),
+            subtitle: t('Group Eight'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/8/1.jpg', text: t('Shirt') },
+                { id: 2, image: '/8/2.jpg', text: t('Pants') },
+                { id: 2, image: '/8/3.jpg', text: t('Shoes') },
+                { id: 2, image: '/8/4.jpg', text: t('Hat') },
+                { id: 2, image: '/8/5.jpg', text: t('Abaya') },
+                { id: 2, image: '/8/6.jpeg', text: t('Coat') },
+                { id: 2, image: '/8/7.jpeg', text: t('Dress') },
+                { id: 2, image: '/8/8.jpg', text: t('Socks') },
+                { id: 2, image: '/8/9.jpg', text: t('Sneakers') },
+            ],
+            audioUrl: '/8/8.wav',
+        },
+        {
+            id: 9,
+            title: t('School Supplies'),
+            subtitle: t('Group Nine'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/9/1.jpg', text: t('Book') },
+                { id: 2, image: '/9/2.jpeg', text: t('Notebook') },
+                { id: 2, image: '/9/3.jpeg', text: t('Pencil') },
+                { id: 2, image: '/9/4.jpg', text: t('Ink Pen') },
+                { id: 2, image: '/9/5.jpeg', text: t('Bag') },
+                { id: 2, image: '/9/6.jpeg', text: t('Ruler') },
+                { id: 2, image: '/9/7.jpeg', text: t('Eraser') },
+                { id: 2, image: '/9/8.jpeg', text: t('Compass') },
+                { id: 2, image: '/9/9.jpg', text: t('Protractor') },
+                { id: 2, image: '/9/10.jpg', text: t('Colored Pencils') },
+            ],
+            audioUrl: '/9/9.wav',
+        },
+        {
+            id: 10,
+            title: t('Public Institutions'),
+            subtitle: t('Group Ten'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/10/1.jpeg', text: t('Mosque') },
+                { id: 2, image: '/10/2.jpeg', text: t('Hospital') },
+                { id: 2, image: '/10/3.jpeg', text: t('Police Station') },
+                { id: 2, image: '/10/4.jpeg', text: t('Stadium') },
+                { id: 2, image: '/10/5.jpeg', text: t('Zoo') },
+            ],
+            audioUrl: '/10/10.wav',
+        },
+
+
     ];
 
     // Helper to fill the rest
