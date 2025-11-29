@@ -179,6 +179,31 @@
         </div>
       </div>
 
+      <!-- Diagram Type Lesson -->
+      <div v-else-if="lesson.type === 'diagram'" class="flex flex-col md:flex-row items-start justify-center gap-8 p-4 max-w-7xl mx-auto z-10 relative w-full">
+        
+        <!-- List (Right side in RTL) -->
+        <div class="flex flex-col gap-2 md:gap-4 shrink-0 order-2 md:order-1 w-full md:w-auto max-h-[80vh] overflow-y-auto custom-scrollbar px-2">
+          <div v-for="item in lesson.items" :key="item.id" class="flex items-center gap-4 group cursor-pointer hover:scale-105 transition-transform p-2 rounded-lg hover:bg-white/50">
+             <!-- Number -->
+             <span class="text-3xl md:text-4xl font-bold text-gray-800 font-sans min-w-[3rem]">{{ item.id }} - </span>
+             <!-- Text -->
+             <span class="text-2xl md:text-3xl font-bold text-gray-900 font-arabic">{{ item.text }}</span>
+          </div>
+        </div>
+
+        <!-- Main Image (Left side in RTL) -->
+        <div class="flex-grow max-w-2xl w-full order-1 md:order-2 sticky top-4">
+           <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white flex flex-col">
+              <template v-if="lesson.diagramImages">
+                  <img v-for="(img, idx) in lesson.diagramImages" :key="idx" :src="img" :alt="lesson.title" class="w-full h-auto object-contain -mt-1 first:mt-0" />
+              </template>
+              <img v-else-if="lesson.mainImage" :src="lesson.mainImage" :alt="lesson.title" class="w-full h-auto object-contain" />
+           </div>
+        </div>
+
+      </div>
+
       <!-- Text Type Lesson -->
       <div v-else class="prose lg:prose-xl mx-auto text-center p-4 z-10 relative">
         <p class="text-gray-600">{{ lesson.description }}</p>
