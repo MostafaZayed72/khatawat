@@ -250,7 +250,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
     ];
 
     // Helper to fill the rest of Part 1 up to 39 (or 50 as before)
-    for (let i = 11; i <= 39; i++) {
+    for (let i = 12; i <= 39; i++) {
         part1Lessons.push({
             id: i,
             title: t('Lesson') + ' ' + i,
