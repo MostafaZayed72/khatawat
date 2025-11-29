@@ -265,7 +265,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             id: 1,
             title: t('Part One'),
             description: t('Basics and Daily Life'),
-            videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            videoUrl: 'https://www.youtube.com/watch?v=lTZBNRYJzi4',
             image: '/parts/1.png',
             lessons: part1Lessons
         },
