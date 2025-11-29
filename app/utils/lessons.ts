@@ -247,18 +247,75 @@ export const getParts = (t: (key: string) => string): Part[] => {
             ],
             audioUrl: '/11/11.wav',
         },
+        {
+            id: 12,
+            title: 'مكونات المنزل الرئيسية',
+            subtitle: 'المجموعة الثانية عشرة',
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/12/1.jpg', text: 'غرفة النوم' },
+                { id: 2, image: '/12/2.jpg', text: 'غرفة الجلوس' },
+                { id: 2, image: '/12/3.jpeg', text: 'دورة المياه' },
+                { id: 2, image: '/12/4.jpg', text: 'غرفة الطعام' },
+                { id: 2, image: '/12/5.jpeg', text: 'مطبخ' },
+                { id: 2, image: '/12/6.jpeg', text: 'غرفة الأطفال' },
+            ],
+            audioUrl: '/12/12.wav',
+        },
+        {
+            id: 13,
+            title: 'أسماء الخضراوات',
+            subtitle: 'المجموعة الثالثة عشرة',
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/13/1.jpg', text: 'بطاطس' },
+                { id: 2, image: '/13/2.jpg', text: 'طماطم' },
+                { id: 2, image: '/13/3.jpg', text: 'خيار' },
+                { id: 2, image: '/13/4.jpg', text: 'باذنجان' },
+                { id: 2, image: '/13/5.jpg', text: 'جرجير' },
+                { id: 2, image: '/13/6.jpg', text: 'فلفل' },
+                { id: 2, image: '/13/7.jpg', text: 'بقدونس' },
+                { id: 2, image: '/13/8.jpg', text: 'بصل' },
+                { id: 2, image: '/13/9.jpg', text: 'جزر' },
+                { id: 2, image: '/13/10.jpg', text: 'خس' },
+            ],
+            audioUrl: '/13/13.wav',
+        },
+        {
+            id: 14,
+            title: 'أسماء الفواكه',
+            subtitle: 'المجموعة الرابعة عشرة',
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/14/1.jpg', text: 'جوافة' },
+                { id: 2, image: '/14/2.jpg', text: 'أناناس' },
+                { id: 2, image: '/14/3.jpg', text: 'برتقال' },
+                { id: 2, image: '/14/4.jpg', text: 'بطيخ' },
+                { id: 2, image: '/14/5.jpg', text: 'رمان' },
+                { id: 2, image: '/14/6.jpg', text: 'تفاح' },
+                { id: 2, image: '/14/7.jpg', text: 'موز' },
+                { id: 2, image: '/14/8.jpg', text: 'تين' },
+                { id: 2, image: '/14/9.jpg', text: 'عنب' },
+                { id: 2, image: '/14/10.jpg', text: 'فراولة' },
+                { id: 2, image: '/14/11.jpg', text: 'مانجو' },
+                { id: 2, image: '/14/12.jpg', text: 'خوخ' },
+                { id: 2, image: '/14/13.jpg', text: 'مشمش' },
+            ],
+            audioUrl: '/14/14.wav',
+        },
+
     ];
 
     // Helper to fill the rest of Part 1 up to 39 (or 50 as before)
-    for (let i = 12; i <= 39; i++) {
-        part1Lessons.push({
-            id: i,
-            title: t('Lesson') + ' ' + i,
-            type: 'text',
-            description: t('Description of lesson') + ' ' + i,
-            audioUrl: `/audio/lesson${i}.mp3`
-        });
-    }
+    // for (let i = 39; i <= 39; i++) {
+    //     part1Lessons.push({
+    //         id: i,
+    //         title: t('Lesson') + ' ' + i,
+    //         type: 'text',
+    //         description: t('Description of lesson') + ' ' + i,
+    //         audioUrl: `/audio/lesson${i}.mp3`
+    //     });
+    // }
 
     return [
         {
