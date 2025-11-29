@@ -2,6 +2,8 @@
 import { useLocaleHead } from '#i18n';
 import { ref } from 'vue';
 
+const { t } = useI18n();
+
 useHead(useLocaleHead({
   addDirAttribute: true,
   identifierAttribute: 'id',
@@ -21,7 +23,7 @@ const isPartActive = (id: number) => {
 </script>
 
 <template>
-  <div class="relative min-h-screen flex flex-col font-sans" dir="rtl">
+  <div class="relative min-h-screen flex flex-col font-sans">
     
     <DynamicHeroBackground />
 
@@ -38,7 +40,7 @@ const isPartActive = (id: number) => {
           </div>
 
           <!-- Navigation (Left) - Desktop -->
-          <nav class="hidden md:flex space-x-8 space-x-reverse">
+          <nav class="hidden md:flex items-center space-x-8 space-x-reverse">
             <NuxtLink 
               v-for="i in 4" 
               :key="i"
@@ -46,8 +48,9 @@ const isPartActive = (id: number) => {
               class="px-4 py-2 rounded-full text-lg font-bold transition-all"
               :class="isPartActive(i) ? 'text-red-600 bg-red-50 shadow-sm' : 'text-gray-700 hover:text-red-600 hover:bg-red-50'"
             >
-              المستوى {{ i }}
+              {{ t('Level') }} {{ i }}
             </NuxtLink>
+            <LanguageSwitcher />
           </nav>
 
           <!-- Mobile Menu Button -->
@@ -76,8 +79,11 @@ const isPartActive = (id: number) => {
               :class="isPartActive(i) ? 'text-red-600 bg-red-50' : 'text-gray-700 hover:text-red-600 hover:bg-red-50'"
               @click="isMobileMenuOpen = false"
             >
-              المستوى {{ i }}
+              {{ t('Level') }} {{ i }}
             </NuxtLink>
+            <div class="flex justify-center pt-2">
+              <LanguageSwitcher />
+            </div>
         </div>
       </div>
     </header>

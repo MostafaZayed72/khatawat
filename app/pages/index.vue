@@ -1,9 +1,9 @@
 <template>
-  <div class="min-h-screen w-full flex flex-col items-center justify-center p-4 font-sans relative" dir="rtl">
+  <div class="min-h-screen w-full flex flex-col items-center justify-center p-4 font-sans relative">
     <!-- Background is handled by app.vue -->
     
     <div class="w-full max-w-7xl z-10 flex flex-col gap-8 py-10">
-      <h1 class="text-5xl md:text-6xl font-black text-center text-red-600 drop-shadow-lg mb-8">اختر المستوى</h1>
+      <h1 class="text-5xl md:text-6xl font-black text-center text-red-600 drop-shadow-lg mb-8">{{ t('Choose Level') }}</h1>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         <NuxtLink 
@@ -44,10 +44,14 @@
 <script setup lang="ts">
 import { getParts } from '~/utils/lessons';
 
-const { t } = useI18n();
-const parts = computed(() => getParts(t));
+const { t, locale } = useI18n();
+const parts = computed(() => {
+  // Dependency on locale to force update
+  const l = locale.value; 
+  return getParts(t);
+});
 
 useHead({
-  title: t('Home'),
+  title: computed(() => t('Home')),
 });
 </script>
