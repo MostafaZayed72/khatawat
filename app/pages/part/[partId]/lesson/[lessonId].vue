@@ -1,6 +1,5 @@
 <template>
   <div class="min-h-screen w-screen bg-white p-2 font-sans flex flex-col" dir="rtl">
-    <DynamicHeroBackground />
     
     <div v-if="lesson" class="flex flex-col relative z-10 pb-10">
       <!-- Header Section -->
@@ -17,17 +16,17 @@
                @click="showDropdown = !showDropdown"
                class="bg-gradient-to-b from-red-600 to-red-500 text-white px-8 py-1 rounded-full shadow-lg border-2 border-yellow-200 flex items-center gap-2 hover:scale-105 transition-transform"
              >
-              <h1 class="text-xl md:text-2xl font-bold">{{ lesson.title }}</h1>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform" :class="{ 'rotate-180': showDropdown }" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </button>
+               <h1 class="text-xl md:text-2xl font-bold">{{ lesson.title }}</h1>
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform" :class="{ 'rotate-180': showDropdown }" viewBox="0 0 20 20" fill="currentColor">
+                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+               </svg>
+             </button>
 
             <!-- Dropdown Menu -->
             <div v-if="showDropdown" class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-64 max-h-80 overflow-y-auto bg-white rounded-xl shadow-2xl border border-gray-100 py-2">
-              <div v-for="l in allLessons" :key="l.id">
+              <div v-for="l in partLessons" :key="l.id">
                 <NuxtLink 
-                  :to="`/lesson/${l.id}`" 
+                  :to="`/part/${partId}/lesson/${l.id}`" 
                   class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 text-center transition-colors"
                   :class="{ 'bg-red-50 text-red-600 font-bold': l.id === lesson.id }"
                   @click="showDropdown = false"
@@ -46,7 +45,7 @@
         <!-- Prev Button (Right in RTL) -->
         <NuxtLink 
           v-if="prevLessonId"
-          :to="`/lesson/${prevLessonId}`"
+          :to="`/part/${partId}/lesson/${prevLessonId}`"
           class="mt-2 p-3 bg-white border border-gray-200 text-gray-600 rounded-full shadow-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
           title="الدرس السابق"
         >
@@ -130,7 +129,7 @@
         <!-- Next Button (Left in RTL) -->
         <NuxtLink 
           v-if="nextLessonId"
-          :to="`/lesson/${nextLessonId}`"
+          :to="`/part/${partId}/lesson/${nextLessonId}`"
           class="mt-2 p-3 bg-white border border-gray-200 text-gray-600 rounded-full shadow-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
           title="الدرس التالي"
         >
@@ -210,38 +209,39 @@
       </div>
 
       <!-- Side Decoration (Optional) -->
-      <div class="fixed top-20 right-0 h-3/4 w-2 bg-gradient-to-b from-orange-300 to-orange-500 rounded-l-lg opacity-80 hidden lg:block pointer-events-none z-0"></div>
+      <!-- <div class="fixed top-20 right-0 h-3/4 w-2 bg-gradient-to-b from-orange-300 to-orange-500 rounded-l-lg opacity-80 hidden lg:block pointer-events-none z-0"></div> -->
     </div>
 
     <div v-else class="text-center py-20">
       <h2 class="text-2xl text-red-500">الدرس غير موجود</h2>
-      <NuxtLink to="/" class="text-blue-500 hover:underline mt-4 block">العودة للرئيسية</NuxtLink>
+      <NuxtLink :to="`/part/${partId}`" class="text-blue-500 hover:underline mt-4 block">العودة للقسم</NuxtLink>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { getLessons } from '~/utils/lessons';
+import { getParts } from '~/utils/lessons';
 
 const { t } = useI18n();
 const route = useRoute();
-const lessonId = computed(() => parseInt(route.params.id as string));
+const partId = computed(() => parseInt(route.params.partId as string));
+const lessonId = computed(() => parseInt(route.params.lessonId as string));
 
 // Make lessons reactive to language changes
-const lessons = computed(() => getLessons(t));
-
-const lesson = computed(() => lessons.value.find(l => l.id === lessonId.value));
-const allLessons = lessons; // For dropdown
+const parts = computed(() => getParts(t));
+const part = computed(() => parts.value.find(p => p.id === partId.value));
+const partLessons = computed(() => part.value?.lessons || []);
+const lesson = computed(() => partLessons.value.find(l => l.id === lessonId.value));
 
 // Navigation Logic
 const prevLessonId = computed(() => {
-  const index = lessons.value.findIndex(l => l.id === lessonId.value);
-  return index > 0 ? lessons.value[index - 1].id : null;
+  const index = partLessons.value.findIndex(l => l.id === lessonId.value);
+  return index > 0 ? partLessons.value[index - 1].id : null;
 });
 
 const nextLessonId = computed(() => {
-  const index = lessons.value.findIndex(l => l.id === lessonId.value);
-  return index < lessons.value.length - 1 ? lessons.value[index + 1].id : null;
+  const index = partLessons.value.findIndex(l => l.id === lessonId.value);
+  return index < partLessons.value.length - 1 ? partLessons.value[index + 1].id : null;
 });
 
 // Dropdown State

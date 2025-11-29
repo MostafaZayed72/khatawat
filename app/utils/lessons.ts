@@ -20,8 +20,17 @@ export interface Lesson {
     diagramImages?: string[];
 }
 
-export const getLessons = (t: (key: string) => string): Lesson[] => {
-    const lessons: Lesson[] = [
+export interface Part {
+    id: number;
+    title: string;
+    description: string;
+    videoUrl: string;
+    image: string;
+    lessons: Lesson[];
+}
+
+export const getParts = (t: (key: string) => string): Part[] => {
+    const part1Lessons: Lesson[] = [
         {
             id: 1,
             title: t('Numbers'),
@@ -127,7 +136,7 @@ export const getLessons = (t: (key: string) => string): Lesson[] => {
             title: t('Main Body Parts'),
             subtitle: t('Group Six'),
             type: 'diagram',
-            diagramImages: ['/6/body.png', '/6/body2.png'],
+            diagramImages: ['/6/body.png'],
             items: [
                 { id: 1, text: t('Hair') },
                 { id: 2, text: t('Head') },
@@ -158,7 +167,7 @@ export const getLessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('Group Seven'),
             type: 'gallery',
             items: [
-                { id: 1, image: '/7/1.jpeg', text: t('Black') },
+                { id: 1, image: '/7/1.jpg', text: t('Black') },
                 { id: 2, image: '/7/2.jpg', text: t('White') },
                 { id: 2, image: '/7/3.jpg', text: t('Blue') },
                 { id: 2, image: '/7/4.jpg', text: t('Purple') },
@@ -223,13 +232,26 @@ export const getLessons = (t: (key: string) => string): Lesson[] => {
             ],
             audioUrl: '/10/10.wav',
         },
-
-
+        {
+            id: 11,
+            title: 'أسماء المؤسسات التعليمية',
+            subtitle: 'المجموعة الحادية عشرة',
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/11/1.jpg', text: 'روضة' },
+                { id: 2, image: '/11/2.jpg', text: 'مدرسة ابتدائية' },
+                { id: 2, image: '/11/3.jpg', text: 'مدرسة متوسطة' },
+                { id: 2, image: '/11/4.jpg', text: 'معهد' },
+                { id: 2, image: '/11/5.jpg', text: 'كلية' },
+                { id: 2, image: '/11/6.jpg', text: 'جامعة' },
+            ],
+            audioUrl: '/11/11.wav',
+        },
     ];
 
-    // Helper to fill the rest
-    for (let i = 5; i <= 50; i++) {
-        lessons.push({
+    // Helper to fill the rest of Part 1 up to 39 (or 50 as before)
+    for (let i = 11; i <= 39; i++) {
+        part1Lessons.push({
             id: i,
             title: t('Lesson') + ' ' + i,
             type: 'text',
@@ -238,6 +260,39 @@ export const getLessons = (t: (key: string) => string): Lesson[] => {
         });
     }
 
-    return lessons;
+    return [
+        {
+            id: 1,
+            title: t('Part One'),
+            description: t('Basics and Daily Life'),
+            videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            image: '/parts/1.png',
+            lessons: part1Lessons
+        },
+        {
+            id: 2,
+            title: t('Part Two'),
+            description: t('Coming Soon'),
+            videoUrl: '',
+            image: '/parts/2.png',
+            lessons: []
+        },
+        {
+            id: 3,
+            title: t('Part Three'),
+            description: t('Coming Soon'),
+            videoUrl: '',
+            image: '/parts/3.png',
+            lessons: []
+        },
+        {
+            id: 4,
+            title: t('Part Four'),
+            description: t('Coming Soon'),
+            videoUrl: '',
+            image: '/parts/4.png',
+            lessons: []
+        }
+    ];
 };
 
