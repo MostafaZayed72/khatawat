@@ -12,21 +12,18 @@
           v-for="part in parts" 
           :key="part.id"
           :to="`/part/${part.id}`"
-          class="relative w-full h-64 md:h-80 bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 transform hover:-translate-y-2 overflow-hidden group border-4 border-white/50 flex items-center justify-between px-6 md:px-12"
+          class="relative w-full h-64 md:h-80 bg-transparent backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-orange-500/50 transition-all duration-500 transform hover:-translate-y-2 overflow-hidden group border-4 border-white/50 flex items-center justify-between px-6 md:px-12"
         >
           <!-- Content -->
-          <div class="flex flex-col gap-2 z-10 max-w-2xl">
-            <div class="flex items-center gap-4 mb-2">
-               <div class="w-12 h-12 md:w-16 md:h-16 bg-red-600 text-white rounded-full flex items-center justify-center text-2xl md:text-3xl font-bold shadow-lg group-hover:scale-110 transition-transform">
-                {{ part.id }}
-              </div>
-              <h2 class="text-3xl md:text-5xl font-black text-gray-800 group-hover:text-red-600 transition-colors">{{ part.title }}</h2>
+          <div class="flex flex-col items-center justify-center gap-2 md:gap-4 z-10 flex-grow">
+             <div class="w-12 h-12 md:w-20 md:h-20 bg-red-600 text-white rounded-full flex items-center justify-center text-xl md:text-4xl font-bold shadow-lg group-hover:scale-110 transition-transform">
+              {{ part.id }}
             </div>
-            <!-- Description removed as requested -->
+            <h2 class="text-xl md:text-5xl font-black text-gray-800 group-hover:text-red-600 transition-colors text-center ">{{ part.title }}</h2>
           </div>
 
           <!-- Image -->
-          <div class="absolute left-0 top-0 h-full w-1/2 md:w-1/3 opacity-20 md:opacity-100 md:relative md:w-auto md:h-full flex items-center justify-center pointer-events-none">
+          <div class="relative h-full w-1/2 md:w-1/3 flex items-center justify-center pointer-events-none opacity-100 bg-transparent">
              <img 
                v-if="part.image" 
                :src="part.image" 
@@ -35,8 +32,7 @@
              />
           </div>
           
-          <!-- Decoration -->
-          <div class="absolute inset-0 bg-gradient-to-l from-white/0 via-white/0 to-white/80 md:hidden pointer-events-none"></div>
+          <!-- Decoration removed to prevent fading on mobile -->
         </NuxtLink>
       </div>
 
