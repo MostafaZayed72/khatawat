@@ -3,7 +3,9 @@
     <!-- Background is handled by app.vue -->
     
     <div class="w-full max-w-7xl z-10 flex flex-col gap-8 py-10">
-      <h1 class="text-5xl md:text-6xl font-black text-center text-red-600 drop-shadow-lg mb-8">{{ t('Choose Level') }}</h1>
+      <h1 class="text-4xl md:text-5xl font-black text-center text-red-600 drop-shadow-lg mb-8 leading-tight">
+        {{ t('Khatwat Program for Teaching Arabic to Non-Native Speakers') }}
+      </h1>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         <NuxtLink 
@@ -20,7 +22,7 @@
               </div>
               <h2 class="text-3xl md:text-5xl font-black text-gray-800 group-hover:text-red-600 transition-colors">{{ part.title }}</h2>
             </div>
-            <p class="text-xl md:text-2xl text-gray-600 font-medium">{{ part.description }}</p>
+            <!-- Description removed as requested -->
           </div>
 
           <!-- Image -->
@@ -36,6 +38,17 @@
           <!-- Decoration -->
           <div class="absolute inset-0 bg-gradient-to-l from-white/0 via-white/0 to-white/80 md:hidden pointer-events-none"></div>
         </NuxtLink>
+      </div>
+
+      <!-- About Project Video Section -->
+      <div class="w-full mt-12 flex flex-col items-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">{{ t('About the Project') }}</h2>
+        <div class="w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+          <video controls class="w-full h-full object-cover">
+            <source src="/video.mp4" type="video/mp4">
+            {{ t('Your browser does not support the video tag.') }}
+          </video>
+        </div>
       </div>
     </div>
   </div>

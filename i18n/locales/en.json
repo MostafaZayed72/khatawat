@@ -124,9 +124,9 @@
   "Group Four": "Group Four",
   "Fetus": "Fetus",
   "Infant": "Infant",
-  "Student.girl":"Student",
-  "Doctor.girl":"Doctor",
-  "Child.girl":"Child",
+  "Student.girl": "Student",
+  "Doctor.girl": "Doctor",
+  "Child.girl": "Child",
   "Young Boy": "Young Boy",
   "Young Girl": "Young Girl",
   "Old Man": "Old Man",
@@ -301,5 +301,8 @@
   "Table": "Table",
   "Pillow": "Pillow",
   "Carpet": "Carpet",
-  "Curtain": "Curtain"
+  "Curtain": "Curtain",
+  "Khatwat Program for Teaching Arabic to Non-Native Speakers": "Khatwat Program for Teaching Arabic to Non-Native Speakers",
+  "About the Project": "About the Project",
+  "Your browser does not support the video tag.": "Your browser does not support the video tag."
 }

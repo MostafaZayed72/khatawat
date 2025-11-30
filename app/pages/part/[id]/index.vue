@@ -4,30 +4,35 @@
       
       <!-- Header -->
       <div class="text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{{ part.title }}</h1>
-        <p class="text-xl text-gray-600">{{ part.description }}</p>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
+          {{ t('Khatwat Program for Teaching Arabic to Non-Native Speakers') }} 
+          <span class="block mt-2 text-red-600">({{ t('Level') }} {{ part.id }})</span>
+        </h1>
+        <!-- Description removed -->
       </div>
 
-      <!-- Video Placeholder -->
-      <div class="w-full aspect-video bg-gray-200 rounded-2xl overflow-hidden shadow-lg relative group">
-        <iframe 
-          v-if="part.videoUrl"
-          class="w-full h-full"
-          :src="part.videoUrl" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen
-        ></iframe>
-        <div v-else class="flex items-center justify-center h-full text-gray-400">
-          <span>{{ t('Video Coming Soon') }}</span>
-        </div>
+      <!-- Video Section (Restored) -->
+      <div class="w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border-4 border-white mb-8">
+        <video controls class="w-full h-full object-cover">
+          <source src="/video.mp4" type="video/mp4">
+          {{ t('Your browser does not support the video tag.') }}
+        </video>
+      </div>
+
+      <!-- Level Image -->
+      <div class="w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+        <img 
+          v-if="part.image" 
+          :src="part.image" 
+          :alt="part.title" 
+          class="w-full h-auto object-contain"
+        />
       </div>
 
       <!-- Start Button -->
       <NuxtLink 
         :to="`/part/${part.id}/lesson/1`"
-        class="bg-gradient-to-r from-red-600 to-red-500 text-white text-2xl font-bold py-4 px-12 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3"
+        class="bg-gradient-to-r from-red-600 to-red-500 text-white text-2xl font-bold py-4 px-12 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3 mt-4"
       >
         <span>{{ t('Start Lessons') }}</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 transform rtl:rotate-180" viewBox="0 0 20 20" fill="currentColor">
@@ -36,7 +41,7 @@
       </NuxtLink>
 
       <!-- Back Home -->
-      <NuxtLink to="/" class="text-gray-500 hover:text-red-600 transition-colors flex items-center gap-2 mt-4">
+      <NuxtLink to="/" class="text-gray-500 hover:text-red-600 transition-colors flex items-center gap-2 mt-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rtl:rotate-180" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
         </svg>

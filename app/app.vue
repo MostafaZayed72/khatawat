@@ -35,7 +35,7 @@ const isPartActive = (id: number) => {
           <!-- Logo (Right) -->
           <div class="flex-shrink-0 flex items-center">
             <NuxtLink to="/" class="flex items-center gap-2 group">
-                 <img src="/logo.png" alt="Logo" class="h-48 w-48 object-contain transform group-hover:scale-105 transition-transform duration-300" />
+                 <img src="/logo.png" alt="Logo" class="h-60 w-60 object-contain mb-10 transform group-hover:scale-105 transition-transform duration-300" />
             </NuxtLink>
           </div>
 
@@ -108,5 +108,6 @@ body {
 html {
   overflow-x: hidden;
   width: 100%;
+  font-family: 'Tajawal', sans-serif;
 }
 </style>

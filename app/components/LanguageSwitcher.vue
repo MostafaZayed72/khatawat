@@ -33,7 +33,7 @@ const currentFlagIcon = computed(() => locale.value === 'ar' ? 'flag:gb-4x3' : '
                  py-2 px-4 rounded-lg transition-colors duration-200 cursor-pointer"
       @click="changeLanguage(otherLocale.code)">
       
-      <Icon :name="currentFlagIcon" class="w-5 h-5" />
+      <span class="text-sm font-bold">{{ otherLocale.name }}</span>
 
       <Icon name="lucide:arrow-right" class="w-4 h-4 rtl:rotate-180" />
     </button>

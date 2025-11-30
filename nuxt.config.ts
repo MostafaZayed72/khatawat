@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  ssr: false, 
-  
+  ssr: false,
+
   // 🟢 هذا السطر هو مفتاح الحل
   router: {
     options: {
@@ -13,8 +13,8 @@ export default defineNuxtConfig({
   app: {
     head: {
       // 💡 يتم استخدام هذا القالب لجميع الصفحات
-      titleTemplate: 'Khatwat - خطوات', 
-      
+      titleTemplate: 'Khatwat - خطوات',
+
     }
   },
   css: [
@@ -25,7 +25,11 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/icon',
     '@nuxtjs/tailwindcss',
-    '@nuxt/fonts'
+    ['@nuxt/fonts', {
+      families: [
+        { name: 'Tajawal', provider: 'google' }
+      ]
+    }]
   ],
   i18n: {
     strategy: 'no_prefix',

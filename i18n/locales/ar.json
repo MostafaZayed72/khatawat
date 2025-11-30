@@ -210,9 +210,9 @@
   "Group Three": "المجموعة الثالثة",
   "Two Boys": "ولدان",
   "Boys": "أولاد",
-  "Student.girl":"طالبة",
-  "Doctor.girl":"طبيبة",
-  "Child.girl":"طفلة",
+  "Student.girl": "طالبة",
+  "Doctor.girl": "طبيبة",
+  "Child.girl": "طفلة",
   "Two Girls": "بنتان",
   "Girls": "بنات",
   "Car": "سيارة",
@@ -405,5 +405,8 @@
   "Table": "طاولة",
   "Pillow": "وسادة",
   "Carpet": "سجادة",
-  "Curtain": "ستارة"
+  "Curtain": "ستارة",
+  "Khatwat Program for Teaching Arabic to Non-Native Speakers": "برنامج خطوات لتعليم اللغة العربية للناطقين بغيرها",
+  "About the Project": "نبذة عن المشروع",
+  "Your browser does not support the video tag.": "متصفحك لا يدعم تشغيل الفيديو."
 }

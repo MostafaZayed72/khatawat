@@ -166,7 +166,9 @@
       </div>
 
       <!-- Gallery Type Lesson -->
-      <div v-else-if="lesson.type === 'gallery' && lesson.items" class="grid grid-cols-2 md:grid-cols-4 gap-6 p-4 max-w-4xl mx-auto z-10 relative">
+      <div v-else-if="lesson.type === 'gallery' && lesson.items" 
+           class="grid gap-6 p-4 max-w-4xl mx-auto z-10 relative"
+           :class="lesson.id === 3 ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-4'">
         <div v-for="(item, index) in lesson.items" :key="index" class="flex flex-col items-center group cursor-pointer">
           <div class="w-full h-64 bg-tranparent rounded-lg overflow-hidden mb-2 shadow-md transition-transform duration-300 transform group-hover:scale-105 group-hover:shadow-xl">
             <img v-if="item.image" :src="item.image" :alt="item.text" class="w-full h-full object-contain" />
