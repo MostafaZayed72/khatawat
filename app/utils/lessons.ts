@@ -13,7 +13,7 @@ export interface Lesson {
     title: string;
     subtitle?: string;
     description?: string;
-    type: 'text' | 'gallery' | 'numbers' | 'diagram';
+    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays';
     items?: LessonItem[];
     audioUrl?: string;
     mainImage?: string;
@@ -408,19 +408,218 @@ export const getParts = (t: (key: string) => string): Part[] => {
             ],
             audioUrl: '/20/20.wav',
         },
+        {
+            id: 21,
+            title: 'وسائل النقل والمواصلات',
+            subtitle: 'المجموعة الحادية والعشرون',
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/21/1.jpg', text: 'دراجة هوائية' },
+                { id: 2, image: '/21/2.jpg', text: 'دراجة نارية' },
+                { id: 2, image: '/21/3.jpg', text: 'عربة' },
+                { id: 2, image: '/21/4.jpg', text: 'سيارة' },
+                { id: 2, image: '/21/5.jpg', text: 'حافلة' },
+                { id: 2, image: '/21/6.jpg', text: 'قطار' },
+                { id: 2, image: '/21/7.jpg', text: 'طائرة' },
+                { id: 2, image: '/21/8.jpg', text: 'سفينة' },
+                { id: 2, image: '/21/9.jpg', text: 'شاحنة' },
+                { id: 2, image: '/21/10.jpg', text: 'منطاد' },
+            ],
+            audioUrl: '/21/21.wav',
+        },
 
+        {
+            id: 22,
+            title: t('Road Components'),
+            subtitle: t('Group Twenty-Two'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/22/1.jpg', text: t('Street') },
+                { id: 2, image: '/22/2.jpg', text: t('Sidewalk') },
+                { id: 2, image: '/22/3.jpg', text: t('Traffic Light') },
+                { id: 2, image: '/22/4.jpg', text: t('Bridge') },
+                { id: 2, image: '/22/5.jpg', text: t('Railway') },
+                { id: 2, image: '/22/6.jpg', text: t('Crosswalk') },
+                { id: 2, image: '/22/7.jpg', text: t('Roundabout') },
+                { id: 2, image: '/22/8.jpg', text: t('Billboard') },
+                { id: 2, image: '/22/9.jpg', text: t('Parking Lot') },
+            ],
+            audioUrl: '/22/22.wav',
+        },
+        {
+            id: 23,
+            title: t('Professions and Crafts'),
+            subtitle: t('Group Twenty-Three'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/23/1.jpg', text: t('Lawyer') },
+                { id: 2, image: '/23/2.jpg', text: t('Doctor') },
+                { id: 2, image: '/23/3.jpg', text: t('Pharmacist') },
+                { id: 2, image: '/23/4.jpg', text: t('Tailor') },
+                { id: 2, image: '/23/5.jpg', text: t('Barber') },
+                { id: 2, image: '/23/6.jpg', text: t('Baker') },
+                { id: 2, image: '/23/7.jpg', text: t('Fisherman') },
+                { id: 2, image: '/23/8.jpg', text: t('Engineer') },
+                { id: 2, image: '/23/9.jpg', text: t('Butcher') },
+                { id: 2, image: '/23/10.jpg', text: t('Blacksmith') },
+                { id: 2, image: '/23/11.jpg', text: t('Carpenter') },
+            ],
+            audioUrl: '/23/23.wav',
+        },
+        {
+            id: 24,
+            title: t('Animal Names'),
+            subtitle: t('Group Twenty-Four'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/24/1.jpeg', text: t('Camel') },
+                { id: 2, image: '/24/2.jpeg', text: t('Monkey') },
+                { id: 2, image: '/24/3.jpeg', text: t('Cat') },
+                { id: 2, image: '/24/4.jpeg', text: t('Rabbit') },
+                { id: 2, image: '/24/5.jpeg', text: t('Cow') },
+                { id: 2, image: '/24/6.jpeg', text: t('Lion') },
+                { id: 2, image: '/24/7.jpeg', text: t('Donkey') },
+                { id: 2, image: '/24/8.jpeg', text: t('Elephant') },
+                { id: 2, image: '/24/9.jpeg', text: t('Giraffe') },
+                { id: 2, image: '/24/10.jpeg', text: t('Sheep') },
+                { id: 2, image: '/24/11.jpeg', text: t('Gazelle') },
+                { id: 2, image: '/24/12.jpeg', text: t('Fox') },
+                { id: 2, image: '/24/13.jpeg', text: t('Dog') },
+                { id: 2, image: '/24/14.jpeg', text: t('Tiger') },
+            ],
+            audioUrl: '/24/24.wav',
+        },
+        {
+            id: 25,
+            title: t('Bird Names'),
+            subtitle: t('Group Twenty-Five'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/25/1.jpeg', text: t('Chicken') },
+                { id: 2, image: '/25/2.jpeg', text: t('Duck') },
+                { id: 2, image: '/25/3.jpeg', text: t('Ostrich') },
+                { id: 2, image: '/25/4.jpeg', text: t('Peacock') },
+                { id: 2, image: '/25/5.jpeg', text: t('Pigeon') },
+                { id: 2, image: '/25/6.jpeg', text: t('Sparrow') },
+                { id: 2, image: '/25/7.jpeg', text: t('Parrot') },
+                { id: 2, image: '/25/8.jpeg', text: t('Falcon') },
+                { id: 2, image: '/25/9.jpeg', text: t('Hoopoe') },
+                { id: 2, image: '/25/10.jpeg', text: t('Seagull') },
+                { id: 2, image: '/25/11.jpeg', text: t('Crow') },
+                { id: 2, image: '/25/12.jpeg', text: t('Eagle') },
+                { id: 2, image: '/25/13.jpeg', text: t('Owl') },
+            ],
+            audioUrl: '/25/25.wav',
+        },
+        {
+            id: 26,
+            title: t('Reptiles and Amphibians Names'),
+            subtitle: t('Group Twenty-Six'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/26/1.jpeg', text: t('Crocodile') },
+                { id: 2, image: '/26/2.jpeg', text: t('Turtle') },
+                { id: 2, image: '/26/3.jpeg', text: t('Snake') },
+                { id: 2, image: '/26/4.jpeg', text: t('Frog') },
+            ],
+            audioUrl: '/26/26.wav',
+        },
+        {
+            id: 27,
+            title: t('Insect Names'),
+            subtitle: t('Group Twenty-Seven'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/27/1.jpeg', text: t('Ant') },
+                { id: 2, image: '/27/2.jpeg', text: t('Bee') },
+                { id: 2, image: '/27/3.jpeg', text: t('Fly') },
+                { id: 2, image: '/27/4.jpeg', text: t('Mosquito') },
+                { id: 2, image: '/27/5.jpeg', text: t('Butterfly') },
+                { id: 2, image: '/27/6.jpeg', text: t('Spider') },
+                { id: 2, image: '/27/7.jpeg', text: t('Scorpion') },
+            ],
+            audioUrl: '/27/27.wav',
+        },
+        {
+            id: 28,
+            title: t('The Four Directions'),
+            subtitle: t('Group Twenty-Eight'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/28/1.svg', text: t('North') },
+                { id: 2, image: '/28/2.svg', text: t('South') },
+                { id: 3, image: '/28/3.svg', text: t('East') },
+                { id: 4, image: '/28/4.svg', text: t('West') },
+            ],
+            audioUrl: '/28/28.wav',
+        },
+        {
+            id: 29,
+            title: t('The Four Seasons'),
+            subtitle: t('Group Twenty-Nine'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/29/1.svg', text: t('Summer') },
+                { id: 2, image: '/29/2.svg', text: t('Spring') },
+                { id: 3, image: '/29/3.svg', text: t('Winter') },
+                { id: 4, image: '/29/4.svg', text: t('Autumn') },
+            ],
+            audioUrl: '/29/29.wav',
+        },
+        {
+            id: 30,
+            title: t('Weather Conditions'),
+            subtitle: t('Group Thirty'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/30/1.svg', text: t('Hot') },
+                { id: 2, image: '/30/2.svg', text: t('Cloudy') },
+                { id: 3, image: '/30/3.svg', text: t('Rainy') },
+                { id: 4, image: '/30/4.svg', text: t('Foggy') },
+                { id: 5, image: '/30/5.svg', text: t('Cold') },
+                { id: 6, image: '/30/6.svg', text: t('Stormy') },
+            ],
+            audioUrl: '/30/30.wav',
+        },
+        {
+            id: 31,
+            title: t('Months of the Arabic Year'),
+            subtitle: t('Group Thirty-One'),
+            type: 'hijri',
+            items: [
+                { id: 1, text: t('Muharram') },
+                { id: 2, text: t('Safar') },
+                { id: 3, text: t('Rabi Al-Awwal') },
+                { id: 4, text: t('Rabi Al-Thani') },
+                { id: 5, text: t('Jumada Al-Ula') },
+                { id: 6, text: t('Jumada Al-Akhirah') },
+                { id: 7, text: t('Rajab') },
+                { id: 8, text: t('Shaban') },
+                { id: 9, text: t('Ramadan') },
+                { id: 10, text: t('Shawwal') },
+                { id: 11, text: t('Dhu Al-Qidah') },
+                { id: 12, text: t('Dhu Al-Hijjah') },
+            ],
+            audioUrl: '/31/31.wav',
+        },
+        {
+            id: 32,
+            title: t('Days of the Week'),
+            subtitle: t('Group Thirty-Two'),
+            type: 'weekDays',
+            items: [
+                { id: 1, text: t('Saturday'), colorFrom: '#5c9ad5' },
+                { id: 2, text: t('Sunday'), colorFrom: '#ed7d31' },
+                { id: 3, text: t('Monday'), colorFrom: '#a5a5a5' },
+                { id: 4, text: t('Tuesday'), colorFrom: '#ffc000' },
+                { id: 5, text: t('Wednesday'), colorFrom: '#4472c4' },
+                { id: 6, text: t('Thursday'), colorFrom: '#70ad47' },
+                { id: 7, text: t('Friday'), colorFrom: '#9e480e' }, // Using a placeholder color, will adjust in Vue if needed or use this property
+            ],
+            audioUrl: '/32/32.wav',
+        },
     ];
 
-    // Helper to fill the rest of Part 1 up to 39 (or 50 as before)
-    // for (let i = 39; i <= 39; i++) {
-    //     part1Lessons.push({
-    //         id: i,
-    //         title: t('Lesson') + ' ' + i,
-    //         type: 'text',
-    //         description: t('Description of lesson') + ' ' + i,
-    //         audioUrl: `/audio/lesson${i}.mp3`
-    //     });
-    // }
 
     return [
         {

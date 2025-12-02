@@ -205,6 +205,74 @@
 
       </div>
 
+
+
+      <!-- Hijri Type Lesson -->
+      <div v-else-if="lesson.type === 'hijri'" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-4 max-w-6xl mx-auto z-10 relative">
+        <div v-for="(item, index) in lesson.items" :key="index" class="flex flex-col items-center justify-center p-4">
+          
+          <!-- Diamond Shape Container -->
+          <div class="relative w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-gray-100 to-gray-300 rounded-2xl shadow-xl transform rotate-45 flex items-center justify-center border-2 border-white group hover:scale-110 transition-transform duration-300 cursor-pointer">
+            
+            <!-- Green Tag -->
+            <div class="absolute -top-2 -right-2 w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg shadow-md z-10"></div>
+            
+            <!-- Text Container (Counter Rotated) -->
+            <div class="transform -rotate-45 flex items-center justify-center w-full h-full">
+              <span class="text-xl md:text-2xl font-bold text-gray-800 text-center leading-tight drop-shadow-sm">{{ item.text }}</span>
+            </div>
+
+            <!-- Glossy Effect -->
+            <div class="absolute top-0 left-0 w-full h-1/2 bg-white opacity-20 rounded-t-2xl pointer-events-none"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Week Days Type Lesson -->
+      <div v-else-if="lesson.type === 'weekDays'" class="flex flex-col md:flex-row items-center justify-center gap-8 p-4 max-w-6xl mx-auto z-10 relative w-full">
+        
+        <!-- Pie Chart -->
+        <div class="relative w-full max-w-md aspect-square">
+           <svg viewBox="0 0 100 100" class="w-full h-full transform -rotate-90">
+             <path 
+               v-for="(item, index) in lesson.items" 
+               :key="item.id"
+               :d="getPiePath(index, lesson.items.length)"
+               :fill="item.colorFrom"
+               class="stroke-white stroke-[0.5] hover:opacity-90 transition-opacity cursor-pointer"
+             />
+             <!-- Text on Pie Slices -->
+             <text 
+                v-for="(item, index) in lesson.items" 
+                :key="'text-' + item.id"
+                :x="getTextPos(index, lesson.items.length).x"
+                :y="getTextPos(index, lesson.items.length).y"
+                text-anchor="middle"
+                dominant-baseline="middle"
+                fill="white"
+                font-size="4"
+                font-weight="bold"
+                class="pointer-events-none transform rotate-90 origin-center"
+                :transform="`rotate(${getTextRotation(index, lesson.items.length)}, ${getTextPos(index, lesson.items.length).x}, ${getTextPos(index, lesson.items.length).y})`"
+             >
+               {{ item.text }}
+             </text>
+             <!-- Center Circle -->
+             <circle cx="50" cy="50" r="10" fill="white" />
+           </svg>
+        </div>
+
+        <!-- Legend -->
+        <div class="flex flex-col gap-4 w-full md:w-auto">
+           <div v-for="item in lesson.items" :key="item.id" class="flex items-center gap-4">
+              <div class="w-8 h-8 rounded-md shadow-sm" :style="{ backgroundColor: item.colorFrom }"></div>
+              <span class="text-xl md:text-2xl font-bold text-gray-800">{{ item.text }}</span>
+           </div>
+        </div>
+
+      </div>
+
       <!-- Text Type Lesson -->
       <div v-else class="prose lg:prose-xl mx-auto text-center p-4 z-10 relative">
         <p class="text-gray-600">{{ lesson.description }}</p>
@@ -339,6 +407,38 @@ const setSpeed = (rate: number) => {
     audio.playbackRate = rate;
     playbackRate.value = rate;
   }
+};
+
+// Pie Chart Helpers
+const getPiePath = (index: number, total: number) => {
+  const startAngle = (index * 360) / total;
+  const endAngle = ((index + 1) * 360) / total;
+  
+  // Convert to radians
+  const startRad = (startAngle * Math.PI) / 180;
+  const endRad = (endAngle * Math.PI) / 180;
+  
+  const x1 = 50 + 50 * Math.cos(startRad);
+  const y1 = 50 + 50 * Math.sin(startRad);
+  const x2 = 50 + 50 * Math.cos(endRad);
+  const y2 = 50 + 50 * Math.sin(endRad);
+  
+  return `M 50 50 L ${x1} ${y1} A 50 50 0 0 1 ${x2} ${y2} Z`;
+};
+
+const getTextPos = (index: number, total: number) => {
+  const angle = (index * 360) / total + (360 / total) / 2;
+  const rad = (angle * Math.PI) / 180;
+  const radius = 35; // Distance from center
+  return {
+    x: 50 + radius * Math.cos(rad),
+    y: 50 + radius * Math.sin(rad)
+  };
+};
+
+const getTextRotation = (index: number, total: number) => {
+    const angle = (index * 360) / total + (360 / total) / 2;
+    return angle + 90; // Rotate text to align with slice radius, +90 because base rotation is -90
 };
 
 useHead({
