@@ -256,7 +256,7 @@
                 class="pointer-events-none transform rotate-90 origin-center"
                 :transform="`rotate(${getTextRotation(index, lesson.items.length)}, ${getTextPos(index, lesson.items.length).x}, ${getTextPos(index, lesson.items.length).y})`"
              >
-               {{ item.text }}
+
              </text>
              <!-- Center Circle -->
              <circle cx="50" cy="50" r="10" fill="white" />
@@ -271,6 +271,30 @@
            </div>
         </div>
 
+      </div>
+
+      <!-- Drops Type Lesson -->
+      <div v-else-if="lesson.type === 'drops'" class="flex flex-wrap items-center justify-center gap-8 p-4 max-w-6xl mx-auto z-10 relative w-full">
+         <div v-for="item in lesson.items" :key="item.id" class="relative w-40 h-56 md:w-56 md:h-80 flex items-center justify-center group cursor-pointer hover:scale-110 transition-transform duration-300">
+            <!-- Drop Shape SVG -->
+            <svg viewBox="0 0 100 140" class="absolute inset-0 w-full h-full drop-shadow-xl">
+               <defs>
+                  <linearGradient :id="'dropGradient-' + item.id" x1="0%" y1="0%" x2="0%" y2="100%">
+                     <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+                     <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1" />
+                  </linearGradient>
+               </defs>
+               <!-- Main Drop Body -->
+               <path d="M 50 5 Q 95 60 95 85 A 45 45 0 1 1 5 85 Q 5 60 50 5 Z" :fill="'url(#dropGradient-' + item.id + ')'" stroke="white" stroke-width="2" />
+               <!-- Inner Decorative Border -->
+               <path d="M 50 12 Q 88 62 88 85 A 38 38 0 1 1 12 85 Q 12 62 50 12 Z" fill="none" stroke="white" stroke-width="1" stroke-dasharray="2 2" opacity="0.7" />
+               <!-- Shine Effect -->
+               <path d="M 30 30 Q 40 40 30 50" fill="none" stroke="white" stroke-width="3" opacity="0.4" stroke-linecap="round" />
+            </svg>
+            
+            <!-- Text Content -->
+            <span class="relative z-10 text-2xl md:text-4xl font-bold text-white drop-shadow-md mt-10">{{ item.text }}</span>
+         </div>
       </div>
 
       <!-- Text Type Lesson -->

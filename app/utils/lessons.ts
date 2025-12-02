@@ -13,7 +13,7 @@ export interface Lesson {
     title: string;
     subtitle?: string;
     description?: string;
-    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays';
+    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops';
     items?: LessonItem[];
     audioUrl?: string;
     mainImage?: string;
@@ -617,6 +617,71 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 { id: 7, text: t('Friday'), colorFrom: '#9e480e' }, // Using a placeholder color, will adjust in Vue if needed or use this property
             ],
             audioUrl: '/32/32.wav',
+        },
+        {
+            id: 33,
+            title: t('Times of the Day'),
+            subtitle: t('Group Thirty-Three'),
+            type: 'weekDays',
+            items: [
+                { id: 1, text: t('Fajr'), colorFrom: '#5c9ad5' },
+                { id: 2, text: t('Sunrise'), colorFrom: '#ed7d31' },
+                { id: 3, text: t('Dhuhr'), colorFrom: '#a5a5a5' },
+                { id: 4, text: t('Asr'), colorFrom: '#ffc000' },
+                { id: 5, text: t('Maghrib'), colorFrom: '#4472c4' },
+                { id: 6, text: t('Isha'), colorFrom: '#70ad47' },
+            ],
+            audioUrl: '/33/33.wav',
+        },
+        {
+            id: 34,
+            title: t('Time Divisions'),
+            subtitle: t('Group Thirty-Four'),
+            type: 'drops',
+            items: [
+                { id: 1, text: t('Century') },
+                { id: 2, text: t('Year') },
+                { id: 3, text: t('Day') },
+                { id: 4, text: t('Hour') },
+                { id: 5, text: t('Minute') },
+                { id: 6, text: t('Second') },
+            ],
+            audioUrl: '/34/34.wav',
+        },
+        {
+            id: 35,
+            title: t('Landforms'),
+            subtitle: t('Group Thirty-Five'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/35/1.jpeg', text: t('Mountain') },
+                { id: 2, image: '/35/2.jpeg', text: t('Plain') },
+                { id: 3, image: '/35/3.jpeg', text: t('Plateau') },
+                { id: 4, image: '/35/4.jpeg', text: t('Hill') },
+                { id: 5, image: '/35/5.jpeg', text: t('Sea') },
+                { id: 6, image: '/35/6.jpeg', text: t('River') },
+                { id: 7, image: '/35/7.jpeg', text: t('Volcano') },
+                { id: 8, image: '/35/8.jpeg', text: t('Valley') },
+                { id: 9, image: '/35/9.jpeg', text: t('Gulf') },
+                { id: 10, image: '/35/10.jpeg', text: t('Lake') },
+            ],
+            audioUrl: '/35/35.wav',
+        },
+        {
+            id: 36,
+            title: t('Celestial Bodies'),
+            subtitle: t('Group Thirty-Six'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/36/1.jpeg', text: t('Moon') },
+                { id: 2, image: '/36/2.jpeg', text: t('Sun') },
+                { id: 3, image: '/36/3.jpeg', text: t('Star') },
+                { id: 4, image: '/36/4.jpeg', text: t('Meteor') },
+                { id: 5, image: '/36/5.jpeg', text: t('Meteorite') },
+                { id: 6, image: '/36/6.jpeg', text: t('Comet') },
+                { id: 7, image: '/36/7.jpeg', text: t('Galaxy') },
+            ],
+            audioUrl: '/36/36.wav',
         },
     ];
 
