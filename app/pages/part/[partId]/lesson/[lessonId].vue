@@ -297,6 +297,72 @@
          </div>
       </div>
 
+      <!-- Text Grid Type Lesson (Custom CSS Shapes) -->
+      <div v-else-if="lesson.type === 'textGrid'" class="grid grid-cols-2 md:grid-cols-4 gap-6 p-4 max-w-6xl mx-auto z-10 relative w-full">
+         <div v-for="item in lesson.items" :key="item.id" 
+              class="flex items-center justify-center p-4 min-h-[100px] rounded-2xl border-2 border-[#8bc34a] bg-[#dcedc8] shadow-sm hover:shadow-md hover:scale-105 transition-all cursor-pointer group">
+            <span class="text-xl md:text-3xl font-bold text-gray-800 font-arabic text-center group-hover:text-black">{{ item.text }}</span>
+         </div>
+      </div>
+
+      <!-- Opposites Type Lesson (Diamond Split) -->
+      <div v-else-if="lesson.type === 'opposites'" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-4 max-w-6xl mx-auto z-10 relative w-full">
+         <div v-for="item in lesson.items" :key="item.id" class="flex flex-col items-center justify-center p-4">
+            <!-- Diamond Container -->
+            <div class="relative w-32 h-32 md:w-40 md:h-40 transform rotate-45 overflow-hidden shadow-xl border-2 border-yellow-400 group hover:scale-110 transition-transform duration-300">
+               <!-- Top Half (Pink) -->
+               <div class="absolute top-0 left-0 w-full h-full bg-[#f8bbd0] origin-bottom-right transition-colors"></div>
+               <!-- Bottom Half (Yellow) - using gradient to split -->
+               <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent from-50% to-[#fff9c4] to-50%"></div>
+               
+               <!-- Content Container (Counter Rotated) -->
+               <div class="absolute inset-0 transform -rotate-45 flex flex-col items-center justify-center w-full h-full">
+                  <!-- Top Text -->
+                  <span class="text-lg md:text-xl font-bold text-[#b71c1c] mb-1">{{ item.text }}</span>
+                  <!-- Divider Line -->
+                  <div class="w-3/4 h-0.5 bg-yellow-500/50 my-0.5"></div>
+                  <!-- Bottom Text -->
+                  <span class="text-lg md:text-xl font-bold text-black mt-1">{{ item.text2 }}</span>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Conversation Type Lesson -->
+      <div v-else-if="lesson.type === 'conversation'" class="flex flex-col items-center justify-center p-4 max-w-4xl mx-auto z-10 relative w-full">
+         <!-- Cloud Container -->
+         <div class="relative w-full max-w-2xl bg-[#f5f5f5] rounded-[3rem] shadow-2xl border-4 border-gray-200 p-8 md:p-12 overflow-hidden">
+            
+            <!-- Grid Background -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none" 
+                 style="background-image: linear-gradient(#999 1px, transparent 1px), linear-gradient(90deg, #999 1px, transparent 1px); background-size: 20px 20px;">
+            </div>
+
+            <!-- Leaves Decoration (CSS Shapes) -->
+            <div class="absolute -left-10 top-1/2 transform -translate-y-1/2 flex flex-col gap-2 pointer-events-none">
+               <div class="w-16 h-8 bg-[#8bc34a] rounded-full transform -rotate-45 shadow-md"></div>
+               <div class="w-20 h-10 bg-[#7cb342] rounded-full transform -rotate-12 shadow-md ml-4"></div>
+               <div class="w-16 h-8 bg-[#689f38] rounded-full transform rotate-12 shadow-md"></div>
+            </div>
+            <div class="absolute -right-10 top-1/2 transform -translate-y-1/2 flex flex-col gap-2 pointer-events-none items-end">
+               <div class="w-16 h-8 bg-[#8bc34a] rounded-full transform rotate-45 shadow-md"></div>
+               <div class="w-20 h-10 bg-[#7cb342] rounded-full transform rotate-12 shadow-md mr-4"></div>
+               <div class="w-16 h-8 bg-[#689f38] rounded-full transform -rotate-12 shadow-md"></div>
+            </div>
+
+            <!-- Dialogue Content -->
+            <div class="relative z-10 flex flex-col gap-6 w-full">
+               <div v-for="item in lesson.items" :key="item.id" class="flex items-start gap-2 text-xl md:text-3xl font-bold font-arabic leading-relaxed">
+                  <!-- Speaker Name -->
+                  <span :style="{ color: item.speakerColor || '#000' }" class="shrink-0">{{ item.speaker }} :</span>
+                  <!-- Text -->
+                  <span class="text-gray-800">{{ item.text }}</span>
+               </div>
+            </div>
+
+         </div>
+      </div>
+
       <!-- Text Type Lesson -->
       <div v-else class="prose lg:prose-xl mx-auto text-center p-4 z-10 relative">
         <p class="text-gray-600">{{ lesson.description }}</p>

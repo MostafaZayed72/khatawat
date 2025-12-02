@@ -2,10 +2,13 @@ export interface LessonItem {
     id: number;
     digit?: string;
     text: string;
+    text2?: string;
     image?: string;
     colorFrom?: string;
     colorTo?: string;
     shadowColor?: string;
+    speaker?: string;
+    speakerColor?: string;
 }
 
 export interface Lesson {
@@ -13,7 +16,7 @@ export interface Lesson {
     title: string;
     subtitle?: string;
     description?: string;
-    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops';
+    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation';
     items?: LessonItem[];
     audioUrl?: string;
     mainImage?: string;
@@ -368,62 +371,62 @@ export const getParts = (t: (key: string) => string): Part[] => {
         },
         {
             id: 19,
-            title: 'أثاث المطبخ',
-            subtitle: 'المجموعة التاسعة عشرة',
+            title: t('Kitchen Tools'),
+            subtitle: t('Group Nineteen'),
             type: 'gallery',
             items: [
-                { id: 1, image: '/19/1.jpg', text: 'طبق' },
-                { id: 2, image: '/19/2.jpg', text: 'كأس' },
-                { id: 2, image: '/19/3.jpg', text: 'سكين' },
-                { id: 2, image: '/19/4.jpg', text: 'شوكة' },
-                { id: 2, image: '/19/5.jpg', text: 'ملعقة' },
-                { id: 2, image: '/19/6.jpg', text: 'إبريق' },
-                { id: 2, image: '/19/7.jpg', text: 'زجاجة' },
-                { id: 2, image: '/19/8.jpg', text: 'صينية' },
-                { id: 2, image: '/19/9.jpg', text: 'مقلاة' },
-                { id: 2, image: '/19/10.jpg', text: 'غاز' },
-                { id: 2, image: '/19/11.jpg', text: 'غلاية' },
-                { id: 2, image: '/19/12.jpg', text: 'مغرفة' },
+                { id: 1, image: '/19/1.jpg', text: t('Cup') },
+                { id: 2, image: '/19/2.jpg', text: t('Plate') },
+                { id: 3, image: '/19/3.jpg', text: t('Knife') },
+                { id: 4, image: '/19/4.jpg', text: t('Fork') },
+                { id: 5, image: '/19/5.jpg', text: t('Spoon') },
+                { id: 6, image: '/19/6.jpg', text: t('Jug') },
+                { id: 7, image: '/19/7.jpg', text: t('Bottle') },
+                { id: 8, image: '/19/8.jpg', text: t('Tray') },
+                { id: 9, image: '/19/9.jpg', text: t('Frying Pan') },
+                { id: 10, image: '/19/10.jpg', text: t('Gas Stove') },
+                { id: 11, image: '/19/11.jpg', text: t('Kettle') },
+                { id: 12, image: '/19/12.jpg', text: t('Ladle') },
             ],
             audioUrl: '/19/19.wav',
         },
         {
             id: 20,
-            title: 'أجهزة المنزل',
-            subtitle: 'المجموعة العشرون',
+            title: t('Home Appliances'),
+            subtitle: t('Group Twenty'),
             type: 'gallery',
             items: [
-                { id: 1, image: '/20/1.jpg', text: 'غسالة' },
-                { id: 2, image: '/20/2.jpg', text: 'ثلاجة' },
-                { id: 2, image: '/20/3.jpg', text: 'خلاط' },
-                { id: 2, image: '/20/4.jpg', text: 'مذياع' },
-                { id: 2, image: '/20/5.jpg', text: 'تلفاز' },
-                { id: 2, image: '/20/6.jpg', text: 'مكنسة كهربائية' },
-                { id: 2, image: '/20/7.jpg', text: 'مدفأة' },
-                { id: 2, image: '/20/8.jpg', text: 'شواية' },
-                { id: 2, image: '/20/9.jpg', text: 'هاتف' },
-                { id: 2, image: '/20/10.jpg', text: 'مروحة' },
-                { id: 2, image: '/20/11.jpg', text: 'سخان كهربائي' },
-                { id: 2, image: '/20/12.jpg', text: 'فرن' },
+                { id: 1, image: '/20/1.jpg', text: t('Washing Machine') },
+                { id: 2, image: '/20/2.jpg', text: t('Refrigerator') },
+                { id: 3, image: '/20/3.jpg', text: t('Blender') },
+                { id: 4, image: '/20/4.jpg', text: t('Radio') },
+                { id: 5, image: '/20/5.jpg', text: t('Television') },
+                { id: 6, image: '/20/6.jpg', text: t('Vacuum Cleaner') },
+                { id: 7, image: '/20/7.jpg', text: t('Heater') },
+                { id: 8, image: '/20/8.jpg', text: t('Grill') },
+                { id: 9, image: '/20/9.jpg', text: t('Telephone') },
+                { id: 10, image: '/20/10.jpg', text: t('Fan') },
+                { id: 11, image: '/20/11.jpg', text: t('Electric Heater') },
+                { id: 12, image: '/20/12.jpg', text: t('Oven') },
             ],
             audioUrl: '/20/20.wav',
         },
         {
             id: 21,
-            title: 'وسائل النقل والمواصلات',
-            subtitle: 'المجموعة الحادية والعشرون',
+            title: t('Transportation'),
+            subtitle: t('Group Twenty-One'),
             type: 'gallery',
             items: [
-                { id: 1, image: '/21/1.jpg', text: 'دراجة هوائية' },
-                { id: 2, image: '/21/2.jpg', text: 'دراجة نارية' },
-                { id: 2, image: '/21/3.jpg', text: 'عربة' },
-                { id: 2, image: '/21/4.jpg', text: 'سيارة' },
-                { id: 2, image: '/21/5.jpg', text: 'حافلة' },
-                { id: 2, image: '/21/6.jpg', text: 'قطار' },
-                { id: 2, image: '/21/7.jpg', text: 'طائرة' },
-                { id: 2, image: '/21/8.jpg', text: 'سفينة' },
-                { id: 2, image: '/21/9.jpg', text: 'شاحنة' },
-                { id: 2, image: '/21/10.jpg', text: 'منطاد' },
+                { id: 1, image: '/21/1.jpg', text: t('Bicycle') },
+                { id: 2, image: '/21/2.jpg', text: t('Motorcycle') },
+                { id: 3, image: '/21/3.jpg', text: t('Cart') },
+                { id: 4, image: '/21/4.jpg', text: t('Car') },
+                { id: 5, image: '/21/5.jpg', text: t('Bus') },
+                { id: 6, image: '/21/6.jpg', text: t('Train') },
+                { id: 7, image: '/21/7.jpg', text: t('Airplane') },
+                { id: 8, image: '/21/8.jpg', text: t('Ship') },
+                { id: 9, image: '/21/9.jpg', text: t('Truck') },
+                { id: 10, image: '/21/10.jpg', text: t('Hot Air Balloon') },
             ],
             audioUrl: '/21/21.wav',
         },
@@ -682,6 +685,277 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 { id: 7, image: '/36/7.jpeg', text: t('Galaxy') },
             ],
             audioUrl: '/36/36.wav',
+        },
+        {
+            id: 37,
+            title: t('Geometric Shapes'),
+            subtitle: t('Group Thirty-Seven'),
+            type: 'gallery',
+            items: [
+                { id: 1, image: '/37/1.jpeg', text: t('Square') },
+                { id: 2, image: '/37/2.jpeg', text: t('Circle') },
+                { id: 3, image: '/37/3.jpeg', text: t('Triangle') },
+                { id: 4, image: '/37/4.jpeg', text: t('Rectangle') },
+                { id: 5, image: '/37/5.jpeg', text: t('Oval') },
+                { id: 6, image: '/37/6.jpeg', text: t('Rhombus') },
+            ],
+            audioUrl: '/37/37.wav',
+        },
+        {
+            id: 38,
+            title: t('Feelings and Emotions'),
+            subtitle: t('Group Thirty-Eight'),
+            type: 'textGrid',
+            items: [
+                { id: 1, text: t('Affection') },
+                { id: 2, text: t('Anger') },
+                { id: 3, text: t('Boredom') },
+                { id: 4, text: t('Trust') },
+                { id: 5, text: t('Creativity') },
+                { id: 6, text: t('Curiosity') },
+                { id: 7, text: t('Despair') },
+                { id: 8, text: t('Depression') },
+                { id: 9, text: t('Danger') },
+                { id: 10, text: t('Disappointment') },
+                { id: 11, text: t('Doubt') },
+                { id: 12, text: t('Betrayal') },
+                { id: 13, text: t('Sadness') },
+                { id: 14, text: t('Joy') },
+                { id: 15, text: t('Fatigue') },
+                { id: 16, text: t('Dream') },
+                { id: 17, text: t('Pressure') },
+                { id: 18, text: t('Optimism') },
+                { id: 19, text: t('Satisfaction') },
+                { id: 20, text: t('Shock') },
+                { id: 21, text: t('Humanity') },
+                { id: 22, text: t('Thinking') },
+                { id: 23, text: t('Love') },
+                { id: 24, text: t('Hate') },
+            ],
+            audioUrl: '/38/38.wav',
+        },
+        {
+            id: 39,
+            title: t('Opposites'),
+            subtitle: t('Group Thirty-Nine'),
+            type: 'opposites',
+            items: [
+                { id: 1, text: t('Big'), text2: t('Small') },
+                { id: 2, text: t('Rich'), text2: t('Poor') },
+                { id: 3, text: t('Tall'), text2: t('Short') },
+                { id: 4, text: t('Famous'), text2: t('Unknown') },
+                { id: 5, text: t('Fast'), text2: t('Slow') },
+                { id: 6, text: t('Cheap'), text2: t('Expensive') },
+                { id: 7, text: t('Thick'), text2: t('Thin') },
+                { id: 8, text: t('Smart'), text2: t('Stupid') },
+                { id: 9, text: t('Earth'), text2: t('Sky') },
+                { id: 10, text: t('Coward'), text2: t('Brave') },
+                { id: 11, text: t('Outside'), text2: t('Inside') },
+                { id: 12, text: t('Diligent'), text2: t('Lazy') },
+                { id: 13, text: t('Sad'), text2: t('Happy') },
+                { id: 14, text: t('Dry'), text2: t('Wet') },
+                { id: 15, text: t('Question'), text2: t('Answer') },
+                { id: 16, text: t('Closed'), text2: t('Open') },
+                { id: 17, text: t('Winner'), text2: t('Loser') },
+                { id: 18, text: t('Good'), text2: t('Bad') },
+                { id: 19, text: t('Beautiful'), text2: t('Ugly') },
+                { id: 20, text: t('Hot'), text2: t('Cold') },
+                { id: 21, text: t('Bright'), text2: t('Dark') },
+                { id: 22, text: t('High'), text2: t('Low') },
+                { id: 23, text: t('Full'), text2: t('Empty') },
+                { id: 24, text: t('Clean'), text2: t('Dirty') },
+                { id: 25, text: t('Beginning'), text2: t('End') },
+            ],
+            audioUrl: '/39/39.wav',
+        },
+        {
+            id: 40,
+            title: t('Conversation Number 1'),
+            subtitle: t('Conversation Number 1'),
+            type: 'conversation',
+            items: [
+                { id: 1, speaker: t('Ahmed'), text: t('As-salamu alaykum'), speakerColor: '#1565C0' }, // Blue
+                { id: 2, speaker: t('Mohamed'), text: t('Wa alaykum as-salam'), speakerColor: '#C62828' }, // Red
+                { id: 3, speaker: t('Ahmed'), text: t('How are you Mohamed?'), speakerColor: '#1565C0' }, // Blue
+                { id: 4, speaker: t('Mohamed'), text: t('Fine'), speakerColor: '#C62828' }, // Red
+            ],
+            audioUrl: '/40/40.wav',
+        },
+        {
+            id: 41,
+            title: t('Conversation Number 2'),
+            subtitle: t('Conversation Number 2'),
+            type: 'conversation',
+            items: [
+                { id: 1, speaker: t('Sarah'), text: t('What is your name?'), speakerColor: '#C62828' }, // Red
+                { id: 2, speaker: t('Heba'), text: t('My name is Heba.'), speakerColor: '#1565C0' }, // Blue
+                { id: 3, speaker: t('Heba'), text: t('And what is your name?'), speakerColor: '#1565C0' }, // Blue (Continuation)
+                { id: 4, speaker: t('Sarah'), text: t('I am Sarah, how old are you?'), speakerColor: '#C62828' }, // Red
+                { id: 5, speaker: t('Heba'), text: t('Twenty years, and you?'), speakerColor: '#1565C0' }, // Blue
+                { id: 6, speaker: t('Sarah'), text: t('Eighteen years.'), speakerColor: '#C62828' }, // Red
+                { id: 7, speaker: t('Heba'), text: t('Goodbye Sarah.'), speakerColor: '#1565C0' }, // Blue
+                { id: 8, speaker: t('Sarah'), text: t('Goodbye.'), speakerColor: '#C62828' }, // Red
+            ],
+            audioUrl: '/41/41.wav',
+        },
+        {
+            id: 42,
+            title: t('Conversation Number 3'),
+            subtitle: t('Conversation Number 3'),
+            type: 'conversation',
+            items: [
+                { id: 1, speaker: t('Mona'), text: t('Good evening Youssef.'), speakerColor: '#C62828' }, // Red
+                { id: 2, speaker: t('Youssef'), text: t('Good evening.'), speakerColor: '#4CAF50' }, // Green
+                { id: 3, speaker: t('Mona'), text: t('What do you want?'), speakerColor: '#C62828' }, // Red
+                { id: 4, speaker: t('Youssef'), text: t('I want to have dinner.'), speakerColor: '#4CAF50' }, // Green
+                { id: 5, speaker: t('Mona'), text: t('What do you want to eat?'), speakerColor: '#C62828' }, // Red
+                { id: 6, speaker: t('Youssef'), text: t('Fried potatoes and some fruit.'), speakerColor: '#4CAF50' }, // Green
+                { id: 7, speaker: t('Mona'), text: t('I will prepare that for you right away.'), speakerColor: '#C62828' }, // Red
+                { id: 8, speaker: t('Youssef'), text: t('Thank you.'), speakerColor: '#4CAF50' }, // Green
+            ],
+            audioUrl: '/42/42.wav',
+        },
+        {
+            id: 43,
+            title: t('Conversation Number 4'),
+            subtitle: t('Conversation Number 4'),
+            type: 'conversation',
+            items: [
+                { id: 1, speaker: t('The Son'), text: t('Where is Jerusalem located, father?'), speakerColor: '#1565C0' }, // Blue
+                { id: 2, speaker: t('The Father'), text: t('It is in the State of Palestine, my son.'), speakerColor: '#C62828' }, // Red
+                { id: 3, speaker: t('The Son'), text: t('Is it beautiful?'), speakerColor: '#1565C0' }, // Blue
+                { id: 4, speaker: t('The Father'), text: t('It is very wonderful.'), speakerColor: '#C62828' }, // Red
+                { id: 5, speaker: t('The Son'), text: t('You made me eager to visit it, father.'), speakerColor: '#1565C0' }, // Blue
+                { id: 6, speaker: t('The Father'), text: t('We will go there in the summer vacation.'), speakerColor: '#C62828' }, // Red
+            ],
+            audioUrl: '/43/43.wav',
+        },
+        {
+            id: 44,
+            title: t('Conversation Number 5'),
+            subtitle: t('Conversation Number 5'),
+            type: 'conversation',
+            items: [
+                { id: 1, speaker: t('The Seller'), text: t('What do you want, Samir?'), speakerColor: '#4CAF50' }, // Green
+                { id: 2, speaker: t('Samir'), text: t('I want a little sugar.'), speakerColor: '#1565C0' }, // Blue
+                { id: 3, speaker: t('The Seller'), text: t('Here you go, Samir, this is what you asked for.'), speakerColor: '#4CAF50' }, // Green
+                { id: 4, speaker: t('Samir'), text: t('How much is it?'), speakerColor: '#1565C0' }, // Blue
+                { id: 5, speaker: t('The Seller'), text: t('Twenty riyals.'), speakerColor: '#4CAF50' }, // Green
+                { id: 6, speaker: t('Samir'), text: t('Here is the money.'), speakerColor: '#1565C0' }, // Blue
+                { id: 7, speaker: t('The Seller'), text: t('Thank you, Samir, see you later.'), speakerColor: '#4CAF50' }, // Green
+                { id: 8, speaker: t('Samir'), text: t('See you later.'), speakerColor: '#1565C0' }, // Blue
+            ],
+            audioUrl: '/44/44.wav',
+        },
+        {
+            id: 45,
+            title: t('Conversation Number 6'),
+            subtitle: t('Conversation Number 6'),
+            type: 'conversation',
+            items: [
+                { id: 1, speaker: t('The Teacher'), text: t('What is the king of the jungle?'), speakerColor: '#C62828' }, // Red
+                { id: 2, speaker: t('Mahmoud'), text: t('The lion.'), speakerColor: '#4CAF50' }, // Green
+                { id: 3, speaker: t('The Teacher'), text: t('Well done, Mahmoud, do you know what is the fastest animal?'), speakerColor: '#C62828' }, // Red
+                { id: 4, speaker: t('Mahmoud'), text: t('Indeed, my teacher, it is the cheetah.'), speakerColor: '#4CAF50' }, // Green
+                { id: 5, speaker: t('The Teacher'), text: t('Very excellent, Mahmoud.'), speakerColor: '#C62828' }, // Red
+            ],
+            audioUrl: '/45/45.wav',
+        },
+        {
+            id: 46,
+            title: t('Conversation Number 7'),
+            subtitle: t('Conversation Number 7'),
+            type: 'conversation',
+            items: [
+                { id: 1, speaker: t('Raed'), text: t('How did you get home, Ali?'), speakerColor: '#C62828' }, // Red
+                { id: 2, speaker: t('Ali'), text: t('I came by car, and you, Raed?'), speakerColor: '#1565C0' }, // Blue
+                { id: 3, speaker: t('Raed'), text: t('The weather was nice and I came walking.'), speakerColor: '#C62828' }, // Red
+                { id: 4, speaker: t('Ali'), text: t('Really, the weather is beautiful today.'), speakerColor: '#1565C0' }, // Blue
+                { id: 5, speaker: t('Raed'), text: t('What do you think, Ali, about going to the sea?'), speakerColor: '#C62828' }, // Red
+                { id: 6, speaker: t('Ali'), text: t("Great idea, let's go immediately."), speakerColor: '#1565C0' }, // Blue
+                { id: 7, speaker: t('Raed'), text: t("Let's go, Ali."), speakerColor: '#C62828' }, // Red
+            ],
+            audioUrl: '/46/46.wav',
+        },
+        {
+            id: 47,
+            title: t('Conversation Number 8'),
+            subtitle: t('Conversation Number 8'),
+            type: 'conversation',
+            items: [
+                { id: 1, speaker: t('The Manager'), text: t('Inform all engineers of an emergency meeting.'), speakerColor: '#C62828' }, // Red
+                { id: 2, speaker: t('Salem'), text: t('Present, what is the reason for that meeting?'), speakerColor: '#4CAF50' }, // Green
+                { id: 3, speaker: t('The Manager'), text: t('To discuss the upcoming projects for the company.'), speakerColor: '#C62828' }, // Red
+                { id: 4, speaker: t('Salem'), text: t('When is the meeting?'), speakerColor: '#4CAF50' }, // Green
+                { id: 5, speaker: t('The Manager'), text: t('Monday, at nine in the morning.'), speakerColor: '#C62828' }, // Red
+                { id: 6, speaker: t('Salem'), text: t('Okay, I will do that now.'), speakerColor: '#4CAF50' }, // Green
+            ],
+            audioUrl: '/47/47.wav',
+        },
+        {
+            id: 48,
+            title: t('Conversation Number 9'),
+            subtitle: t('Conversation Number 9'),
+            type: 'conversation',
+            items: [
+                { id: 1, speaker: t('Salma'), text: t('What is the color of the banana?'), speakerColor: '#1565C0' }, // Blue
+                { id: 2, speaker: t('Saeed'), text: t('Its color is yellow.'), speakerColor: '#C62828' }, // Red
+                { id: 3, speaker: t('Salma'), text: t('And what is the color of the egg?'), speakerColor: '#1565C0' }, // Blue
+                { id: 4, speaker: t('Saeed'), text: t('An easy question, its color is white.'), speakerColor: '#C62828' }, // Red
+                { id: 5, speaker: t('Salma'), text: t('And what is the shape of the egg?'), speakerColor: '#1565C0' }, // Blue
+                { id: 6, speaker: t('Saeed'), text: t('Oval.'), speakerColor: '#C62828' }, // Red
+                { id: 7, speaker: t('Salma'), text: t('Well done, Saeed.'), speakerColor: '#1565C0' }, // Blue
+            ],
+            audioUrl: '/48/48.wav',
+        },
+        {
+            id: 49,
+            title: t('Conversation Number 10'),
+            subtitle: t('Conversation Number 10'),
+            type: 'conversation',
+            items: [
+                { id: 1, speaker: t('Saleh'), text: t('Which is faster, the plane or the train?'), speakerColor: '#C62828' }, // Red
+                { id: 2, speaker: t('Sawsan'), text: t('I think the train is faster.'), speakerColor: '#4CAF50' }, // Green
+                { id: 3, speaker: t('Saleh'), text: t('Wrong answer, Sawsan, the plane is faster than the train.'), speakerColor: '#C62828' }, // Red
+                { id: 4, speaker: t('Sawsan'), text: t('I apologize to you, Saleh.'), speakerColor: '#4CAF50' }, // Green
+                { id: 5, speaker: t('Saleh'), text: t('No problem, Sawsan, the important thing is that you learn from your mistake.'), speakerColor: '#C62828' }, // Red
+                { id: 6, speaker: t('Sawsan'), text: t('Indeed, I learned that from you, thank you for the information.'), speakerColor: '#4CAF50' }, // Green
+                { id: 7, speaker: t('Saleh'), text: t('You are welcome.'), speakerColor: '#C62828' }, // Red
+            ],
+            audioUrl: '/49/49.wav',
+        },
+        {
+            id: 50,
+            title: t('Conversation Number 11'),
+            subtitle: t('Conversation Number 11'),
+            type: 'conversation',
+            items: [
+                { id: 1, speaker: t('Jassem'), text: t('Which country are you from, Mariam?'), speakerColor: '#1565C0' }, // Blue
+                { id: 2, speaker: t('Mariam'), text: t('I am from Morocco, and you?'), speakerColor: '#C62828' }, // Red
+                { id: 3, speaker: t('Jassem'), text: t('I am from Saudi Arabia.'), speakerColor: '#1565C0' }, // Blue
+                { id: 4, speaker: t('Mariam'), text: t('Honored to meet you, Jassem.'), speakerColor: '#C62828' }, // Red
+                { id: 5, speaker: t('Jassem'), text: t('And I am also happy to see you.'), speakerColor: '#1565C0' }, // Blue
+                { id: 6, speaker: t('Mariam'), text: t('Good morning, Jassem, I will leave now.'), speakerColor: '#C62828' }, // Red
+                { id: 7, speaker: t('Jassem'), text: t('Goodbye.'), speakerColor: '#1565C0' }, // Blue
+            ],
+            audioUrl: '/50/50.wav',
+        },
+        {
+            id: 51,
+            title: t('Conversation Number 12'),
+            subtitle: t('Conversation Number 12'),
+            type: 'conversation',
+            items: [
+                { id: 1, speaker: t('The Grandfather'), text: t('Which university are you studying at now, Wasan?'), speakerColor: '#C62828' }, // Red
+                { id: 2, speaker: t('Wasan'), text: t('I am studying at Makkah University, grandfather.'), speakerColor: '#4CAF50' }, // Green
+                { id: 3, speaker: t('The Grandfather'), text: t('Which college are you studying at in the university?'), speakerColor: '#C62828' }, // Red
+                { id: 4, speaker: t('Wasan'), text: t('I am studying at the College of Sharia.'), speakerColor: '#4CAF50' }, // Green
+                { id: 5, speaker: t('The Grandfather'), text: t('What is your major at the university?'), speakerColor: '#C62828' }, // Red
+                { id: 6, speaker: t('Wasan'), text: t('Islamic Sharia, grandfather.'), speakerColor: '#4CAF50' }, // Green
+                { id: 7, speaker: t('The Grandfather'), text: t('Good luck to you, my daughter.'), speakerColor: '#C62828' }, // Red
+                { id: 8, speaker: t('Wasan'), text: t('Thank you, grandfather.'), speakerColor: '#4CAF50' }, // Green
+            ],
+            audioUrl: '/51/51.wav',
         },
     ];
 
