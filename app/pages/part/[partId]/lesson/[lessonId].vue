@@ -1,7 +1,13 @@
 <template>
   <div class="min-h-screen w-screen bg-white p-2 font-sans flex flex-col">
     
-    <div v-if="lesson" class="flex flex-col relative z-10 pb-10">
+    <!-- Loading Spinner -->
+    <div v-if="isLoading" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white/90 backdrop-blur-sm">
+        <div class="animate-spin rounded-full h-24 w-24 border-t-4 border-b-4 border-red-500 mb-4"></div>
+        <p class="text-xl font-bold text-gray-600 animate-pulse">جاري التحميل...</p>
+    </div>
+
+    <div v-if="lesson" v-show="!isLoading" class="flex flex-col relative z-10 pb-10">
       <!-- Header Section -->
       <div class="flex flex-col md:flex-row justify-between items-center mb-2 shrink-0 relative">
         <!-- Top Right Label -->
@@ -171,7 +177,7 @@
            :class="lesson.id === 3 ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-4'">
         <div v-for="(item, index) in lesson.items" :key="index" class="flex flex-col items-center group cursor-pointer">
           <div class="w-full h-64 bg-tranparent rounded-lg overflow-hidden mb-2 shadow-md transition-transform duration-300 transform group-hover:scale-105 group-hover:shadow-xl">
-            <img v-if="item.image" :src="item.image" :alt="item.text" class="w-full h-full object-contain" />
+            <img v-if="item.image" :src="item.image" :alt="item.text" class="w-full h-full object-contain" @load="handleImageLoad" />
             <div v-else class="w-full h-full flex items-center justify-center text-gray-400">
               No Image
             </div>
@@ -197,9 +203,9 @@
         <div class="flex-grow max-w-2xl w-full order-1 md:order-2 sticky top-4">
            <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white flex flex-col">
               <template v-if="lesson.diagramImages">
-                  <img v-for="(img, idx) in lesson.diagramImages" :key="idx" :src="img" :alt="lesson.title" class="w-full h-auto object-contain -mt-1 first:mt-0" />
+                  <img v-for="(img, idx) in lesson.diagramImages" :key="idx" :src="img" :alt="lesson.title" class="w-full h-auto object-contain -mt-1 first:mt-0" @load="handleImageLoad" />
               </template>
-              <img v-else-if="lesson.mainImage" :src="lesson.mainImage" :alt="lesson.title" class="w-full h-auto object-contain" />
+              <img v-else-if="lesson.mainImage" :src="lesson.mainImage" :alt="lesson.title" class="w-full h-auto object-contain" @load="handleImageLoad" />
            </div>
         </div>
 
@@ -534,6 +540,44 @@ const getTextRotation = (index: number, total: number) => {
 useHead({
   title: computed(() => lesson.value?.title || 'الدرس'),
 });
+
+// Loading State
+const isLoading = ref(true);
+const imagesLoadedCount = ref(0);
+const totalImagesToLoad = ref(0);
+
+const handleImageLoad = () => {
+  imagesLoadedCount.value++;
+  if (imagesLoadedCount.value >= totalImagesToLoad.value) {
+    isLoading.value = false;
+  }
+};
+
+watch(lesson, (newLesson) => {
+  isLoading.value = true;
+  imagesLoadedCount.value = 0;
+  totalImagesToLoad.value = 0;
+
+  if (!newLesson) {
+      isLoading.value = false;
+      return;
+  }
+
+  if (newLesson.type === 'gallery' && newLesson.items) {
+     totalImagesToLoad.value = newLesson.items.filter(i => i.image).length;
+  } else if (newLesson.type === 'diagram') {
+     if (newLesson.diagramImages) {
+        totalImagesToLoad.value = newLesson.diagramImages.length;
+     } else if (newLesson.mainImage) {
+        totalImagesToLoad.value = 1;
+     }
+  }
+
+  // If no images to load (or other types), stop loading immediately
+  if (totalImagesToLoad.value === 0) {
+    isLoading.value = false;
+  }
+}, { immediate: true });
 </script>
 
 <style scoped>
