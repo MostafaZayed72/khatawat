@@ -81,7 +81,7 @@
           </div>
           <div class="job-logo">
             <div class="tabby-logo">
-              <span class="tabby-text">tabby</span>
+              <span class="tabby-text">tabbyyyyyy</span>
             </div>
           </div>
         </div>
