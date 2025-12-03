@@ -553,7 +553,13 @@ const handleImageLoad = () => {
   }
 };
 
-watch(lesson, (newLesson) => {
+watch(lesson, (newLesson, oldLesson) => {
+  // If the lesson ID is the same, it's likely a language switch or similar update
+  // that doesn't require reloading images.
+  if (newLesson && oldLesson && newLesson.id === oldLesson.id) {
+    return;
+  }
+
   isLoading.value = true;
   imagesLoadedCount.value = 0;
   totalImagesToLoad.value = 0;
