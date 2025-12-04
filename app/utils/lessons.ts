@@ -29,6 +29,7 @@ export interface Part {
     description: string;
     videoUrl: string;
     image: string;
+    pdfUrl?: string;
     lessons: Lesson[];
 }
 
@@ -967,6 +968,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Basics and Daily Life'),
             videoUrl: 'https://www.youtube.com/embed/lTZBNRYJzi4',
             image: '/parts/1.png',
+            pdfUrl: 'https://drive.google.com/file/d/1XceJNyeZm1rNcd9kI5YSUN7Zwozdtn5K/preview',
             lessons: part1Lessons
         },
         {
@@ -975,6 +977,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Coming Soon'),
             videoUrl: '',
             image: '/parts/2.png',
+            pdfUrl: 'https://drive.google.com/file/d/1gCmkA9IW0ZVFAX4MJT4qvqIm87OrfDRS/preview',
             lessons: []
         },
         {
@@ -983,6 +986,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Coming Soon'),
             videoUrl: '',
             image: '/parts/3.png',
+            pdfUrl: 'https://drive.google.com/file/d/15rGfTtD8Akg0IKIN_t0JjAA2b6LfyCK6/preview',
             lessons: []
         },
         {
@@ -991,6 +995,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Coming Soon'),
             videoUrl: '',
             image: '/parts/4.png',
+            pdfUrl: 'https://drive.google.com/file/d/1EW8y2ode5aiERMErwFNlEmdpL7i34AOi/preview',
             lessons: []
         }
     ];

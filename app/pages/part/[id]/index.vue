@@ -40,6 +40,18 @@
         </svg>
       </NuxtLink>
 
+      <!-- View PDF Button -->
+      <button 
+        v-if="part.pdfUrl"
+        @click="openPdfViewer"
+        class="bg-gradient-to-r from-blue-600 to-blue-500 text-white text-2xl font-bold py-4 px-12 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3 mt-4"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+        <span>{{ t('View PDF') }}</span>
+      </button>
+
       <!-- Back Home -->
       <NuxtLink to="/" class="text-gray-500 hover:text-red-600 transition-colors flex items-center gap-2 mt-2">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 rtl:rotate-180" viewBox="0 0 20 20" fill="currentColor">
@@ -54,6 +66,15 @@
       <h2 class="text-2xl text-red-500 font-bold mb-4">{{ t('Part Not Found') }}</h2>
       <NuxtLink to="/" class="text-blue-500 hover:underline">{{ t('Back to Home') }}</NuxtLink>
     </div>
+
+    <!-- PDF Viewer Component -->
+    <PdfViewerSimple 
+      v-if="part?.pdfUrl"
+      :is-open="isPdfViewerOpen"
+      :pdf-url="part.pdfUrl"
+      :title="part.title"
+      @close="closePdfViewer"
+    />
   </div>
 </template>
 
@@ -69,6 +90,17 @@ const parts = computed(() => {
   return getParts(t);
 });
 const part = computed(() => parts.value.find(p => p.id === partId.value));
+
+// PDF Viewer state
+const isPdfViewerOpen = ref(false);
+
+const openPdfViewer = () => {
+  isPdfViewerOpen.value = true;
+};
+
+const closePdfViewer = () => {
+  isPdfViewerOpen.value = false;
+};
 
 useHead({
   title: computed(() => part.value?.title || 'القسم'),
