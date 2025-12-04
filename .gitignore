@@ -29,3 +29,5 @@ logs
 
 # Temporary files
 commit_files.txt
+
+*.pdf
