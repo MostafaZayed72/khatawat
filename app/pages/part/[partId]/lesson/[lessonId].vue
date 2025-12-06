@@ -380,7 +380,12 @@
                    <h2 class="text-4xl font-black text-[#1565c0] font-arabic tracking-wide">{{ item.text }}</h2>
                 </div>
                 <div class="bg-[#fff9c4] h-24 flex justify-center items-center border-b-[3px] border-[#ffcc80]">
-                   <div class="w-20 h-3 bg-[#d50000] rounded-full transform -rotate-[25deg]"></div>
+                   <!-- Fatha for lesson 1 -->
+                   <div v-if="lesson.id === 1" class="w-20 h-3 bg-[#d50000] rounded-full transform -rotate-[25deg]"></div>
+                   <!-- Kasra for lesson 2 -->
+                   <div v-else-if="lesson.id === 2" class="w-20 h-3 bg-[#d50000] rounded-full transform -rotate-[25deg]"></div>
+                   <!-- Damma for lesson 3 (small waw) -->
+                   <div v-else-if="lesson.id === 3" class="text-6xl font-black text-[#d50000] leading-none font-arabic">ُ</div>
                 </div>
                 <div class="relative w-full h-72">
                    <img :src="item.image" :alt="item.text" class="w-full h-full object-cover" />
@@ -398,6 +403,12 @@
                      <template v-else-if="lesson.id === 2">
                         <span class="text-[250px] font-black text-[#212121] leading-none font-arabic mt-4 block">إ</span>
                         <div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-[#d50000] rounded-full -rotate-[25deg] shadow-sm z-10"></div>
+                     </template>
+                     <template v-else-if="lesson.id === 3">
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 z-10">
+                           <span class="text-[120px] font-black text-[#d50000] leading-none font-arabic">ُ</span>
+                        </div>
+                        <span class="text-[250px] font-black text-[#212121] leading-none font-arabic mt-4 block">أ</span>
                      </template>
                  </div>
              </div>
