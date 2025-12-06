@@ -46,8 +46,7 @@
       </div>
 
       <!-- Audio Player & Navigation Section -->
-      <div v-if="lesson.audioUrl" class="flex items-start justify-center gap-2 md:gap-4 mb-2 mt-2 shrink-0 w-full px-2">
-        
+<div v-if="lesson.audioUrl" class="flex items-start justify-center gap-2 md:gap-4 mb-2 shrink-0 w-full px-2" :class="lesson.type === 'shortVowels' ? 'mt-12' : 'mt-2'">        
         <!-- Prev Button (Right in RTL) -->
         <NuxtLink 
           v-if="prevLessonId"
@@ -366,6 +365,42 @@
                </div>
             </div>
 
+         </div>
+      </div>
+      <!-- Short Vowels Type Lesson -->
+      <div v-else-if="lesson.type === 'shortVowels'" class="flex flex-col items-center justify-center gap-4 p-4 max-w-6xl mx-auto z-10 relative w-full">
+         <div class="w-full flex justify-start max-w-4xl px-4">
+             <div class="bg-gradient-to-b from-gray-100 to-gray-200 border border-gray-300 rounded-lg px-6 py-1 shadow-sm">
+                 <span class="text-xl font-bold text-gray-800 font-arabic">{{ t('I watch') }}</span>
+             </div>
+         </div>
+         <div class="flex flex-col md:flex-row items-center justify-center gap-12 w-full">
+             <div v-for="item in lesson.items" :key="item.id" class="flex flex-col w-full max-w-md bg-white border-[3px] border-[#ffcc80] shadow-xl">
+                <div class="bg-[#ffcc80] p-2 text-center border-b-[3px] border-[#ffcc80]">
+                   <h2 class="text-4xl font-black text-[#1565c0] font-arabic tracking-wide">{{ item.text }}</h2>
+                </div>
+                <div class="bg-[#fff9c4] h-24 flex justify-center items-center border-b-[3px] border-[#ffcc80]">
+                   <div class="w-20 h-3 bg-[#d50000] rounded-full transform -rotate-[25deg]"></div>
+                </div>
+                <div class="relative w-full h-72">
+                   <img :src="item.image" :alt="item.text" class="w-full h-full object-cover" />
+                </div>
+                <div class="bg-[#c8e6c9] p-3 text-center border-t-[3px] border-[#ffcc80]">
+                   <h3 class="text-4xl font-black text-black font-arabic tracking-wide">{{ item.text2 }}</h3>
+                </div>
+             </div>
+             <div class="flex flex-col items-center justify-center pt-10">
+                 <div class="relative">
+                     <template v-if="lesson.id === 1">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-[#d50000] rounded-full -rotate-[25deg] shadow-sm z-10"></div>
+                        <span class="text-[250px] font-black text-[#212121] leading-none font-arabic mt-4 block">أ</span>
+                     </template>
+                     <template v-else-if="lesson.id === 2">
+                        <span class="text-[250px] font-black text-[#212121] leading-none font-arabic mt-4 block">إ</span>
+                        <div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-[#d50000] rounded-full -rotate-[25deg] shadow-sm z-10"></div>
+                     </template>
+                 </div>
+             </div>
          </div>
       </div>
 

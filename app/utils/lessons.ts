@@ -16,7 +16,7 @@ export interface Lesson {
     title: string;
     subtitle?: string;
     description?: string;
-    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation';
+    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels';
     items?: LessonItem[];
     audioUrl?: string;
     mainImage?: string;
@@ -960,6 +960,54 @@ export const getParts = (t: (key: string) => string): Part[] => {
         },
     ];
 
+    const part2Lessons: Lesson[] = [
+        {
+            id: 1,
+            title: t('The Three Short Vowels (1)'),
+            subtitle: t(''),
+            type: 'shortVowels',
+            items: [
+                {
+                    id: 1,
+                    text: t('Fatha'),
+                    image: '/level2/1/1.png',
+                    text2: t('By opening the mouth')
+                },
+            ],
+            audioUrl: '/level2/1/1.wav',
+        },
+        {
+            id: 2,
+            title: t('The Three Short Vowels (2)'),
+            subtitle: t(''),
+            type: 'shortVowels',
+            items: [
+                {
+                    id: 1,
+                    text: t('Kasra'),
+                    image: '/level2/1/2.png',
+                    text2: t('By lowering the lower jaw')
+                },
+            ],
+            audioUrl: '/level2/2/2.wav',
+        },
+        {
+            id: 3,
+            title: t('The Three Short Vowels (3)'),
+            subtitle: t(''),
+            type: 'shortVowels',
+            items: [
+                {
+                    id: 1,
+                    text: t('Damma'),
+                    image: '/level2/1/3.png',
+                    text2: t('By rounding the lips')
+                },
+            ],
+            audioUrl: '/level2/3/3.wav',
+        },
+    ];
+
 
     return [
         {
@@ -978,7 +1026,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             videoUrl: '',
             image: '/parts/2.png',
             pdfUrl: 'https://drive.google.com/file/d/1gCmkA9IW0ZVFAX4MJT4qvqIm87OrfDRS/preview',
-            lessons: []
+            lessons: part2Lessons
         },
         {
             id: 3,

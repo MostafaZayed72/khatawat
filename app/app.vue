@@ -25,7 +25,7 @@ const isPartActive = (id: number) => {
 <template>
   <div class="relative min-h-screen flex flex-col font-sans">
     
-    <DynamicHeroBackground />
+    <!-- <DynamicHeroBackground /> -->
 
     <!-- Header -->
     <header class="w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 sticky top-0 shadow-md transition-all duration-300">
