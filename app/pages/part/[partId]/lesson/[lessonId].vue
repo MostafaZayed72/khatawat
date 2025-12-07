@@ -19,6 +19,7 @@
         <div class="relative md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:top-0 z-50">
            <div class="relative">
              <button 
+               type="button"
                @click="showDropdown = !showDropdown"
                class="bg-gradient-to-b from-red-600 to-red-500 text-white px-8 py-1 rounded-full shadow-lg border-2 border-yellow-200 flex items-center gap-2 hover:scale-105 transition-transform"
              >

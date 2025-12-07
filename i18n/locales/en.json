@@ -12,6 +12,8 @@
     }
   },
   "Nabtha": "Overview",
+  "Level Book": "Level {number} book",
+  "Book Note": "The book is available for browsing via this document",
   "Letter Alif Lesson": "Letter Alif Lesson",
   "I Watch": "I Watch",
   "I Listen": "I Listen",
@@ -150,6 +152,8 @@
       "description": "We capture moments that inspire… We photograph the stories behind destinations and the ideas that redefine tourism. We visually produce the event in a way that befits the spirit of exploration…"
     }
   },
+  "Level Book": "Level {number} book",
+  "Book Note": "The book is available for browsing via this document",
   "Numbers": "Numbers",
   "Group One": "Group One",
   "One": "One",
@@ -376,7 +380,7 @@
   "Carpet": "Carpet",
   "Curtain": "Curtain",
   "Khatwat Program for Teaching Arabic to Non-Native Speakers": "Khatwat Program for Teaching Arabic to Non-Native Speakers",
-  "About the Project": "About the Project",
+  "About the Level": "About the Level",
   "Road Components": "Road Components",
   "Group Twenty-Two": "Group Twenty-Two",
   "Street": "Street",

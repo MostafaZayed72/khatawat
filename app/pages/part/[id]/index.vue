@@ -14,7 +14,7 @@
       <!-- Video Section (Restored) -->
       <div class="w-full mt-12 flex flex-col items-center">
   <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">
-    {{ t('About the Project') }}
+    {{ t('About the Level') }}
   </h2>
 
   <div class="w-full max-w-xl bg-transparent rounded-2xl overflow-hidden shadow-2xl border-4 border-white p-4">
@@ -47,16 +47,18 @@
       </NuxtLink>
 
       <!-- View PDF Button -->
-      <button 
-        v-if="part.pdfUrl"
-        @click="openPdfViewer"
-        class="bg-gradient-to-r from-blue-600 to-blue-500 text-white text-2xl font-bold py-4 px-12 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3 mt-4"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
-        <span>{{ t('View PDF') }}</span>
-      </button>
+      <div v-if="part.pdfUrl" class="flex flex-col items-center mt-4">
+        <button 
+          @click="openPdfViewer"
+          class="bg-gradient-to-r from-blue-600 to-blue-500 text-white text-2xl font-bold py-4 px-12 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg>
+          <span>{{ t('Level Book', { number: part.id }) }}</span>
+        </button>
+        <p class="mt-2 text-gray-500 text-sm font-medium">({{ t('Book Note') }})</p>
+      </div>
 
       <!-- Back Home -->
       <NuxtLink to="/" class="text-gray-500 hover:text-red-600 transition-colors flex items-center gap-2 mt-2">

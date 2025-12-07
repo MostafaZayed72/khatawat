@@ -10,7 +10,7 @@
             <!-- About Project Video Section -->
 <div class="w-full mt-12 flex flex-col items-center">
   <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">
-    {{ t('About the Project') }}
+    {{ t('About the Program') }}
   </h2>
 
  <div class="w-full max-w-xl bg-transparent rounded-2xl overflow-hidden shadow-2xl border-4 border-white p-4">

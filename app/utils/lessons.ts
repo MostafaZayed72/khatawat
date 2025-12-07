@@ -86,7 +86,9 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 { id: 1000, digit: '1000', text: t('Thousand'), colorFrom: '#3F51B5', colorTo: '#5C6BC0', shadowColor: '#1A237E' },
                 { id: 1000000, digit: '1,000,000', text: t('Million'), colorFrom: '#673AB7', colorTo: '#7E57C2', shadowColor: '#311B92' },
                 { id: 1000000000, digit: '1,000,000,000', text: t('Billion'), colorFrom: '#9C27B0', colorTo: '#AB47BC', shadowColor: '#4A148C' },
-            ]
+                { id: 1000000000, digit: '1,000,000,000', text: t('Billion'), colorFrom: '#9C27B0', colorTo: '#AB47BC', shadowColor: '#4A148C' },
+            ],
+            audioUrl: '/numbers.wav'
         },
         {
             id: 2,
