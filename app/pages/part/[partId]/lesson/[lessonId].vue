@@ -465,6 +465,259 @@
          </div>
       </div>
 
+      <!-- Letter Examples Lesson Type -->
+      <div v-else-if="lesson.type === 'letterExamples'" class="flex flex-col w-full max-w-6xl mx-auto mt-4 gap-12 px-4">
+          
+          <!-- Top Letter Circle (Alif) -->
+          <div class="flex justify-center mb-4">
+              <div class="w-32 h-32 rounded-full bg-pink-100 border-4 border-white shadow-xl flex items-center justify-center relative">
+                  <!-- Decorative shadow/glow -->
+                  <div class="absolute inset-0 rounded-full bg-pink-200 blur-lg -z-10 opacity-50"></div>
+                  <span class="text-7xl font-bold text-red-600">أ</span>
+              </div>
+          </div>
+
+          <!-- Section 1: Watch, Listen, Read -->
+          <div class="flex flex-col gap-8">
+              <!-- Label: I Watch -->
+              <div class="flex justify-start px-4">
+                  <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-6 py-2 shadow-sm flex items-center gap-2">
+                       <span class="text-xl font-bold text-gray-700">{{ t('I Watch') }}</span>
+                  </div>
+              </div>
+              
+              <!-- Images Row -->
+              <div class="grid grid-cols-3 gap-4 md:gap-8">
+                  <div v-for="item in lesson.items" :key="'img-' + item.id" class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border-4 border-white transform hover:scale-105 transition-transform duration-300 bg-white">
+                      <img :src="item.image" :alt="item.text" class="w-full h-full object-contain">
+                  </div>
+              </div>
+
+              <!-- Label: I Listen -->
+              <div class="flex justify-start px-4 mt-4">
+                  <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-6 py-2 shadow-sm flex items-center gap-2">
+                       <span class="text-xl font-bold text-gray-700">{{ t('I Listen') }}</span>
+                  </div>
+              </div>
+
+              <!-- Words Row -->
+              <div class="grid grid-cols-3 gap-4 md:gap-8">
+                   <div v-for="item in lesson.items" :key="'word-' + item.id" class="bg-blue-50 border-2 border-blue-200 rounded-xl p-4 flex items-center justify-center shadow-md relative overflow-hidden">
+                       <span class="text-4xl md:text-6xl font-bold text-black font-amiri tracking-wide">
+                          <!-- Render word with highlight -->
+                          <template v-for="(char, index) in item.text.split('')" :key="index">
+                              <span :class="{'text-red-600': char === item.highlight || (item.highlight === 'أ' && ['أ', 'إ', 'آ'].includes(char))}">{{ char }}</span>
+                          </template>
+                       </span>
+                        <!-- Underline -->
+                       <div class="absolute bottom-4 left-4 right-4 h-0.5 bg-gray-400"></div>
+                   </div>
+              </div>
+
+               <!-- Label: I Read -->
+               <div class="flex justify-start px-4 mt-4">
+                  <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-6 py-2 shadow-sm flex items-center gap-2">
+                       <span class="text-xl font-bold text-gray-700">{{ t('I Read') }}</span>
+                  </div>
+              </div>
+
+              <!-- Letters Row -->
+              <div class="grid grid-cols-3 gap-4 md:gap-8 relative">
+                   <!-- Connecting Lines (Visual decoration) -->
+                   <div class="absolute -top-10 left-0 right-0 h-20 flex justify-around pointer-events-none opacity-20">
+                        <div class="w-0.5 h-full bg-yellow-400"></div>
+                        <div class="w-0.5 h-full bg-yellow-400"></div>
+                        <div class="w-0.5 h-full bg-yellow-400"></div>
+                   </div>
+
+                   <div v-for="item in lesson.items" :key="'letter-' + item.id" class="flex flex-col items-center">
+                       <span class="text-6xl md:text-8xl font-bold text-red-600 mb-2 font-amiri">{{ item.letter }}</span>
+                       <!-- Dotted Line -->
+                       <div class="w-full border-b-2 border-dotted border-gray-400 mt-2"></div>
+                   </div>
+              </div>
+          </div>
+
+          <!-- Section 2: Distinguish (Omayyez) -->
+          <div v-if="lesson.distinguish" class="mt-12 flex flex-col gap-8 bg-yellow-50/50 p-6 rounded-3xl border border-yellow-100">
+               <!-- Header -->
+               <div class="flex justify-start mb-8">
+                   <div class="bg-white border border-red-200 rounded-2xl px-8 py-3 shadow-sm">
+                       <h3 class="text-2xl font-bold text-gray-800">{{ t('I Distinguish') }}</h3>
+                   </div>
+               </div>
+
+               <!-- Grid -->
+               <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                   <div v-for="d in lesson.distinguish" :key="d.id" class="flex flex-col items-center relative">
+                       <!-- Green Badge/Ribbon -->
+                       <div class="relative z-10 w-20 h-24 mb-4 flex items-start justify-center pt-2">
+                           <div class="absolute inset-0 bg-green-600 shadow-lg rounded-t-lg" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);"></div>
+                           <div class="absolute inset-0 flex items-center justify-center -mt-2">
+                               <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center border-2 border-green-700 border-dashed z-20">
+                                    <span class="text-3xl font-bold text-red-600 font-amiri">{{ d.badge }}</span>
+                               </div>
+                               <!-- Star shape behind circle (simplified as scaling/rotation or just let the badge hold it) -->
+                           </div>
+                       </div>
+                       
+                       <!-- Hanging Boxes -->
+                       <div class="flex justify-center gap-4 w-full pt-4">
+                           <!-- Long Vowel Box -->
+                           <div class="flex-1 bg-gradient-to-br from-orange-400 to-orange-500 rounded-xl p-2 shadow-lg border-2 border-white flex flex-col items-center justify-center h-20 transform hover:scale-105 transition-transform" v-if="d.id===1">
+                               <span class="text-4xl font-bold text-white font-amiri">{{ d.long }}</span>
+                           </div>
+                           <div class="flex-1 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl p-2 shadow-lg border-2 border-white flex flex-col items-center justify-center h-20 transform hover:scale-105 transition-transform" v-else-if="d.id===2">
+                               <span class="text-4xl font-bold text-white font-amiri">{{ d.long }}</span>
+                           </div>
+                           <div class="flex-1 bg-gradient-to-br from-red-500 to-red-600 rounded-xl p-2 shadow-lg border-2 border-white flex flex-col items-center justify-center h-20 transform hover:scale-105 transition-transform" v-else>
+                               <span class="text-4xl font-bold text-white font-amiri">{{ d.long }}</span>
+                           </div>
+
+
+                            <!-- Short Vowel Box -->
+                           <div class="flex-1 bg-gradient-to-br from-orange-400 to-orange-500 rounded-xl p-2 shadow-lg border-2 border-white flex flex-col items-center justify-center h-20 transform hover:scale-105 transition-transform" v-if="d.id===1">
+                               <span class="text-4xl font-bold text-white font-amiri">{{ d.short }}</span>
+                           </div>
+                           <div class="flex-1 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl p-2 shadow-lg border-2 border-white flex flex-col items-center justify-center h-20 transform hover:scale-105 transition-transform" v-else-if="d.id===2">
+                               <span class="text-4xl font-bold text-white font-amiri">{{ d.short }}</span>
+                           </div>
+                           <div class="flex-1 bg-gradient-to-br from-red-500 to-red-600 rounded-xl p-2 shadow-lg border-2 border-white flex flex-col items-center justify-center h-20 transform hover:scale-105 transition-transform" v-else>
+                               <span class="text-4xl font-bold text-white font-amiri">{{ d.short }}</span>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+               <!-- Bottom Summary Letters -->
+               <div class="flex justify-around mt-8 border-t border-yellow-200 pt-8">
+                    <div v-for="d in lesson.distinguish" :key="'summary-' + d.id" class="text-center">
+                        <span class="text-5xl font-bold text-red-600 font-amiri">{{ d.short }}</span>
+                    </div>
+               </div>
+          </div>
+
+          <!-- Section 3: I Write -->
+          <div v-if="lesson.writingPractice" class="mt-8 flex flex-col gap-6">
+               <div class="flex justify-end px-4">
+                  <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-6 py-2 shadow-sm flex items-center gap-2">
+                       <span class="text-xl font-bold text-gray-700">{{ t('I Write') }}</span>
+                  </div>
+              </div>
+
+              <div class="bg-white rounded-3xl shadow-lg border-2 border-gray-100 p-6 flex flex-col gap-8">
+                  <div v-for="practice in lesson.writingPractice" :key="practice.id" class="flex flex-col gap-4">
+                       <!-- Writing Row -->
+                       <div class="flex items-center justify-around h-24 border-b border-gray-200 relative pb-4">
+                           <!-- Line Guide -->
+                           <div class="absolute top-1/2 left-0 right-0 border-b border-dotted border-gray-400"></div>
+
+                           <!-- Letters -->
+                           <div class="flex flex-col items-center z-10">
+                               <span 
+                                :class="[
+                                    'text-6xl md:text-8xl font-amiri leading-none',
+                                    practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
+                                ]"
+                               >
+                               {{ practice.text }}
+                               </span>
+                           </div>
+                           
+                             <!-- Separator -->
+                           <div class="w-8 h-1 bg-red-500 rounded-full"></div>
+
+                           <div class="flex flex-col items-center z-10">
+                               <span 
+                                :class="[
+                                    'text-6xl md:text-8xl font-amiri leading-none',
+                                    practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
+                                ]"
+                               >
+                               {{ practice.sub }}
+                               </span>
+                           </div>
+
+                             <!-- Separator -->
+                           <div class="w-8 h-1 bg-red-500 rounded-full"></div>
+
+                           <div class="flex flex-col items-center z-10">
+                               <span 
+                                :class="[
+                                    'text-6xl md:text-8xl font-amiri leading-none',
+                                    practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
+                                ]"
+                               >
+                               {{ practice.text2 }}
+                               </span>
+                           </div>
+                       </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Section 4: Exercises -->
+          <div v-if="lesson.exercises" class="mt-8 flex flex-col gap-12">
+               
+               <div v-for="exercise in lesson.exercises" :key="exercise.id" class="flex flex-col gap-6">
+                   
+                   <!-- Exercise: Circle Words -->
+                   <template v-if="exercise.type === 'circle'">
+                       <div class="flex flex-col gap-4">
+                            <!-- Instruction -->
+                            <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex items-start gap-4">
+                                <div class="bg-blue-100 p-2 rounded-lg shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    </svg>
+                                </div> 
+                                <h3 class="text-lg md:text-xl font-bold text-gray-800 leading-relaxed">{{ exercise.title }}</h3>
+                            </div>
+
+                            <!-- Word Grid -->
+                            <div class="grid grid-cols-3 gap-6 md:gap-8">
+                                <div v-for="(word, wIdx) in exercise.words" :key="wIdx" class="bg-pink-50 rounded-xl p-4 flex items-center justify-center h-24 shadow-sm border border-pink-100 relative group cursor-pointer hover:bg-pink-100 transition-colors">
+                                    <span class="text-3xl md:text-5xl font-bold text-black font-amiri">{{ t(word) }}</span>
+                                    <!-- Decorative corner accent -->
+                                    <div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-pink-200 rounded-tr-xl"></div>
+                                    <div class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-pink-200 rounded-bl-xl"></div>
+                                </div>
+                            </div>
+                       </div>
+                   </template>
+
+                    <!-- Exercise: Think -->
+                   <template v-else-if="exercise.type === 'think'">
+                       <div class="flex flex-col md:flex-row items-center gap-8 bg-white p-6 rounded-3xl shadow-lg border border-gray-100 mt-8">
+                             <!-- Question & Badge -->
+                             <div class="flex-1 flex flex-col gap-4">
+                                 <div class="flex items-center gap-3">
+                                      <div class="bg-red-500 text-white px-4 py-1 rounded-full font-bold shadow-md transform -rotate-2">
+                                          {{ t('Think') }}
+                                      </div>
+                                 </div>
+                                 <p class="text-xl md:text-2xl font-bold text-gray-800 leading-relaxed font-arabic">
+                                     {{ t('Mention words with letter Alif') }}
+                                 </p>
+                             </div>
+
+                             <!-- Image & Answer -->
+                             <div class="flex-1 flex flex-col items-center">
+                                 <div class="relative w-64 h-48 rounded-2xl overflow-hidden border-4 border-green-500 shadow-xl rotate-1 hover:rotate-0 transition-transform duration-300">
+                                     <img :src="exercise.image" class="w-full h-full object-cover">
+                                 </div>
+                                 <div class="mt-4 border-b-2 border-gray-800 w-32 flex justify-center pb-1">
+                                      <span class="text-4xl font-bold text-red-600 font-amiri">{{ exercise.answer }}</span>
+                                 </div>
+                             </div>
+                       </div>
+                   </template>
+
+               </div>
+
+          </div>
+      </div>
+
       <!-- Text Type Lesson -->
       <div v-else class="prose lg:prose-xl mx-auto text-center p-4 z-10 relative">
         <p class="text-gray-600">{{ lesson.description }}</p>

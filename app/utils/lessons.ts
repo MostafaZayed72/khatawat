@@ -9,6 +9,33 @@ export interface LessonItem {
     shadowColor?: string;
     speaker?: string;
     speakerColor?: string;
+    letter?: string;
+    highlight?: string;
+}
+
+export interface DistinguishItem {
+    id: number;
+    badge: string;
+    long: string;
+    long: string;
+    short: string;
+}
+
+export interface WritingPracticeItem {
+    id: number;
+    text: string;
+    sub: string;
+    text2: string; // The damma/kasra version or just repeating
+    type: 'solid' | 'dotted';
+}
+
+export interface ExerciseItem {
+    id: number;
+    type: 'circle' | 'think';
+    title?: string;
+    words?: string[]; // keys for translations
+    image?: string;
+    answer?: string;
 }
 
 export interface Lesson {
@@ -16,8 +43,11 @@ export interface Lesson {
     title: string;
     subtitle?: string;
     description?: string;
-    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes';
+    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes' | 'letterExamples';
     items?: LessonItem[];
+    distinguish?: DistinguishItem[];
+    writingPractice?: WritingPracticeItem[];
+    exercises?: ExerciseItem[];
     audioUrl?: string;
     mainImage?: string;
     diagramImages?: string[];
@@ -1037,6 +1067,46 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 },
             ],
             audioUrl: '/level2/4/4.wav',
+        },
+        {
+            id: 5,
+            title: t('Letter Alif Lesson'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Ear'), image: '/level2/5/ear.jpg', letter: 'أُ', highlight: 'أ' },
+                { id: 2, text: t('Needle'), image: '/level2/5/needle.jpg', letter: 'إِ', highlight: 'إ' },
+                { id: 3, text: t('Lion'), image: '/level2/5/lion.jpg', letter: 'أَ', highlight: 'أ' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'آ', short: 'أَ' },
+                { id: 2, badge: 'ي', long: 'إِيـــ', short: 'إِ' },
+                { id: 3, badge: 'و', long: 'أُو', short: 'أُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'أَ', sub: 'إِ', text2: 'أُ', type: 'solid' },
+                { id: 2, text: 'أَ', sub: 'إِ', text2: 'أُ', type: 'dotted' },
+                { id: 3, text: 'أَ', sub: 'إِ', text2: 'أُ', type: 'dotted' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    title: t('Exercise: Circle Letter Alif'),
+                    words: [
+                        'Lion', 'Ask', 'Mouse',
+                        'Basim', 'Answered', 'Rabbit',
+                        'Roared', 'Water', 'Cup'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Think'),
+                    image: '/level2/5/rabbit.jpg',
+                    answer: t('Rabbit')
+                }
+            ],
+            audioUrl: '/level2/5/5.wav',
         },
     ];
 
