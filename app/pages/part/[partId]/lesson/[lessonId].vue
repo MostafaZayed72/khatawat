@@ -11,7 +11,7 @@
       <!-- Header Section -->
       <div class="flex flex-col md:flex-row justify-between items-center mb-2 shrink-0 relative">
         <!-- Top Right Label -->
-        <div v-if="lesson.subtitle" class="mb-2 md:mb-0 border border-red-200 bg-red-50 text-gray-800 px-3 py-1 rounded-lg shadow-sm">
+        <div v-if="lesson.subtitle && partId !== 2" class="mb-2 md:mb-0 border border-red-200 bg-red-50 text-gray-800 px-3 py-1 rounded-lg shadow-sm">
           <span class="font-bold text-xs md:text-sm">{{ lesson.subtitle }}</span>
         </div>
         
@@ -46,7 +46,7 @@
       </div>
 
       <!-- Audio Player & Navigation Section -->
-<div v-if="lesson.audioUrl" class="flex items-start justify-center gap-2 md:gap-4 mb-2 shrink-0 w-full px-2" :class="lesson.type === 'shortVowels' ? 'mt-12' : 'mt-2'">        
+<div v-if="lesson.audioUrl" class="flex items-start justify-center gap-2 md:gap-4 mb-2 shrink-0 w-full px-2" :class="partId === 2 ? 'mt-12 mb-12' : 'mt-2'">        
         <!-- Prev Button (Right in RTL) -->
         <NuxtLink 
           v-if="prevLessonId"
@@ -368,6 +368,56 @@
          </div>
       </div>
       <!-- Short Vowels Type Lesson -->
+      <!-- Cubes Type Lesson (3D Letter Cubes) -->
+      <div v-else-if="lesson.type === 'cubes'" class="flex flex-col items-center justify-center gap-8 p-4 max-w-6xl mx-auto z-10 relative w-full">
+         <!-- Badge with number -->
+         <div class="relative w-32 h-32 flex items-center justify-center">
+            <!-- Blue circle background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full shadow-2xl"></div>
+            <!-- White inner circle -->
+            <div class="absolute inset-4 bg-white rounded-full shadow-inner"></div>
+            <!-- Number -->
+            <span class="relative z-10 text-6xl font-black text-blue-700">1</span>
+         </div>
+
+         <!-- Title -->
+         <h2 class="text-5xl font-black text-blue-700 font-arabic">{{ lesson.title }}</h2>
+
+         <!-- Cubes Grid -->
+         <div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full">
+            <div v-for="item in lesson.items" :key="item.id" class="flex flex-col items-center justify-center group cursor-pointer">
+               <!-- 3D Cube Container -->
+               <div class="relative w-40 h-40 md:w-48 md:h-48 perspective-1000 hover:scale-110 transition-transform duration-300">
+                  <!-- Cube wrapper with 3D transform -->
+                  <div class="cube-3d w-full h-full relative preserve-3d">
+                     <!-- Front face -->
+                     <div 
+                        class="cube-face cube-front absolute inset-0 rounded-2xl shadow-2xl flex items-center justify-center border-4 border-white"
+                        :style="{ backgroundColor: item.colorFrom }"
+                     >
+                        <span class="text-8xl font-black text-white drop-shadow-2xl font-arabic">{{ item.text }}</span>
+                     </div>
+                     
+                     <!-- Top face (lighter) -->
+                     <div 
+                        class="cube-face cube-top absolute inset-0 rounded-2xl shadow-xl flex items-center justify-center border-4 border-white opacity-80"
+                        :style="{ backgroundColor: item.colorTo }"
+                     >
+                     </div>
+                     
+                     <!-- Right face (darker) -->
+                     <div 
+                        class="cube-face cube-right absolute inset-0 rounded-2xl shadow-xl flex items-center justify-center border-4 border-white opacity-60"
+                        :style="{ backgroundColor: item.shadowColor }"
+                     >
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Short Vowels Type Lesson -->
       <div v-else-if="lesson.type === 'shortVowels'" class="flex flex-col items-center justify-center gap-4 p-4 max-w-6xl mx-auto z-10 relative w-full">
          <div class="w-full flex justify-start max-w-4xl px-4">
              <div class="bg-gradient-to-b from-gray-100 to-gray-200 border border-gray-300 rounded-lg px-6 py-1 shadow-sm">
@@ -650,5 +700,41 @@ watch(lesson, (newLesson, oldLesson) => {
     color: var(--gradient-from);
     background: none;
   }
+}
+
+/* 3D Cube Styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.cube-3d {
+  transform: rotateX(-15deg) rotateY(20deg);
+  transition: transform 0.3s ease;
+}
+
+.cube-3d:hover {
+  transform: rotateX(-10deg) rotateY(25deg) scale(1.05);
+}
+
+.cube-face {
+  backface-visibility: hidden;
+}
+
+.cube-front {
+  transform: translateZ(0px);
+}
+
+.cube-top {
+  transform: rotateX(90deg) translateZ(80px);
+  transform-origin: top;
+}
+
+.cube-right {
+  transform: rotateY(90deg) translateZ(80px);
+  transform-origin: right;
 }
 </style>

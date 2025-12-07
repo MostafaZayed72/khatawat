@@ -16,7 +16,7 @@ export interface Lesson {
     title: string;
     subtitle?: string;
     description?: string;
-    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels';
+    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes';
     items?: LessonItem[];
     audioUrl?: string;
     mainImage?: string;
@@ -40,10 +40,9 @@ export const getParts = (t: (key: string) => string): Part[] => {
             title: t('Numbers'),
             subtitle: t('Group One'),
             type: 'numbers',
-            audioUrl: '/numbers.wav',
             items: [
-                { id: 1, digit: '1', text: t('One'), colorFrom: '#FF9800', colorTo: '#FFC107', shadowColor: '#E65100' },
-                { id: 2, digit: '2', text: t('Two'), colorFrom: '#03A9F4', colorTo: '#00BCD4', shadowColor: '#01579B' },
+                { id: 1, digit: '1', text: t('One'), colorFrom: '#FF9800', colorTo: '#FFB74D', shadowColor: '#F57C00' },
+                { id: 2, digit: '2', text: t('Two'), colorFrom: '#2196F3', colorTo: '#64B5F6', shadowColor: '#1976D2' },
                 { id: 3, digit: '3', text: t('Three'), colorFrom: '#9C27B0', colorTo: '#E040FB', shadowColor: '#4A148C' },
                 { id: 4, digit: '4', text: t('Four'), colorFrom: '#4CAF50', colorTo: '#8BC34A', shadowColor: '#1B5E20' },
                 { id: 5, digit: '5', text: t('Five'), colorFrom: '#2196F3', colorTo: '#64B5F6', shadowColor: '#0D47A1' },
@@ -964,7 +963,6 @@ export const getParts = (t: (key: string) => string): Part[] => {
         {
             id: 1,
             title: t('The Three Short Vowels (1)'),
-            subtitle: t(''),
             type: 'shortVowels',
             items: [
                 {
@@ -979,7 +977,6 @@ export const getParts = (t: (key: string) => string): Part[] => {
         {
             id: 2,
             title: t('The Three Short Vowels (2)'),
-            subtitle: t(''),
             type: 'shortVowels',
             items: [
                 {
@@ -994,7 +991,6 @@ export const getParts = (t: (key: string) => string): Part[] => {
         {
             id: 3,
             title: t('The Three Short Vowels (3)'),
-            subtitle: t(''),
             type: 'shortVowels',
             items: [
                 {
@@ -1005,6 +1001,42 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 },
             ],
             audioUrl: '/level2/3/3.wav',
+        },
+        {
+            id: 4,
+            title: t('Group One'),
+            type: 'cubes',
+            items: [
+                {
+                    id: 1,
+                    text: 'أ',
+                    colorFrom: '#FFA726',
+                    colorTo: '#FFB74D',
+                    shadowColor: '#F57C00'
+                },
+                {
+                    id: 2,
+                    text: 'ب',
+                    colorFrom: '#EC407A',
+                    colorTo: '#F06292',
+                    shadowColor: '#C2185B'
+                },
+                {
+                    id: 3,
+                    text: 'ت',
+                    colorFrom: '#42A5F5',
+                    colorTo: '#64B5F6',
+                    shadowColor: '#1976D2'
+                },
+                {
+                    id: 4,
+                    text: 'ث',
+                    colorFrom: '#66BB6A',
+                    colorTo: '#81C784',
+                    shadowColor: '#388E3C'
+                },
+            ],
+            audioUrl: '/level2/4/4.wav',
         },
     ];
 
