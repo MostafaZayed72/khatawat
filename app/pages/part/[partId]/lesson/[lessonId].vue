@@ -377,14 +377,14 @@
             <!-- White inner circle -->
             <div class="absolute inset-4 bg-white rounded-full shadow-inner"></div>
             <!-- Number -->
-            <span class="relative z-10 text-6xl font-black text-blue-700">1</span>
+            <span class="relative z-10 text-6xl font-black text-blue-700 font-sans">{{ lesson.groupNumber }}</span>
          </div>
 
          <!-- Title -->
          <h2 class="text-5xl font-black text-blue-700 font-arabic">{{ lesson.title }}</h2>
 
          <!-- Cubes Grid -->
-         <div class="grid grid-cols-2 md:grid-cols-4 gap-12 w-full">
+         <div class="flex flex-wrap justify-center gap-12 w-full">
             <div v-for="item in lesson.items" :key="item.id" class="flex flex-col items-center justify-center group cursor-pointer">
                <!-- 3D Cube Container -->
                <div class="relative w-40 h-40 md:w-48 md:h-48 perspective-1000 hover:scale-110 transition-transform duration-300">
@@ -468,12 +468,12 @@
       <!-- Letter Examples Lesson Type -->
       <div v-else-if="lesson.type === 'letterExamples'" class="flex flex-col w-full max-w-6xl mx-auto mt-4 gap-12 px-4">
           
-          <!-- Top Letter Circle (Alif) -->
+          <!-- Top Letter Circle (Example: Alif/Baa) -->
           <div class="flex justify-center mb-4">
               <div class="w-32 h-32 rounded-full bg-pink-100 border-4 border-white shadow-xl flex items-center justify-center relative">
                   <!-- Decorative shadow/glow -->
                   <div class="absolute inset-0 rounded-full bg-pink-200 blur-lg -z-10 opacity-50"></div>
-                  <span class="text-7xl font-bold text-red-600">أ</span>
+                  <span class="text-7xl font-bold text-red-600">{{ lesson.items?.[0]?.highlight }}</span>
               </div>
           </div>
 
@@ -716,6 +716,50 @@
                </div>
 
           </div>
+      </div>
+
+      <!-- Read and Write Review Lesson Type -->
+      <div v-else-if="lesson.type === 'readWriteReview'" class="flex flex-col w-full max-w-5xl mx-auto mt-8 gap-8 px-4">
+           
+           <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-8 flex flex-col gap-12">
+               
+               <div v-for="item in lesson.items" :key="'review-' + item.id" class="flex flex-col gap-6">
+                   <!-- Read Row -->
+                   <div class="flex items-center gap-4">
+                       <!-- Label -->
+                       <div class="shrink-0 w-24">
+                           <span class="bg-red-100 text-red-600 px-4 py-2 rounded-xl font-bold block text-center border border-red-200 shadow-sm">{{ t('Read') }}</span>
+                       </div>
+                       
+                       <!-- Words -->
+                       <div class="flex-1 flex justify-around items-center bg-orange-50/50 rounded-2xl p-4 border border-orange-100">
+                           <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ item.text }}</span>
+                           <div class="w-px h-12 bg-orange-200"></div>
+                           <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ item.text2 }}</span>
+                           <div class="w-px h-12 bg-orange-200"></div>
+                           <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ item.highlight }}</span>
+                       </div>
+                   </div>
+
+                   <!-- Write Row -->
+                   <div class="flex items-center gap-4">
+                       <!-- Label -->
+                        <div class="shrink-0 w-24">
+                           <span class="bg-green-100 text-green-600 px-4 py-2 rounded-xl font-bold block text-center border border-green-200 shadow-sm">{{ t('Write') }}</span>
+                       </div>
+
+                       <!-- Writing Space -->
+                       <div class="flex-1 h-20 border-b-2 border-dashed border-gray-300 relative">
+                            <!-- Writing Guidelines -->
+                            <div class="absolute inset-x-0 top-1/2 border-t border-dotted border-gray-200"></div>
+                       </div>
+                   </div>
+
+                   <!-- Separator -->
+                   <div v-if="lesson.items && item.id !== lesson.items.length" class="border-b border-gray-100 my-2"></div>
+               </div>
+
+           </div>
       </div>
 
       <!-- Text Type Lesson -->

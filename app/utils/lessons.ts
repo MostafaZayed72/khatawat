@@ -43,7 +43,7 @@ export interface Lesson {
     title: string;
     subtitle?: string;
     description?: string;
-    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes' | 'letterExamples';
+    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes' | 'letterExamples' | 'readWriteReview';
     items?: LessonItem[];
     distinguish?: DistinguishItem[];
     writingPractice?: WritingPracticeItem[];
@@ -51,6 +51,7 @@ export interface Lesson {
     audioUrl?: string;
     mainImage?: string;
     diagramImages?: string[];
+    groupNumber?: number;
 }
 
 export interface Part {
@@ -1036,6 +1037,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             id: 4,
             title: t('Group One'),
             type: 'cubes',
+            groupNumber: 1,
             items: [
                 {
                     id: 1,
@@ -1107,6 +1109,167 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 }
             ],
             audioUrl: '/level2/5/5.wav',
+        },
+        {
+            id: 6,
+            title: t('Letter Baa Lesson'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Duck'), image: '/level2/6/duck.jpg', letter: 'بَ', highlight: 'ب' },
+                { id: 2, text: t('Watermelon'), image: '/level2/6/watermelon.jpg', letter: 'بِ', highlight: 'ب' },
+                { id: 3, text: t('Tower'), image: '/level2/6/tower.jpg', letter: 'بُ', highlight: 'ب' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'بَا', short: 'بَ' },
+                { id: 2, badge: 'ي', long: 'بِيـــ', short: 'بِ' },
+                { id: 3, badge: 'و', long: 'بُو', short: 'بُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'ب', sub: 'بِ', text2: 'بُ', type: 'solid' },
+                { id: 2, text: 'بَ', sub: 'بِ', text2: 'بُ', type: 'dotted' },
+                { id: 3, text: 'بَ', sub: 'بِ', text2: 'بُ', type: 'dotted' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    title: t('Exercise: Circle Letter Baa'),
+                    words: [
+                        'White', 'Fox', 'Ibrahim',
+                        'Gate', 'Fly', 'Seven',
+                        'Well', 'Milk', 'Drinks'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Think'),
+                    image: '/level2/6/orange.jpg',
+                    answer: t('Orange')
+                }
+            ],
+            audioUrl: '/level2/6/6.wav',
+        },
+        {
+            id: 7,
+            title: t('Letter Taa Lesson'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Berries'), image: '/level2/7/berries.jpg', letter: 'تُ', highlight: 'ت' },
+                { id: 2, text: t('Figs'), image: '/level2/7/fig.jpg', letter: 'تِ', highlight: 'ت' },
+                { id: 3, text: t('Dates'), image: '/level2/7/dates.jpg', letter: 'تَ', highlight: 'ت' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'تَا', short: 'تَ' },
+                { id: 2, badge: 'ي', long: 'تِيـــ', short: 'تِ' },
+                { id: 3, badge: 'و', long: 'تُو', short: 'تُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'تَابَ', sub: 'تُوتُ', text2: 'بَاتَتْ', type: 'solid' },
+                { id: 2, text: 'تَابَ', sub: 'تُوتُ', text2: 'بَاتَتْ', type: 'dotted' },
+                { id: 3, text: 'تَابَ', sub: 'تُوتُ', text2: 'بَاتَتْ', type: 'dotted' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    title: t('Exercise: Circle Letter Taa'),
+                    words: [
+                        'Mutaz', 'Key', 'Figs',
+                        'Plant', 'Dates', 'Crocodile',
+                        'House', 'Crown', 'Oil'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Think'),
+                    image: '/level2/7/apple.jpg',
+                    answer: t('Apple')
+                }
+            ],
+            audioUrl: '/level2/7/7.wav',
+        },
+        {
+            id: 8,
+            title: t('Letter Thaa Lesson'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Snake'), image: '/level2/8/snake.jpg', letter: 'ثُ', highlight: 'ث' },
+                { id: 2, text: t('Clothes'), image: '/level2/8/clothes.jpg', letter: 'ثِ', highlight: 'ث' },
+                { id: 3, text: t('Bull'), image: '/level2/8/bull.jpg', letter: 'ثَ', highlight: 'ث' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'ثَا', short: 'ثَ' },
+                { id: 2, badge: 'ي', long: 'ثِيـــ', short: 'ثِ' },
+                { id: 3, badge: 'و', long: 'ثُو', short: 'ثُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'ثَبَتَ', sub: 'ثَابَ', text2: 'بَثَّ', type: 'solid' },
+                { id: 2, text: 'ثَبَتَ', sub: 'ثَابَ', text2: 'بَثَّ', type: 'dotted' },
+                { id: 3, text: 'ثَبَتَ', sub: 'ثَابَ', text2: 'بَثَّ', type: 'dotted' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    title: t('Exercise: Circle Letter Thaa'),
+                    words: [
+                        'Furniture', 'Fox', 'Triangle',
+                        'Bull', 'Plow', 'Fridge',
+                        'Fruit', 'Three', 'Yathrib'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Think'),
+                    image: '/level2/8/thobe.jpg',
+                    answer: t('Thobe')
+                }
+            ],
+            audioUrl: '/level2/8/8.wav',
+        },
+        {
+            id: 9,
+            title: t('First Group Words Review'),
+            type: 'readWriteReview',
+            items: [
+                { id: 1, text: 'أَب', text2: 'بَاب', highlight: 'بُن' },
+                { id: 2, text: 'تَابَ', text2: 'تُوت', highlight: 'بَاتَ' },
+                { id: 3, text: 'ثَبَتَ', text2: 'ثَابَ', highlight: 'بَثَّ' },
+            ],
+            audioUrl: '/level2/9/9.wav',
+        },
+        {
+            id: 10,
+            title: t('The Second Group'),
+            type: 'cubes',
+            groupNumber: 2,
+            items: [
+                {
+                    id: 1,
+                    text: 'ج',
+                    colorFrom: '#F06292',
+                    colorTo: '#F48FB1',
+                    shadowColor: '#D81B60'
+                },
+                {
+                    id: 2,
+                    text: 'ح',
+                    colorFrom: '#29B6F6',
+                    colorTo: '#4FC3F7',
+                    shadowColor: '#0288D1'
+                },
+                {
+                    id: 3,
+                    text: 'خ',
+                    colorFrom: '#9CCC65',
+                    colorTo: '#AED581',
+                    shadowColor: '#689F38'
+                },
+            ],
+            audioUrl: '/level2/10/10.wav',
         },
     ];
 
