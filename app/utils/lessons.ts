@@ -1095,6 +1095,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 {
                     id: 1,
                     type: 'circle',
+                    letter: 'أ',
                     title: t('Exercise: Circle Letter Alif'),
                     words: [
                         'Lion', 'Ask', 'Mouse',
@@ -1135,6 +1136,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 {
                     id: 1,
                     type: 'circle',
+                    letter: 'ب',
                     title: t('Exercise: Circle Letter Baa'),
                     words: [
                         'White', 'Fox', 'Ibrahim',
@@ -1175,6 +1177,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 {
                     id: 1,
                     type: 'circle',
+                    letter: 'ت',
                     title: t('Exercise: Circle Letter Taa'),
                     words: [
                         'Mutaz', 'Key', 'Figs',
@@ -1215,6 +1218,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 {
                     id: 1,
                     type: 'circle',
+                    letter: 'ث',
                     title: t('Exercise: Circle Letter Thaa'),
                     words: [
                         'Furniture', 'Fox', 'Triangle',

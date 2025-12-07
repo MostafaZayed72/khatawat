@@ -670,20 +670,39 @@
                    <!-- Exercise: Circle Words -->
                    <template v-if="exercise.type === 'circle'">
                        <div class="flex flex-col gap-4">
-                            <!-- Instruction -->
-                            <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex items-start gap-4">
-                                <div class="bg-blue-100 p-2 rounded-lg shrink-0">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                            <!-- Instruction & Button -->
+                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex items-start gap-4 flex-1">
+                                    <div class="bg-blue-100 p-2 rounded-lg shrink-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                        </svg>
+                                    </div> 
+                                    <h3 class="text-lg md:text-xl font-bold text-gray-800 leading-relaxed">{{ exercise.title }}</h3>
+                                </div>
+                                
+                                <button 
+                                    @click="toggleAnswer(exercise.id)"
+                                    class="px-6 py-3 rounded-xl font-bold shadow-md transition-colors flex items-center gap-2 whitespace-nowrap"
+                                    :class="showAnswers[exercise.id] ? 'bg-red-100 text-red-600 hover:bg-red-200' : 'bg-green-500 text-white hover:bg-green-600'"
+                                >
+                                    <svg v-if="!showAnswers[exercise.id]" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
                                     </svg>
-                                </div> 
-                                <h3 class="text-lg md:text-xl font-bold text-gray-800 leading-relaxed">{{ exercise.title }}</h3>
+                                    <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                                    </svg>
+                                    {{ showAnswers[exercise.id] ? t('Hide Answer') : t('Show Answer') }}
+                                </button>
                             </div>
 
                             <!-- Word Grid -->
                             <div class="grid grid-cols-3 gap-6 md:gap-8">
                                 <div v-for="(word, wIdx) in exercise.words" :key="wIdx" class="bg-pink-50 rounded-xl p-4 flex items-center justify-center h-24 shadow-sm border border-pink-100 relative group cursor-pointer hover:bg-pink-100 transition-colors">
-                                    <span class="text-3xl md:text-5xl font-bold text-black font-amiri">{{ t(typeof word === 'string' ? word : word.text) }}</span>
+                                    <span 
+                                        class="text-3xl md:text-5xl font-bold text-black font-amiri"
+                                        v-html="getHighlightedWord(t(typeof word === 'string' ? word : word.text), exercise.letter, showAnswers[exercise.id])"
+                                    ></span>
                                     <!-- Decorative corner accent -->
                                     <div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-pink-200 rounded-tr-xl"></div>
                                     <div class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-pink-200 rounded-bl-xl"></div>
@@ -814,6 +833,26 @@ const nextLessonId = computed(() => {
 
 // Dropdown State
 const showDropdown = ref(false);
+
+// Exercise Answer State
+const showAnswers = ref<Record<number, boolean>>({});
+
+const toggleAnswer = (exerciseId: number) => {
+    showAnswers.value[exerciseId] = !showAnswers.value[exerciseId];
+};
+
+const getHighlightedWord = (word: string, letter: string | undefined, show: boolean) => {
+    if (!show || !letter) return word;
+    // Highlight letter and optional following diacritics
+    // We use a regex to capture the letter and its tashkeel
+    const escapedLetter = letter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${escapedLetter}[\\u064B-\\u065F]*)`, 'g');
+    
+    // Use inline styles to ensure it works regardless of CSS class issues
+    return word.replace(regex, '<span style="border: 2px solid #ef4444; border-radius: 50%; color: #ef4444; padding: 0 4px; display: inline-block;">$1</span>');
+};
+
+
 
 // Audio Logic
 const isPlaying = ref(false);
@@ -1039,5 +1078,12 @@ watch(lesson, (newLesson, oldLesson) => {
 .cube-right {
   transform: rotateY(90deg) translateZ(80px);
   transform-origin: right;
+}
+
+.circle-highlight {
+    border: 2px solid #ef4444; 
+    border-radius: 50%; 
+    padding: 0px 4px; 
+    color: #ef4444;
 }
 </style>
