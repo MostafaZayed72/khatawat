@@ -605,7 +605,7 @@
 
           <!-- Section 3: I Write -->
           <div v-if="lesson.writingPractice" class="mt-8 flex flex-col gap-6">
-               <div class="flex justify-end px-4">
+               <div class="flex justify-start px-4">
                   <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-6 py-2 shadow-sm flex items-center gap-2">
                        <span class="text-xl font-bold text-gray-700">{{ t('I Write') }}</span>
                   </div>
@@ -758,11 +758,19 @@
                        
                        <!-- Words -->
                        <div class="flex-1 flex justify-around items-center bg-orange-50/50 rounded-2xl p-4 border border-orange-100">
-                           <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ item.text }}</span>
-                           <div class="w-px h-12 bg-orange-200"></div>
-                           <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ item.text2 }}</span>
-                           <div class="w-px h-12 bg-orange-200"></div>
-                           <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ item.highlight }}</span>
+                           <template v-if="item.words">
+                               <template v-for="(word, wIdx) in item.words" :key="wIdx">
+                                   <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ word }}</span>
+                                   <div v-if="wIdx < item.words.length - 1" class="w-px h-12 bg-orange-200"></div>
+                               </template>
+                           </template>
+                           <template v-else>
+                               <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ item.text }}</span>
+                               <div class="w-px h-12 bg-orange-200"></div>
+                               <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ item.text2 }}</span>
+                               <div class="w-px h-12 bg-orange-200"></div>
+                               <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ item.highlight }}</span>
+                           </template>
                        </div>
                    </div>
 
