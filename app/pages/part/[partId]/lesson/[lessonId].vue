@@ -473,7 +473,12 @@
               <div class="w-32 h-32 rounded-full bg-pink-100 border-4 border-white shadow-xl flex items-center justify-center relative">
                   <!-- Decorative shadow/glow -->
                   <div class="absolute inset-0 rounded-full bg-pink-200 blur-lg -z-10 opacity-50"></div>
-                  <span class="text-7xl font-bold text-red-600">{{ lesson.items?.[0]?.highlight }}</span>
+                  <span 
+                      class="text-7xl font-bold text-red-600 font-amiri leading-none"
+                      :class="['ج', 'ح', 'خ'].includes(lesson.items?.[0]?.highlight || '') ? 'pb-16' : 'pb-2'"
+                  >
+                      {{ lesson.items?.[0]?.highlight }}
+                  </span>
               </div>
           </div>
 
@@ -677,7 +682,7 @@
                             <!-- Word Grid -->
                             <div class="grid grid-cols-3 gap-6 md:gap-8">
                                 <div v-for="(word, wIdx) in exercise.words" :key="wIdx" class="bg-pink-50 rounded-xl p-4 flex items-center justify-center h-24 shadow-sm border border-pink-100 relative group cursor-pointer hover:bg-pink-100 transition-colors">
-                                    <span class="text-3xl md:text-5xl font-bold text-black font-amiri">{{ t(word) }}</span>
+                                    <span class="text-3xl md:text-5xl font-bold text-black font-amiri">{{ t(typeof word === 'string' ? word : word.text) }}</span>
                                     <!-- Decorative corner accent -->
                                     <div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-pink-200 rounded-tr-xl"></div>
                                     <div class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-pink-200 rounded-bl-xl"></div>
@@ -704,7 +709,7 @@
                              <!-- Image & Answer -->
                              <div class="flex-1 flex flex-col items-center">
                                  <div class="relative w-64 h-48 rounded-2xl overflow-hidden border-4 border-green-500 shadow-xl rotate-1 hover:rotate-0 transition-transform duration-300">
-                                     <img :src="exercise.image" class="w-full h-full object-cover">
+                                     <img :src="exercise.image" class="w-full h-full object-contain">
                                  </div>
                                  <div class="mt-4 border-b-2 border-gray-800 w-32 flex justify-center pb-1">
                                       <span class="text-4xl font-bold text-red-600 font-amiri">{{ exercise.answer }}</span>
@@ -803,7 +808,7 @@ const prevLessonId = computed(() => {
 
 const nextLessonId = computed(() => {
   const index = partLessons.value.findIndex(l => l.id === lessonId.value);
-  return index < partLessons.value.length - 1 ? partLessons.value[index + 1].id : null;
+  return index < partLessons.value.length - 1 ? partLessons.value[index + 1]?.id : null;
 });
 
 // Dropdown State

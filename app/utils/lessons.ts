@@ -17,7 +17,6 @@ export interface DistinguishItem {
     id: number;
     badge: string;
     long: string;
-    long: string;
     short: string;
 }
 
@@ -25,7 +24,7 @@ export interface WritingPracticeItem {
     id: number;
     text: string;
     sub: string;
-    text2: string; // The damma/kasra version or just repeating
+    text2?: string; // The damma/kasra version or just repeating
     type: 'solid' | 'dotted';
 }
 
@@ -33,7 +32,8 @@ export interface ExerciseItem {
     id: number;
     type: 'circle' | 'think';
     title?: string;
-    words?: string[]; // keys for translations
+    letter?: string;
+    words?: (string | { id: number; text: string })[]; // keys for translations or objects
     image?: string;
     answer?: string;
 }
@@ -1271,6 +1271,52 @@ export const getParts = (t: (key: string) => string): Part[] => {
             ],
             audioUrl: '/level2/10/10.wav',
         },
+        {
+            id: 11,
+            title: t('Letter Jeem Lesson'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Soldiers'), image: '/level2/11/soldiers.jpg', letter: 'جُ', highlight: 'ج' },
+                { id: 2, text: t('Camels'), image: '/level2/11/camels.jpg', letter: 'جِ', highlight: 'ج' },
+                { id: 3, text: t('Carrots'), image: '/level2/11/carrots.jpg', letter: 'جَ', highlight: 'ج' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'جَا', short: 'جَ' },
+                { id: 2, badge: 'ي', long: 'جِي', short: 'جِ' },
+                { id: 3, badge: 'و', long: 'جُو', short: 'جُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'ج', sub: 'جَ', type: 'solid' },
+                { id: 2, text: 'جِ', sub: 'جُ', type: 'dotted' },
+                { id: 3, text: 'تَاج', sub: 'جَبَل', type: 'solid' },
+                { id: 4, text: 'جُبّ', sub: 'جَابَ', type: 'dotted' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'ج',
+                    words: [
+                        { id: 1, text: 'مَعْجُون' }, // Maajoon
+                        { id: 2, text: 'جَمَل' }, // Jamal
+                        { id: 3, text: 'جِسْر' }, // Jisr
+                        { id: 4, text: 'بُرْج' }, // Burj
+                        { id: 5, text: 'جَرَادَة' }, // Jaraada
+                        { id: 6, text: 'نُجُود' }, // Nujuud
+                        { id: 7, text: 'جَمِيلَة' }, // Jameela
+                        { id: 8, text: 'أَمْجَد' }, // Amjad
+                        { id: 9, text: 'سَجَّادَة' }, // Sajjada
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    image: '/level2/11/crown.jpg',
+                    answer: 'تَاج' // Taaj
+                }
+            ],
+            audioUrl: '/level2/11/11.wav',
+        },
     ];
 
 
@@ -1281,7 +1327,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Basics and Daily Life'),
             videoUrl: 'https://www.youtube.com/embed/lTZBNRYJzi4',
             image: '/parts/1.png',
-            pdfUrl: 'https://drive.google.com/file/d/1XceJNyeZm1rNcd9kI5YSUN7Zwozdtn5K/preview',
+            pdfUrl: 'https://drive.google.com/file/d/1nYdgUosHeyyZNPMG8vrOPGakUA7oUZrE/view?usp=sharing',
             lessons: part1Lessons
         },
         {
@@ -1290,7 +1336,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Coming Soon'),
             videoUrl: '',
             image: '/parts/2.png',
-            pdfUrl: 'https://drive.google.com/file/d/1gCmkA9IW0ZVFAX4MJT4qvqIm87OrfDRS/preview',
+            pdfUrl: 'https://drive.google.com/file/d/1IC6svlKgNDBB-4Vtc24mAUA_-xTkRG7m/view?usp=sharing',
             lessons: part2Lessons
         },
         {
@@ -1299,7 +1345,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Coming Soon'),
             videoUrl: '',
             image: '/parts/3.png',
-            pdfUrl: 'https://drive.google.com/file/d/15rGfTtD8Akg0IKIN_t0JjAA2b6LfyCK6/preview',
+            pdfUrl: 'https://drive.google.com/file/d/1RuFvD46Ku5cpOWYpuCgMr2OXSryLVIss/view?usp=sharing',
             lessons: []
         },
         {
@@ -1308,7 +1354,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Coming Soon'),
             videoUrl: '',
             image: '/parts/4.png',
-            pdfUrl: 'https://drive.google.com/file/d/1EW8y2ode5aiERMErwFNlEmdpL7i34AOi/preview',
+            pdfUrl: 'https://drive.google.com/file/d/1IfVNk1ne8EtEHjuvAQ-33TiGG-C-8G-e/view?usp=sharing',
             lessons: []
         }
     ];

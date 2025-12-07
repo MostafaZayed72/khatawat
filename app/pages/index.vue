@@ -7,6 +7,23 @@
         {{ t('Khatwat Program for Teaching Arabic to Non-Native Speakers') }}
       </h1>
       
+            <!-- About Project Video Section -->
+<div class="w-full mt-12 flex flex-col items-center">
+  <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">
+    {{ t('About the Project') }}
+  </h2>
+
+ <div class="w-full max-w-xl bg-transparent rounded-2xl overflow-hidden shadow-2xl border-4 border-white p-4">
+    <audio controls class="w-full">
+      <source src="/nabza2.mp3" type="audio/mpeg">
+      {{ t('Your browser does not support the audio tag.') }}
+    </audio>
+  </div>
+</div>
+
+
+
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         <NuxtLink 
           v-for="part in parts" 
@@ -36,19 +53,6 @@
         </NuxtLink>
       </div>
 
-      <!-- About Project Video Section -->
-<div class="w-full mt-12 flex flex-col items-center">
-  <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">
-    {{ t('About the Project') }}
-  </h2>
-
-  <div class="w-full max-w-xl bg-transparent rounded-2xl overflow-hidden shadow-2xl border-4 border-white p-4">
-    <audio controls class="w-full">
-      <source src="/nabza.mp3" type="audio/mpeg">
-      {{ t('Your browser does not support the audio tag.') }}
-    </audio>
-  </div>
-</div>
 
 
 </div>
