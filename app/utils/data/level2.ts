@@ -529,6 +529,55 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             ],
             audioUrl: '/level2/16/16.wav',
         },
+        {
+            id: 17,
+            title: t('Letter Thal Lesson'),
+            subtitle: t('The Third Group'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Corn'), image: '/level2/17/corn.jpg', letter: 'ذُ', highlight: 'ذ' },
+                { id: 2, text: t('Arm'), image: '/level2/17/arm.jpg', letter: 'ذِ', highlight: 'ذ' },
+                { id: 3, text: t('Gold'), image: '/level2/17/gold.jpg', letter: 'ذَ', highlight: 'ذ' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'ذَا', short: 'ذَ' },
+                { id: 2, badge: 'ي', long: 'ذِي', short: 'ذِ' },
+                { id: 3, badge: 'و', long: 'ذُو', short: 'ذُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'ذ', sub: 'ذَ', type: 'solid' },
+                { id: 2, text: 'ذِ', sub: 'ذُ', type: 'dotted' },
+                { id: 3, text: 'ذَابَ', sub: 'جَذَبَ', type: 'solid' },
+                { id: 4, text: 'ذِئْب', sub: 'حَبَّذَا', type: 'dotted' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'ذ',
+                    title: t('Exercise: Circle Letter Thal'),
+                    words: [
+                        { id: 1, text: 'جَذَبَ' }, // Jadhaba
+                        { id: 2, text: 'أُذُن' }, // Uthun (Ear) - Reusing existing key if possible? No, sticking to text for consistency in arrays
+                        { id: 3, text: 'حِذَاء' }, // Hidhaa
+                        { id: 4, text: 'نَافِذَة' }, // Nafidha
+                        { id: 5, text: 'قُنْفُذ' }, // Qunfudh
+                        { id: 6, text: 'غِذَاء' }, // Ghidhaa
+                        { id: 7, text: 'ذُبَابَة' }, // Dhubaaba (Fly) - Reusing existing word? Existing key is "Fly": "ذُبَابَة"
+                        { id: 8, text: 'تِلْمِيذ' }, // Tilmeeth
+                        { id: 9, text: 'ذِئْب' }, // Thi'b
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Thal'),
+                    image: '/level2/17/tail.jpg',
+                    answer: 'ذَيْل'
+                }
+            ],
+            audioUrl: '/level2/17/17.wav',
+        },
     ];
 
     return part2Lessons;
