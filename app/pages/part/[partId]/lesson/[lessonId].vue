@@ -703,7 +703,7 @@
                                       </div>
                                  </div>
                                  <p class="text-xl md:text-2xl font-bold text-gray-800 leading-relaxed font-arabic">
-                                     {{ t('Mention words with letter Alif') }}
+                                     {{ exercise.title }}
                                  </p>
                              </div>
 

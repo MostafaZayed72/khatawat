@@ -1105,7 +1105,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 {
                     id: 2,
                     type: 'think',
-                    title: t('Think'),
+                    title: t('Mention words with letter Alif'),
                     image: '/level2/5/rabbit.jpg',
                     answer: t('Rabbit')
                 }
@@ -1145,7 +1145,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 {
                     id: 2,
                     type: 'think',
-                    title: t('Think'),
+                    title: t('Mention words with letter Baa'),
                     image: '/level2/6/orange.jpg',
                     answer: t('Orange')
                 }
@@ -1185,7 +1185,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 {
                     id: 2,
                     type: 'think',
-                    title: t('Think'),
+                    title: t('Mention words with letter Taa'),
                     image: '/level2/7/apple.jpg',
                     answer: t('Apple')
                 }
@@ -1225,7 +1225,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 {
                     id: 2,
                     type: 'think',
-                    title: t('Think'),
+                    title: t('Mention words with letter Thaa'),
                     image: '/level2/8/thobe.jpg',
                     answer: t('Thobe')
                 }
@@ -1313,11 +1313,60 @@ export const getParts = (t: (key: string) => string): Part[] => {
                 {
                     id: 2,
                     type: 'think',
+                    title: t('Mention words with letter Jeem'),
                     image: '/level2/11/crown.jpg',
                     answer: 'تَاج' // Taaj
                 }
             ],
             audioUrl: '/level2/11/11.wav',
+        },
+        {
+            id: 12,
+            title: t('Letter Haa Lesson'),
+            subtitle: t('The Second Group'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Rope'), image: '/level2/12/rope.png', letter: 'حَ', highlight: 'ح' },
+                { id: 2, text: t('Horse'), image: '/level2/12/horse.png', letter: 'حِ', highlight: 'ح' },
+                { id: 3, text: t('Whale'), image: '/level2/12/whale.png', letter: 'حُ', highlight: 'ح' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'حَا', short: 'حَ' },
+                { id: 2, badge: 'ي', long: 'حِي', short: 'حِ' },
+                { id: 3, badge: 'و', long: 'حُو', short: 'حُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'ح', sub: 'حَ', type: 'solid' },
+                { id: 2, text: 'حِ', sub: 'حُ', type: 'dotted' },
+                { id: 3, text: 'أُحِبُّ', sub: 'بَحْر', type: 'solid' },
+                { id: 4, text: 'حَبِيب', sub: 'حَجَبَ', type: 'dotted' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'ح',
+                    words: [
+                        { id: 1, text: 'حِصَان' },
+                        { id: 2, text: 'حَضَرَ' },
+                        { id: 3, text: 'مَزَحَ' },
+                        { id: 4, text: 'حَدِيقَة' },
+                        { id: 5, text: 'حَازِم' },
+                        { id: 6, text: 'مِلْح' },
+                        { id: 7, text: 'فَرِحَ' },
+                        { id: 8, text: 'قَمْح' },
+                        { id: 9, text: 'حَقْل' },
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Haa'),
+                    image: '/level2/12/milk.png',
+                    answer: 'حَلِيب'
+                }
+            ],
+            audioUrl: '/level2/12/12.wav',
         },
     ];
 
