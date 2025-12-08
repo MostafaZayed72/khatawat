@@ -508,15 +508,21 @@
 
               <!-- Words Row -->
               <div class="grid grid-cols-3 gap-4 md:gap-8">
-                   <div v-for="item in lesson.items" :key="'word-' + item.id" class="bg-blue-50 border-2 border-blue-200 rounded-xl p-4 flex items-center justify-center shadow-md relative overflow-hidden">
-                       <span class="text-4xl md:text-6xl font-bold text-black font-amiri tracking-wide">
-                          <!-- Render word with highlight -->
-                          <template v-for="(char, index) in item.text.split('')" :key="index">
-                              <span :class="{'text-red-600': char === item.highlight || (item.highlight === 'أ' && ['أ', 'إ', 'آ'].includes(char))}">{{ char }}</span>
-                          </template>
-                       </span>
-                        <!-- Underline -->
-                       <div class="absolute bottom-4 left-4 right-4 h-0.5 bg-gray-400"></div>
+                   <div v-for="item in lesson.items" :key="'word-' + item.id" class="relative group">
+                       <!-- Spotlight Effect -->
+                       <div class="absolute top-3/4 left-1/2 transform -translate-x-1/2 w-full h-48 bg-gradient-to-b from-yellow-100/80 via-yellow-50/30 to-transparent clip-path-spotlight z-0 pointer-events-none"></div>
+
+                       <div class="bg-white border-2 border-[#42a5f5] rounded-xl h-40 flex items-center justify-center shadow-lg relative overflow-visible z-10">
+                           <!-- Line -->
+                           <div class="absolute bottom-[3.5rem] left-6 right-6 h-0.5 bg-gray-800 z-0"></div> 
+                           
+                           <span class="relative z-10 text-6xl md:text-8xl font-bold text-black font-amiri tracking-wide -mt-4 leading-normal">
+                              <!-- Render word with highlight -->
+                              <template v-for="(char, index) in item.text.split('')" :key="index">
+                                  <span :class="{'text-red-600': char === item.highlight || (item.highlight === 'أ' && ['أ', 'إ', 'آ'].includes(char))}">{{ char }}</span>
+                              </template>
+                           </span>
+                       </div>
                    </div>
               </div>
 
@@ -528,18 +534,13 @@
               </div>
 
               <!-- Letters Row -->
-              <div class="grid grid-cols-3 gap-4 md:gap-8 relative">
-                   <!-- Connecting Lines (Visual decoration) -->
-                   <div class="absolute -top-10 left-0 right-0 h-20 flex justify-around pointer-events-none opacity-20">
-                        <div class="w-0.5 h-full bg-yellow-400"></div>
-                        <div class="w-0.5 h-full bg-yellow-400"></div>
-                        <div class="w-0.5 h-full bg-yellow-400"></div>
-                   </div>
-
-                   <div v-for="item in lesson.items" :key="'letter-' + item.id" class="flex flex-col items-center">
-                       <span class="text-6xl md:text-8xl font-bold text-red-600 mb-2 font-amiri">{{ item.letter }}</span>
+              <div class="grid grid-cols-3 gap-4 md:gap-8 relative mt-16">
+                   <div v-for="item in lesson.items" :key="'letter-' + item.id" class="flex flex-col items-center relative h-32 justify-end">
                        <!-- Dotted Line -->
-                       <div class="w-full border-b-2 border-dotted border-gray-400 mt-2"></div>
+                       <div class="absolute bottom-6 w-full border-b-2 border-dotted border-gray-400"></div>
+
+                       <!-- Letter -->
+                       <span class="relative z-10 text-7xl md:text-9xl font-bold text-red-600 font-amiri leading-none pb-2">{{ item.letter }}</span>
                    </div>
               </div>
           </div>
@@ -614,15 +615,15 @@
               <div class="bg-white rounded-3xl shadow-lg border-2 border-gray-100 p-6 flex flex-col gap-8">
                   <div v-for="practice in lesson.writingPractice" :key="practice.id" class="flex flex-col gap-4">
                        <!-- Writing Row -->
-                       <div class="flex items-center justify-around h-24 border-b border-gray-200 relative pb-4">
+                       <div class="flex items-center justify-around h-32 border-b border-gray-100 relative">
                            <!-- Line Guide -->
-                           <div class="absolute top-1/2 left-0 right-0 border-b border-dotted border-gray-400"></div>
+                           <div class="absolute top-[72%] left-0 right-0 border-b-2 border-dashed border-gray-300"></div>
 
                            <!-- Letters -->
-                           <div class="flex flex-col items-center z-10">
+                           <div class="flex flex-col items-center z-10 w-1/3">
                                <span 
                                 :class="[
-                                    'text-6xl md:text-8xl font-amiri leading-none',
+                                    'text-6xl md:text-8xl font-amiri leading-none -mt-4',
                                     practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
                                 ]"
                                >
@@ -631,12 +632,12 @@
                            </div>
                            
                              <!-- Separator -->
-                           <div class="w-8 h-1 bg-red-500 rounded-full"></div>
+                           <div class="w-1 h-12 bg-gray-200 rounded-full"></div>
 
-                           <div class="flex flex-col items-center z-10">
+                           <div class="flex flex-col items-center z-10 w-1/3">
                                <span 
                                 :class="[
-                                    'text-6xl md:text-8xl font-amiri leading-none',
+                                    'text-6xl md:text-8xl font-amiri leading-none -mt-4',
                                     practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
                                 ]"
                                >
@@ -645,12 +646,12 @@
                            </div>
 
                              <!-- Separator -->
-                           <div class="w-8 h-1 bg-red-500 rounded-full"></div>
+                           <div class="w-1 h-12 bg-gray-200 rounded-full"></div>
 
-                           <div class="flex flex-col items-center z-10">
+                           <div class="flex flex-col items-center z-10 w-1/3">
                                <span 
                                 :class="[
-                                    'text-6xl md:text-8xl font-amiri leading-none',
+                                    'text-6xl md:text-8xl font-amiri leading-none -mt-4',
                                     practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
                                 ]"
                                >
@@ -731,8 +732,9 @@
                                  <div class="relative w-64 h-48 rounded-2xl overflow-hidden border-4 border-green-500 shadow-xl rotate-1 hover:rotate-0 transition-transform duration-300">
                                      <img :src="exercise.image" class="w-full h-full object-contain">
                                  </div>
-                                 <div class="mt-4 border-b-2 border-gray-800 w-32 flex justify-center pb-1">
-                                      <span class="text-4xl font-bold text-red-600 font-amiri">{{ exercise.answer }}</span>
+                                 <div class="mt-4 w-48 h-24 relative flex justify-center items-end">
+                                      <div class="absolute bottom-6 left-0 right-0 h-0.5 bg-black"></div>
+                                      <span class="relative z-10 text-6xl font-bold text-red-600 font-amiri leading-none mb-2">{{ exercise.answer }}</span>
                                  </div>
                              </div>
                        </div>
