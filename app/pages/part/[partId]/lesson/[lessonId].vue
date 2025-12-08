@@ -507,7 +507,7 @@
               </div>
 
               <!-- Words Row -->
-              <div class="grid grid-cols-3 gap-4 md:gap-8">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
                    <div v-for="item in lesson.items" :key="'word-' + item.id" class="relative group">
                        <!-- Spotlight Effect -->
                        <div class="absolute top-3/4 left-1/2 transform -translate-x-1/2 w-full h-48 bg-gradient-to-b from-yellow-100/80 via-yellow-50/30 to-transparent clip-path-spotlight z-0 pointer-events-none"></div>
@@ -540,7 +540,7 @@
                        <div class="absolute bottom-6 w-full border-b-2 border-dotted border-gray-400"></div>
 
                        <!-- Letter -->
-                       <span class="relative z-10 text-7xl md:text-9xl font-bold text-red-600 font-amiri leading-none pb-2">{{ item.letter }}</span>
+                       <span class="relative z-10 text-7xl md:text-9xl font-bold text-red-600 font-amiri leading-none mb-2 md:mb-4">{{ item.letter }}</span>
                    </div>
               </div>
           </div>
@@ -615,15 +615,15 @@
               <div class="bg-white rounded-3xl shadow-lg border-2 border-gray-100 p-6 flex flex-col gap-8">
                   <div v-for="practice in lesson.writingPractice" :key="practice.id" class="flex flex-col gap-4">
                        <!-- Writing Row -->
-                       <div class="flex items-center justify-around h-32 border-b border-gray-100 relative">
+                       <div class="flex items-end justify-around h-32 border-b border-gray-100 relative">
                            <!-- Line Guide -->
-                           <div class="absolute top-[72%] left-0 right-0 border-b-2 border-dashed border-gray-300"></div>
+                           <div class="absolute bottom-6 left-0 right-0 border-b-2 border-dashed border-gray-300"></div>
 
                            <!-- Letters -->
                            <div class="flex flex-col items-center z-10 w-1/3">
                                <span 
                                 :class="[
-                                    'text-6xl md:text-8xl font-amiri leading-none -mt-4',
+                                    'text-6xl md:text-8xl font-amiri leading-none mb-5 md:mb-4',
                                     practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
                                 ]"
                                >
@@ -632,12 +632,12 @@
                            </div>
                            
                              <!-- Separator -->
-                           <div class="w-1 h-12 bg-gray-200 rounded-full"></div>
+                           <div class="w-1 h-12 bg-gray-200 rounded-full mb-8"></div>
 
                            <div class="flex flex-col items-center z-10 w-1/3">
                                <span 
                                 :class="[
-                                    'text-6xl md:text-8xl font-amiri leading-none -mt-4',
+                                    'text-6xl md:text-8xl font-amiri leading-none mb-5 md:mb-4',
                                     practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
                                 ]"
                                >
@@ -646,12 +646,12 @@
                            </div>
 
                              <!-- Separator -->
-                           <div class="w-1 h-12 bg-gray-200 rounded-full"></div>
+                           <div class="w-1 h-12 bg-gray-200 rounded-full mb-8"></div>
 
                            <div class="flex flex-col items-center z-10 w-1/3">
                                <span 
                                 :class="[
-                                    'text-6xl md:text-8xl font-amiri leading-none -mt-4',
+                                    'text-6xl md:text-8xl font-amiri leading-none mb-5 md:mb-4',
                                     practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
                                 ]"
                                >
@@ -734,7 +734,7 @@
                                  </div>
                                  <div class="mt-4 w-48 h-24 relative flex justify-center items-end">
                                       <div class="absolute bottom-6 left-0 right-0 h-0.5 bg-black"></div>
-                                      <span class="relative z-10 text-6xl font-bold text-red-600 font-amiri leading-none mb-2">{{ exercise.answer }}</span>
+                                      <span class="relative z-10 text-6xl font-bold text-red-600 font-amiri leading-none mb-2 md:mb-4">{{ exercise.answer }}</span>
                                  </div>
                              </div>
                        </div>
