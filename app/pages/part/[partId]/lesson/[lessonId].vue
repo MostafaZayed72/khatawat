@@ -436,7 +436,7 @@
                    <!-- Kasra for lesson 2 -->
                    <div v-else-if="lesson.id === 2" class="w-20 h-3 bg-[#d50000] rounded-full transform -rotate-[25deg]"></div>
                    <!-- Damma for lesson 3 (small waw) -->
-                   <div v-else-if="lesson.id === 3" class="text-6xl font-black text-[#d50000] leading-none font-arabic">ُ</div>
+                   <div v-else-if="lesson.id === 3" class="text-[220px] mt-32 font-black text-[#d50000] leading-none font-arabic">ُ</div>
                 </div>
                 <div class="relative w-full h-72">
                    <img :src="item.image" :alt="item.text" class="w-full h-full object-cover" />
