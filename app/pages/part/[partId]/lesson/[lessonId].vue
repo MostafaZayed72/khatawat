@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen w-screen bg-white p-2 font-sans flex flex-col">
+  <div class="min-h-screen w-screen bg-white p-2 font-sans flex flex-col" dir="rtl">
     
     <!-- Loading Spinner -->
     <div v-if="isLoading" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white/90 backdrop-blur-sm">
