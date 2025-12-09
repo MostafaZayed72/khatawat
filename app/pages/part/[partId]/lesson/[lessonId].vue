@@ -772,7 +772,6 @@
                                      <img :src="exercise.image" class="w-full h-full object-contain">
                                  </div>
                                  <div class="mt-4 w-48 h-24 relative flex justify-center items-end">
-                                      <div class="absolute bottom-6 left-0 right-0 h-0.5 bg-black"></div>
                                       <span class="relative z-10 text-6xl font-bold text-red-600 font-amiri leading-none mb-2 md:mb-4">{{ exercise.answer }}</span>
                                  </div>
                              </div>
