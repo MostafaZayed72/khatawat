@@ -298,7 +298,7 @@
       </div>
       <!-- Short Vowels Type Lesson -->
       <!-- Cubes Type Lesson (3D Letter Cubes) -->
-      <div v-else-if="lesson.type === 'cubes'" class="flex flex-col items-center justify-center gap-8 p-4 max-w-6xl mx-auto z-10 relative w-full">
+      <div v-else-if="lesson.type === 'cubes'" class="mt-16 flex flex-col items-center justify-center gap-8 p-4 max-w-6xl mx-auto z-10 relative w-full">
          <!-- Badge with number -->
          <div class="relative w-32 h-32 flex items-center justify-center">
             <!-- Blue circle background -->
