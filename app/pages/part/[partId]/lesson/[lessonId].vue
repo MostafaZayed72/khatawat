@@ -20,8 +20,8 @@
            
            <!-- Next Button -->
            <NuxtLink 
-             v-if="nextLessonId"
-             :to="`/part/${partId}/lesson/${nextLessonId}`"
+             v-if="previousLessonId"
+             :to="`/part/${partId}/lesson/${previousLessonId}`"
              class="p-2 bg-white border border-gray-200 text-gray-600 rounded-full shadow-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
              :title="t('Next Lesson')"
            >
@@ -59,8 +59,8 @@
 
            <!-- Prev Button -->
            <NuxtLink 
-             v-if="prevLessonId"
-             :to="`/part/${partId}/lesson/${prevLessonId}`"
+             v-if="nextLessonId"
+             :to="`/part/${partId}/lesson/${nextLessonId}`"
              class="p-2 bg-white border border-gray-200 text-gray-600 rounded-full shadow-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
              :title="t('Previous Lesson')"
            >
