@@ -522,7 +522,7 @@
                        </div>
                        
                        <!-- Hanging Boxes -->
-                       <div class="flex justify-center gap-4 w-full pt-4">
+                       <div class="flex justify-center flex-row-reverse gap-4 w-full pt-4">
                            <!-- Long Vowel Box -->
                            <div class="flex-1 bg-gradient-to-br from-orange-400 to-orange-500 rounded-xl p-2 shadow-lg border-2 border-white flex flex-col items-center justify-center h-20 transform hover:scale-105 transition-transform" v-if="d.id===1">
                                <span class="text-4xl font-bold text-white font-amiri">{{ d.long }}</span>
