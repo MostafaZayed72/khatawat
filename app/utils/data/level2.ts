@@ -107,9 +107,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     letter: 'أ',
                     title: t('Exercise: Circle Letter Alif'),
                     words: [
-                        'Lion', 'Ask', 'Mouse',
-                        'Basim', 'Answered', 'Rabbit',
-                        'Roared', 'Water', 'Cup'
+                        'أَسَد', 'سَأَلَ', 'فَأْر',
+                        'بَاسِم', 'أَجَابَ', 'أَرْنَب',
+                        'زَأَرَ', 'مَاء', 'كَأْس'
                     ]
                 },
                 {
@@ -190,9 +190,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     letter: 'ت',
                     title: t('Exercise: Circle Letter Taa'),
                     words: [
-                        'Mutaz', 'Key', 'Figs',
-                        'Plant', 'Dates', 'Crocodile',
-                        'House', 'Crown', 'Oil'
+                        'مُعْتَزّ', 'مِفْتَاح', 'تِين',
+                        'نَبَات', 'تَمْر', 'تِمْسَاح',
+                        'بَيْت', 'تَاج', 'زَيْت'
                     ]
                 },
                 {
@@ -231,9 +231,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     letter: 'ث',
                     title: t('Exercise: Circle Letter Thaa'),
                     words: [
-                        'Furniture', 'Fox', 'Triangle',
-                        'Bull', 'Plow', 'Fridge',
-                        'Fruit', 'Three', 'Yathrib'
+                        'أَثَاث', 'ثَعْلَب', 'مُثَلَّث',
+                        'ثَوْر', 'مِحْرَاث', 'ثَلَّاجَة',
+                        'ثِمَار', 'ثَلَاثَة', 'يَثْرِب'
                     ]
                 },
                 {
