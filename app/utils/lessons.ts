@@ -15,6 +15,8 @@ export interface LessonItem {
     letter?: string;
     highlight?: string;
     words?: string[];
+    listenImage?: string;
+    readImage?: string;
 }
 
 export interface DistinguishItem {
@@ -30,6 +32,7 @@ export interface WritingPracticeItem {
     sub: string;
     text2?: string; // The damma/kasra version or just repeating
     type: 'solid' | 'dotted';
+    image?: string;
 }
 
 export interface ExerciseItem {
@@ -56,6 +59,7 @@ export interface Lesson {
     mainImage?: string;
     diagramImages?: string[];
     groupNumber?: number;
+    writingImage?: string;
 }
 
 export interface Part {

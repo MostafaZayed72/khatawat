@@ -86,9 +86,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             title: t('Letter Alif Lesson'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Ear'), image: '/level2/5/ear.jpg', letter: 'أُ', highlight: 'أ' },
-                { id: 2, text: t('Needle'), image: '/level2/5/needle.jpg', letter: 'إِ', highlight: 'إ' },
-                { id: 3, text: t('Lion'), image: '/level2/5/lion.jpg', letter: 'أَ', highlight: 'أ' },
+                { id: 1, text: t('Ear'), image: '/level2/5/ear.jpg', letter: 'أُ', highlight: 'أ', listenImage: '/level2/5/listen/1.png', readImage: '/level2/5/read/1.png' },
+                { id: 2, text: t('Needle'), image: '/level2/5/needle.jpg', letter: 'إِ', highlight: 'إ', listenImage: '/level2/5/listen/2.png', readImage: '/level2/5/read/2.png' },
+                { id: 3, text: t('Lion'), image: '/level2/5/lion.jpg', letter: 'أَ', highlight: 'أ', listenImage: '/level2/5/listen/3.png', readImage: '/level2/5/read/3.png' },
             ],
             distinguish: [
                 { id: 1, badge: 'ا', long: 'آ', short: 'أَ' },
@@ -96,9 +96,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 3, badge: 'و', long: 'أُو', short: 'أُ' },
             ],
             writingPractice: [
-                { id: 1, text: 'أَ', sub: 'إِ', text2: 'أُ', type: 'solid' },
-                { id: 2, text: 'أَ', sub: 'إِ', text2: 'أُ', type: 'dotted' },
-                { id: 3, text: 'أَ', sub: 'إِ', text2: 'أُ', type: 'dotted' },
+                { id: 1, text: 'أَ', sub: 'إِ', text2: 'أُ', type: 'solid', image: '/level2/5/write/1.png' },
+                { id: 2, text: 'أَ', sub: 'إِ', text2: 'أُ', type: 'dotted', image: '/level2/5/write/2.png' },
+                { id: 3, text: 'أَ', sub: 'إِ', text2: 'أُ', type: 'dotted', image: '/level2/5/write/3.png' },
             ],
             exercises: [
                 {
@@ -121,6 +121,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 }
             ],
             audioUrl: '/level2/5/5.wav',
+            writingImage: '/level2/5/write_full.png',
         },
         {
             id: 6,

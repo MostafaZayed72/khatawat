@@ -483,7 +483,7 @@
               </div>
           </div>
 
-          <!-- Section 1: Watch, Listen, Read -->
+              <!-- Section 1: Watch, Listen, Read -->
           <div class="flex flex-col gap-8">
               <!-- Label: I Watch -->
               <div class="flex justify-start px-4">
@@ -493,7 +493,7 @@
               </div>
               
               <!-- Images Row -->
-              <div class="grid grid-cols-3 gap-4 md:gap-8">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
                   <div v-for="item in lesson.items" :key="'img-' + item.id" class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border-4 border-white transform hover:scale-105 transition-transform duration-300 bg-white">
                       <img :src="item.image" :alt="item.text" class="w-full h-full object-contain">
                   </div>
@@ -512,16 +512,29 @@
                        <!-- Spotlight Effect -->
                        <div class="absolute top-3/4 left-1/2 transform -translate-x-1/2 w-full h-48 bg-gradient-to-b from-yellow-100/80 via-yellow-50/30 to-transparent clip-path-spotlight z-0 pointer-events-none"></div>
 
-                       <div class="bg-white border-2 border-[#42a5f5] rounded-xl h-40 flex items-center justify-center shadow-lg relative overflow-visible z-10">
-                           <!-- Line -->
-                           <div class="absolute bottom-[3.5rem] left-6 right-6 h-0.5 bg-gray-800 z-0"></div> 
+                       <div class="bg-white border-2 border-[#42a5f5] rounded-xl h-40 flex flex-col items-center justify-center shadow-lg relative overflow-hidden z-10 p-2">
+                           <!-- Image Mode -->
+                           <template v-if="item.listenImage">
+                               <div class="relative w-full flex-grow flex items-center justify-center overflow-hidden">
+                                   <img :src="item.listenImage" class="max-w-full max-h-full object-contain" />
+                               </div>
+                               <span v-if="locale === 'en'" class="text-lg font-bold text-gray-800 mt-1 shrink-0 font-sans">{{ item.text }}</span>
+                           </template>
                            
-                           <span class="relative z-10 text-6xl md:text-8xl font-bold text-black font-amiri tracking-wide -mt-4 leading-normal">
-                              <!-- Render word with highlight -->
-                              <template v-for="(char, index) in item.text.split('')" :key="index">
-                                  <span :class="{'text-red-600': char === item.highlight || (item.highlight === 'أ' && ['أ', 'إ', 'آ'].includes(char))}">{{ char }}</span>
-                              </template>
-                           </span>
+                           <!-- Text Mode -->
+                           <template v-else>
+                                <div class="w-full h-full flex items-center justify-center relative">
+                                    <!-- Line -->
+                                    <div class="absolute bottom-[3.5rem] left-6 right-6 h-0.5 bg-gray-800 z-0"></div> 
+                                    
+                                    <span class="relative z-10 text-6xl md:text-8xl font-bold text-black font-amiri tracking-wide -mt-4 leading-normal">
+                                    <!-- Render word with highlight -->
+                                    <template v-for="(char, index) in item.text.split('')" :key="index">
+                                        <span :class="{'text-red-600': char === item.highlight || (item.highlight === 'أ' && ['أ', 'إ', 'آ'].includes(char))}">{{ char }}</span>
+                                    </template>
+                                    </span>
+                                </div>
+                           </template>
                        </div>
                    </div>
               </div>
@@ -536,11 +549,19 @@
               <!-- Letters Row -->
               <div class="grid grid-cols-3 gap-4 md:gap-8 relative mt-16">
                    <div v-for="item in lesson.items" :key="'letter-' + item.id" class="flex flex-col items-center relative h-32 justify-end">
-                       <!-- Dotted Line -->
-                       <div class="absolute bottom-6 w-full border-b-2 border-dotted border-gray-400"></div>
+                       <!-- Image Mode -->
+                       <div v-if="item.readImage" class="w-full h-full flex items-end justify-center">
+                            <img :src="item.readImage" class="max-w-full max-h-full object-contain" />
+                       </div>
 
-                       <!-- Letter -->
-                       <span class="relative z-10 text-7xl md:text-9xl font-bold text-red-600 font-amiri leading-none mb-2 md:mb-4">{{ item.letter }}</span>
+                       <!-- Text Mode -->
+                       <template v-else>
+                           <!-- Dotted Line -->
+                           <div class="absolute bottom-6 w-full border-b-2 border-dotted border-gray-400"></div>
+
+                           <!-- Letter -->
+                           <span class="relative z-10 text-7xl md:text-9xl font-bold text-red-600 font-amiri leading-none mb-2 md:mb-4">{{ item.letter }}</span>
+                       </template>
                    </div>
               </div>
           </div>
@@ -613,53 +634,71 @@
               </div>
 
               <div class="bg-white rounded-3xl shadow-lg border-2 border-gray-100 p-6 flex flex-col gap-8">
-                  <div v-for="practice in lesson.writingPractice" :key="practice.id" class="flex flex-col gap-4">
-                       <!-- Writing Row -->
-                       <div class="flex items-end justify-around h-32 border-b border-gray-100 relative">
-                           <!-- Line Guide -->
-                           <div class="absolute bottom-6 left-0 right-0 border-b-2 border-dashed border-gray-300"></div>
-
-                           <!-- Letters -->
-                           <div class="flex flex-col items-center z-10 w-1/3">
-                               <span 
-                                :class="[
-                                    'text-6xl md:text-8xl font-amiri leading-none mb-5 md:mb-4',
-                                    practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
-                                ]"
-                               >
-                               {{ practice.text }}
-                               </span>
-                           </div>
-                           
-                             <!-- Separator -->
-                           <div class="w-1 h-12 bg-gray-200 rounded-full mb-8"></div>
-
-                           <div class="flex flex-col items-center z-10 w-1/3">
-                               <span 
-                                :class="[
-                                    'text-6xl md:text-8xl font-amiri leading-none mb-5 md:mb-4',
-                                    practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
-                                ]"
-                               >
-                               {{ practice.sub }}
-                               </span>
-                           </div>
-
-                             <!-- Separator -->
-                           <div class="w-1 h-12 bg-gray-200 rounded-full mb-8"></div>
-
-                           <div class="flex flex-col items-center z-10 w-1/3">
-                               <span 
-                                :class="[
-                                    'text-6xl md:text-8xl font-amiri leading-none mb-5 md:mb-4',
-                                    practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
-                                ]"
-                               >
-                               {{ practice.text2 }}
-                               </span>
-                           </div>
-                       </div>
+                  <!-- Single Image Mode -->
+                  <div v-if="lesson.writingImage" class="w-full">
+                      <img :src="lesson.writingImage" class="w-full h-auto object-contain rounded-xl" />
                   </div>
+
+                  <!-- Standard Practice Mode -->
+                  <template v-else>
+                      <div v-for="practice in lesson.writingPractice" :key="practice.id" class="flex flex-col gap-4">
+                           <!-- Writing Row -->
+                           <div class="flex items-end justify-around h-32 border-b border-gray-100 relative">
+                               <!-- Image Mode (Per Item) -->
+                               <template v-if="practice.image">
+                                   <div class="w-full h-full flex items-center justify-center">
+                                        <img :src="practice.image" class="max-h-full object-contain" />
+                                   </div>
+                               </template>
+    
+                               <!-- Text Mode -->
+                               <template v-else>
+                                   <!-- Line Guide -->
+                                   <div class="absolute bottom-6 left-0 right-0 border-b-2 border-dashed border-gray-300"></div>
+    
+                                   <!-- Letters -->
+                                   <div class="flex flex-col items-center z-10 w-1/3">
+                                       <span 
+                                        :class="[
+                                            'text-6xl md:text-8xl font-amiri leading-none mb-5 md:mb-4',
+                                            practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
+                                        ]"
+                                       >
+                                       {{ practice.text }}
+                                       </span>
+                                   </div>
+                                   
+                                     <!-- Separator -->
+                                   <div class="w-1 h-12 bg-gray-200 rounded-full mb-8"></div>
+    
+                                   <div class="flex flex-col items-center z-10 w-1/3">
+                                       <span 
+                                        :class="[
+                                            'text-6xl md:text-8xl font-amiri leading-none mb-5 md:mb-4',
+                                            practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
+                                        ]"
+                                       >
+                                       {{ practice.sub }}
+                                       </span>
+                                   </div>
+    
+                                     <!-- Separator -->
+                                   <div class="w-1 h-12 bg-gray-200 rounded-full mb-8"></div>
+    
+                                   <div class="flex flex-col items-center z-10 w-1/3">
+                                       <span 
+                                        :class="[
+                                            'text-6xl md:text-8xl font-amiri leading-none mb-5 md:mb-4',
+                                            practice.type === 'dotted' ? 'text-gray-300' : 'text-black'
+                                        ]"
+                                       >
+                                       {{ practice.text2 }}
+                                       </span>
+                                   </div>
+                               </template>
+                           </div>
+                      </div>
+                  </template>
               </div>
           </div>
 
