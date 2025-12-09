@@ -15,8 +15,21 @@
           <span class="font-bold text-xs md:text-sm">{{ lesson.subtitle }}</span>
         </div>
         
-        <!-- Title (Centered & Dropdown) -->
-        <div class="relative md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:top-0 z-50">
+        <!-- Title & Navigation -->
+        <div class="relative md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:top-0 z-50 flex items-center gap-4">
+           
+           <!-- Next Button -->
+           <NuxtLink 
+             v-if="nextLessonId"
+             :to="`/part/${partId}/lesson/${nextLessonId}`"
+             class="p-2 bg-white border border-gray-200 text-gray-600 rounded-full shadow-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
+             :title="t('Next Lesson')"
+           >
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform rtl:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+               <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+             </svg>
+           </NuxtLink>
+
            <div class="relative">
              <button 
                type="button"
@@ -43,110 +56,25 @@
               </div>
             </div>
            </div>
-        </div>
-      </div>
 
-      <!-- Audio Player & Navigation Section -->
-      <div class="flex items-start justify-center gap-2 md:gap-4 mb-2 shrink-0 w-full px-2" :class="partId === 2 ? 'mt-12 mb-12' : 'mt-2'">        
-        <!-- Prev Button (Right in RTL) -->
-        <NuxtLink 
-          v-if="prevLessonId"
-          :to="`/part/${partId}/lesson/${prevLessonId}`"
-          class="mt-2 p-3 bg-white border border-gray-200 text-gray-600 rounded-full shadow-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
-          :title="t('Previous Lesson')"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform rtl:rotate-180" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-        </NuxtLink>
-        <div v-else class="w-12"></div> <!-- Spacer -->
-
-        <!-- Audio Controls Container -->
-        <div class="flex flex-col items-center w-full max-w-lg">
-          <!-- Main Play Button -->
-          <button 
-            @click="toggleAudio"
-            class="w-full flex items-center justify-center gap-4 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white py-2 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 border-b-4 border-yellow-700 mb-2"
-          >
-            <span class="text-2xl font-black tracking-wide">{{ isPlaying ? t('Pause') : t('Play Audio') }}</span>
-            <div class="bg-white/20 p-2 rounded-full">
-               <svg v-if="!isPlaying" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 rtl:rotate-180" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-              </svg>
-              <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-              </svg>
-            </div>
-          </button>
-
-          <!-- Advanced Controls Row -->
-          <div class="w-full bg-gray-100 rounded-xl p-2 flex flex-col gap-2 shadow-inner border border-gray-200">
+           <!-- Prev Button -->
+           <NuxtLink 
+             v-if="prevLessonId"
+             :to="`/part/${partId}/lesson/${prevLessonId}`"
+             class="p-2 bg-white border border-gray-200 text-gray-600 rounded-full shadow-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
+             :title="t('Previous Lesson')"
+           >
             
-            <!-- Progress Bar & Time -->
-            <div class="flex items-center gap-2 w-full">
-              <span class="text-xs font-mono text-gray-600 w-10 text-center">{{ formatTime(currentTime) }}</span>
-              <input 
-                type="range" 
-                min="0" 
-                :max="duration" 
-                step="0.1" 
-                v-model="currentTime" 
-                @input="seekAudio"
-                class="flex-grow h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-yellow-500"
-              >
-              <span class="text-xs font-mono text-gray-600 w-10 text-center">{{ formatTime(duration) }}</span>
-            </div>
 
-            <!-- Secondary Controls (Restart, Speed) -->
-            <div class="flex justify-between items-center w-full px-2">
-              
-              <!-- Restart Button -->
-              <button 
-                @click="restartAudio"
-                class="flex items-center gap-1 text-gray-600 hover:text-red-500 transition-colors text-sm font-bold"
-                :title="t('Restart')"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
-                </svg>
-                <span>{{ t('Restart') }}</span>
-              </button>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform rtl:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+            </svg>
+           </NuxtLink>
 
-              <!-- Speed Control -->
-              <div class="flex items-center gap-2">
-                <span class="text-xs text-gray-500 font-bold">{{ t('Speed') }}:</span>
-                <div class="flex bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                  <button 
-                    v-for="rate in [0.5, 1, 1.5, 2]" 
-                    :key="rate"
-                    @click="setSpeed(rate)"
-                    class="px-2 py-1 text-xs font-bold transition-colors"
-                    :class="playbackRate === rate ? 'bg-yellow-100 text-yellow-700' : 'text-gray-600 hover:bg-gray-50'"
-                  >
-                    {{ rate }}x
-                  </button>
-                </div>
-              </div>
-
-            </div>
-          </div>
         </div>
-
-        <!-- Next Button (Left in RTL) -->
-        <NuxtLink 
-          v-if="nextLessonId"
-          :to="`/part/${partId}/lesson/${nextLessonId}`"
-          class="mt-2 p-3 bg-white border border-gray-200 text-gray-600 rounded-full shadow-md hover:bg-gray-50 hover:text-blue-600 transition-colors"
-          :title="t('Next Lesson')"
-        >
-         
-           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform rtl:rotate-180" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-          </svg>
-        </NuxtLink>
-        <div v-else class="w-12"></div> <!-- Spacer -->
-
       </div>
+
+
 
       <!-- Numbers Grid (Type: numbers) -->
       <div v-if="lesson.type === 'numbers' && lesson.items" class="grid grid-cols-3 md:grid-cols-5 gap-4 w-full max-w-7xl mx-auto px-2 z-10">
@@ -467,7 +395,7 @@
       </div>
 
       <!-- Letter Examples Lesson Type -->
-      <div v-else-if="lesson.type === 'letterExamples'" class="flex flex-col w-full max-w-6xl mx-auto mt-4 gap-12 px-4">
+      <div v-else-if="lesson.type === 'letterExamples'" class="flex flex-col w-full max-w-6xl mx-auto mt-16 gap-12 px-4">
           
           <!-- Top Letter Circle (Example: Alif/Baa) -->
           <div class="flex justify-center mb-4">
@@ -573,8 +501,9 @@
           <div v-if="lesson.distinguish" class="mt-12 flex flex-col gap-8 bg-yellow-50/50 p-6 rounded-3xl border border-yellow-100">
                <!-- Header -->
                <div class="flex justify-start mb-8">
-                   <div class="bg-white border border-red-200 rounded-2xl px-8 py-3 shadow-sm">
-                       <h3 class="text-2xl font-bold text-gray-800">{{ t('I Distinguish') }}</h3>
+                   <div class="bg-white border border-red-200 rounded-2xl px-8 py-3 shadow-sm flex items-center gap-4">
+                       <h3 class="text-3xl font-bold text-gray-800">{{ t('I Distinguish') }}</h3>
+                       <PlayAudioButton v-if="lesson.distinguishAudio" :audioUrl="lesson.distinguishAudio" />
                    </div>
                </div>
 
