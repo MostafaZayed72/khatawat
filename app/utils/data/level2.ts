@@ -120,7 +120,14 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Rabbit')
                 }
             ],
-            audioUrl: '/level2/5/5.wav',
+
+            watchAudio: '/level2/5/1.mp3',
+            listenAudio: '/level2/5/2.mp3',
+            readAudio: '/level2/5/3.mp3',
+            writeAudio: '/level2/5/4.mp3',
+            distinguishAudio: '/level2/5/5.mp3',
+            thinkAudio: '/level2/5/7.mp3',
+            circleAudio: '/level2/5/6.mp3',
             writingImage: '/level2/5/write_full.png',
         },
         {

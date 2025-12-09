@@ -47,7 +47,7 @@
       </div>
 
       <!-- Audio Player & Navigation Section -->
-<div v-if="lesson.audioUrl" class="flex items-start justify-center gap-2 md:gap-4 mb-2 shrink-0 w-full px-2" :class="partId === 2 ? 'mt-12 mb-12' : 'mt-2'">        
+      <div class="flex items-start justify-center gap-2 md:gap-4 mb-2 shrink-0 w-full px-2" :class="partId === 2 ? 'mt-12 mb-12' : 'mt-2'">        
         <!-- Prev Button (Right in RTL) -->
         <NuxtLink 
           v-if="prevLessonId"
@@ -487,8 +487,9 @@
           <div class="flex flex-col gap-8">
               <!-- Label: I Watch -->
               <div class="flex justify-start px-4">
-                  <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-6 py-2 shadow-sm flex items-center gap-2">
-                       <span class="text-xl font-bold text-gray-700">{{ t('I Watch') }}</span>
+                  <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-8 py-3 shadow-sm flex items-center gap-4">
+                       <span class="text-3xl font-bold text-gray-700">{{ t('I Watch') }}</span>
+                       <PlayAudioButton v-if="lesson.watchAudio" :audioUrl="lesson.watchAudio" />
                   </div>
               </div>
               
@@ -501,8 +502,9 @@
 
               <!-- Label: I Listen -->
               <div class="flex justify-start px-4 mt-4">
-                  <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-6 py-2 shadow-sm flex items-center gap-2">
-                       <span class="text-xl font-bold text-gray-700">{{ t('I Listen') }}</span>
+                  <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-8 py-3 shadow-sm flex items-center gap-4">
+                       <span class="text-3xl font-bold text-gray-700">{{ t('I Listen') }}</span>
+                       <PlayAudioButton v-if="lesson.listenAudio" :audioUrl="lesson.listenAudio" />
                   </div>
               </div>
 
@@ -541,8 +543,9 @@
 
                <!-- Label: I Read -->
                <div class="flex justify-start px-4 mt-4">
-                  <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-6 py-2 shadow-sm flex items-center gap-2">
-                       <span class="text-xl font-bold text-gray-700">{{ t('I Read') }}</span>
+                  <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-8 py-3 shadow-sm flex items-center gap-4">
+                       <span class="text-3xl font-bold text-gray-700">{{ t('I Read') }}</span>
+                       <PlayAudioButton v-if="lesson.readAudio" :audioUrl="lesson.readAudio" />
                   </div>
               </div>
 
@@ -628,8 +631,9 @@
           <!-- Section 3: I Write -->
           <div v-if="lesson.writingPractice" class="mt-8 flex flex-col gap-6">
                <div class="flex justify-start px-4">
-                  <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-6 py-2 shadow-sm flex items-center gap-2">
-                       <span class="text-xl font-bold text-gray-700">{{ t('I Write') }}</span>
+                  <div class="bg-gradient-to-l from-white to-gray-50 border border-gray-200 rounded-l-full px-8 py-3 shadow-sm flex items-center gap-4">
+                       <span class="text-3xl font-bold text-gray-700">{{ t('I Write') }}</span>
+                       <PlayAudioButton v-if="lesson.writeAudio" :audioUrl="lesson.writeAudio" />
                   </div>
               </div>
 
@@ -718,7 +722,10 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                         </svg>
                                     </div> 
-                                    <h3 class="text-lg md:text-xl font-bold text-gray-800 leading-relaxed">{{ exercise.title }}</h3>
+                                    <div class="flex items-center gap-4 w-full">
+                                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 leading-relaxed">{{ exercise.title }}</h3>
+                                        <PlayAudioButton v-if="lesson.circleAudio" :audioUrl="lesson.circleAudio" />
+                                    </div>
                                 </div>
                                 
                                 <button 
@@ -757,9 +764,10 @@
                              <!-- Question & Badge -->
                              <div class="flex-1 flex flex-col gap-4">
                                  <div class="flex items-center gap-3">
-                                      <div class="bg-red-500 text-white px-4 py-1 rounded-full font-bold shadow-md transform -rotate-2">
+                                      <div class="bg-red-500 text-white px-6 py-2 rounded-full font-bold shadow-md transform -rotate-2 text-2xl">
                                           {{ t('Think') }}
                                       </div>
+                                      <PlayAudioButton v-if="lesson.thinkAudio" :audioUrl="lesson.thinkAudio" />
                                  </div>
                                  <p class="text-xl md:text-2xl font-bold text-gray-800 leading-relaxed font-arabic">
                                      {{ exercise.title }}
@@ -854,6 +862,53 @@
 <script setup lang="ts">
 import { getParts } from '~/utils/lessons';
 
+// Custom Audio Player Component (Inline)
+const PlayAudioButton = defineComponent({
+  props: {
+    audioUrl: String,
+    title: String 
+  },
+  setup(props) {
+    const isPlaying = ref(false);
+    let audio: HTMLAudioElement | null = null;
+
+    const toggleAudio = () => {
+      if (!props.audioUrl) return;
+      
+      if (audio) {
+        if (isPlaying.value) {
+            audio.pause();
+            isPlaying.value = false;
+        } else {
+            audio.play();
+            isPlaying.value = true;
+        }
+      } else {
+         audio = new Audio(props.audioUrl);
+         audio.onended = () => { isPlaying.value = false; };
+         audio.play();
+         isPlaying.value = true;
+      }
+    };
+
+    onUnmounted(() => {
+        if (audio) audio.pause();
+    });
+
+    return () => h('button', {
+        class: 'p-2 rounded-full shadow-md transition-colors ' + (isPlaying.value ? 'bg-yellow-100 text-yellow-600' : 'bg-white text-gray-500 hover:bg-gray-50'),
+        onClick: toggleAudio,
+        title: props.title || 'Play Audio'
+    }, [
+        h('svg', { xmlns: 'http://www.w3.org/2000/svg', class: 'h-6 w-6', viewBox: '0 0 20 20', fill: 'currentColor' }, [
+            isPlaying.value 
+                ? h('path', { 'fill-rule': 'evenodd', d: 'M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z', 'clip-rule': 'evenodd' })
+                : h('path', { 'fill-rule': 'evenodd', d: 'M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z', 'clip-rule': 'evenodd' })
+        ])
+    ]);
+  }
+});
+
 const { t, locale } = useI18n();
 const route = useRoute();
 const partId = computed(() => parseInt(route.params.partId as string));
@@ -889,16 +944,21 @@ const toggleAnswer = (exerciseId: number) => {
     showAnswers.value[exerciseId] = !showAnswers.value[exerciseId];
 };
 
-const getHighlightedWord = (word: string, letter: string | undefined, show: boolean) => {
+    const getHighlightedWord = (word: string, letter: string | undefined, show: boolean) => {
     if (!show || !letter) return word;
-    // Highlight letter and optional following diacritics
-    // We use a regex to capture the letter and its tashkeel
-    const escapedLetter = letter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(`(${escapedLetter}[\\u064B-\\u065F]*)`, 'g');
     
-    // Use inline styles to ensure it works regardless of CSS class issues
-    return word.replace(regex, '<span style="border: 2px solid #ef4444; border-radius: 50%; color: #ef4444; padding: 0 4px; display: inline-block;">$1</span>');
+    // Normalize Alif for matching: If searching for 'أ', match any 'ا', 'أ', 'إ', 'آ'
+    let regexSource = letter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (['أ', 'إ', 'آ', 'ا'].includes(letter)) {
+       regexSource = '[أإآا]'; 
+    }
+
+    const regex = new RegExp(`(${regexSource}[\\u064B-\\u065F]*)`, 'g');
+    
+    // Use relative positioning for the text and absolute for the circle to preserve ligatures
+    return word.replace(regex, '<span style="position: relative; display: inline;">$1<span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140%; height: 140%; border: 3px solid #ef4444; border-radius: 50%; pointer-events: none;"></span></span>');
 };
+
 
 
 

@@ -55,7 +55,15 @@ export interface Lesson {
     distinguish?: DistinguishItem[];
     writingPractice?: WritingPracticeItem[];
     exercises?: ExerciseItem[];
-    audioUrl?: string;
+    audioUrl?: string; // Legacy/Fallback
+    watchAudio?: string;
+    listenAudio?: string;
+    readAudio?: string;
+    writeAudio?: string;
+    distinguishAudio?: string;
+    thinkAudio?: string;
+    circleAudio?: string;
+    exercisesAudio?: string; // General exercises audio
     mainImage?: string;
     diagramImages?: string[];
     groupNumber?: number;
