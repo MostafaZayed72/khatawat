@@ -193,9 +193,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             title: t('Letter Taa Lesson'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Berries'), image: '/level2/7/berries.jpg', letter: 'تُ', highlight: 'ت', listenImage: '/level2/7/listen/1.png', readImage: '/level2/7/read/1.png' },
+                { id: 1, text: t('Dates'), image: '/level2/7/dates.jpg', letter: 'تَ', highlight: 'ت', listenImage: '/level2/7/listen/1.png', readImage: '/level2/7/read/1.png' },
                 { id: 2, text: t('Figs'), image: '/level2/7/fig.jpg', letter: 'تِ', highlight: 'ت', listenImage: '/level2/7/listen/2.png', readImage: '/level2/7/read/2.png' },
-                { id: 3, text: t('Dates'), image: '/level2/7/dates.jpg', letter: 'تَ', highlight: 'ت', listenImage: '/level2/7/listen/3.png', readImage: '/level2/7/read/3.png' },
+                { id: 3, text: t('Berries'), image: '/level2/7/berries.jpg', letter: 'تُ', highlight: 'ت', listenImage: '/level2/7/listen/3.png', readImage: '/level2/7/read/3.png' },
             ],
             distinguish: [
                 { id: 1, badge: 'ا', long: 'تَا', short: 'تَ' },
@@ -251,9 +251,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             title: t('Letter Thaa Lesson'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Snake'), image: '/level2/8/snake.jpg', letter: 'ثُ', highlight: 'ث' },
-                { id: 2, text: t('Clothes'), image: '/level2/8/clothes.jpg', letter: 'ثِ', highlight: 'ث' },
-                { id: 3, text: t('Bull'), image: '/level2/8/bull.jpg', letter: 'ثَ', highlight: 'ث' },
+                { id: 1, text: t('Bull'), image: '/level2/8/bull.jpg', letter: 'ثَ', highlight: 'ث', listenImage: '/level2/8/listen/1.png', readImage: '/level2/8/read/1.png' },
+                { id: 2, text: t('Clothes'), image: '/level2/8/clothes.jpg', letter: 'ثِ', highlight: 'ث', listenImage: '/level2/8/listen/2.png', readImage: '/level2/8/read/2.png' },
+                { id: 3, text: t('Snake'), image: '/level2/8/snake.jpg', letter: 'ثُ', highlight: 'ث', listenImage: '/level2/8/listen/3.png', readImage: '/level2/8/read/3.png' },
             ],
             distinguish: [
                 { id: 1, badge: 'ا', long: 'ثَا', short: 'ثَ' },
@@ -286,6 +286,22 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 }
             ],
             audioUrl: '/level2/8/8.wav',
+            watchAudio: '/level2/8/1.mp3',
+            listenAudio: '/level2/8/2.mp3',
+            readAudio: '/level2/8/3.mp3',
+            writeAudio: '/level2/8/4.mp3',
+            distinguishAudio: '/level2/8/5.mp3',
+            thinkAudio: '/level2/8/7.mp3',
+            circleAudio: '/level2/8/6.mp3',
+            writingImages: ['/level2/8/write_1.png', '/level2/8/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ'],
+            rememberAudio: '/level2/8/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['ثَ', 'بَ', 'تَ'], word: 'ثَبَتَ' },
+                { id: 2, letters: ['ثَا', 'بَ'], word: 'ثَابَ' },
+                { id: 3, letters: ['بَ', 'ثَّ'], word: 'بَثَّ' }
+            ],
+            assembleAudio: '/level2/8/assemble.mp3',
         },
         {
             id: 9,
