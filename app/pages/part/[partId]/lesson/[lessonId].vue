@@ -358,13 +358,13 @@
                 <div class="bg-[#ffcc80] p-2 text-center border-b-[3px] border-[#ffcc80]">
                    <h2 class="text-4xl font-black text-[#1565c0] font-arabic tracking-wide">{{ item.text }}</h2>
                 </div>
-                <div class="bg-[#fff9c4] h-24 flex justify-center items-center border-b-[3px] border-[#ffcc80]">
+                <div class="bg-[#fff9c4] h-24 flex justify-center items-center border-b-[3px] border-[#ffcc80] relative">
                    <!-- Fatha for lesson 1 & 18 & 21 -->
                    <div v-if="lesson.id === 1 || lesson.id === 18 || lesson.id === 21" class="w-20 h-3 bg-[#d50000] rounded-full transform -rotate-[25deg]"></div>
                    <!-- Kasra for lesson 2 & 19 & 22 -->
                    <div v-else-if="lesson.id === 2 || lesson.id === 19 || lesson.id === 22" class="w-20 h-3 bg-[#d50000] rounded-full transform -rotate-[25deg]"></div>
                    <!-- Damma for lesson 3 & 20 & 23 (small waw) -->
-                   <div v-else-if="lesson.id === 3 || lesson.id === 20 || lesson.id === 23" class="text-[220px] mt-32 font-black text-[#d50000] leading-none font-arabic">ُ</div>
+                   <div v-else-if="lesson.id === 3 || lesson.id === 20 || lesson.id === 23" class="text-[200px] font-black text-[#d50000] leading-none font-arabic absolute top-32 left-1/2 transform -translate-x-1/2 -translate-y-[35%]">ُ</div>
                 </div>
                 <div class="relative w-full h-72">
                    <img :src="item.image" :alt="item.text" class="w-full h-full object-cover" />
@@ -376,7 +376,7 @@
              <div class="flex flex-col items-center justify-center pt-10">
                  <div class="relative">
                      <template v-if="lesson.id === 1">
-                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-[#d50000] rounded-full -rotate-[25deg] shadow-sm z-10"></div>
+                        <div class="absolute -top-20 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-[#d50000] rounded-full -rotate-[25deg] shadow-sm z-10"></div>
                         <span class="text-[250px] font-black text-[#212121] leading-none font-arabic mt-4 block">أ</span>
                      </template>
                      <template v-else-if="lesson.id === 2">
@@ -588,6 +588,50 @@
                     </div>
                </div>
           </div>
+
+
+           <!-- New Section: I Remember -->
+           <div v-if="lesson.remember" class="flex flex-col items-center justify-center p-8 bg-amber-50 rounded-3xl mt-16 max-w-6xl mx-auto border-4 border-amber-200 w-full relative">
+                <div class="absolute -top-8 px-8 py-2 bg-white rounded-full border-4 border-amber-200 shadow-lg flex items-center gap-4">
+                     <h3 class="text-4xl font-black text-amber-600 font-arabic">{{ t('I remember') }}</h3>
+                     <PlayAudioButton v-if="lesson.rememberAudio" :audioUrl="lesson.rememberAudio" />
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-4 md:gap-8 mt-4">
+                    <div v-for="(char, idx) in lesson.remember" :key="idx" class="text-4xl md:text-6xl font-bold text-gray-800 font-amiri leading-normal">
+                        <span class="text-red-600">{{ char }}</span>
+                        <span v-if="idx < lesson.remember.length - 1" class="text-gray-400 mx-2">-</span>
+                    </div>
+                </div>
+           </div>
+
+           <!-- New Section: I Assemble -->
+           <div v-if="lesson.assemble" class="flex flex-col items-center justify-center p-4 md:p-8 mt-16 max-w-6xl mx-auto w-full">
+                <div class="mb-12 px-12 py-3 bg-gradient-to-r from-gray-100 to-gray-200 rounded-2xl border border-gray-300 shadow-sm self-start flex items-center gap-4">
+                     <h3 class="text-3xl md:text-4xl font-black text-gray-800 font-arabic">{{ t('I assemble') }}</h3>
+                     <PlayAudioButton v-if="lesson.assembleAudio" :audioUrl="lesson.assembleAudio" />
+                </div>
+                
+                <div class="flex flex-col gap-6 w-full max-w-5xl">
+                    <div v-for="item in lesson.assemble" :key="item.id" class="flex flex-row items-center justify-between gap-4 md:gap-8 w-full">
+                         <!-- Letters Part (Right side in RTL) -->
+                         <div class="flex items-center gap-4">
+                             <div v-for="(letter, lIdx) in item.letters" :key="lIdx" class="w-16 h-16 md:w-24 md:h-24 bg-green-100 border-b-4 border-green-600 rounded-xl flex items-center justify-center shadow-sm">
+                                 <span class="text-3xl md:text-5xl font-bold text-black font-amiri">{{ letter }}</span>
+                             </div>
+                         </div>
+
+                         <!-- Connector/Arrow -->
+                         <div class="flex-grow h-1 bg-gradient-to-l from-yellow-200 to-transparent mx-4 relative hidden md:block">
+                              <div class="absolute left-0 top-1/2 transform -translate-y-1/2 -ml-2 w-0 h-0 border-t-[10px] border-t-transparent border-r-[20px] border-r-yellow-200 border-b-[10px] border-b-transparent"></div>
+                         </div>
+
+                         <!-- Result Word (Left side in RTL) -->
+                         <div class="w-32 h-16 md:w-48 md:h-24 bg-red-100 border-r-4 border-red-600 rounded-xl flex items-center justify-center shadow-md">
+                              <span class="text-3xl md:text-5xl font-bold text-black font-amiri">{{ item.word }}</span>
+                         </div>
+                    </div>
+                </div>
+           </div>
 
           <!-- Section 3: I Write -->
           <div v-if="lesson.writingPractice" class="mt-8 flex flex-col gap-6">

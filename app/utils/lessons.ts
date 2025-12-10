@@ -69,6 +69,10 @@ export interface Lesson {
     groupNumber?: number;
     writingImage?: string;
     writingImages?: string[];
+    remember?: string[];
+    rememberAudio?: string;
+    assemble?: { id: number; letters: string[]; word: string }[];
+    assembleAudio?: string;
 }
 
 export interface Part {

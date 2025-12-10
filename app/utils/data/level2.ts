@@ -178,6 +178,15 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             thinkAudio: '/level2/6/7.mp3',
             circleAudio: '/level2/6/6.mp3',
             writingImages: ['/level2/6/write_1.png', '/level2/6/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ'],
+            rememberAudio: '/level2/6/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['أَ', 'ب'], word: 'أَب' },
+                { id: 2, letters: ['بُ', 'ن'], word: 'بُن' },
+                { id: 3, letters: ['بَ', 'ا', 'ب'], word: 'بَاب' },
+                { id: 4, letters: ['بِ', 'نْ', 'ت'], word: 'بِنْت' }
+            ],
+            assembleAudio: '/level2/6/assemble.mp3',
         },
         {
             id: 7,
@@ -215,7 +224,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     type: 'think',
                     title: t('Mention words with letter Taa'),
                     image: '/level2/7/apple.jpg',
-                    answer: t('Apple')
+                    answer: t('Apple').replace('Apple', 'تُفَّاح')
                 }
             ],
             audioUrl: '/level2/7/7.wav',
@@ -227,49 +236,16 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             thinkAudio: '/level2/7/7.mp3',
             circleAudio: '/level2/7/6.mp3',
             writingImages: ['/level2/7/write_1.png', '/level2/7/write_2.png'],
-        },
-        {
-            id: 21,
-            title: t('The Three Short Vowels (Taa - 1)'),
-            type: 'shortVowels',
-            items: [
-                {
-                    id: 1,
-                    text: t('Fatha'),
-                    image: '/level2/21/1.png',
-                    text2: t('By opening the mouth')
-                },
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ'],
+            rememberAudio: '/level2/7/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['تَا', 'بَ'], word: 'تَابَ' },
+                { id: 2, letters: ['تُو', 'تُ'], word: 'تُوتُ' },
+                { id: 3, letters: ['بَ', 'ا', 'تَ', 'تْ'], word: 'بَاتَتْ' }
             ],
-            audioUrl: '/level2/21/1.wav',
+            assembleAudio: '/level2/7/assemble.mp3',
         },
-        {
-            id: 22,
-            title: t('The Three Short Vowels (Taa - 2)'),
-            type: 'shortVowels',
-            items: [
-                {
-                    id: 1,
-                    text: t('Kasra'),
-                    image: '/level2/22/1.png',
-                    text2: t('By lowering the lower jaw')
-                },
-            ],
-            audioUrl: '/level2/22/1.wav',
-        },
-        {
-            id: 23,
-            title: t('The Three Short Vowels (Taa - 3)'),
-            type: 'shortVowels',
-            items: [
-                {
-                    id: 1,
-                    text: t('Damma'),
-                    image: '/level2/23/1.png',
-                    text2: t('By rounding the lips')
-                },
-            ],
-            audioUrl: '/level2/23/1.wav',
-        },
+
         {
             id: 8,
             title: t('Letter Thaa Lesson'),
