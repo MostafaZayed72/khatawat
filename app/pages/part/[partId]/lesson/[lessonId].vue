@@ -689,16 +689,16 @@
 
                     <!-- Exercise: Think -->
                    <template v-else-if="exercise.type === 'think'">
-                       <div class="flex flex-col md:flex-row items-center gap-8 bg-white p-6 rounded-3xl shadow-lg border border-gray-100 mt-8">
+                       <div class="text-3xl md:text-5xl flex flex-col md:flex-row items-center gap-8 bg-white p-6 rounded-3xl shadow-lg border border-gray-100 mt-8">
                              <!-- Question & Badge -->
                              <div class="flex-1 flex flex-col gap-4">
-                                 <div class="flex items-center gap-3">
-                                      <div class="bg-red-500 text-white px-6 py-2 rounded-full font-bold shadow-md transform -rotate-2 text-2xl">
+                                 <div class="text-2xl md:text-3xl flex items-center gap-3">
+                                      <div class="text-2xl md:text-3xl bg-red-500 text-white px-6 py-2 rounded-full font-bold shadow-md transform -rotate-2 text-2xl">
                                           {{ t('Think') }}
                                       </div>
                                       <PlayAudioButton v-if="lesson.thinkAudio" :audioUrl="lesson.thinkAudio" />
                                  </div>
-                                 <p class="text-xl md:text-2xl font-bold text-gray-800 leading-relaxed font-arabic">
+                                 <p class="text-2xl md:text-3xl font-bold text-gray-800 leading-relaxed font-arabic">
                                      {{ exercise.title }}
                                  </p>
                              </div>
