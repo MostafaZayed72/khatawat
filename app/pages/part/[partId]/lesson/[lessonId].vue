@@ -373,7 +373,7 @@
                    <h3 class="text-4xl font-black text-black font-arabic tracking-wide">{{ item.text2 }}</h3>
                 </div>
              </div>
-             <div class="flex flex-col items-center justify-center pt-10">
+             <div class="flex flex-col items-center justify-center pt-10 mt-10">
                  <div class="relative">
                      <template v-if="lesson.id === 1">
                         <div class="absolute -top-20 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-[#d50000] rounded-full -rotate-[25deg] shadow-sm z-10"></div>
