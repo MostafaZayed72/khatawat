@@ -1,56 +1,77 @@
+
 from PIL import Image
 import os
 
-files = [
-    'C:/Users/Mostafa/.gemini/antigravity/brain/ae34bf4a-fe87-4f73-8a51-61e1bf247aa9/uploaded_image_0_1765288807662.png',
-    'C:/Users/Mostafa/.gemini/antigravity/brain/ae34bf4a-fe87-4f73-8a51-61e1bf247aa9/uploaded_image_1_1765288807662.png',
-    'C:/Users/Mostafa/.gemini/antigravity/brain/ae34bf4a-fe87-4f73-8a51-61e1bf247aa9/uploaded_image_2_1765288807662.png'
-]
+# Source Images (from metadata)
+base_path = r"C:\Users\Mostafa\.gemini\antigravity\brain\f0b6b6e3-c01d-4ca2-a8a7-973cef0d44ea"
+image_0 = os.path.join(base_path, "uploaded_image_0_1765365327713.png") # Listen Words
+image_1 = os.path.join(base_path, "uploaded_image_1_1765365327713.png") # Read Letters
+image_2 = os.path.join(base_path, "uploaded_image_2_1765365327713.png") # Writing Rows
+image_3 = os.path.join(base_path, "uploaded_image_3_1765365327713.png") # Full Writing
 
-dest_dirs = [
-    'public/level2/5/listen/',
-    'public/level2/5/read/',
-    'public/level2/5/write/'
-]
+# Destination Paths
+dest_base = r"e:\projects\khatwat\public\level2\7"
 
-for d in dest_dirs:
-    os.makedirs(d, exist_ok=True)
-
-# Order is a guess, can be swapped later.
-# Assuming:
-# 0 -> Listen (Words images)
-# 1 -> Read (Letters)
-# 2 -> Write (Tracing)
-# Or maybe the user uploaded them in order Listen, Read, Write.
-
-for i, fpath in enumerate(files):
-    if i >= len(dest_dirs): break
-    
+def slice_horizontal(image_path, dest_folder, count=3):
     try:
-        img = Image.open(fpath)
-        w, h = img.size
-        
-        # We need 3 parts.
-        # RTL Language: 
-        # Item 1 (Right): [2/3w : w]
-        # Item 2 (Middle): [1/3w : 2/3w]
-        # Item 3 (Left): [0 : 1/3w]
-        
-        part_w = w // 3
-        
-        # Item 1
-        crop1 = img.crop((part_w * 2, 0, w, h))
-        crop1.save(os.path.join(dest_dirs[i], '1.png'))
-        
-        # Item 2
-        crop2 = img.crop((part_w, 0, part_w * 2, h))
-        crop2.save(os.path.join(dest_dirs[i], '2.png'))
-        
-        # Item 3
-        crop3 = img.crop((0, 0, part_w, h))
-        crop3.save(os.path.join(dest_dirs[i], '3.png'))
-        
-        print(f"Processed {fpath} to {dest_dirs[i]}")
-        
+        img = Image.open(image_path)
+        width, height = img.size
+        step = width // count
+        for i in range(count):
+            # RTL: image 1 is the rightmost slice
+            left = width - (step * (i + 1))
+            right = width - (step * i)
+            # Adjust for last slice to catch rounding pixels
+            if i == count - 1:
+                left = 0
+            
+            box = (left, 0, right, height)
+            slice_img = img.crop(box)
+            slice_img.save(os.path.join(dest_folder, f"{i+1}.png"))
+            print(f"Saved {dest_folder}/{i+1}.png")
     except Exception as e:
-        print(f"Error processing {fpath}: {e}")
+        print(f"Error slicing {image_path}: {e}")
+
+def slice_vertical(image_path, dest_folder, count=3):
+    try:
+        img = Image.open(image_path)
+        width, height = img.size
+        step = height // count
+        for i in range(count):
+            # Top to Bottom? Usually writing practice goes 1, 2, 3
+            top = step * i
+            bottom = step * (i + 1)
+             # Adjust for last slice
+            if i == count - 1:
+                bottom = height
+
+            box = (0, top, width, bottom)
+            slice_img = img.crop(box)
+            slice_img.save(os.path.join(dest_folder, f"{i+1}.png"))
+            print(f"Saved {dest_folder}/{i+1}.png")
+    except Exception as e:
+        print(f"Error slicing {image_path}: {e}")
+
+# Process Image 0 (Listen/Read Words)
+listen_dir = os.path.join(dest_base, "listen")
+os.makedirs(listen_dir, exist_ok=True)
+slice_horizontal(image_0, listen_dir, 3)
+
+# Process Image 1 (Letters) -> Read Items
+read_dir = os.path.join(dest_base, "read")
+os.makedirs(read_dir, exist_ok=True)
+slice_horizontal(image_1, read_dir, 3)
+
+# Process Image 2 (Writing Rows) -> Writing Practice
+write_dir = os.path.join(dest_base, "write")
+os.makedirs(write_dir, exist_ok=True)
+slice_vertical(image_2, write_dir, 3)
+
+# Process Image 3 (Full Writing) -> Writing Full
+try:
+    os.makedirs(dest_base, exist_ok=True)
+    img = Image.open(image_3)
+    img.save(os.path.join(dest_base, "write_full.png"))
+    print("Saved write_full.png")
+except Exception as e:
+    print(f"Error saving full write image: {e}")

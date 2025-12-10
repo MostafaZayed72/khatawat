@@ -68,6 +68,7 @@ export interface Lesson {
     diagramImages?: string[];
     groupNumber?: number;
     writingImage?: string;
+    writingImages?: string[];
 }
 
 export interface Part {

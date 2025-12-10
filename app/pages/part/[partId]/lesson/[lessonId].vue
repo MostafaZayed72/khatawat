@@ -359,12 +359,12 @@
                    <h2 class="text-4xl font-black text-[#1565c0] font-arabic tracking-wide">{{ item.text }}</h2>
                 </div>
                 <div class="bg-[#fff9c4] h-24 flex justify-center items-center border-b-[3px] border-[#ffcc80]">
-                   <!-- Fatha for lesson 1 -->
-                   <div v-if="lesson.id === 1" class="w-20 h-3 bg-[#d50000] rounded-full transform -rotate-[25deg]"></div>
-                   <!-- Kasra for lesson 2 -->
-                   <div v-else-if="lesson.id === 2" class="w-20 h-3 bg-[#d50000] rounded-full transform -rotate-[25deg]"></div>
-                   <!-- Damma for lesson 3 (small waw) -->
-                   <div v-else-if="lesson.id === 3" class="text-[220px] mt-32 font-black text-[#d50000] leading-none font-arabic">ُ</div>
+                   <!-- Fatha for lesson 1 & 18 & 21 -->
+                   <div v-if="lesson.id === 1 || lesson.id === 18 || lesson.id === 21" class="w-20 h-3 bg-[#d50000] rounded-full transform -rotate-[25deg]"></div>
+                   <!-- Kasra for lesson 2 & 19 & 22 -->
+                   <div v-else-if="lesson.id === 2 || lesson.id === 19 || lesson.id === 22" class="w-20 h-3 bg-[#d50000] rounded-full transform -rotate-[25deg]"></div>
+                   <!-- Damma for lesson 3 & 20 & 23 (small waw) -->
+                   <div v-else-if="lesson.id === 3 || lesson.id === 20 || lesson.id === 23" class="text-[220px] mt-32 font-black text-[#d50000] leading-none font-arabic">ُ</div>
                 </div>
                 <div class="relative w-full h-72">
                    <img :src="item.image" :alt="item.text" class="w-full h-full object-cover" />
@@ -388,6 +388,38 @@
                            <span class="text-[120px] font-black text-[#d50000] leading-none font-arabic">ُ</span>
                         </div>
                         <span class="text-[250px] font-black text-[#212121] leading-none font-arabic mt-4 block">أ</span>
+                     </template>
+
+                     <!-- Baa Logic -->
+                     <template v-else-if="lesson.id === 18">
+                        <div class="absolute top-4 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-[#d50000] rounded-full -rotate-[25deg] shadow-sm z-10"></div>
+                        <span class="text-[250px] font-black text-[#212121] leading-none font-arabic mt-4 block">ب</span>
+                     </template>
+                     <template v-else-if="lesson.id === 19">
+                        <span class="text-[250px] font-black text-[#212121] leading-none font-arabic mt-4 block">ب</span>
+                        <div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-[#d50000] rounded-full -rotate-[25deg] shadow-sm z-10"></div>
+                     </template>
+                     <template v-else-if="lesson.id === 20">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                           <span class="text-[120px] font-black text-[#d50000] leading-none font-arabic">ُ</span>
+                        </div>
+                        <span class="text-[250px] font-black text-[#212121] leading-none font-arabic mt-4 block">ب</span>
+                     </template>
+
+                     <!-- Taa Logic -->
+                     <template v-else-if="lesson.id === 21">
+                        <div class="absolute top-4 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-[#d50000] rounded-full -rotate-[25deg] shadow-sm z-10"></div>
+                        <span class="text-[250px] font-black text-[#212121] leading-none font-arabic mt-4 block">ت</span>
+                     </template>
+                     <template v-else-if="lesson.id === 22">
+                        <span class="text-[250px] font-black text-[#212121] leading-none font-arabic mt-4 block">ت</span>
+                        <div class="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-[#d50000] rounded-full -rotate-[25deg] shadow-sm z-10"></div>
+                     </template>
+                     <template v-else-if="lesson.id === 23">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                           <span class="text-[120px] font-black text-[#d50000] leading-none font-arabic">ُ</span>
+                        </div>
+                        <span class="text-[250px] font-black text-[#212121] leading-none font-arabic mt-4 block">ت</span>
                      </template>
                  </div>
              </div>
@@ -570,6 +602,11 @@
                   <!-- Single Image Mode -->
                   <div v-if="lesson.writingImage" class="w-full">
                       <img :src="lesson.writingImage" class="w-full h-auto object-contain rounded-xl" />
+                  </div>
+
+                  <!-- Multiple Images Mode -->
+                  <div v-else-if="lesson.writingImages" class="w-full flex flex-col gap-8">
+                      <img v-for="(img, idx) in lesson.writingImages" :key="idx" :src="img" class="w-full h-auto object-contain rounded-xl" />
                   </div>
 
                   <!-- Standard Practice Mode -->

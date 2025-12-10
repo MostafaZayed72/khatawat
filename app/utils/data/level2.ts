@@ -135,9 +135,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             title: t('Letter Baa Lesson'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Duck'), image: '/level2/6/duck.jpg', letter: 'بَ', highlight: 'ب' },
-                { id: 2, text: t('Watermelon'), image: '/level2/6/watermelon.jpg', letter: 'بِ', highlight: 'ب' },
-                { id: 3, text: t('Tower'), image: '/level2/6/tower.jpg', letter: 'بُ', highlight: 'ب' },
+                { id: 1, text: t('Duck'), image: '/level2/6/duck.jpg', letter: 'بَ', highlight: 'ب', listenImage: '/level2/6/listen/1.png', readImage: '/level2/6/read/1.png' },
+                { id: 2, text: t('Watermelon'), image: '/level2/6/watermelon.jpg', letter: 'بِ', highlight: 'ب', listenImage: '/level2/6/listen/2.png', readImage: '/level2/6/read/2.png' },
+                { id: 3, text: t('Tower'), image: '/level2/6/tower.jpg', letter: 'بُ', highlight: 'ب', listenImage: '/level2/6/listen/3.png', readImage: '/level2/6/read/3.png' },
             ],
             distinguish: [
                 { id: 1, badge: 'ا', long: 'بَا', short: 'بَ' },
@@ -145,9 +145,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 3, badge: 'و', long: 'بُو', short: 'بُ' },
             ],
             writingPractice: [
-                { id: 1, text: 'ب', sub: 'بِ', text2: 'بُ', type: 'solid' },
-                { id: 2, text: 'بَ', sub: 'بِ', text2: 'بُ', type: 'dotted' },
-                { id: 3, text: 'بَ', sub: 'بِ', text2: 'بُ', type: 'dotted' },
+                { id: 1, text: 'بَ', sub: 'بِ', text2: 'بُ', type: 'solid', image: '/level2/6/write/1.png' },
+                { id: 2, text: 'بَ', sub: 'بِ', text2: 'بُ', type: 'dotted', image: '/level2/6/write/2.png' },
+                { id: 3, text: 'بَ', sub: 'بِ', text2: 'بُ', type: 'dotted', image: '/level2/6/write/3.png' },
             ],
             exercises: [
                 {
@@ -156,9 +156,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     letter: 'ب',
                     title: t('Exercise: Circle Letter Baa'),
                     words: [
-                        'White', 'Fox', 'Ibrahim',
-                        'Gate', 'Fly', 'Seven',
-                        'Well', 'Milk', 'Drinks'
+                        'بُرْج', 'بَطِيخ', 'بَط',
+                        'أَب', 'بَاب', 'بِنْت',
+                        'بَيْت', 'كِتَاب', 'عِنَب'
                     ]
                 },
                 {
@@ -170,15 +170,23 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 }
             ],
             audioUrl: '/level2/6/6.wav',
+            watchAudio: '/level2/6/1.mp3',
+            listenAudio: '/level2/6/2.mp3',
+            readAudio: '/level2/6/3.mp3',
+            writeAudio: '/level2/6/4.mp3',
+            distinguishAudio: '/level2/6/5.mp3',
+            thinkAudio: '/level2/6/7.mp3',
+            circleAudio: '/level2/6/6.mp3',
+            writingImages: ['/level2/6/write_1.png', '/level2/6/write_2.png'],
         },
         {
             id: 7,
             title: t('Letter Taa Lesson'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Berries'), image: '/level2/7/berries.jpg', letter: 'تُ', highlight: 'ت' },
-                { id: 2, text: t('Figs'), image: '/level2/7/fig.jpg', letter: 'تِ', highlight: 'ت' },
-                { id: 3, text: t('Dates'), image: '/level2/7/dates.jpg', letter: 'تَ', highlight: 'ت' },
+                { id: 1, text: t('Berries'), image: '/level2/7/berries.jpg', letter: 'تُ', highlight: 'ت', listenImage: '/level2/7/listen/1.png', readImage: '/level2/7/read/1.png' },
+                { id: 2, text: t('Figs'), image: '/level2/7/fig.jpg', letter: 'تِ', highlight: 'ت', listenImage: '/level2/7/listen/2.png', readImage: '/level2/7/read/2.png' },
+                { id: 3, text: t('Dates'), image: '/level2/7/dates.jpg', letter: 'تَ', highlight: 'ت', listenImage: '/level2/7/listen/3.png', readImage: '/level2/7/read/3.png' },
             ],
             distinguish: [
                 { id: 1, badge: 'ا', long: 'تَا', short: 'تَ' },
@@ -186,9 +194,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 3, badge: 'و', long: 'تُو', short: 'تُ' },
             ],
             writingPractice: [
-                { id: 1, text: 'تَابَ', sub: 'تُوتُ', text2: 'بَاتَتْ', type: 'solid' },
-                { id: 2, text: 'تَابَ', sub: 'تُوتُ', text2: 'بَاتَتْ', type: 'dotted' },
-                { id: 3, text: 'تَابَ', sub: 'تُوتُ', text2: 'بَاتَتْ', type: 'dotted' },
+                { id: 1, text: 'تَابَ', sub: 'تُوتُ', text2: 'بَاتَتْ', type: 'solid', image: '/level2/7/write/1.png' },
+                { id: 2, text: 'تَابَ', sub: 'تُوتُ', text2: 'بَاتَتْ', type: 'dotted', image: '/level2/7/write/2.png' },
+                { id: 3, text: 'تَابَ', sub: 'تُوتُ', text2: 'بَاتَتْ', type: 'dotted', image: '/level2/7/write/3.png' },
             ],
             exercises: [
                 {
@@ -211,6 +219,56 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 }
             ],
             audioUrl: '/level2/7/7.wav',
+            watchAudio: '/level2/7/1.mp3',
+            listenAudio: '/level2/7/2.mp3',
+            readAudio: '/level2/7/3.mp3',
+            writeAudio: '/level2/7/4.mp3',
+            distinguishAudio: '/level2/7/5.mp3',
+            thinkAudio: '/level2/7/7.mp3',
+            circleAudio: '/level2/7/6.mp3',
+            writingImages: ['/level2/7/write_1.png', '/level2/7/write_2.png'],
+        },
+        {
+            id: 21,
+            title: t('The Three Short Vowels (Taa - 1)'),
+            type: 'shortVowels',
+            items: [
+                {
+                    id: 1,
+                    text: t('Fatha'),
+                    image: '/level2/21/1.png',
+                    text2: t('By opening the mouth')
+                },
+            ],
+            audioUrl: '/level2/21/1.wav',
+        },
+        {
+            id: 22,
+            title: t('The Three Short Vowels (Taa - 2)'),
+            type: 'shortVowels',
+            items: [
+                {
+                    id: 1,
+                    text: t('Kasra'),
+                    image: '/level2/22/1.png',
+                    text2: t('By lowering the lower jaw')
+                },
+            ],
+            audioUrl: '/level2/22/1.wav',
+        },
+        {
+            id: 23,
+            title: t('The Three Short Vowels (Taa - 3)'),
+            type: 'shortVowels',
+            items: [
+                {
+                    id: 1,
+                    text: t('Damma'),
+                    image: '/level2/23/1.png',
+                    text2: t('By rounding the lips')
+                },
+            ],
+            audioUrl: '/level2/23/1.wav',
         },
         {
             id: 8,
@@ -585,6 +643,48 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 }
             ],
             audioUrl: '/level2/17/17.wav',
+        },
+        {
+            id: 18,
+            title: t('The Three Short Vowels (Ba - 1)'),
+            type: 'shortVowels',
+            items: [
+                {
+                    id: 1,
+                    text: t('Fatha'),
+                    image: '/level2/18/1.png',
+                    text2: t('By opening the mouth')
+                },
+            ],
+            audioUrl: '/level2/18/1.wav',
+        },
+        {
+            id: 19,
+            title: t('The Three Short Vowels (Ba - 2)'),
+            type: 'shortVowels',
+            items: [
+                {
+                    id: 1,
+                    text: t('Kasra'),
+                    image: '/level2/19/1.png',
+                    text2: t('By lowering the lower jaw')
+                },
+            ],
+            audioUrl: '/level2/19/1.wav',
+        },
+        {
+            id: 20,
+            title: t('The Three Short Vowels (Ba - 3)'),
+            type: 'shortVowels',
+            items: [
+                {
+                    id: 1,
+                    text: t('Damma'),
+                    image: '/level2/20/1.png',
+                    text2: t('By rounding the lips')
+                },
+            ],
+            audioUrl: '/level2/20/1.wav',
         },
     ];
 
