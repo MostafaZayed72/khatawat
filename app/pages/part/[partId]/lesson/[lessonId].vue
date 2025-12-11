@@ -591,11 +591,16 @@
 
 
            <!-- New Section: I Remember -->
-           <div v-if="lesson.remember" class="flex flex-col items-center justify-center p-8 bg-amber-50 rounded-3xl mt-16 max-w-6xl mx-auto border-4 border-amber-200 w-full relative">
-                <div class="absolute -top-8 px-8 py-2 bg-white rounded-full border-4 border-amber-200 shadow-lg flex items-center gap-4">
-                     <h3 class="text-4xl font-black text-amber-600 font-arabic">{{ t('I remember') }}</h3>
-                     <PlayAudioButton v-if="lesson.rememberAudio" :audioUrl="lesson.rememberAudio" />
+           <!-- New Section: I Remember -->
+           <div v-if="lesson.remember" class="flex flex-col gap-8 bg-amber-50 p-6 rounded-3xl border border-amber-100 mt-16 max-w-6xl mx-auto w-full">
+                <!-- Header -->
+                <div class="flex justify-start px-4">
+                    <div class="bg-white border border-amber-200 rounded-2xl px-8 py-3 shadow-sm flex items-center gap-4">
+                        <h3 class="text-4xl font-black text-amber-600 font-arabic">{{ t('I remember') }}</h3>
+                        <PlayAudioButton v-if="lesson.rememberAudio" :audioUrl="lesson.rememberAudio" />
+                    </div>
                 </div>
+
                 <div class="flex flex-wrap items-center justify-center gap-4 md:gap-8 mt-4">
                     <div v-for="(char, idx) in lesson.remember" :key="idx" class="text-4xl md:text-6xl font-bold text-gray-800 font-amiri leading-normal">
                         <span class="text-red-600">{{ char }}</span>
