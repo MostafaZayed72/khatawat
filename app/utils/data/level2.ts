@@ -594,9 +594,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('The Third Group'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Bear'), image: '/level2/16/bear.jpg', letter: 'دُ', highlight: 'د' },
-                { id: 2, text: t('Rooster'), image: '/level2/16/rooster.jpg', letter: 'دِ', highlight: 'د' },
-                { id: 3, text: t('Chicken'), image: '/level2/16/chicken.jpg', letter: 'دَ', highlight: 'د' },
+                { id: 1, text: t('Bear'), image: '/level2/16/bear.jpg', letter: 'دُ', highlight: 'د', listenImage: '/level2/16/listen/1.png', readImage: '/level2/16/read/1.png' },
+                { id: 2, text: t('Rooster'), image: '/level2/16/rooster.jpg', letter: 'دِ', highlight: 'د', listenImage: '/level2/16/listen/2.png', readImage: '/level2/16/read/2.png' },
+                { id: 3, text: t('Chicken'), image: '/level2/16/chicken.jpg', letter: 'دَ', highlight: 'د', listenImage: '/level2/16/listen/3.png', readImage: '/level2/16/read/3.png' },
             ],
             distinguish: [
                 { id: 1, badge: 'ا', long: 'دَا', short: 'دَ' },
@@ -631,11 +631,28 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     id: 2,
                     type: 'think',
                     title: t('Mention words with letter Dal'),
-                    image: '/level2/16/polar_bear.jpg',
+                    image: '/level2/16/bear.jpg',
                     answer: 'دُبّ'
                 }
             ],
             audioUrl: '/level2/16/16.wav',
+            watchAudio: '/level2/16/1.mp3',
+            listenAudio: '/level2/16/2.mp3',
+            readAudio: '/level2/16/3.mp3',
+            writeAudio: '/level2/16/4.mp3',
+            distinguishAudio: '/level2/16/5.mp3',
+            thinkAudio: '/level2/16/7.mp3',
+            circleAudio: '/level2/16/6.mp3',
+            writingImages: ['/level2/16/write_1.png', '/level2/16/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ'],
+            rememberAudio: '/level2/16/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['دُ', 'ب'], word: 'دُبّ' },
+                { id: 2, letters: ['ب', 'دَ', 'أَ'], word: 'أَدَب' },
+                { id: 3, letters: ['د', 'جَ'], word: 'جَد' },
+                { id: 4, letters: ['د', 'دِي', 'حَ'], word: 'حَدِيد' }
+            ],
+            assembleAudio: '/level2/16/assemble.mp3',
         },
         {
             id: 17,
@@ -686,7 +703,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             ],
             audioUrl: '/level2/17/17.wav',
         },
-       
+
     ];
 
     return part2Lessons;
