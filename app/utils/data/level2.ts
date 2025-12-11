@@ -480,9 +480,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('The Second Group'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Bread'), image: '/level2/13/bread.jpg', letter: 'خُ', highlight: 'خ' },
-                { id: 2, text: t('Cucumber'), image: '/level2/13/cucumber.jpg', letter: 'خِ', highlight: 'خ' },
-                { id: 3, text: t('Lettuce'), image: '/level2/13/lettuce.jpg', letter: 'خَ', highlight: 'خ' },
+                { id: 1, text: t('Bread'), image: '/level2/13/bread.jpg', letter: 'خُ', highlight: 'خ', listenImage: '/level2/13/listen/1.png', readImage: '/level2/13/read/1.png' },
+                { id: 2, text: t('Cucumber'), image: '/level2/13/cucumber.jpg', letter: 'خِ', highlight: 'خ', listenImage: '/level2/13/listen/2.png', readImage: '/level2/13/read/2.png' },
+                { id: 3, text: t('Lettuce'), image: '/level2/13/lettuce.jpg', letter: 'خَ', highlight: 'خ', listenImage: '/level2/13/listen/3.png', readImage: '/level2/13/read/3.png' },
             ],
             distinguish: [
                 { id: 1, badge: 'ا', long: 'خَا', short: 'خَ' },
@@ -522,6 +522,23 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 }
             ],
             audioUrl: '/level2/13/13.wav',
+            watchAudio: '/level2/13/1.mp3',
+            listenAudio: '/level2/13/2.mp3',
+            readAudio: '/level2/13/3.mp3',
+            writeAudio: '/level2/13/4.mp3',
+            distinguishAudio: '/level2/13/5.mp3',
+            thinkAudio: '/level2/13/7.mp3',
+            circleAudio: '/level2/13/6.mp3',
+            writingImages: ['/level2/13/write_1.png', '/level2/13/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ'],
+            rememberAudio: '/level2/13/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['أَ', 'خ'], word: 'أَخ' },
+                { id: 2, letters: ['أُ', 'خْ', 'ت'], word: 'أُخْت' },
+                { id: 3, letters: ['خَا', 'بَ'], word: 'خَابَ' },
+                { id: 4, letters: ['بَ', 'خْ', 'ت'], word: 'بَخْت' }
+            ],
+            assembleAudio: '/level2/13/assemble.mp3',
         },
         {
             id: 14,
@@ -669,48 +686,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             ],
             audioUrl: '/level2/17/17.wav',
         },
-        {
-            id: 18,
-            title: t('The Three Short Vowels (Ba - 1)'),
-            type: 'shortVowels',
-            items: [
-                {
-                    id: 1,
-                    text: t('Fatha'),
-                    image: '/level2/18/1.png',
-                    text2: t('By opening the mouth')
-                },
-            ],
-            audioUrl: '/level2/18/1.wav',
-        },
-        {
-            id: 19,
-            title: t('The Three Short Vowels (Ba - 2)'),
-            type: 'shortVowels',
-            items: [
-                {
-                    id: 1,
-                    text: t('Kasra'),
-                    image: '/level2/19/1.png',
-                    text2: t('By lowering the lower jaw')
-                },
-            ],
-            audioUrl: '/level2/19/1.wav',
-        },
-        {
-            id: 20,
-            title: t('The Three Short Vowels (Ba - 3)'),
-            type: 'shortVowels',
-            items: [
-                {
-                    id: 1,
-                    text: t('Damma'),
-                    image: '/level2/20/1.png',
-                    text2: t('By rounding the lips')
-                },
-            ],
-            audioUrl: '/level2/20/1.wav',
-        },
+       
     ];
 
     return part2Lessons;

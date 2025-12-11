@@ -614,7 +614,7 @@
                 <div class="flex flex-col gap-6 w-full max-w-5xl">
                     <div v-for="item in lesson.assemble" :key="item.id" class="flex flex-row items-center justify-between gap-4 md:gap-8 w-full">
                          <!-- Letters Part (Right side in RTL) -->
-                         <div class="flex items-center gap-4">
+                         <div class="flex flex-col md:flex-row items-stretch md:items-center gap-4">
                              <div v-for="(letter, lIdx) in item.letters" :key="lIdx" class="w-16 h-16 md:w-24 md:h-24 bg-green-100 border-b-4 border-green-600 rounded-xl flex items-center justify-center shadow-sm">
                                  <span class="text-3xl md:text-5xl font-bold text-black font-amiri">{{ letter }}</span>
                              </div>
@@ -808,34 +808,34 @@
                
                <div v-for="item in lesson.items" :key="'review-' + item.id" class="flex flex-col gap-6">
                    <!-- Read Row -->
-                   <div class="flex items-center gap-4">
+                   <div class="flex flex-col md:flex-row items-stretch md:items-center gap-4">
                        <!-- Label -->
-                       <div class="shrink-0 w-24">
+                       <div class="shrink-0 w-24 md:w-auto self-center md:self-auto">
                            <span class="bg-red-100 text-red-600 px-4 py-2 rounded-xl font-bold block text-center border border-red-200 shadow-sm">{{ t('Read') }}</span>
                        </div>
                        
                        <!-- Words -->
-                       <div class="flex-1 flex justify-around items-center bg-orange-50/50 rounded-2xl p-4 border border-orange-100">
+                       <div class="flex-1 flex flex-wrap justify-center gap-4 items-center bg-orange-50/50 rounded-2xl p-4 border border-orange-100">
                            <template v-if="item.words">
                                <template v-for="(word, wIdx) in item.words" :key="wIdx">
                                    <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ word }}</span>
-                                   <div v-if="wIdx < item.words.length - 1" class="w-px h-12 bg-orange-200"></div>
+                                   <div v-if="wIdx < item.words.length - 1" class="w-px h-12 bg-orange-200 hidden md:block"></div>
                                </template>
                            </template>
                            <template v-else>
                                <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ item.text }}</span>
-                               <div class="w-px h-12 bg-orange-200"></div>
+                               <div class="w-px h-12 bg-orange-200 hidden md:block"></div>
                                <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ item.text2 }}</span>
-                               <div class="w-px h-12 bg-orange-200"></div>
+                               <div class="w-px h-12 bg-orange-200 hidden md:block"></div>
                                <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ item.highlight }}</span>
                            </template>
                        </div>
                    </div>
 
                    <!-- Write Row -->
-                   <div class="flex items-center gap-4">
+                   <div class="flex flex-col md:flex-row items-stretch md:items-center gap-4">
                        <!-- Label -->
-                        <div class="shrink-0 w-24">
+                        <div class="shrink-0 w-24 md:w-auto self-center md:self-auto">
                            <span class="bg-green-100 text-green-600 px-4 py-2 rounded-xl font-bold block text-center border border-green-200 shadow-sm">{{ t('Write') }}</span>
                        </div>
 
