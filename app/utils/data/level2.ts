@@ -480,9 +480,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('The Second Group'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Bread'), image: '/level2/13/bread.jpg', letter: 'خُ', highlight: 'خ', listenImage: '/level2/13/listen/1.png', readImage: '/level2/13/read/1.png' },
+                { id: 1, text: t('Lettuce'), image: '/level2/13/lettuce.jpg', letter: 'خُ', highlight: 'خ', listenImage: '/level2/13/listen/1.png', readImage: '/level2/13/read/1.png' },
                 { id: 2, text: t('Cucumber'), image: '/level2/13/cucumber.jpg', letter: 'خِ', highlight: 'خ', listenImage: '/level2/13/listen/2.png', readImage: '/level2/13/read/2.png' },
-                { id: 3, text: t('Lettuce'), image: '/level2/13/lettuce.jpg', letter: 'خَ', highlight: 'خ', listenImage: '/level2/13/listen/3.png', readImage: '/level2/13/read/3.png' },
+                { id: 3, text: t('Bread'), image: '/level2/13/bread.jpg', letter: 'خَ', highlight: 'خ', listenImage: '/level2/13/listen/3.png', readImage: '/level2/13/read/3.png' },
             ],
             distinguish: [
                 { id: 1, badge: 'ا', long: 'خَا', short: 'خَ' },
