@@ -105,7 +105,7 @@
            :class="lesson.id === 3 ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-4'">
         <div v-for="(item, index) in lesson.items" :key="index" class="flex flex-col items-center group cursor-pointer">
           <div class="w-full h-64 bg-tranparent rounded-lg overflow-hidden mb-2 shadow-md transition-transform duration-300 transform group-hover:scale-105 group-hover:shadow-xl">
-            <img v-if="item.image" :src="item.image" :alt="item.text" class="w-full h-full object-contain" @load="handleImageLoad" />
+            <img v-if="item.image" :src="item.image" :alt="item.text" class="w-full h-full object-contain" @load="handleImageLoad" @error="handleImageLoad" />
             <div v-else class="w-full h-full flex items-center justify-center text-gray-400">
               No Image
             </div>
@@ -131,9 +131,9 @@
         <div class="flex-grow max-w-2xl w-full order-1 md:order-2 sticky top-4">
            <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white flex flex-col">
               <template v-if="lesson.diagramImages">
-                  <img v-for="(img, idx) in lesson.diagramImages" :key="idx" :src="img" :alt="lesson.title" class="w-full h-auto object-contain -mt-1 first:mt-0" @load="handleImageLoad" />
+                  <img v-for="(img, idx) in lesson.diagramImages" :key="idx" :src="img" :alt="lesson.title" class="w-full h-auto object-contain -mt-1 first:mt-0" @load="handleImageLoad" @error="handleImageLoad" />
               </template>
-              <img v-else-if="lesson.mainImage" :src="lesson.mainImage" :alt="lesson.title" class="w-full h-auto object-contain" @load="handleImageLoad" />
+              <img v-else-if="lesson.mainImage" :src="lesson.mainImage" :alt="lesson.title" class="w-full h-auto object-contain" @load="handleImageLoad" @error="handleImageLoad" />
            </div>
         </div>
 
@@ -367,7 +367,7 @@
                    <div v-else-if="lesson.id === 3 || lesson.id === 20 || lesson.id === 23" class="text-[200px] font-black text-[#d50000] leading-none font-arabic absolute top-32 left-1/2 transform -translate-x-1/2 -translate-y-[35%]">ُ</div>
                 </div>
                 <div class="relative w-full h-72">
-                   <img :src="item.image" :alt="item.text" class="w-full h-full object-cover" />
+                   <img :src="item.image" :alt="item.text" class="w-full h-full object-cover" @load="handleImageLoad" @error="handleImageLoad" />
                 </div>
                 <div class="bg-[#c8e6c9] p-3 text-center border-t-[3px] border-[#ffcc80]">
                    <h3 class="text-4xl font-black text-black font-arabic tracking-wide">{{ item.text2 }}</h3>
@@ -456,7 +456,7 @@
               <!-- Images Row -->
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
                   <div v-for="item in lesson.items" :key="'img-' + item.id" class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border-4 border-white transform hover:scale-105 transition-transform duration-300 bg-white">
-                      <img :src="item.image" :alt="item.text" class="w-full h-full object-cover">
+                      <img :src="item.image" :alt="item.text" class="w-full h-full object-contain" @load="handleImageLoad" @error="handleImageLoad">
                   </div>
               </div>
 
@@ -478,7 +478,7 @@
                            <!-- Image Mode -->
                            <template v-if="item.listenImage">
                                <div class="relative w-full flex-grow flex items-center justify-center overflow-hidden">
-                                   <img :src="item.listenImage" class="max-w-full max-h-full object-cover" />
+                                   <img :src="item.listenImage" class="max-w-full max-h-full object-contain" @load="handleImageLoad" @error="handleImageLoad" />
                                </div>
                                <span v-if="locale === 'en'" class="text-lg font-bold text-gray-800 mt-1 shrink-0 font-sans">{{ item.text }}</span>
                            </template>
@@ -514,7 +514,7 @@
                    <div v-for="item in lesson.items" :key="'letter-' + item.id" class="flex flex-col items-center relative h-32 justify-end">
                        <!-- Image Mode -->
                        <div v-if="item.readImage" class="w-full h-full flex items-end justify-center">
-                            <img :src="item.readImage" class="max-w-full max-h-full object-contain" />
+                            <img :src="item.readImage" class="max-w-full max-h-full object-contain" @load="handleImageLoad" @error="handleImageLoad" />
                        </div>
 
                        <!-- Text Mode -->
@@ -645,12 +645,12 @@
               <div class="bg-white rounded-3xl shadow-lg border-2 border-gray-100 p-6 flex flex-col gap-8">
                   <!-- Single Image Mode -->
                   <div v-if="lesson.writingImage" class="w-full">
-                      <img :src="lesson.writingImage" class="w-full h-auto object-contain rounded-xl" />
+                      <img :src="lesson.writingImage" class="w-full h-auto object-contain rounded-xl" @load="handleImageLoad" @error="handleImageLoad" />
                   </div>
 
                   <!-- Multiple Images Mode -->
                   <div v-else-if="lesson.writingImages" class="w-full flex flex-col gap-8">
-                      <img v-for="(img, idx) in lesson.writingImages" :key="idx" :src="img" class="w-full h-auto object-contain rounded-xl" />
+                      <img v-for="(img, idx) in lesson.writingImages" :key="idx" :src="img" class="w-full h-auto object-contain rounded-xl" @load="handleImageLoad" @error="handleImageLoad" />
                   </div>
 
                   <!-- Standard Practice Mode -->
@@ -661,7 +661,7 @@
                                <!-- Image Mode (Per Item) -->
                                <template v-if="practice.image">
                                    <div class="w-full h-full flex items-center justify-center">
-                                        <img :src="practice.image" class="max-h-full object-contain" />
+                                        <img :src="practice.image" class="max-h-full object-contain" @load="handleImageLoad" @error="handleImageLoad" />
                                    </div>
                                </template>
     
@@ -787,7 +787,7 @@
                              <!-- Image & Answer -->
                              <div class="flex-1 flex flex-col items-center">
                                  <div class="relative w-64 h-48 rounded-2xl overflow-hidden border-4 border-green-500 shadow-xl rotate-1 hover:rotate-0 transition-transform duration-300">
-                                     <img :src="exercise.image" class="w-full h-full object-contain">
+                                     <img :src="exercise.image" class="w-full h-full object-contain" @load="handleImageLoad" @error="handleImageLoad">
                                  </div>
                                  <div class="mt-4 w-48 h-24 relative flex justify-center items-end">
                                       <span class="relative z-10 text-6xl font-bold text-red-600 font-amiri leading-none mb-2 md:mb-4">{{ exercise.answer }}</span>
@@ -1133,11 +1133,42 @@ watch(lesson, (newLesson, oldLesson) => {
      } else if (newLesson.mainImage) {
         totalImagesToLoad.value = 1;
      }
+  } else if (newLesson.type === 'shortVowels' && newLesson.items) {
+     totalImagesToLoad.value = newLesson.items.filter(i => i.image).length;
+  } else if (newLesson.type === 'letterExamples') {
+     let count = 0;
+     if (newLesson.items) {
+        count += newLesson.items.filter(i => i.image).length;
+        count += newLesson.items.filter(i => i.listenImage).length;
+        count += newLesson.items.filter(i => i.readImage).length;
+     }
+     
+     if (newLesson.writingImage) {
+        count += 1;
+     } else if (newLesson.writingImages) {
+        count += newLesson.writingImages.length;
+     } else if (newLesson.writingPractice) {
+        count += newLesson.writingPractice.filter(p => p.image).length;
+     }
+
+     if (newLesson.exercises) {
+        count += newLesson.exercises.filter(e => e.image).length;
+     }
+     
+     totalImagesToLoad.value = count;
   }
 
   // If no images to load (or other types), stop loading immediately
   if (totalImagesToLoad.value === 0) {
     isLoading.value = false;
+  } else {
+    // Safety timeout: stop loading after 8 seconds max to prevent infinite spinning on stuck images
+    setTimeout(() => {
+        if (isLoading.value) {
+            console.warn('Loading timed out', imagesLoadedCount.value, '/', totalImagesToLoad.value);
+            isLoading.value = false;
+        }
+    }, 8000);
   }
 }, { immediate: true });
 </script>

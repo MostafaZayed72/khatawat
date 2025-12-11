@@ -414,9 +414,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('The Second Group'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Rope'), image: '/level2/12/rope.png', letter: 'حَ', highlight: 'ح' },
-                { id: 2, text: t('Horse'), image: '/level2/12/horse.png', letter: 'حِ', highlight: 'ح' },
-                { id: 3, text: t('Whale'), image: '/level2/12/whale.png', letter: 'حُ', highlight: 'ح' },
+                { id: 1, text: t('Rope'), image: '/level2/12/rope.png', letter: 'حَ', highlight: 'ح', listenImage: '/level2/12/listen/1.png', readImage: '/level2/12/read/1.png' },
+                { id: 2, text: t('Horse'), image: '/level2/12/horse.png', letter: 'حِ', highlight: 'ح', listenImage: '/level2/12/listen/2.png', readImage: '/level2/12/read/2.png' },
+                { id: 3, text: t('Whale'), image: '/level2/12/whale.png', letter: 'حُ', highlight: 'ح', listenImage: '/level2/12/listen/3.png', readImage: '/level2/12/read/3.png' },
             ],
             distinguish: [
                 { id: 1, badge: 'ا', long: 'حَا', short: 'حَ' },
@@ -456,6 +456,23 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 }
             ],
             audioUrl: '/level2/12/12.wav',
+            watchAudio: '/level2/12/1.mp3',
+            listenAudio: '/level2/12/2.mp3',
+            readAudio: '/level2/12/3.mp3',
+            writeAudio: '/level2/12/4.mp3',
+            distinguishAudio: '/level2/12/5.mp3',
+            thinkAudio: '/level2/12/7.mp3',
+            circleAudio: '/level2/12/6.mp3',
+            writingImages: ['/level2/12/write_1.png', '/level2/12/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ'],
+            rememberAudio: '/level2/12/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['أُ', 'حِ', 'بُّ'], word: 'أُحِبُّ' },
+                { id: 2, letters: ['بَ', 'حْ', 'ر'], word: 'بَحْر' },
+                { id: 3, letters: ['حَ', 'بِي', 'ب'], word: 'حَبِيب' },
+                { id: 4, letters: ['حَ', 'جَ', 'بَ'], word: 'حَجَبَ' }
+            ],
+            assembleAudio: '/level2/12/assemble.mp3',
         },
         {
             id: 13,
