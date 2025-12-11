@@ -349,9 +349,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             title: t('Letter Jeem Lesson'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Soldiers'), image: '/level2/11/soldiers.jpg', letter: 'جُ', highlight: 'ج' },
-                { id: 2, text: t('Camels'), image: '/level2/11/camels.jpg', letter: 'جِ', highlight: 'ج' },
-                { id: 3, text: t('Carrots'), image: '/level2/11/carrots.jpg', letter: 'جَ', highlight: 'ج' },
+                { id: 1, text: t('Carrots'), image: '/level2/11/carrots.jpg', letter: 'جَ', highlight: 'ج', listenImage: '/level2/11/listen/1_large.png', readImage: '/level2/11/read/1.png' },
+                { id: 2, text: t('Camels'), image: '/level2/11/camels.jpg', letter: 'جِ', highlight: 'ج', listenImage: '/level2/11/listen/2_large.png', readImage: '/level2/11/read/2.png' },
+                { id: 3, text: t('Soldiers'), image: '/level2/11/soldiers.jpg', letter: 'جُ', highlight: 'ج', listenImage: '/level2/11/listen/3_large.png', readImage: '/level2/11/read/3.png' },
             ],
             distinguish: [
                 { id: 1, badge: 'ا', long: 'جَا', short: 'جَ' },
@@ -391,6 +391,22 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 }
             ],
             audioUrl: '/level2/11/11.wav',
+            watchAudio: '/level2/11/1.mp3',
+            listenAudio: '/level2/11/2.mp3',
+            readAudio: '/level2/11/3.mp3',
+            writeAudio: '/level2/11/4.mp3',
+            distinguishAudio: '/level2/11/5.mp3',
+            thinkAudio: '/level2/11/7.mp3',
+            circleAudio: '/level2/11/6.mp3',
+            writingImages: ['/level2/11/write_1.png', '/level2/11/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ'],
+            rememberAudio: '/level2/11/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['تَا', 'ج'], word: 'تَاج' },
+                { id: 2, letters: ['جُ', 'بّ'], word: 'جُبّ' },
+                { id: 3, letters: ['جَا', 'بَ'], word: 'جَابَ' }
+            ],
+            assembleAudio: '/level2/11/assemble.mp3',
         },
         {
             id: 12,

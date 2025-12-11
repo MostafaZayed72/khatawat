@@ -456,7 +456,7 @@
               <!-- Images Row -->
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
                   <div v-for="item in lesson.items" :key="'img-' + item.id" class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border-4 border-white transform hover:scale-105 transition-transform duration-300 bg-white">
-                      <img :src="item.image" :alt="item.text" class="w-full h-full object-contain">
+                      <img :src="item.image" :alt="item.text" class="w-full h-full object-cover">
                   </div>
               </div>
 
@@ -478,7 +478,7 @@
                            <!-- Image Mode -->
                            <template v-if="item.listenImage">
                                <div class="relative w-full flex-grow flex items-center justify-center overflow-hidden">
-                                   <img :src="item.listenImage" class="max-w-full max-h-full object-contain" />
+                                   <img :src="item.listenImage" class="max-w-full max-h-full object-cover" />
                                </div>
                                <span v-if="locale === 'en'" class="text-lg font-bold text-gray-800 mt-1 shrink-0 font-sans">{{ item.text }}</span>
                            </template>
