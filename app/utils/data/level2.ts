@@ -594,9 +594,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('The Third Group'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Bear'), image: '/level2/16/bear.jpg', letter: 'دُ', highlight: 'د', listenImage: '/level2/16/listen/1.png', readImage: '/level2/16/read/1.png' },
+                { id: 1, text: t('Chicken'), image: '/level2/16/chicken.jpg', letter: 'دُ', highlight: 'د', listenImage: '/level2/16/listen/1.png', readImage: '/level2/16/read/1.png' },
                 { id: 2, text: t('Rooster'), image: '/level2/16/rooster.jpg', letter: 'دِ', highlight: 'د', listenImage: '/level2/16/listen/2.png', readImage: '/level2/16/read/2.png' },
-                { id: 3, text: t('Chicken'), image: '/level2/16/chicken.jpg', letter: 'دَ', highlight: 'د', listenImage: '/level2/16/listen/3.png', readImage: '/level2/16/read/3.png' },
+                { id: 3, text: t('Bear'), image: '/level2/16/bear.jpg', letter: 'دَ', highlight: 'د', listenImage: '/level2/16/listen/3.png', readImage: '/level2/16/read/3.png' },
             ],
             distinguish: [
                 { id: 1, badge: 'ا', long: 'دَا', short: 'دَ' },
@@ -660,9 +660,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('The Third Group'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Corn'), image: '/level2/17/corn.jpg', letter: 'ذُ', highlight: 'ذ' },
-                { id: 2, text: t('Arm'), image: '/level2/17/arm.jpg', letter: 'ذِ', highlight: 'ذ' },
-                { id: 3, text: t('Gold'), image: '/level2/17/gold.jpg', letter: 'ذَ', highlight: 'ذ' },
+                { id: 1, text: t('Corn'), image: '/level2/17/corn.jpg', letter: 'ذُ', highlight: 'ذ', listenImage: '/level2/17/listen/1.png', readImage: '/level2/17/read/1.png' },
+                { id: 2, text: t('Arm'), image: '/level2/17/arm.jpg', letter: 'ذِ', highlight: 'ذ', listenImage: '/level2/17/listen/2.png', readImage: '/level2/17/read/2.png' },
+                { id: 3, text: t('Gold'), image: '/level2/17/gold.jpg', letter: 'ذَ', highlight: 'ذ', listenImage: '/level2/17/listen/3.png', readImage: '/level2/17/read/3.png' },
             ],
             distinguish: [
                 { id: 1, badge: 'ا', long: 'ذَا', short: 'ذَ' },
@@ -683,25 +683,42 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     title: t('Exercise: Circle Letter Thal'),
                     words: [
                         { id: 1, text: 'جَذَبَ' }, // Jadhaba
-                        { id: 2, text: 'أُذُن' }, // Uthun (Ear) - Reusing existing key if possible? No, sticking to text for consistency in arrays
-                        { id: 3, text: 'حِذَاء' }, // Hidhaa
-                        { id: 4, text: 'نَافِذَة' }, // Nafidha
-                        { id: 5, text: 'قُنْفُذ' }, // Qunfudh
-                        { id: 6, text: 'غِذَاء' }, // Ghidhaa
-                        { id: 7, text: 'ذُبَابَة' }, // Dhubaaba (Fly) - Reusing existing word? Existing key is "Fly": "ذُبَابَة"
-                        { id: 8, text: 'تِلْمِيذ' }, // Tilmeeth
-                        { id: 9, text: 'ذِئْب' }, // Thi'b
+                        { id: 2, text: 'أُذُن' }, // Uthun (Ear)
+                        { id: 3, text: 'قُنْفُذ' }, // Qunfudh
+                        { id: 4, text: 'ذُبَاب' }, // Dhubab
+                        { id: 5, text: 'ذِقْن' }, // Dhiqn
+                        { id: 6, text: 'بُذُور' }, // Budhoor
+                        { id: 7, text: 'أَخَذَ' }, // Akhadha
+                        { id: 8, text: 'لَذِيذ' }, // Ladheedh
+                        { id: 9, text: 'مِذْيَاع' }, // Midhyaa
                     ]
                 },
                 {
                     id: 2,
                     type: 'think',
                     title: t('Mention words with letter Thal'),
-                    image: '/level2/17/tail.jpg',
-                    answer: 'ذَيْل'
+                    image: '/level2/17/corn.jpg',
+                    answer: 'ذُرَة'
                 }
             ],
             audioUrl: '/level2/17/17.wav',
+            watchAudio: '/level2/17/1.mp3',
+            listenAudio: '/level2/17/2.mp3',
+            readAudio: '/level2/17/3.mp3',
+            writeAudio: '/level2/17/4.mp3',
+            distinguishAudio: '/level2/17/5.mp3',
+            thinkAudio: '/level2/17/7.mp3',
+            circleAudio: '/level2/17/6.mp3',
+            writingImages: ['/level2/17/write_1.png', '/level2/17/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ'],
+            rememberAudio: '/level2/17/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['أَ', 'خَ', 'ذَ'], word: 'أَخَذَ' },
+                { id: 2, letters: ['جَ', 'ذَ', 'بَ'], word: 'جَذَبَ' },
+                { id: 3, letters: ['ذَ', 'ا', 'بَ'], word: 'ذَابَ' },
+                { id: 4, letters: ['حَ', 'بَّ', 'ذَا'], word: 'حَبَّذَا' }
+            ],
+            assembleAudio: '/level2/17/assemble.mp3',
         },
 
     ];

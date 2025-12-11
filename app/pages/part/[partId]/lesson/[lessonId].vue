@@ -427,7 +427,7 @@
       </div>
 
       <!-- Letter Examples Lesson Type -->
-      <div v-else-if="lesson.type === 'letterExamples'" class="flex flex-col w-full max-w-6xl mx-auto mt-16 gap-12 px-4">
+      <div v-else-if="lesson.type === 'letterExamples'" dir="rtl" class="flex flex-col w-full max-w-6xl mx-auto mt-16 gap-12 px-4">
           
           <!-- Top Letter Circle (Example: Alif/Baa) -->
           <div class="flex justify-center mb-4">
@@ -454,7 +454,7 @@
               </div>
               
               <!-- Images Row -->
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8" dir="rtl">
                   <div v-for="item in lesson.items" :key="'img-' + item.id" class="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border-4 border-white transform hover:scale-105 transition-transform duration-300 bg-white">
                       <img :src="item.image" :alt="item.text" class="w-full h-full object-contain" @load="handleImageLoad" @error="handleImageLoad">
                   </div>
@@ -469,7 +469,7 @@
               </div>
 
               <!-- Words Row -->
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8" dir="rtl">
                    <div v-for="item in lesson.items" :key="'word-' + item.id" class="relative group">
                        <!-- Spotlight Effect -->
                        <div class="absolute top-3/4 left-1/2 transform -translate-x-1/2 w-full h-48 bg-gradient-to-b from-yellow-100/80 via-yellow-50/30 to-transparent clip-path-spotlight z-0 pointer-events-none"></div>
@@ -510,7 +510,7 @@
               </div>
 
               <!-- Letters Row -->
-              <div class="grid grid-cols-3 gap-4 md:gap-8 relative mt-16">
+              <div class="grid grid-cols-3 gap-4 md:gap-8 relative mt-16" dir="rtl">
                    <div v-for="item in lesson.items" :key="'letter-' + item.id" class="flex flex-col items-center relative h-32 justify-end">
                        <!-- Image Mode -->
                        <div v-if="item.readImage" class="w-full h-full flex items-end justify-center">
