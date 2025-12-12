@@ -631,7 +631,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     id: 2,
                     type: 'think',
                     title: t('Mention words with letter Dal'),
-                    image: '/level2/16/bear.jpg',
+                    image: '/level2/16/bearr.jpg',
                     answer: 'دُبّ'
                 }
             ],

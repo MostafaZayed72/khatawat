@@ -483,11 +483,7 @@
                            <!-- Image Mode -->
                            <template v-if="item.listenImage">
                                <div class="relative w-full flex-grow flex items-center justify-center overflow-hidden">
-                                   <!-- Blurred Background -->
-                                   <div class="absolute inset-0 w-full h-full">
-                                        <img :src="item.listenImage" class="w-full h-full object-cover blur-sm opacity-50" />
-                                   </div>
-                                   <img :src="item.listenImage" class="relative z-10 w-full h-full object-contain" @load="handleImageLoad" @error="handleImageLoad" />
+                                   <img :src="item.listenImage" class="max-w-full max-h-full object-contain" @load="handleImageLoad" @error="handleImageLoad" />
                                </div>
                                <span v-if="locale === 'en'" class="text-lg font-bold text-gray-800 mt-1 shrink-0 font-sans">{{ item.text }}</span>
                            </template>
@@ -522,12 +518,8 @@
               <div class="grid grid-cols-3 gap-4 md:gap-8 relative mt-16" dir="rtl">
                    <div v-for="item in lesson.items" :key="'letter-' + item.id" class="flex flex-col items-center relative h-32 justify-end">
                        <!-- Image Mode -->
-                        <div v-if="item.readImage" class="w-full h-full flex items-end justify-center relative overflow-hidden rounded-lg">
-                             <!-- Blurred Background -->
-                             <div class="absolute inset-0 w-full h-full">
-                                  <img :src="item.readImage" class="w-full h-full object-cover blur-sm opacity-50" />
-                             </div>
-                             <img :src="item.readImage" class="relative z-10 w-full h-full object-contain" @load="handleImageLoad" @error="handleImageLoad" />
+                        <div v-if="item.readImage" class="w-full h-full flex items-end justify-center">
+                             <img :src="item.readImage" class="max-w-full max-h-full object-contain" @load="handleImageLoad" @error="handleImageLoad" />
                         </div>
 
                        <!-- Text Mode -->
