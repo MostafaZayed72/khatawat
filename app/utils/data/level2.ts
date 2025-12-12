@@ -87,7 +87,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             type: 'letterExamples',
             items: [
                 { id: 1, text: t('Lion'), image: '/level2/5/lion.jpg', letter: 'أَ', highlight: 'أ', listenImage: '/level2/5/listen/1.png', readImage: '/level2/5/read/1.png' },
-                { id: 2, text: t('Needle'), image: '/level2/5/needle.jpg', letter: 'إِ', highlight: 'إ', listenImage: '/level2/5/listen/2.png', readImage: '/level2/5/read/2.png' },
+                { id: 2, text: t('Needle'), image: '/level2/5/needle.png', letter: 'إِ', highlight: 'إ', listenImage: '/level2/5/listen/2.png', readImage: '/level2/5/read/2.png' },
                 { id: 3, text: t('Ear'), image: '/level2/5/ear.jpg', letter: 'أُ', highlight: 'أ', listenImage: '/level2/5/listen/3.png', readImage: '/level2/5/read/3.png' },
             ],
             distinguish: [
@@ -135,7 +135,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             title: t('Letter Baa Lesson'),
             type: 'letterExamples',
             items: [
-                { id: 1, text: t('Duck'), image: '/level2/6/duck.jpg', letter: 'بَ', highlight: 'ب', listenImage: '/level2/6/listen/1.png', readImage: '/level2/6/read/1.png' },
+                { id: 1, text: t('Duck'), image: '/level2/6/Batt.jpg', letter: 'بَ', highlight: 'ب', listenImage: '/level2/6/listen/1.png', readImage: '/level2/6/read/1.png' },
                 { id: 2, text: t('Watermelon'), image: '/level2/6/watermelon.jpg', letter: 'بِ', highlight: 'ب', listenImage: '/level2/6/listen/2.png', readImage: '/level2/6/read/2.png' },
                 { id: 3, text: t('Tower'), image: '/level2/6/tower.jpg', letter: 'بُ', highlight: 'ب', listenImage: '/level2/6/listen/3.png', readImage: '/level2/6/read/3.png' },
             ],
