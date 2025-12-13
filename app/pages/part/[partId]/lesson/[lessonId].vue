@@ -606,10 +606,12 @@
                     </div>
                 </div>
 
-                <div class="flex flex-wrap items-center justify-center gap-4 md:gap-8 mt-4">
-                    <div v-for="(char, idx) in lesson.remember" :key="idx" class="text-4xl md:text-6xl font-bold text-gray-800 font-amiri leading-normal">
-                        <span class="text-red-600">{{ char }}</span>
-                        <span v-if="idx < lesson.remember.length - 1" class="text-gray-400 mx-2">-</span>
+                <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 md:gap-8 mt-4">
+                    <div v-for="(chunk, cIdx) in chunkedRemember" :key="cIdx" class="flex flex-nowrap items-baseline justify-center gap-1 md:gap-2 p-2 bg-white/50 rounded-xl border border-amber-100/50 shadow-sm">
+                        <div v-for="(char, idx) in chunk" :key="idx" class="text-4xl md:text-6xl font-bold text-gray-800 font-amiri leading-normal flex items-center">
+                            <span class="text-red-600">{{ char }}</span>
+                            <span v-if="idx < chunk.length - 1" class="text-gray-400 mx-1 md:mx-2">-</span>
+                        </div>
                     </div>
                 </div>
            </div>
@@ -624,9 +626,9 @@
                 <div class="flex flex-col gap-6 w-full max-w-5xl">
                     <div v-for="item in lesson.assemble" :key="item.id" class="flex flex-row items-center justify-between gap-4 md:gap-8 w-full">
                          <!-- Letters Part (Right side in RTL) -->
-                         <div class="flex flex-col md:flex-row items-stretch md:items-center gap-4">
-                             <div v-for="(letter, lIdx) in item.letters" :key="lIdx" class="w-16 h-16 md:w-24 md:h-24 bg-green-100 border-b-4 border-green-600 rounded-xl flex items-center justify-center shadow-sm">
-                                 <span class="text-3xl md:text-5xl font-bold text-black font-amiri">{{ letter }}</span>
+                         <div class="flex flex-row flex-nowrap items-center justify-center gap-1 md:gap-4">
+                             <div v-for="(letter, lIdx) in item.letters" :key="lIdx" class="w-10 h-10 sm:w-12 sm:h-12 md:w-24 md:h-24 bg-green-100 border-b-2 md:border-b-4 border-green-600 rounded-lg md:rounded-xl flex items-center justify-center shadow-sm shrink-0">
+                                 <span class="text-2xl sm:text-3xl md:text-5xl font-bold text-black font-amiri">{{ letter }}</span>
                              </div>
                          </div>
 
@@ -957,6 +959,17 @@ const nextLessonId = computed(() => {
 // Dropdown State
 const showDropdown = ref(false);
 
+const chunkedRemember = computed(() => {
+    if (!lesson.value || !lesson.value.remember) return [];
+    const items = lesson.value.remember;
+    const chunkSize = 3;
+    const chunks = [];
+    for (let i = 0; i < items.length; i += chunkSize) {
+        chunks.push(items.slice(i, i + chunkSize));
+    }
+    return chunks;
+});
+
 // Exercise Answer State
 const showAnswers = ref<Record<number, boolean>>({});
 
@@ -975,8 +988,8 @@ const toggleAnswer = (exerciseId: number) => {
 
     const regex = new RegExp(`(${regexSource}[\\u064B-\\u065F]*)`, 'g');
     
-    // Use relative positioning for the text and absolute for the circle to preserve ligatures
-    return word.replace(regex, '<span style="position: relative; display: inline;">$1<span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140%; height: 140%; border: 3px solid #ef4444; border-radius: 50%; pointer-events: none;"></span></span>');
+    // Use background-image to avoid breaking ligatures
+    return word.replace(regex, '<span class="circle-highlight-text">$1</span>');
 };
 
 
@@ -1244,5 +1257,13 @@ watch(lesson, (newLesson, oldLesson) => {
     border-radius: 50%; 
     padding: 0px 4px; 
     color: #ef4444;
+}
+
+:deep(.circle-highlight-text) {
+  background-image: radial-gradient(closest-side, transparent 0%, transparent 60%, #ef4444 65%, #ef4444 90%, transparent 95%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 150% 150%;
+  padding-bottom: 5px;
 }
 </style>
