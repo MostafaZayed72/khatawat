@@ -1186,6 +1186,932 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             ],
             audioUrl: '/level2/27/27.wav',
         },
+        {
+            id: 28,
+            title: t('Letter Tah Lesson'),
+            subtitle: t('Group Five'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Drum'), image: '/level2/28/drum.jpg', letter: 'طَ', highlight: 'ط', listenImage: '/level2/28/listen/1.png', readImage: '/level2/28/read/1.png' },
+                { id: 2, text: t('Child'), image: '/level2/28/child.jpg', letter: 'طِ', highlight: 'ط', listenImage: '/level2/28/listen/2.png', readImage: '/level2/28/read/2.png' },
+                { id: 3, text: t('Birds'), image: '/level2/28/birds.jpg', letter: 'طُ', highlight: 'ط', listenImage: '/level2/28/listen/3.png', readImage: '/level2/28/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'طَا', short: 'طَ' },
+                { id: 2, badge: 'ي', long: 'طِيـــ', short: 'طِ' },
+                { id: 3, badge: 'و', long: 'طُو', short: 'طُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'طَبَخَ', sub: 'طَرَحَ', text2: 'طَرَدَ', type: 'solid', image: '/level2/28/write/1.png' },
+                { id: 2, text: 'طَبَخَ', sub: 'طَرَحَ', text2: 'طَرَدَ', type: 'dotted', image: '/level2/28/write/2.png' },
+                { id: 3, text: 'طَبَخَ', sub: 'طَرَحَ', text2: 'طَرَدَ', type: 'dotted', image: '/level2/28/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'ط',
+                    title: t('Exercise: Circle Letter Tah'),
+                    words: [
+                        'طَارِق', 'مَطَّاط', 'فَاطِمَة', // Tariq, Matat, Fatima
+                        'مَطَار', 'طُهُور', 'طَبِيب', // Matar, Tuhoor, Tabib
+                        'قِطَار', 'يَرْبِط', 'طَائِرَة' // Qitar, Yarbut, Ta'ira
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Tah'),
+                    image: '/level2/28/table.jpg',
+                    answer: t('Table')
+                }
+            ],
+            audioUrl: '/level2/28/28.wav',
+            watchAudio: '/level2/28/1.mp3',
+            listenAudio: '/level2/28/2.mp3',
+            readAudio: '/level2/28/3.mp3',
+            writeAudio: '/level2/28/4.mp3',
+            distinguishAudio: '/level2/28/5.mp3',
+            thinkAudio: '/level2/28/7.mp3',
+            circleAudio: '/level2/28/6.mp3',
+            writingImages: ['/level2/28/write_1.png', '/level2/28/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ'],
+            rememberAudio: '/level2/28/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['طَ', 'بَ', 'خَ'], word: 'طَبَخَ' },
+                { id: 2, letters: ['طَ', 'رَ', 'حَ'], word: 'طَرَحَ' },
+                { id: 3, letters: ['طَ', 'رَ', 'دَ'], word: 'طَرَدَ' },
+                { id: 4, letters: ['طُ', 'و', 'ب'], word: 'طُوب' }
+            ],
+            assembleAudio: '/level2/28/assemble.mp3',
+        },
+        {
+            id: 29,
+            title: t('Letter Zaa Lesson'),
+            subtitle: t('Group Five'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Envelope'), image: '/level2/29/envelope.jpg', letter: 'ظَ', highlight: 'ظ', listenImage: '/level2/29/listen/1.png', readImage: '/level2/29/read/1.png' },
+                { id: 2, text: t('Shadow'), image: '/level2/29/shadow.jpg', letter: 'ظِ', highlight: 'ظ', listenImage: '/level2/29/listen/2.png', readImage: '/level2/29/read/2.png' },
+                { id: 3, text: t('Envelopes'), image: '/level2/29/envelopes.jpg', letter: 'ظُ', highlight: 'ظ', listenImage: '/level2/29/listen/3.png', readImage: '/level2/29/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'ظَا', short: 'ظَ' },
+                { id: 2, badge: 'ي', long: 'ظِيـــ', short: 'ظِ' },
+                { id: 3, badge: 'و', long: 'ظُو', short: 'ظُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'حَظَرَ', sub: 'جَحَظَ', text2: 'ظُفْر', type: 'solid', image: '/level2/29/write/1.png' },
+                { id: 2, text: 'حَظَرَ', sub: 'جَحَظَ', text2: 'ظُفْر', type: 'dotted', image: '/level2/29/write/2.png' },
+                { id: 3, text: 'حَظَرَ', sub: 'جَحَظَ', text2: 'ظُفْر', type: 'dotted', image: '/level2/29/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'ظ',
+                    title: t('Exercise: Circle Letter Zaa'),
+                    words: [
+                        'ظَافِر', 'مَنْظُور', 'حَظّ', // Zhaafir, Manzhuur, Hazz
+                        'ظَبْي', 'نَظَافَة', 'عَظْم', // Zhabiy, Nazhaafa, Azhm
+                        'ظَلَام', 'وَظِيفَة', 'حِفْظ' // Zhalaam, Wazheefa, Hifzh
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Zaa'),
+                    image: '/level2/29/glasses.jpg',
+                    answer: t('Glasses')
+                }
+            ],
+            audioUrl: '/level2/29/29.wav',
+            watchAudio: '/level2/29/1.mp3',
+            listenAudio: '/level2/29/2.mp3',
+            readAudio: '/level2/29/3.mp3',
+            writeAudio: '/level2/29/4.mp3',
+            distinguishAudio: '/level2/29/5.mp3',
+            thinkAudio: '/level2/29/7.mp3',
+            circleAudio: '/level2/29/6.mp3',
+            writingImages: ['/level2/29/write_1.png', '/level2/29/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ'],
+            rememberAudio: '/level2/29/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['حَ', 'ظَ', 'رَ'], word: 'حَظَرَ' },
+                { id: 2, letters: ['جَ', 'حَ', 'ظَ'], word: 'جَحَظَ' },
+                { id: 3, letters: ['ظُ', 'فْ', 'ر'], word: 'ظُفْر' },
+                { id: 4, letters: ['حَ', 'ا', 'فِ', 'ظ'], word: 'حَافِظ' }
+            ],
+            assembleAudio: '/level2/29/assemble.mp3',
+        },
+        {
+            id: 30,
+            title: t('Letter Ain Lesson'),
+            subtitle: t('Group Six'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Flag'), image: '/level2/30/flag.jpg', letter: 'عَ', highlight: 'ع', listenImage: '/level2/30/listen/1.png', readImage: '/level2/30/read/1.png' },
+                { id: 2, text: t('Grapes'), image: '/level2/30/grapes.jpg', letter: 'عِ', highlight: 'ع', listenImage: '/level2/30/listen/2.png', readImage: '/level2/30/read/2.png' },
+                { id: 3, text: t('Nest'), image: '/level2/30/nest.jpg', letter: 'عُ', highlight: 'ع', listenImage: '/level2/30/listen/3.png', readImage: '/level2/30/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'عَا', short: 'عَ' },
+                { id: 2, badge: 'ي', long: 'عِيـــ', short: 'عِ' },
+                { id: 3, badge: 'و', long: 'عُو', short: 'عُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'عَبَدَ', sub: 'عَبَرَ', text2: 'بَرَعَ', type: 'solid', image: '/level2/30/write/1.png' },
+                { id: 2, text: 'عَبَدَ', sub: 'عَبَرَ', text2: 'بَرَعَ', type: 'dotted', image: '/level2/30/write/2.png' },
+                { id: 3, text: 'عَبَدَ', sub: 'عَبَرَ', text2: 'بَرَعَ', type: 'dotted', image: '/level2/30/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'ع',
+                    title: t('Exercise: Circle Letter Ain'),
+                    words: [
+                        'عَيْن', 'أُسْبُوع', 'سَعِيد', // Ayn, Usbuu, Saeed
+                        'عَنْكَبُوت', 'عُمَر', 'مُزَارِع', // Ankabut, Umar, Muzaari
+                        'جُمُعَة', 'مَصْنَع', 'عَامِل' // Juma, Masna, Aamil
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Ain'),
+                    image: '/level2/30/box.jpg',
+                    answer: t('Box')
+                }
+            ],
+            audioUrl: '/level2/30/30.wav',
+            watchAudio: '/level2/30/1.mp3',
+            listenAudio: '/level2/30/2.mp3',
+            readAudio: '/level2/30/3.mp3',
+            writeAudio: '/level2/30/4.mp3',
+            distinguishAudio: '/level2/30/5.mp3',
+            thinkAudio: '/level2/30/7.mp3',
+            circleAudio: '/level2/30/6.mp3',
+            writingImages: ['/level2/30/write_1.png', '/level2/30/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ'],
+            rememberAudio: '/level2/30/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['عَ', 'بَ', 'دَ'], word: 'عَبَدَ' },
+                { id: 2, letters: ['عَ', 'بَ', 'رَ'], word: 'عَبَرَ' },
+                { id: 3, letters: ['بَ', 'رَ', 'عَ'], word: 'بَرَعَ' },
+                { id: 4, letters: ['عَ', 'بَ', 'سَ'], word: 'عَبَسَ' }
+            ],
+            assembleAudio: '/level2/30/assemble.mp3',
+        },
+        {
+            id: 31,
+            title: t('Letter Ghain Lesson'),
+            subtitle: t('Group Six'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Gazelle'), image: '/level2/31/gazelle.jpg', letter: 'غَ', highlight: 'غ', listenImage: '/level2/31/listen/1.png', readImage: '/level2/31/read/1.png' },
+                { id: 2, text: t('Crows'), image: '/level2/31/crows.jpg', letter: 'غِ', highlight: 'غ', listenImage: '/level2/31/listen/2.png', readImage: '/level2/31/read/2.png' },
+                { id: 3, text: t('Clouds'), image: '/level2/31/clouds.jpg', letter: 'غُ', highlight: 'غ', listenImage: '/level2/31/listen/3.png', readImage: '/level2/31/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'غَا', short: 'غَ' },
+                { id: 2, badge: 'ي', long: 'غِيـــ', short: 'غِ' },
+                { id: 3, badge: 'و', long: 'غُو', short: 'غُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'رَغِبَ', sub: 'غَدَرَ', text2: 'رَغَدَ', type: 'solid', image: '/level2/31/write/1.png' },
+                { id: 2, text: 'رَغِبَ', sub: 'غَدَرَ', text2: 'رَغَدَ', type: 'dotted', image: '/level2/31/write/2.png' },
+                { id: 3, text: 'رَغِبَ', sub: 'غَدَرَ', text2: 'رَغَدَ', type: 'dotted', image: '/level2/31/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'غ',
+                    title: t('Exercise: Circle Letter Ghain'),
+                    words: [
+                        'شُغْل', 'صَمْغ', 'بَبَّغَاء', // Shughl, Samgh, Babagha
+                        'غُرُوب', 'صَغِير', 'فَرَاغ', // Ghuroob, Sagheer, Faraagh
+                        'غُرْفَة', 'غَدَاء', 'رَغِيف' // Ghurfa, Ghadaa, Ragheef
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Ghain'),
+                    image: '/level2/31/washing_machine.jpg',
+                    answer: t('Washing Machine')
+                }
+            ],
+            audioUrl: '/level2/31/31.wav',
+            watchAudio: '/level2/31/1.mp3',
+            listenAudio: '/level2/31/2.mp3',
+            readAudio: '/level2/31/3.mp3',
+            writeAudio: '/level2/31/4.mp3',
+            distinguishAudio: '/level2/31/5.mp3',
+            thinkAudio: '/level2/31/7.mp3',
+            circleAudio: '/level2/31/6.mp3',
+            writingImages: ['/level2/31/write_1.png', '/level2/31/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ'],
+            rememberAudio: '/level2/31/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['رَ', 'غِ', 'بَ'], word: 'رَغِبَ' },
+                { id: 2, letters: ['غَ', 'دَ', 'رَ'], word: 'غَدَرَ' },
+                { id: 3, letters: ['رَ', 'غَ', 'دَ'], word: 'رَغَدَ' },
+                { id: 4, letters: ['غَ', 'رْ', 'ب'], word: 'غَرْب' }
+            ],
+            assembleAudio: '/level2/31/assemble.mp3',
+        },
+        {
+            id: 32,
+            title: t('Review of Group Five Words'),
+            subtitle: t('Group Five'),
+            type: 'readWriteReview',
+            items: [
+                { id: 1, text: '', words: ['طَبَخَ', 'طَرَحَ', 'طَرَدَ', 'طُوبَ'] },
+                { id: 2, text: '', words: ['حَظَرَ', 'جَحَظَ', 'ظُفْر', 'حَافِظ'] },
+                { id: 3, text: '', words: ['عَبَدَ', 'عَبَرَ', 'بَرَعَ', 'عَبَسَ'] },
+                { id: 4, text: '', words: ['رَغِبَ', 'غَدَرَ', 'رَغَدَ', 'غَرْب'] },
+            ],
+            audioUrl: '/level2/32/32.wav',
+            reviewAudio: '/level2/32/1.mp3'
+        },
+        {
+            id: 33,
+            title: t('Group Six'),
+            type: 'cubes',
+            groupNumber: 6,
+            items: [
+                { id: 1, text: 'ف', colorFrom: '#FFA500', colorTo: '#FF8C00', shadowColor: '#CC7A00' }, // Orange
+                { id: 2, text: 'ق', colorFrom: '#FFC0CB', colorTo: '#FFB6C1', shadowColor: '#DB7093' }, // Pink
+                { id: 3, text: 'ك', colorFrom: '#00BFFF', colorTo: '#1E90FF', shadowColor: '#0000CD' }, // Blue
+                { id: 4, text: 'ل', colorFrom: '#9ACD32', colorTo: '#32CD32', shadowColor: '#006400' }, // Green
+            ],
+            audioUrl: '/level2/33/33.wav',
+        },
+
+        {
+            id: 34,
+            title: t('Letter Fa Lesson'),
+            subtitle: t('Group Six'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Butterfly'), image: '/level2/34/butterfly.jpg', letter: 'فَ', highlight: 'ف', listenImage: '/level2/34/listen/1.png', readImage: '/level2/34/read/1.png' },
+                { id: 2, text: t('Elephant'), image: '/level2/34/elephant.jpg', letter: 'فِ', highlight: 'ف', listenImage: '/level2/34/listen/2.png', readImage: '/level2/34/read/2.png' },
+                { id: 3, text: t('Beans'), image: '/level2/34/beans.jpg', letter: 'فُ', highlight: 'ف', listenImage: '/level2/34/listen/3.png', readImage: '/level2/34/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'فَا', short: 'فَ' },
+                { id: 2, badge: 'ي', long: 'فِيـــ', short: 'فِ' },
+                { id: 3, badge: 'و', long: 'فُو', short: 'فُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'فَتَحَ', sub: 'حَفَرَ', text2: 'فَسَدَ', type: 'solid', image: '/level2/34/write/1.png' },
+                { id: 2, text: 'فَتَحَ', sub: 'حَفَرَ', text2: 'فَسَدَ', type: 'dotted', image: '/level2/34/write/2.png' },
+                { id: 3, text: 'فَتَحَ', sub: 'حَفَرَ', text2: 'فَسَدَ', type: 'dotted', image: '/level2/34/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'ف',
+                    title: t('Exercise: Circle Letter Fa'),
+                    words: [
+                        'مِفْتَاح', 'فَانُوس', 'صَفْر',
+                        'عَاطِف', 'تُفَّاحَة', 'يَقْفِزُ',
+                        'جَعْفَر', 'سَيْف', 'فَأْس'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Fa'),
+                    image: '/level2/34/window.jpg',
+                    answer: t('Window')
+                }
+            ],
+            audioUrl: '/level2/34/34.wav',
+            watchAudio: '/level2/34/1.mp3',
+            listenAudio: '/level2/34/2.mp3',
+            readAudio: '/level2/34/3.mp3',
+            writeAudio: '/level2/34/4.mp3',
+            distinguishAudio: '/level2/34/5.mp3',
+            thinkAudio: '/level2/34/7.mp3',
+            circleAudio: '/level2/34/6.mp3',
+            writingImages: ['/level2/34/write_1.png', '/level2/34/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ'],
+            rememberAudio: '/level2/34/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['فَ', 'تَ', 'حَ'], word: 'فَتَحَ' },
+                { id: 2, letters: ['حَ', 'فَ', 'رَ'], word: 'حَفَرَ' },
+                { id: 3, letters: ['فَ', 'سَ', 'دَ'], word: 'فَسَدَ' },
+                { id: 4, letters: ['رَ', 'فَ', 'ضَ'], word: 'رَفَضَ' }
+            ],
+            assembleAudio: '/level2/34/assemble.mp3',
+        },
+        {
+            id: 35,
+            title: t('Letter Qaf Lesson'),
+            subtitle: t('Group Six'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Boat'), image: '/level2/35/boat.jpg', letter: 'قَ', highlight: 'ق', listenImage: '/level2/35/listen/1.png', readImage: '/level2/35/read/1.png' },
+                { id: 2, text: t('Monkey'), image: '/level2/35/monkey.jpg', letter: 'قِ', highlight: 'ق', listenImage: '/level2/35/listen/2.png', readImage: '/level2/35/read/2.png' },
+                { id: 3, text: t('Hat'), image: '/level2/35/hat.jpg', letter: 'قُ', highlight: 'ق', listenImage: '/level2/35/listen/3.png', readImage: '/level2/35/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'قَا', short: 'قَ' },
+                { id: 2, badge: 'ي', long: 'قِيـــ', short: 'قِ' },
+                { id: 3, badge: 'و', long: 'قُو', short: 'قُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'رَفَقَ', sub: 'قَطَعَ', text2: 'سَقَطَ', type: 'solid', image: '/level2/35/write/1.png' },
+                { id: 2, text: 'رَفَقَ', sub: 'قَطَعَ', text2: 'سَقَطَ', type: 'dotted', image: '/level2/35/write/2.png' },
+                { id: 3, text: 'رَفَقَ', sub: 'قَطَعَ', text2: 'سَقَطَ', type: 'dotted', image: '/level2/35/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'ق',
+                    title: t('Exercise: Circle Letter Qaf'),
+                    words: [
+                        'قَامُوس', 'قَلَم', 'مِطْرَقَة',
+                        'سَقْف', 'قُرْآن', 'قِصَّة',
+                        'قَمَر', 'وَرَق', 'طَارِق'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Qaf'),
+                    image: '/level2/35/scissors.jpg',
+                    answer: t('Scissors')
+                }
+            ],
+            audioUrl: '/level2/35/35.wav',
+            watchAudio: '/level2/35/1.mp3',
+            listenAudio: '/level2/35/2.mp3',
+            readAudio: '/level2/35/3.mp3',
+            writeAudio: '/level2/35/4.mp3',
+            distinguishAudio: '/level2/35/5.mp3',
+            thinkAudio: '/level2/35/7.mp3',
+            circleAudio: '/level2/35/6.mp3',
+            writingImages: ['/level2/35/write_1.png', '/level2/35/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ'],
+            rememberAudio: '/level2/35/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['رَ', 'فَ', 'قَ'], word: 'رَفَقَ' },
+                { id: 2, letters: ['قَ', 'طَ', 'عَ'], word: 'قَطَعَ' },
+                { id: 3, letters: ['سَ', 'قَ', 'طَ'], word: 'سَقَطَ' },
+                { id: 4, letters: ['رَ', 'قَ', 'صَ'], word: 'رَقَصَ' }
+            ],
+            assembleAudio: '/level2/35/assemble.mp3',
+        },
+        {
+            id: 36,
+            title: t('Letter Kaf Lesson'),
+            subtitle: t('Group Six'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Palm'), image: '/level2/36/palm.jpg', letter: 'كُ', highlight: 'ك', listenImage: '/level2/36/listen/1.png', readImage: '/level2/36/read/1.png' },
+                { id: 2, text: t('Book'), image: '/level2/36/book.jpg', letter: 'كِ', highlight: 'ك', listenImage: '/level2/36/listen/2.png', readImage: '/level2/36/read/2.png' },
+                { id: 3, text: t('Chair'), image: '/level2/36/chair.jpg', letter: 'كَ', highlight: 'ك', listenImage: '/level2/36/listen/3.png', readImage: '/level2/36/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'كَا', short: 'كَ' },
+                { id: 2, badge: 'ي', long: 'كِيـــ', short: 'كِ' },
+                { id: 3, badge: 'و', long: 'كُو', short: 'كُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'كَتَبَ', sub: 'رَكَعَ', text2: 'كَسَرَ', sub2: 'رَكِبَ', type: 'solid', image: '/level2/36/write/1.png' },
+                { id: 2, text: 'كَتَبَ', sub: 'رَكَعَ', text2: 'كَسَرَ', sub2: 'رَكِبَ', type: 'dotted', image: '/level2/36/write/2.png' },
+                { id: 3, text: 'كَتَبَ', sub: 'رَكَعَ', text2: 'كَسَرَ', sub2: 'رَكِبَ', type: 'dotted', image: '/level2/36/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'ك',
+                    title: t('Exercise: Circle Letter Kaf'),
+                    words: [
+                        'كَهْف', 'كُرَة', 'سَمَكَة',
+                        'إِبْرَة', 'دِيك', 'سُكَّر',
+                        'كُرَّاسَة', 'كَلْب', 'كَرِيم'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Kaf'),
+                    image: '/level2/36/cup.jpg',
+                    answer: t('Cup')
+                }
+            ],
+            audioUrl: '/level2/36/36.wav',
+            watchAudio: '/level2/36/1.mp3',
+            listenAudio: '/level2/36/2.mp3',
+            readAudio: '/level2/36/3.mp3',
+            writeAudio: '/level2/36/4.mp3',
+            distinguishAudio: '/level2/36/5.mp3',
+            thinkAudio: '/level2/36/7.mp3',
+            circleAudio: '/level2/36/6.mp3',
+            writingImages: ['/level2/36/write_1.png', '/level2/36/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ'],
+            rememberAudio: '/level2/36/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['ك', 'تَ', 'بَ'], word: 'كَتَبَ' },
+                { id: 2, letters: ['ك', 'سَ', 'رَ'], word: 'كَسَرَ' },
+                { id: 3, letters: ['رَ', 'ك', 'عَ'], word: 'رَكَعَ' },
+                { id: 4, letters: ['مَ', 'عَ', 'ك'], word: 'مَعَكَ' }, // Using 'Ma'ak' as a placeholder or inferred from 'Rakiba' in image context but let's check assemble image again. Image shows: ر ك ب -> Rakiba
+                // Correction: Image showing assemble words: Ka Ta Ba - Kataba, Ka Sa Ra - Kasara, Ra Ka 'A - Raka'a, Ra Ki Ba - Rakiba (no Ma'ak in image)
+                { id: 4, letters: ['رَ', 'كِ', 'بَ'], word: 'رَكِبَ' }
+            ],
+            assembleAudio: '/level2/36/assemble.mp3',
+        },
+        {
+            id: 37,
+            title: t('Letter Lam Lesson'),
+            subtitle: t('Group Six'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Milk'), image: '/level2/37/milk.jpg', letter: 'لُ', highlight: 'ل', listenImage: '/level2/37/listen/1.png', readImage: '/level2/37/read/1.png' },
+                { id: 2, text: t('Tongue'), image: '/level2/37/tongue.jpg', letter: 'لِ', highlight: 'ل', listenImage: '/level2/37/listen/2.png', readImage: '/level2/37/read/2.png' },
+                { id: 3, text: t('Toy'), image: '/level2/37/toy.jpg', letter: 'لَ', highlight: 'ل', listenImage: '/level2/37/listen/3.png', readImage: '/level2/37/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'لَا', short: 'لَ' },
+                { id: 2, badge: 'ي', long: 'لِيـــ', short: 'لِ' },
+                { id: 3, badge: 'و', long: 'لُو', short: 'لُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'لَبَن', sub: 'طَلَبَ', text2: 'طَالِب', sub2: 'غَسَلَ', type: 'solid', image: '/level2/37/write/1.png' },
+                { id: 2, text: 'لَبَن', sub: 'طَلَبَ', text2: 'طَالِب', sub2: 'غَسَلَ', type: 'dotted', image: '/level2/37/write/2.png' },
+                { id: 3, text: 'لَبَن', sub: 'طَلَبَ', text2: 'طَالِب', sub2: 'غَسَلَ', type: 'dotted', image: '/level2/37/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'ل',
+                    title: t('Exercise: Circle Letter Lam'),
+                    words: [
+                        'مِلْعَقَة', 'لَحْم', 'لَيْل',
+                        'وَلَد', 'مِلْح', 'جِبَال',
+                        'جَمَل', 'بُرْتُقَال', 'قَلَم'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Lam'),
+                    image: '/level2/37/lemon.jpg',
+                    answer: t('Laymoon')
+                }
+            ],
+            audioUrl: '/level2/37/37.wav',
+            watchAudio: '/level2/37/1.mp3',
+            listenAudio: '/level2/37/2.mp3',
+            readAudio: '/level2/37/3.mp3',
+            writeAudio: '/level2/37/4.mp3',
+            distinguishAudio: '/level2/37/5.mp3',
+            thinkAudio: '/level2/37/7.mp3',
+            circleAudio: '/level2/37/6.mp3',
+            writingImages: ['/level2/37/write_1.png', '/level2/37/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ', 'لَ', 'لِ', 'لُ'],
+            rememberAudio: '/level2/37/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['لَ', 'بَ', 'ن'], word: 'لَبَن' },
+                { id: 2, letters: ['طَ', 'لَ', 'بَ'], word: 'طَلَبَ' },
+                { id: 3, letters: ['طَ', 'ال', 'ب'], word: 'طَالِب' },
+                { id: 4, letters: ['غَ', 'سَ', 'لَ'], word: 'غَسَلَ' }
+            ],
+            assembleAudio: '/level2/37/assemble.mp3',
+        },
+        {
+            id: 38,
+            title: t('Review of Group Six Words'),
+            subtitle: t('Group Six'),
+            type: 'readWriteReview',
+            items: [
+                { id: 1, text: '', words: ['فَتَحَ', 'حَفَرَ', 'فَسَدَ', 'رَفَضَ'] },
+                { id: 2, text: '', words: ['رَفَقَ', 'قَطَعَ', 'سَقَطَ', 'رَقَصَ'] },
+                { id: 3, text: '', words: ['كَتَبَ', 'كَسَرَ', 'رَكَعَ', 'رَكِبَ'] },
+                { id: 4, text: '', words: ['لَبَن', 'طَلَبَ', 'طَالِب', 'غَسَلَ'] },
+            ],
+            audioUrl: '/level2/38/38.wav',
+            reviewAudio: '/level2/38/1.mp3'
+        },
+        {
+            id: 39,
+            title: t('Group Seven'),
+            type: 'cubes',
+            groupNumber: 7,
+            items: [
+                { id: 1, text: 'م', colorFrom: '#FFA500', colorTo: '#FF8C00', shadowColor: '#CC7A00' }, // Orange
+                { id: 2, text: 'ن', colorFrom: '#FFC0CB', colorTo: '#FFB6C1', shadowColor: '#DB7093' }, // Pink
+                { id: 3, text: 'هـ', colorFrom: '#00BFFF', colorTo: '#1E90FF', shadowColor: '#0000CD' }, // Blue
+                { id: 4, text: 'و', colorFrom: '#9ACD32', colorTo: '#32CD32', shadowColor: '#006400' }, // Green
+                { id: 5, text: 'ي', colorFrom: '#A1887F', colorTo: '#8D6E63', shadowColor: '#5D4037' }, // Brown
+            ],
+            audioUrl: '/level2/39/39.wav',
+        },
+        {
+            id: 40,
+            title: t('Letter Meem Lesson'),
+            subtitle: t('Group Seven'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Mosque'), image: '/level2/40/mosque.jpg', letter: 'مَ', highlight: 'م', listenImage: '/level2/40/listen/1.png', readImage: '/level2/40/read/1.png' },
+                { id: 2, text: t('Scale'), image: '/level2/40/scale.jpg', letter: 'مِ', highlight: 'م', listenImage: '/level2/40/listen/2.png', readImage: '/level2/40/read/2.png' },
+                { id: 3, text: t('Mushaf'), image: '/level2/40/mushaf.jpg', letter: 'مُ', highlight: 'م', listenImage: '/level2/40/listen/3.png', readImage: '/level2/40/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'مَا', short: 'مَ' },
+                { id: 2, badge: 'ي', long: 'مِيـــ', short: 'مِ' },
+                { id: 3, badge: 'و', long: 'مُو', short: 'مُ' },
+            ],
+            writingPractice: [
+
+                { id: 1, text: 'رَسَمَ', sub: 'سَمَحَ', text2: 'حَسَمَ', sub2: 'مَاجِد', type: 'solid', image: '/level2/40/write/1.png' },
+                { id: 2, text: 'رَسَمَ', sub: 'سَمَحَ', text2: 'حَسَمَ', sub2: 'مَاجِد', type: 'dotted', image: '/level2/40/write/2.png' },
+                { id: 3, text: 'رَسَمَ', sub: 'سَمَحَ', text2: 'حَسَمَ', sub2: 'مَاجِد', type: 'dotted', image: '/level2/40/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'م',
+                    title: t('Exercise: Circle Letter Meem'),
+                    words: [
+                        'مَدْرَسَة', 'لَحْم', 'مَقَصّ',
+                        'عُمَر', 'مِلْعَقَة', 'أَقْلَام',
+                        'مِقَصّ', 'نَمِر', 'مِلْح'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Meem'),
+                    image: '/level2/40/pomegranate.jpg',
+                    answer: t('Pomegranate')
+                }
+            ],
+            audioUrl: '/level2/40/40.wav',
+            watchAudio: '/level2/40/1.mp3',
+            listenAudio: '/level2/40/2.mp3',
+            readAudio: '/level2/40/3.mp3',
+            writeAudio: '/level2/40/4.mp3',
+            distinguishAudio: '/level2/40/5.mp3',
+            thinkAudio: '/level2/40/7.mp3',
+            circleAudio: '/level2/40/6.mp3',
+            writingImages: ['/level2/40/write_1.png', '/level2/40/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ', 'لَ', 'لِ', 'لُ', 'مَ', 'مِ', 'مُ'],
+            rememberAudio: '/level2/40/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['رَ', 'سَ', 'مَ'], word: 'رَسَمَ' },
+                { id: 2, letters: ['سَ', 'مَ', 'حَ'], word: 'سَمَحَ' },
+                { id: 3, letters: ['حَ', 'سَ', 'مَ'], word: 'حَسَمَ' },
+                { id: 4, letters: ['مَ', 'ا', 'جِد'], word: 'مَاجِد' }
+            ],
+            assembleAudio: '/level2/40/assemble.mp3',
+        },
+        {
+            id: 41,
+            title: t('Letter Noon Lesson'),
+            subtitle: t('Group Seven'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Palm Tree'), image: '/level2/41/palm_tree.jpg', letter: 'نَ', highlight: 'ن', listenImage: '/level2/41/listen/1.png', readImage: '/level2/41/read/1.png' },
+                { id: 2, text: t('Tiger'), image: '/level2/41/tiger.jpg', letter: 'نَ', highlight: 'ن', listenImage: '/level2/41/listen/2.png', readImage: '/level2/41/read/2.png' },
+                { id: 3, text: t('Stars'), image: '/level2/41/stars.jpg', letter: 'نُ', highlight: 'ن', listenImage: '/level2/41/listen/3.png', readImage: '/level2/41/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'نَا', short: 'نَ' },
+                { id: 2, badge: 'ي', long: 'نِيـــ', short: 'نِ' },
+                { id: 3, badge: 'و', long: 'نُو', short: 'نُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'نَبِيل', sub: 'نَمْل', text2: 'نُور', sub2: 'هَنَاء', type: 'solid', image: '/level2/41/write/1.png' },
+                { id: 2, text: 'نَبِيل', sub: 'نَمْل', text2: 'نُور', sub2: 'هَنَاء', type: 'dotted', image: '/level2/41/write/2.png' },
+                { id: 3, text: 'نَبِيل', sub: 'نَمْل', text2: 'نُور', sub2: 'هَنَاء', type: 'dotted', image: '/level2/41/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'ن',
+                    title: t('Exercise: Circle Letter Noon'),
+                    words: [
+                        'زَيْتُون', 'نَافِذَة', 'نَسْر',
+                        'نَاد', 'نَار', 'نَعَامَة',
+                        'مِنْدِيل', 'نَحْل', 'مُنِيرَة'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Noon'),
+                    image: '/level2/41/money.jpg',
+                    answer: t('Money')
+                }
+            ],
+            audioUrl: '/level2/41/41.wav',
+            watchAudio: '/level2/41/1.mp3',
+            listenAudio: '/level2/41/2.mp3',
+            readAudio: '/level2/41/3.mp3',
+            writeAudio: '/level2/41/4.mp3',
+            distinguishAudio: '/level2/41/5.mp3',
+            thinkAudio: '/level2/41/7.mp3',
+            circleAudio: '/level2/41/6.mp3',
+            writingImages: ['/level2/41/write_1.png', '/level2/41/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ', 'لَ', 'لِ', 'لُ', 'مَ', 'مِ', 'مُ', 'نَ', 'نِ', 'نُ'],
+            rememberAudio: '/level2/41/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['نَ', 'بِيـ', 'ـل'], word: 'نَبِيل' },
+                { id: 2, letters: ['نُ', 'مُ', 'ل'], word: 'نَمْل' },
+                { id: 3, letters: ['نُ', 'و', 'ر'], word: 'نُور' },
+                { id: 4, letters: ['هَ', 'نَ', 'اء'], word: 'هَنَاء' }
+            ],
+            assembleAudio: '/level2/41/assemble.mp3',
+        },
+        {
+            id: 42,
+            title: t('Letter Ha Lesson'),
+            subtitle: t('Group Seven'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Pyramid'), image: '/level2/42/pyramid.jpg', letter: 'هَ', highlight: 'هـ', listenImage: '/level2/42/listen/1.png', readImage: '/level2/42/read/1.png' },
+                { id: 2, text: t('Crescent'), image: '/level2/42/crescent.jpg', letter: 'هـِ', highlight: 'هـ', listenImage: '/level2/42/listen/2.png', readImage: '/level2/42/read/2.png' },
+                { id: 3, text: t('Hoopoe'), image: '/level2/42/hoopoe.jpg', letter: 'هُ', highlight: 'هـ', listenImage: '/level2/42/listen/3.png', readImage: '/level2/42/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'هَا', short: 'هَ' },
+                { id: 2, badge: 'ي', long: 'هِيـــ', short: 'هـِ' },
+                { id: 3, badge: 'و', long: 'هُو', short: 'هُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'نَهَلَ', sub: 'هَدَمَ', text2: 'هَزَمَ', sub2: 'هَادٍ', type: 'solid', image: '/level2/42/write/1.png' },
+                { id: 2, text: 'نَهَلَ', sub: 'هَدَمَ', text2: 'هَزَمَ', sub2: 'هَادٍ', type: 'dotted', image: '/level2/42/write/2.png' },
+                { id: 3, text: 'نَهَلَ', sub: 'هَدَمَ', text2: 'هَزَمَ', sub2: 'هَادٍ', type: 'dotted', image: '/level2/42/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'هـ',
+                    title: t('Exercise: Circle Letter Ha'),
+                    words: [
+                        'نَهْر', 'هَرَاوَة', 'مَهَا',
+                        'كَهْرَبَاء', 'هَوَاء', 'وَجْه',
+                        'مِيَاه', 'هِرَّة', 'طَهُور'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Ha'),
+                    image: '/level2/42/phone.jpg',
+                    answer: t('Telephone')
+                }
+            ],
+            audioUrl: '/level2/42/42.wav',
+            watchAudio: '/level2/42/1.mp3',
+            listenAudio: '/level2/42/2.mp3',
+            readAudio: '/level2/42/3.mp3',
+            writeAudio: '/level2/42/4.mp3',
+            distinguishAudio: '/level2/42/5.mp3',
+            thinkAudio: '/level2/42/7.mp3',
+            circleAudio: '/level2/42/6.mp3',
+            writingImages: ['/level2/42/write_1.png', '/level2/42/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ', 'لَ', 'لِ', 'لُ', 'مَ', 'مِ', 'مُ', 'نَ', 'نِ', 'نُ', 'هَ', 'هـِ', 'هُ'],
+            rememberAudio: '/level2/42/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['نَ', 'هَ', 'لَ'], word: 'نَهَلَ' },
+                { id: 2, letters: ['هَ', 'دَ', 'مَ'], word: 'هَدَمَ' },
+                { id: 3, letters: ['هَ', 'زَ', 'مَ'], word: 'هَزَمَ' },
+                { id: 4, letters: ['هَ', 'ا', 'دٍ'], word: 'هَادٍ' }
+            ],
+            assembleAudio: '/level2/42/assemble.mp3',
+        },
+        {
+            id: 43,
+            title: t('Letter Waw Lesson'),
+            subtitle: t('Group Seven'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Rose'), image: '/level2/43/rose.jpg', letter: 'وَ', highlight: 'و', listenImage: '/level2/43/listen/1.png', readImage: '/level2/43/read/1.png' },
+                { id: 2, text: t('Pillow'), image: '/level2/43/pillow.jpg', letter: 'وِ', highlight: 'و', listenImage: '/level2/43/listen/2.png', readImage: '/level2/43/read/2.png' },
+                { id: 3, text: t('Roses'), image: '/level2/43/roses.jpg', letter: 'وُ', highlight: 'و', listenImage: '/level2/43/listen/3.png', readImage: '/level2/43/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'وَا', short: 'وَ' },
+                { id: 2, badge: 'ي', long: 'وِي', short: 'وِ' },
+                { id: 3, badge: 'و', long: 'وُو', short: 'وُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'وَرَدَ', sub: 'وَصَفَ', text2: 'وَصَلَ', sub2: 'وَرِثَ', type: 'solid', image: '/level2/43/write/1.png' },
+                { id: 2, text: 'وَرَدَ', sub: 'وَصَفَ', text2: 'وَصَلَ', sub2: 'وَرِثَ', type: 'dotted', image: '/level2/43/write/2.png' },
+                { id: 3, text: 'وَرَدَ', sub: 'وَصَفَ', text2: 'وَصَلَ', sub2: 'وَرِثَ', type: 'dotted', image: '/level2/43/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'و',
+                    title: t('Exercise: Circle Letter Waw'),
+                    words: [
+                        'هَوَاء', 'نُجُوم', 'وَلِيد',
+                        'وَظِيفَة', 'صُوَر', 'فَوَاكِه',
+                        'جَوَّال', 'مُلَوَّث', 'نَعُود'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Waw'),
+                    image: '/level2/43/banana.jpg',
+                    answer: t('Banana')
+                }
+            ],
+            audioUrl: '/level2/43/43.wav',
+            watchAudio: '/level2/43/1.mp3',
+            listenAudio: '/level2/43/2.mp3',
+            readAudio: '/level2/43/3.mp3',
+            writeAudio: '/level2/43/4.mp3',
+            distinguishAudio: '/level2/43/5.mp3',
+            thinkAudio: '/level2/43/7.mp3',
+            circleAudio: '/level2/43/6.mp3',
+            writingImages: ['/level2/43/write_1.png', '/level2/43/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ', 'لَ', 'لِ', 'لُ', 'مَ', 'مِ', 'مُ', 'نَ', 'نِ', 'نُ', 'هَ', 'هـِ', 'هُ', 'وَ', 'وِ', 'وُ'],
+            rememberAudio: '/level2/43/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['و', 'ر', 'د'], word: 'وَرَد' },
+                { id: 2, letters: ['و', 'ص', 'ف'], word: 'وَصَفَ' },
+                { id: 3, letters: ['و', 'ص', 'ل'], word: 'وَصَلَ' },
+                { id: 4, letters: ['و', 'ر', 'ث'], word: 'وَرِثَ' }
+            ],
+            assembleAudio: '/level2/43/assemble.mp3',
+        },
+        {
+            id: 44,
+            title: t('Letter Ya Lesson'),
+            subtitle: t('Group Seven'),
+            type: 'letterExamples',
+            items: [
+                { id: 1, text: t('Reads'), image: '/level2/44/reads.jpg', letter: 'يَ', highlight: 'ي', listenImage: '/level2/44/listen/1.png', readImage: '/level2/44/read/1.png' },
+                { id: 2, text: t('Nayef'), image: '/level2/44/nayef.jpg', letter: 'يِ', highlight: 'ي', listenImage: '/level2/44/listen/2.png', readImage: '/level2/44/read/2.png' },
+                { id: 3, text: t('Shakes hands'), image: '/level2/44/shakes_hands.jpg', letter: 'يُ', highlight: 'ي', listenImage: '/level2/44/listen/3.png', readImage: '/level2/44/read/3.png' },
+            ],
+            distinguish: [
+                { id: 1, badge: 'ا', long: 'يَا', short: 'يَ' },
+                { id: 2, badge: 'ي', long: 'يِي', short: 'يِ' },
+                { id: 3, badge: 'و', long: 'يُو', short: 'يُ' },
+            ],
+            writingPractice: [
+                { id: 1, text: 'يُحِبُّ', sub: 'يَاسِر', text2: 'يُوسُف', sub2: 'رِيح', type: 'solid', image: '/level2/44/write/1.png' },
+                { id: 2, text: 'يُحِبُّ', sub: 'يَاسِر', text2: 'يُوسُف', sub2: 'رِيح', type: 'dotted', image: '/level2/44/write/2.png' },
+                { id: 3, text: 'يُحِبُّ', sub: 'يَاسِر', text2: 'يُوسُف', sub2: 'رِيح', type: 'dotted', image: '/level2/44/write/3.png' },
+            ],
+            exercises: [
+                {
+                    id: 1,
+                    type: 'circle',
+                    letter: 'ي',
+                    title: t('Exercise: Circle Letter Ya'),
+                    words: [
+                        'بَيْت', 'يَمَامَة', 'رِيَاح',
+                        'يَمْشِي', 'يُسْرِعُ', 'سَيَّارَة',
+                        'يَرْكُضُ', 'عَيْن', 'رِيَاضَة'
+                    ]
+                },
+                {
+                    id: 2,
+                    type: 'think',
+                    title: t('Mention words with letter Ya'),
+                    image: '/level2/44/riyal.jpg',
+                    answer: t('Riyal')
+                }
+            ],
+            audioUrl: '/level2/44/44.wav',
+            watchAudio: '/level2/44/1.mp3',
+            listenAudio: '/level2/44/2.mp3',
+            readAudio: '/level2/44/3.mp3',
+            writeAudio: '/level2/44/4.mp3',
+            distinguishAudio: '/level2/44/5.mp3',
+            thinkAudio: '/level2/44/7.mp3',
+            circleAudio: '/level2/44/6.mp3',
+            writingImages: ['/level2/44/write_1.png', '/level2/44/write_2.png'],
+            remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ', 'لَ', 'لِ', 'لُ', 'مَ', 'مِ', 'مُ', 'نَ', 'نِ', 'نُ', 'هَ', 'هـِ', 'هُ', 'وَ', 'وِ', 'وُ', 'يَ', 'يِ', 'يُ'],
+            rememberAudio: '/level2/44/remember.mp3',
+            assemble: [
+                { id: 1, letters: ['ي', 'ح', 'ب'], word: 'يُحِبُّ' },
+                { id: 2, letters: ['ي', 'ا', 'س', 'ر'], word: 'يَاسِر' },
+                { id: 3, letters: ['ي', 'و', 'س', 'ف'], word: 'يُوسُف' },
+                { id: 4, letters: ['ر', 'ي', 'ح'], word: 'رِيح' }
+            ],
+            assembleAudio: '/level2/44/assemble.mp3',
+        },
+        {
+            id: 45,
+            title: t('Group Seven Words Review'),
+            subtitle: t('Group Seven'),
+            type: 'readWriteReview',
+            items: [
+                { id: 1, text: '', words: ['رَسَمَ', 'سَمَحَ', 'حَسَمَ', 'مَاجِد'] },
+                { id: 2, text: '', words: ['نَبِيل', 'نَمْل', 'هَنَاء', 'نُور'] },
+                { id: 3, text: '', words: ['نَهَلَ', 'هَدَمَ', 'هَزَمَ', 'هَادٍ'] },
+                { id: 4, text: '', words: ['وَرَدَ', 'وَصَفَ', 'وَصَلَ', 'وَرِثَ'] },
+                { id: 5, text: '', words: ['يُحِبُّ', 'يَاسِر', 'يُوسُف', 'رِيح'] },
+            ],
+            audioUrl: '/level2/45/45.wav',
+        },
+        {
+            id: 46,
+            title: t('Sukoon Lesson'),
+            subtitle: t('Group Seven'),
+            type: 'gallery',
+            items: [
+                { id: 1, text: '<span class="text-red-500">أُسْ</span>رَة', image: '/level2/46/family.jpg' },
+                { id: 2, text: '<span class="text-red-500">بِنْ</span>ت', image: '/level2/46/girl.jpg' },
+                { id: 3, text: '<span class="text-red-500">طِفْ</span>ل', image: '/level2/46/child.jpg' },
+                { id: 4, text: '<span class="text-red-500">بَيْ</span>ت', image: '/level2/46/house.jpg' },
+                { id: 5, text: '<span class="text-red-500">رَأْ</span>س', image: '/level2/46/head.jpg' },
+                { id: 6, text: '<span class="text-red-500">شَعْ</span>ر', image: '/level2/46/hair.jpg' },
+                { id: 7, text: '<span class="text-red-500">وَجْ</span>ه', image: '/level2/46/face.jpg' },
+                { id: 8, text: '<span class="text-red-500">أَنْ</span>ف', image: '/level2/46/nose.jpg' },
+                { id: 9, text: '<span class="text-red-500">قَلْ</span>ب', image: '/level2/46/heart.jpg' },
+                { id: 10, text: '<span class="text-red-500">تَمْ</span>ر', image: '/level2/46/dates.jpg' },
+                { id: 11, text: '<span class="text-red-500">زَيْ</span>تُون', image: '/level2/46/olives.jpg' },
+                { id: 12, text: '<span class="text-red-500">مَوْ</span>ز', image: '/level2/46/banana.jpg' },
+                { id: 13, text: '<span class="text-red-500">مِشْ</span>مِش', image: '/level2/46/apricot.jpg' },
+                { id: 14, text: '<span class="text-red-500">خَوْ</span>خ', image: '/level2/46/peach.jpg' },
+                { id: 15, text: '<span class="text-red-500">ثُعْ</span>بَان', image: '/level2/46/snake.jpg' },
+                { id: 16, text: '<span class="text-red-500">ثَعْ</span>لَب', image: '/level2/46/fox.jpg' },
+                { id: 17, text: '<span class="text-red-500">كَلْ</span>ب', image: '/level2/46/dog.jpg' },
+                { id: 18, text: '<span class="text-red-500">فَهْ</span>د', image: '/level2/46/cheetah.jpg' },
+            ],
+            audioUrl: '/level2/46/46.wav',
+        },
+        {
+            id: 47,
+            title: t('Shaddah Lesson'),
+            subtitle: t('Group Seven'),
+            type: 'gallery',
+            items: [
+                { id: 1, text: 'أ<span class="text-red-500">مِّ</span>ي', image: '/level2/47/mother.jpg' },
+                { id: 2, text: 'جَ<span class="text-red-500">دِّ</span>ي', image: '/level2/47/grandfather.jpg' },
+                { id: 3, text: 'جَ<span class="text-red-500">دَّ</span>تِي', image: '/level2/47/grandmother.jpg' },
+                { id: 4, text: 'عَ<span class="text-red-500">مَّ</span>تِي', image: '/level2/47/aunt.jpg' },
+                { id: 5, text: 'مُعَ<span class="text-red-500">لِّ</span>م', image: '/level2/47/teacher_m.jpg' },
+                { id: 6, text: 'مُعَ<span class="text-red-500">لِّ</span>مَة', image: '/level2/47/teacher_f.jpg' },
+                { id: 7, text: 'فَ<span class="text-red-500">نَّا</span>ن', image: '/level2/47/artist.jpg' },
+                { id: 8, text: 'يُفَ<span class="text-red-500">كِّ</span>رُ', image: '/level2/47/thinks.jpg' },
+                { id: 9, text: 'يُغَ<span class="text-red-500">نِّ</span>ي', image: '/level2/47/sings.jpg' },
+            ],
+            audioUrl: '/level2/47/47.wav',
+        },
+        {
+            id: 48,
+            title: t('Arabic Alphabet Sounds'),
+            subtitle: t('Group Seven'),
+            type: 'alphabetChart',
+            items: [
+                'أَ', 'بَ', 'تَ', 'ثَ', 'جَ', 'حَ', 'خَ',
+                'دَ', 'ذَ', 'رَ', 'زَ', 'سَ', 'شَ', 'صَ',
+                'ضَ', 'طَ', 'ظَ', 'عَ', 'غَ', 'فَ', 'قَ',
+                'كَ', 'لَ', 'مَ', 'نَ', 'هَ', 'وَ', 'يَ'
+            ],
+            audioUrl: '/level2/48/48.wav',
+        },
+        {
+            id: 49,
+            title: t('Arabic Alphabet Sounds'),
+            subtitle: t('Group Seven'),
+            type: 'alphabetChart',
+            colorTheme: 'blue',
+            items: [
+                'إِ', 'بِ', 'تِ', 'ثِ', 'جِ', 'حِ', 'خِ',
+                'دِ', 'ذِ', 'رِ', 'زِ', 'سِ', 'شِ', 'صِ',
+                'ضِ', 'طِ', 'ظِ', 'عِ', 'غِ', 'فِ', 'قِ',
+                'كِ', 'لِ', 'مِ', 'نِ', 'هِ', 'وِ', 'يِ'
+            ],
+            audioUrl: '/level2/49/49.wav',
+        },
+        {
+            id: 50,
+            title: t('Arabic Alphabet Sounds'),
+            subtitle: t('Group Seven'),
+            type: 'alphabetChart',
+            colorTheme: 'green',
+            items: [
+                'أُ', 'بُ', 'تُ', 'ثُ', 'جُ', 'حُ', 'خُ',
+                'دُ', 'ذُ', 'رُ', 'زُ', 'سُ', 'شُ', 'صُ',
+                'ضُ', 'طُ', 'ظُ', 'عُ', 'غُ', 'فُ', 'قُ',
+                'كُ', 'لُ', 'مُ', 'نُ', 'هُ', 'وُ', 'يُ'
+            ],
+            audioUrl: '/level2/50/50.wav',
+        },
 
     ];
 

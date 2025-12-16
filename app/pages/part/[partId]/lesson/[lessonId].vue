@@ -101,7 +101,7 @@
 
       <!-- Gallery Type Lesson -->
       <div v-else-if="lesson.type === 'gallery' && lesson.items" 
-           class="grid gap-6 p-4 max-w-4xl mx-auto z-10 relative"
+           class="grid gap-6 p-4 max-w-4xl mx-auto z-10 relative mt-12"
            :class="lesson.id === 3 ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-4'">
         <div v-for="(item, index) in lesson.items" :key="index" class="flex flex-col items-center group cursor-pointer">
           <div class="w-full h-64 bg-tranparent rounded-lg overflow-hidden mb-2 shadow-md transition-transform duration-300 transform group-hover:scale-105 group-hover:shadow-xl">
@@ -110,7 +110,7 @@
               No Image
             </div>
           </div>
-          <p class="text-xl font-semibold text-gray-700 transition-colors group-hover:text-red-600">{{ item.text }}</p>
+          <p class="text-xl font-bold text-gray-700 transition-colors group-hover:text-red-600 font-amiri text-3xl" v-html="item.text"></p>
         </div>
       </div>
 
@@ -811,6 +811,29 @@
                </div>
 
           </div>
+      </div>
+
+      <!-- Alphabet Chart Lesson Type -->
+      <div v-else-if="lesson.type === 'alphabetChart'" class="flex flex-col w-full max-w-6xl mx-auto mt-16 px-4">
+           <div class="grid grid-cols-4 md:grid-cols-7 gap-4 md:gap-6 border-2 border-gray-200 p-4 rounded-xl bg-white shadow-sm">
+               <div v-for="(char, index) in lesson.items" :key="index" 
+                    class="aspect-square flex items-center justify-center border border-gray-100 rounded-lg transition-colors shadow-sm bg-white cursor-pointer transform hover:scale-105 duration-200"
+                    :class="[
+                        lesson.colorTheme === 'blue' ? 'hover:bg-blue-50 hover:border-blue-200' : 
+                        lesson.colorTheme === 'green' ? 'hover:bg-green-50 hover:border-green-200' :
+                        'hover:bg-red-50 hover:border-red-200'
+                    ]"
+                >
+                   <span 
+                        class="text-4xl md:text-6xl font-bold font-amiri"
+                        :class="[
+                            lesson.colorTheme === 'blue' ? 'text-blue-600' : 
+                            lesson.colorTheme === 'green' ? 'text-green-600' :
+                            'text-red-600'
+                        ]"
+                    >{{ char }}</span>
+               </div>
+           </div>
       </div>
 
       <!-- Read and Write Review Lesson Type -->

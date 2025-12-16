@@ -31,6 +31,7 @@ export interface WritingPracticeItem {
     text: string;
     sub: string;
     text2?: string; // The damma/kasra version or just repeating
+    sub2?: string;
     type: 'solid' | 'dotted';
     image?: string;
 }
