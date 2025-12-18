@@ -114,6 +114,122 @@
         </div>
       </div>
 
+      <!-- Unit Intro Type -->
+      <div v-else-if="lesson.type === 'unitIntro'" class="flex items-center justify-center w-full min-h-[85vh] p-4 z-10 bg-white">
+          <div class="relative w-full max-w-4xl aspect-[3/4] md:aspect-[4/3] bg-white flex flex-col items-center justify-start pt-32 md:pt-40 shadow-2xl rounded-sm border border-gray-100 overflow-hidden">
+              
+              <!-- Left Sidebar Decoration (Blue Gradient) -->
+              <div class="absolute left-4 top-4 bottom-4 w-12 md:w-16 rounded-full overflow-hidden flex flex-col gap-2">
+                  <div class="h-full w-full bg-gradient-to-b from-[#4a90e2] via-[#5ca0f2] to-[#4a90e2] opacity-80 relative overflow-hidden">
+                       <!-- Waves Pattern Overlay -->
+                       <div class="absolute inset-0 opacity-30" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, #fff 10px, #fff 20px);"></div>
+                  </div>
+              </div>
+
+               <!-- Right Bottom Flourish Decoration -->
+              <div class="absolute right-0 bottom-0 w-64 h-64 md:w-96 md:h-96 pointer-events-none opacity-20">
+                   <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-full fill-blue-400">
+                        <path d="M42.7,-62.9C50.9,-52.8,49.3,-34.4,50.1,-19.1C50.9,-3.8,54.1,8.3,50,18.3C45.9,28.3,34.4,36.1,22.7,45.4C11,54.7,-1,65.5,-12.3,64.8C-23.6,64.1,-34.1,51.9,-43.4,40.1C-52.7,28.3,-60.8,16.9,-63.3,3.7C-65.8,-9.5,-62.7,-24.5,-53.9,-35.1C-45.1,-45.7,-30.5,-51.9,-16.9,-58C-3.2,-64.1,9.4,-70.1,22.3,-69.3C35.2,-68.5,48.3,-60.9,42.7,-62.9Z" transform="translate(100 100)" />
+                   </svg>
+              </div>
+
+
+              <!-- Title: Unit One -->
+              <h1 class="text-6xl md:text-8xl font-black text-[#2c3e50] font-amiri mb-12 relative z-10" style="color: #1a237e; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
+                  {{ lesson.title }}
+              </h1>
+
+              <!-- Subtitle: Words with Three Letters -->
+              <h2 class="text-4xl md:text-6xl font-black font-amiri text-center leading-relaxed px-8 relative z-10 drop-shadow-sm" 
+                  style="color: #d32f2f; -webkit-text-stroke: 1px rgba(211, 47, 47, 0.1);">
+                  {{ lesson.subtitle }}
+              </h2>
+
+
+
+          </div>
+      </div>
+
+
+
+      <!-- I Read and Write Type logic -->
+      <div v-else-if="lesson.type === 'readWriteRows'" class="w-full max-w-6xl mx-auto p-4 z-10">
+          <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-white">
+              <!-- Header Removed as requested -->
+
+
+              <!-- Grid -->
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 dir-rtl">
+                  <div v-for="item in lesson.items" :key="item.id" class="flex flex-col items-center group">
+                      <!-- Reading Bubble -->
+                      <div class="w-full bg-gradient-to-b from-[#008CBA] to-[#007095] text-white rounded-full py-4 px-2 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 mb-6 flex items-center justify-center border-2 border-[#005f7f]">
+                          <span class="text-3xl md:text-5xl font-bold font-amiri leading-normal pt-2">{{ item.text }}</span>
+                      </div>
+
+                      <!-- Writing Line -->
+                      <div class="relative w-full h-24 flex items-end justify-center">
+                          <!-- The Line -->
+                          <div class="absolute bottom-4 left-0 right-0 h-0.5 bg-gray-400 w-full"></div>
+                          
+                          <!-- The Tracing Text -->
+                          <span class="text-5xl md:text-6xl font-black font-amiri text-gray-300 tracking-wide relative z-10 bottom-0 select-none pointer-events-none" 
+                                style="-webkit-text-stroke: 1px #9ca3af;">
+                              {{ item.text }}
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+      <!-- Assemble then Write Type logic -->
+      <div v-else-if="lesson.type === 'assembleWrite'" class="w-full max-w-5xl mx-auto p-4 z-10">
+           <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 md:p-12 border border-white flex flex-col gap-12">
+               
+               <!-- Description -->
+               <div v-if="lesson.description" class="text-center mb-4">
+                   <p class="text-xl md:text-2xl text-gray-600 font-amiri leading-relaxed">{{ lesson.description }}</p>
+               </div>
+
+               <!-- Item Loop -->
+               <div v-for="item in lesson.items" :key="item.id" class="flex flex-col md:flex-row items-center justify-between gap-8 py-8 border-b border-gray-100 last:border-0" dir="rtl">
+                   
+                   <!-- Right Side: Letters Circles (First in DOM because RTL) -->
+                   <div class="flex gap-4 md:gap-6">
+                        <div v-for="(letter, idx) in item.letters" :key="idx" 
+                             class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300">
+                             <span class="text-3xl md:text-4xl font-bold text-blue-800 font-amiri mb-2">{{ letter }}</span>
+                        </div>
+                   </div>
+
+                   <!-- Center: Arrow Icon -->
+                   <!-- Removed rotation so it points left by default (M10.5 19.5 L3 12...) -->
+                   <div class="text-red-500 opacity-60">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-12 h-12">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                        </svg>
+                   </div>
+
+                   <!-- Left Side: Writing Box -->
+                   <div class="relative w-full md:w-80 h-24 md:h-28 rounded-xl border-4 border-gray-200 bg-gray-50 flex items-end justify-center pb-2 shadow-inner">
+                        <!-- Dashed Baseline -->
+                        <div class="absolute bottom-6 left-4 right-4 h-0.5 bg-gray-300 border-t-2 border-dashed border-gray-400 w-auto"></div>
+                        
+                        <!-- Tracing Text (Only for first item) -->
+                        <span v-if="item.id === 1" 
+                              class="text-6xl md:text-7xl font-black font-amiri text-gray-300/60 tracking-wider select-none"
+                              style="-webkit-text-stroke: 1px #9ca3af;">
+                              {{ item.word }}
+                        </span>
+                   </div>
+
+               </div>
+
+           </div>
+      </div>
+
       <!-- Diagram Type Lesson -->
       <div v-else-if="lesson.type === 'diagram'" class="flex flex-col md:flex-row items-start justify-center gap-8 p-4 max-w-7xl mx-auto z-10 relative w-full">
         
@@ -1181,6 +1297,8 @@ watch(lesson, (newLesson, oldLesson) => {
      }
   } else if (newLesson.type === 'shortVowels' && newLesson.items) {
      totalImagesToLoad.value = newLesson.items.filter(i => i.image).length;
+  } else if (newLesson.type === 'unitIntro' && newLesson.mainImage) {
+     totalImagesToLoad.value = 1;
   } else if (newLesson.type === 'letterExamples') {
      let count = 0;
      if (newLesson.items) {

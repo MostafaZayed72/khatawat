@@ -1,10 +1,11 @@
 import { getLevel1Lessons } from './data/level1';
 import { getLevel2Lessons } from './data/level2';
+import { getLevel3Lessons } from './data/level3';
 
 export interface LessonItem {
     id: number;
     digit?: string;
-    text: string;
+    text?: string;
     text2?: string;
     image?: string;
     colorFrom?: string;
@@ -17,6 +18,8 @@ export interface LessonItem {
     words?: string[];
     listenImage?: string;
     readImage?: string;
+    letters?: string[];
+    word?: string;
 }
 
 export interface DistinguishItem {
@@ -51,7 +54,7 @@ export interface Lesson {
     title: string;
     subtitle?: string;
     description?: string;
-    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes' | 'letterExamples' | 'readWriteReview';
+    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes' | 'letterExamples' | 'readWriteReview' | 'alphabetChart' | 'unitIntro' | 'readWriteRows' | 'assembleWrite';
     items?: LessonItem[];
     distinguish?: DistinguishItem[];
     writingPractice?: WritingPracticeItem[];
@@ -113,7 +116,8 @@ export const getParts = (t: (key: string) => string): Part[] => {
             videoUrl: '',
             image: '/parts/3.png',
             pdfUrl: 'https://drive.google.com/file/d/1qHlC5N6G1qJ6Q0Zp0yv_V4Z4QdC7q_J/view?usp=sharing',
-            lessons: []
+            lessons: getLevel3Lessons(t)
+
         },
         {
             id: 4,
