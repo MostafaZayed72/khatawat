@@ -230,6 +230,51 @@
            </div>
       </div>
 
+      <!-- Arrange then Write Type logic -->
+      <div v-else-if="lesson.type === 'arrangeWrite'" class="w-full max-w-5xl mx-auto p-4 z-10">
+           <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 md:p-12 border border-white flex flex-col gap-12">
+               
+               <!-- Description -->
+               <div v-if="lesson.description" class="text-center mb-4">
+                   <p class="text-xl md:text-2xl text-gray-600 font-amiri leading-relaxed">{{ lesson.description }}</p>
+               </div>
+
+               <!-- Item Loop -->
+               <div v-for="item in lesson.items" :key="item.id" class="flex flex-col md:flex-row items-center justify-between gap-8 py-8 border-b border-gray-100 last:border-0" dir="rtl">
+                   
+                   <!-- Right Side: Letters Squares (First in DOM because RTL) -->
+                   <div class="flex gap-4 md:gap-6">
+                        <div v-for="(letter, idx) in item.letters" :key="idx" 
+                             class="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 shadow-[0_4px_0_0_rgba(209,213,219,1)] flex items-center justify-center transform hover:translate-y-1 hover:shadow-none transition-all duration-200">
+                             <span class="text-3xl md:text-4xl font-bold text-gray-700 font-amiri mb-1">{{ letter }}</span>
+                        </div>
+                   </div>
+
+                   <!-- Center: Arrow Icon (Green) -->
+                   <div class="text-green-500 opacity-80">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-12 h-12">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                        </svg>
+                   </div>
+
+                   <!-- Left Side: Writing Box -->
+                   <div class="relative w-full md:w-80 h-24 md:h-28 rounded-xl border-4 border-gray-200 bg-gray-50 flex items-end justify-center pb-2 shadow-inner">
+                        <!-- Dashed Baseline -->
+                        <div class="absolute bottom-6 left-4 right-4 h-0.5 bg-gray-300 border-t-2 border-dashed border-gray-400 w-auto"></div>
+                        
+                        <!-- Tracing Text (Only for first item) -->
+                        <span v-if="item.id === 1" 
+                              class="text-6xl md:text-7xl font-black font-amiri text-gray-300/60 tracking-wider select-none"
+                              style="-webkit-text-stroke: 1px #9ca3af;">
+                              {{ item.word }}
+                        </span>
+                   </div>
+
+               </div>
+
+           </div>
+      </div>
+
       <!-- Diagram Type Lesson -->
       <div v-else-if="lesson.type === 'diagram'" class="flex flex-col md:flex-row items-start justify-center gap-8 p-4 max-w-7xl mx-auto z-10 relative w-full">
         
