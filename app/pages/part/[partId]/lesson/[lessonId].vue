@@ -400,6 +400,20 @@
          </div>
       </div>
 
+       <!-- Read Grid Type Lesson (3 Columns) -->
+      <div v-else-if="lesson.type === 'readGrid'" class="w-full max-w-5xl mx-auto p-4 z-10 relative mt-16">
+          <div class="grid grid-cols-3 gap-4 md:gap-8" dir="rtl">
+              <div v-for="item in lesson.items" :key="item.id" 
+                   class="bg-gradient-to-b from-gray-50 to-gray-100 border border-gray-300 rounded-xl shadow-sm flex items-center justify-center py-4 md:py-6 relative overflow-hidden group hover:shadow-md hover:scale-105 transition-all duration-300">
+                  
+                  <!-- Decorative Left Bar -->
+                   <div class="absolute left-0 top-0 bottom-0 w-1 md:w-2 bg-[#90caf9] group-hover:bg-[#42a5f5] transition-colors"></div>
+
+                  <span class="text-3xl md:text-5xl font-black text-gray-800 font-amiri z-10 leading-normal">{{ item.text }}</span>
+              </div>
+          </div>
+      </div>
+
       <!-- Opposites Type Lesson (Diamond Split) -->
       <div v-else-if="lesson.type === 'opposites'" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-4 max-w-6xl mx-auto z-10 relative w-full">
          <div v-for="item in lesson.items" :key="item.id" class="flex flex-col items-center justify-center p-4">

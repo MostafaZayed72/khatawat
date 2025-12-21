@@ -13,11 +13,10 @@
     {{ t('About the Program') }}
   </h2>
 
- <div class="w-full max-w-xl bg-transparent rounded-2xl overflow-hidden shadow-2xl border-4 border-white p-4">
-    <audio controls class="w-full">
-      <source src="/nabza2.mp3" type="audio/mpeg">
-      {{ t('Your browser does not support the audio tag.') }}
-    </audio>
+ <div class="w-full max-w-4xl mx-auto">
+    <div class="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+      <YouTubePlayer videoId="SLBDpvUAsQw" />
+    </div>
   </div>
 </div>
 

@@ -130,6 +130,125 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 29, letters: ['عَ', 'وَ', 'قَ'], word: 'وَقَعَ' },
                 { id: 30, letters: ['سَ', 'رَ', 'مَ'], word: 'رَسَمَ' }
             ]
+        },
+        {
+            id: 5,
+            title: t('I Construct then I Write'),
+            description: t('(تَكْوِينُ كَلِمَةٍ ذَاتِ مَعْنًى مِنَ الْحُرُوفِ الْمُخْتَارَةِ مَعَ وَضْعِ الْحَرَكَاتِ الْمُنَاسِبَةِ عَلَى غِرَارِ الْمِثَالِ الْأَوَّلِ)'),
+            type: 'arrangeWrite',
+            items: [
+                { id: 1, letters: ['ن', 'ص', 'ع'], word: 'صَنَعَ' },
+                { id: 2, letters: ['ض', 'ر', 'ع'], word: 'عَرَضَ' },
+                { id: 3, letters: ['ح', 'م', 'ط'], word: 'طَمَحَ' },
+                { id: 4, letters: ['ن', 'ص', 'ع'], word: 'صَنَعَ' },
+                { id: 5, letters: ['ظ', 'ن', 'ر'], word: 'نَظَرَ' },
+                // Page 27
+                { id: 6, letters: ['ف', 'ر', 'ع'], word: 'عَرَفَ' },
+                { id: 7, letters: ['ل', 'ب', 'غ'], word: 'بَلَغَ' },
+                { id: 8, letters: ['ف', 'ص', 'ل'], word: 'فَصَلَ' },
+                { id: 9, letters: ['ع', 'ل', 'ق'], word: 'قَلَعَ' },
+                { id: 10, letters: ['ف', 'ر', 'ك'], word: 'فَرَكَ' },
+                // Page 28
+                { id: 11, letters: ['س', 'ل', 'م'], word: 'لَمَسَ' },
+                { id: 12, letters: ['ل', 'ن', 'ق'], word: 'نَقَلَ' }, // Image 2 Row 2. Right L Mid N Left Q.
+                { id: 13, letters: ['ر', 'م', 'ه'], word: 'هَرَمَ' },
+                { id: 14, letters: ['ض', 'و', 'ح'], word: 'وَضُحَ' },
+                { id: 15, letters: ['ن', 'ل', 'ز'], word: 'نَزَلَ' },
+                // Page 29
+                { id: 16, letters: ['د', 'ر', 'س'], word: 'دَرَسَ' },
+                { id: 17, letters: ['س', 'ر', 'م'], word: 'رَسَمَ' }, // Verified Page 29 Row 2: Right S Mid R Left M.
+                { id: 18, letters: ['ح', 'ب', 'س'], word: 'سَبَحَ' },
+                { id: 19, letters: ['ح', 'س', 'ب'], word: 'سَحَبَ' },
+                { id: 20, letters: ['ح', 'ب', 'ص'], word: 'صَحِبَ' }, // Verified Page 29 Row 5: Right H Mid B Left Saad.
+                // Page 30
+                { id: 21, letters: ['س', 'د', 'ر'], word: 'سَرَدَ' },
+                { id: 22, letters: ['ص', 'ر', 'د'], word: 'رَصَدَ' },
+                { id: 23, letters: ['ص', 'ق', 'د'], word: 'قَصَدَ' },
+                { id: 24, letters: ['ص', 'ر', 'ب'], word: 'صَبَرَ' },
+                { id: 25, letters: ['ص', 'ح', 'د'], word: 'حَصَدَ' }, // Image 4 Row 5: Right Saad Mid Ha Left Dal. -> ['ص', 'ح', 'د']
+                // Previous I had ['د', 'ح', 'ص']. This is Reverse.
+                // Page 31
+                { id: 26, letters: ['ص', 'و', 'ل'], word: 'وَصَلَ' },
+                { id: 27, letters: ['م', 'ج', 'ع'], word: 'جَمَعَ' },
+                { id: 28, letters: ['م', 'ح', 'ل'], word: 'حَمَلَ' },
+                { id: 29, letters: ['ل', 'م', 'ح'], word: 'لَمَحَ' },
+                { id: 30, letters: ['ت', 'ك', 'ب'], word: 'كَتَبَ' },
+                // Page 32
+                { id: 31, letters: ['خ', 'ل', 'د'], word: 'دَخَلَ' },
+                { id: 32, letters: ['ر', 'ص', 'ق'], word: 'قَرَصَ' }, // 'Qarasa' (Pinched) or 'Qasara' (Shortened)? 'Qarasa' fits letters R, S, Q.
+                { id: 33, letters: ['ق', 'ن', 'ل'], word: 'نَقَلَ' },
+                { id: 34, letters: ['و', 'ث', 'ب'], word: 'وَثَبَ' },
+                { id: 35, letters: ['ه', 'م', 'ف'], word: 'فَهِمَ' },
+                // Page 33
+                { id: 36, letters: ['ح', 'ج', 'ن'], word: 'نَجَحَ' },
+                { id: 37, letters: ['ن', 'ه', 'ض'], word: 'نَهَضَ' },
+                { id: 38, letters: ['د', 'خ', 'ل'], word: 'دَخَلَ' },
+                { id: 39, letters: ['ز', 'و', 'ن'], word: 'وَزَنَ' },
+                { id: 40, letters: ['ل', 'م', 'ع'], word: 'لَمَعَ' }
+            ]
+        },
+        {
+            id: 6,
+            title: t('I Read'),
+            type: 'readGrid',
+            items: [
+                // Page 34
+                { id: 1, text: 'مَدَحَ' }, { id: 2, text: 'غَرَسَ' }, { id: 3, text: 'سَهِرَ' },
+                { id: 4, text: 'فَرِحَ' }, { id: 5, text: 'سَمَكَ' }, { id: 6, text: 'بَغِضَ' },
+                { id: 7, text: 'جَبُلُ' }, { id: 8, text: 'قَمَرُ' }, { id: 9, text: 'نَزَلَ' },
+                { id: 10, text: 'جَلَسَ' }, { id: 11, text: 'غَسَلَ' }, { id: 12, text: 'رَدَمَ' },
+                { id: 13, text: 'صَرَفَ' }, { id: 14, text: 'صَلُحَ' }, { id: 15, text: 'عَنِبُ' },
+                { id: 16, text: 'لَبِنُ' }, { id: 17, text: 'نَفَرَ' }, { id: 18, text: 'صَفِقَ' },
+
+                // Page 35
+                { id: 19, text: 'سَعِدَ' }, { id: 20, text: 'عَصَرَ' }, { id: 21, text: 'حَرَصَ' },
+                { id: 22, text: 'فَقَدَ' }, { id: 23, text: 'سَبَحَ' }, { id: 24, text: 'تَعِبَ' },
+                { id: 25, text: 'رَسَمَ' }, { id: 26, text: 'دَرَسَ' }, { id: 27, text: 'لَحِقَ' },
+                { id: 28, text: 'رَبَطَ' }, { id: 29, text: 'ضَرَبَ' }, { id: 30, text: 'نَجَرَ' },
+                { id: 31, text: 'فَرَجُ' }, { id: 32, text: 'أَخَذَ' }, { id: 33, text: 'نَفَخَ' },
+                { id: 34, text: 'كَسَرَ' }, { id: 35, text: 'حَضَرَ' }, { id: 36, text: 'مَرِضَ' },
+
+
+                // Page 36
+                { id: 37, text: 'بَذَرَ' }, { id: 38, text: 'نَفَذَ' }, { id: 39, text: 'يَزِنُ' },
+                { id: 40, text: 'سَكَنُ' }, { id: 41, text: 'يَدِي' }, { id: 42, text: 'نَثَرَ' },
+                { id: 43, text: 'حَدَثَ' }, { id: 44, text: 'هَرَبَ' }, { id: 45, text: 'بَيِضُ' },
+                { id: 46, text: 'نَبَهَ' }, { id: 47, text: 'نَظَرَ' }, { id: 48, text: 'حَفِظَ' },
+                { id: 49, text: 'أَسُدُ' }, { id: 50, text: 'فَتَحَ' }, { id: 51, text: 'نَصَتَ' },
+                { id: 52, text: 'بَطَلُ' }, { id: 53, text: 'أُذُنُ' }, { id: 54, text: 'زَأَرَ' },
+
+                // Page 37
+                { id: 55, text: 'سَأَلَ' }, { id: 56, text: 'قَرَأَ' }, { id: 57, text: 'نَمِرُ' },
+                { id: 58, text: 'فَرَشَ' }, { id: 59, text: 'جَمَلُ' }, { id: 60, text: 'نَزَلَ' },
+                { id: 61, text: 'فَرَزَ' }, { id: 62, text: 'نَشَرَ' }, { id: 63, text: 'بَلَعَ' },
+                { id: 64, text: 'وَصَفَ' }, { id: 65, text: 'صَعَدَ' }, { id: 66, text: 'بَدَأَ' },
+                { id: 67, text: 'رَكِبَ' }, { id: 68, text: 'أَسِفَ' }, { id: 69, text: 'صَمَتَ' },
+                { id: 70, text: 'قَدَمُ' }, { id: 71, text: 'طَلَبَ' }, { id: 72, text: 'سَمِعَ' },
+
+                // Page 38
+                { id: 73, text: 'عَمِلَ' }, { id: 74, text: 'عَمَلُ' }, { id: 75, text: 'مَنَعَ' },
+                { id: 76, text: 'عَدَلَ' }, { id: 77, text: 'شَرَحَ' }, { id: 78, text: 'نَجِدُ' },
+                { id: 79, text: 'نَزَعَ' }, { id: 80, text: 'بَعُدَ' }, { id: 81, text: 'هَدَمَ' },
+                { id: 82, text: 'قَدِمَ' }, { id: 83, text: 'حَصَدَ' }, { id: 84, text: 'نَصَلُ' },
+                { id: 85, text: 'بَدَلَ' }, { id: 86, text: 'وَزَنَ' }, { id: 87, text: 'قَسَمَ' },
+                { id: 88, text: 'نَدِمَ' }, { id: 89, text: 'قَرُبَ' }, { id: 90, text: 'زَرَعَ' },
+
+                // Page 39
+                { id: 91, text: 'أَذِنَ' }, { id: 92, text: 'دَعَمَ' }, { id: 93, text: 'كَسُرَ' },
+                { id: 94, text: 'بَلُدَ' }, { id: 95, text: 'فَرُسَ' }, { id: 96, text: 'رَفَدَ' },
+                { id: 97, text: 'لَزِمَ' }, { id: 98, text: 'رَكَلَ' }, { id: 99, text: 'فَرِحَ' },
+                { id: 100, text: 'عَرَفَ' }, { id: 101, text: 'غَرَفَ' }, { id: 102, text: 'فَرُحَ' },
+                { id: 103, text: 'طَلَعَ' }, { id: 104, text: 'وَرَقُ' }, { id: 105, text: 'صَفَحَ' },
+                { id: 106, text: 'سَمَحَ' }, { id: 107, text: 'فَهِمَ' }, { id: 108, text: 'بَصُلَ' },
+
+                // Page 40
+                { id: 109, text: 'وَصَلَ' }, { id: 110, text: 'وَقَعَ' }, { id: 111, text: 'أَمَرَ' },
+                { id: 112, text: 'نَهَضَ' }, { id: 113, text: 'نَظَمَ' }, { id: 114, text: 'نُظُمُ' },
+                { id: 115, text: 'لَمَعَ' }, { id: 116, text: 'فَرَدَ' }, { id: 117, text: 'ذَهَبَ' },
+                { id: 118, text: 'حَسَبَ' }, { id: 119, text: 'حَرَفُ' }, { id: 120, text: 'رَأَسَ' },
+                { id: 121, text: 'أَكَلَ' }, { id: 122, text: 'طَمِعَ' }, { id: 123, text: 'رَأَفَ' },
+                { id: 124, text: 'عَبَرَ' }, { id: 125, text: 'كَرُمَ' }, { id: 126, text: 'نَسِيَ' }
+            ]
         }
     ];
 
