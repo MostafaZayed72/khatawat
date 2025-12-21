@@ -249,6 +249,103 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 121, text: 'أَكَلَ' }, { id: 122, text: 'طَمِعَ' }, { id: 123, text: 'رَأَفَ' },
                 { id: 124, text: 'عَبَرَ' }, { id: 125, text: 'كَرُمَ' }, { id: 126, text: 'نَسِيَ' }
             ]
+        },
+        {
+            id: 7,
+            title: t('الكلمات الثلاثية التي تحوي على مقطع ساكن'),
+            description: t('لمحة مختصرة لقراءة بعض الكلمات التي تحتوي على عدد من المهارات اللغوية'),
+            type: 'ovalGrid',
+            items: [
+                // Page 41 (Images converted to text)
+                // Row 1 (R->L): Nimr, Habl, Jubn, Fasl
+                { id: 1, text: 'نِمْرُ' }, { id: 2, text: 'حَبْلُ' }, { id: 3, text: 'جُبْنُ' }, { id: 4, text: 'فَصْلُ' },
+                // Row 2: Kalb, Tabl, Raml, Qufl
+                { id: 5, text: 'كَلْبُ' }, { id: 6, text: 'طَبْلُ' }, { id: 7, text: 'رَمْلُ' }, { id: 8, text: 'قُفْلُ' },
+                // Row 3: Anf, Ayn, Zhufr, Rijl
+                { id: 9, text: 'أَنْفُ' }, { id: 10, text: 'عَيْنُ' }, { id: 11, text: 'ظُفْرُ' }, { id: 12, text: 'رِجْلُ' },
+
+                // Page 42 (Pink Ovals)
+                // Row 1: Wazn, Sam, Ilm, Rasm
+                { id: 13, text: 'وَزْنُ' }, { id: 14, text: 'سَمْعُ' }, { id: 15, text: 'عِلْمُ' }, { id: 16, text: 'رَسْمُ' },
+                // Row 2: Qaml, Lawh, Adl, Misk
+                { id: 17, text: 'قَمْلُ' }, { id: 18, text: 'لَوْحُ' }, { id: 19, text: 'عَدْلُ' }, { id: 20, text: 'مِسْكُ' },
+                // Row 3: Ta'm, Qird, Bayt, Aql
+                { id: 21, text: 'طَعْمُ' }, { id: 22, text: 'قِرْدُ' }, { id: 23, text: 'بَيْتُ' }, { id: 24, text: 'عَقْلُ' },
+                // Row 4: Barq, Naml, Kasr, Akl
+                { id: 25, text: 'بَرْقُ' }, { id: 26, text: 'نَمْلُ' }, { id: 27, text: 'كَسْرُ' }, { id: 28, text: 'أَكْلُ' }
+            ]
+        },
+        {
+            id: 8,
+            title: t('الكلمات الثلاثية التي تحوي على مقطع المد'),
+            type: 'ovalGrid',
+            colorTheme: 'green',
+            items: [
+                // Page 43 (Images converted to text)
+                // Row 1 (R->L): Ful, Mal, Fil, Bab
+                { id: 1, text: 'فُولُ' }, { id: 2, text: 'مَالُ' }, { id: 3, text: 'فِيلُ' }, { id: 4, text: 'بَابُ' },
+                // Row 2 (R->L): Kub, Hut, Dud, Sur
+                { id: 5, text: 'كُوبُ' }, { id: 6, text: 'حُوتُ' }, { id: 7, text: 'دُودُ' }, { id: 8, text: 'سُورُ' },
+                // Row 3 (R->L): Tut, Dik, Zir, Tin
+                { id: 9, text: 'تُوتُ' }, { id: 10, text: 'دِيكُ' }, { id: 11, text: 'زِيرُ' }, { id: 12, text: 'تِينُ' },
+
+                // Page 44 (Green Ovals)
+                // Row 1: Zar, Eid, Kaf, Qal
+                { id: 13, text: 'زَارَ' }, { id: 14, text: 'عِيدُ' }, { id: 15, text: 'كَافُ' }, { id: 16, text: 'قَالَ' },
+                // Row 2: Ad, Jar, Rim, Ud
+                { id: 17, text: 'عَادَ' }, { id: 18, text: 'جَارُ' }, { id: 19, text: 'رِيمُ' }, { id: 20, text: 'عُودُ' },
+                // Row 3: Sad, Hur, Rif, Tar
+                { id: 21, text: 'صَادَ' }, { id: 22, text: 'حُورُ' }, { id: 23, text: 'رِيفُ' }, { id: 24, text: 'طَارَ' },
+                // Row 4: Sam, Ghar, Nam, Dur
+                { id: 25, text: 'صَامَ' }, { id: 26, text: 'غَارُ' }, { id: 27, text: 'نَامَ' }, { id: 28, text: 'دُورُ' }
+            ]
+        },
+        {
+            id: 9,
+            title: t('الكلمات الثلاثية التي تحوي على الحروف المُشَدَّدَة'),
+            type: 'ovalGrid',
+            colorTheme: 'orange',
+            items: [
+
+                { id: 1, text: 'مَ<span class="text-red-600">كَّ</span>ة' },
+                { id: 2, text: 'سُ<span class="text-red-600">كَّ</span>رُ' },
+                { id: 3, text: 'بَ<span class="text-red-600">طَّ</span>ة' },
+
+                // Row 2 (R->L): Qittah, Wazzah, Jarrah
+                { id: 4, text: 'قِ<span class="text-red-600">طَّ</span>ة' },
+                { id: 5, text: 'وَ<span class="text-red-600">زَّ</span>ة' },
+                { id: 6, text: 'جَ<span class="text-red-600">رَّ</span>ة' },
+
+                // Row 3 (R->L): Samma'ah, Sabbah
+                // Samma'ah: S - M(Shadda) - A - 'A - H. Middle/Stressed is Mim.
+                { id: 7, text: 'سَ<span class="text-red-600">مَّ</span>اعَة' },
+                { id: 8, text: 'سَ<span class="text-red-600">بَّ</span>اح' },
+
+                // Page 46 (Green/Orange Ovals) - Verbs
+                // Row 1 (R->L): Baddala, Hassana, Wadd'a, Jarraba
+                { id: 9, text: 'بَ<span class="text-red-600">دَّ</span>لَ' },
+                { id: 10, text: 'حَ<span class="text-red-600">سَّ</span>نَ' },
+                { id: 11, text: 'وَ<span class="text-red-600">دَّ</span>عَ' },
+                { id: 12, text: 'جَ<span class="text-red-600">رَّ</span>بَ' },
+
+                // Row 2 (R->L): Da'ama, Sarrafa, Darraba, Haddatha
+                { id: 13, text: 'دَ<span class="text-red-600">عَّ</span>مَ' },
+                { id: 14, text: 'صَ<span class="text-red-600">رَّ</span>فَ' },
+                { id: 15, text: 'دَ<span class="text-red-600">رَّ</span>بَ' },
+                { id: 16, text: 'حَ<span class="text-red-600">دَّ</span>ثَ' },
+
+                // Row 3 (R->L): Qassama, Wazza'a, Jarrada, Qallada
+                { id: 17, text: 'قَ<span class="text-red-600">سَّ</span>مَ' },
+                { id: 18, text: 'وَ<span class="text-red-600">زَّ</span>عَ' },
+                { id: 19, text: 'جَ<span class="text-red-600">رَّ</span>دَ' },
+                { id: 20, text: 'قَ<span class="text-red-600">لَّ</span>دَ' },
+
+                // Row 4 (R->L): Darrasa, 'Abbara, Ghassala, Saddada
+                { id: 21, text: 'دَ<span class="text-red-600">رَّ</span>سَ' },
+                { id: 22, text: 'عَ<span class="text-red-600">بَّ</span>رَ' },
+                { id: 23, text: 'غَ<span class="text-red-600">سَّ</span>لَ' },
+                { id: 24, text: 'سَ<span class="text-red-600">دَّ</span>دَ' }
+            ]
         }
     ];
 

@@ -414,6 +414,29 @@
           </div>
       </div>
 
+      <!-- Oval Grid Type Lesson (Pink Ovals) -->
+      <div v-else-if="lesson.type === 'ovalGrid'" class="w-full max-w-6xl mx-auto p-4 z-10 relative mt-16">
+          
+          <!-- Lesson Description (Centered Subtitle) -->
+          <div v-if="lesson.description" class="flex justify-center mb-12">
+              <div class="bg-gradient-to-r from-purple-100 to-indigo-100 border border-purple-200 px-6 py-3 rounded-full shadow-sm text-center">
+                  <h3 class="text-lg md:text-xl font-bold text-purple-900 font-amiri leading-relaxed">{{ lesson.description }}</h3>
+              </div>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8" dir="rtl">
+              <div v-for="item in lesson.items" :key="item.id" 
+                   :class="[
+                     'border-2 rounded-full shadow-sm flex items-center justify-center py-6 md:py-8 group hover:shadow-md hover:scale-105 transition-all duration-300',
+                     lesson.colorTheme === 'green' ? 'bg-[#dcedc8] border-[#c5e1a5]' : 
+                     lesson.colorTheme === 'orange' ? 'bg-[#ffe0b2] border-[#ffcc80]' :
+                     'bg-pink-100 border-pink-200'
+                   ]">
+                  <span class="text-3xl md:text-5xl font-black text-gray-800 font-amiri leading-normal" v-html="item.text"></span>
+              </div>
+          </div>
+      </div>
+
       <!-- Opposites Type Lesson (Diamond Split) -->
       <div v-else-if="lesson.type === 'opposites'" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-4 max-w-6xl mx-auto z-10 relative w-full">
          <div v-for="item in lesson.items" :key="item.id" class="flex flex-col items-center justify-center p-4">
