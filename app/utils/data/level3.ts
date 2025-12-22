@@ -346,6 +346,128 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 23, text: 'غَ<span class="text-red-600">سَّ</span>لَ' },
                 { id: 24, text: 'سَ<span class="text-red-600">دَّ</span>دَ' }
             ]
+        },
+        {
+            id: 10,
+            title: t('Reading words containing Tanween'),
+            type: 'tanweenTable',
+            columns: [
+                {
+                    id: 1,
+                    header: 'تَنَوِينُ ضَمٍّ',
+                    color: 'red',
+                    items: [
+                        { id: 1, text: 'وَاقِ<span class="text-red-600">فٌ</span>' },
+                        { id: 2, text: 'طَالِ<span class="text-red-600">بٌ</span>' },
+                        { id: 3, text: 'قَمَ<span class="text-red-600">رٌ</span>' },
+                        { id: 4, text: 'شَجَرَ<span class="text-red-600">ةٌ</span>' }
+                    ]
+                },
+                {
+                    id: 2,
+                    header: 'تَنَوِينُ كَسْرٍ',
+                    color: 'green',
+                    items: [
+                        { id: 1, text: 'وَاقِ<span class="text-green-600">فٍ</span>' },
+                        { id: 2, text: 'طَالِ<span class="text-green-600">بٍ</span>' },
+                        { id: 3, text: 'قَمَ<span class="text-green-600">رٍ</span>' },
+                        { id: 4, text: 'شَجَرَ<span class="text-green-600">ةٍ</span>' }
+                    ]
+                },
+                {
+                    id: 3,
+                    header: 'تَنَوِينُ فَتْحٍ',
+                    color: 'blue',
+                    items: [
+                        { id: 1, text: 'وَا<span class="text-blue-600">قِفًا</span>' },
+                        { id: 2, text: 'طَالِ<span class="text-blue-600">بًا</span>' },
+                        { id: 3, text: 'قَمَ<span class="text-blue-600">رًا</span>' },
+                        { id: 4, text: 'شَجَرَ<span class="text-blue-600">ةً</span>' }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 11,
+            title: t('Reading words ending with open Taa or Marbuta Taa or Haa'),
+            type: 'tanweenTable',
+            columns: [
+                {
+                    id: 1,
+                    header: 'كَلِمَاتٌ مَخْتُومَةٌ بِتَاءٍ مَفْتُوحَةٍ',
+                    color: 'red',
+                    items: [
+                        { id: 1, text: 'أَكَلَ<span class="text-red-600">تْ</span>' },
+                        { id: 2, text: 'ذَهَبَ<span class="text-red-600">تْ</span>' },
+                        { id: 3, text: 'بَيْ<span class="text-red-600">تٌ</span>' },
+                        { id: 4, text: 'بَنَا<span class="text-red-600">تٌ</span>' }
+                    ]
+                },
+                {
+                    id: 2,
+                    header: 'كَلِمَاتٌ مَخْتُومَةٌ بِتَاءٍ مَرْبُوطَةٍ',
+                    color: 'green',
+                    items: [
+                        { id: 1, text: 'حَدِيقَ<span class="text-green-600">ةٌ</span>' },
+                        { id: 2, text: 'مُعَلِّمَ<span class="text-green-600">ةٌ</span>' },
+                        { id: 3, text: 'نَخْلَ<span class="text-green-600">ةٌ</span>' },
+                        { id: 4, text: 'بَقَرَ<span class="text-green-600">ةٌ</span>' }
+                    ]
+                },
+                {
+                    id: 3,
+                    header: 'كَلِمَاتٌ مَخْتُومَةٌ بِهَاءٍ',
+                    color: 'blue',
+                    items: [
+                        { id: 1, text: 'مِيَا<span class="text-blue-600">هٌ</span>' },
+                        { id: 2, text: 'وُجُو<span class="text-blue-600">هٌ</span>' },
+                        { id: 3, text: 'قَلَمُ<span class="text-blue-600">هُ</span>' },
+                        { id: 4, text: 'عَلَيْ<span class="text-blue-600">هِ</span>' }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 12,
+            title: t('Reading words containing Sun Lam and Moon Lam'),
+            type: 'tanweenTable',
+            columns: [
+                {
+                    id: 1,
+                    header: '(ال) الشَّمْسِيَّة',
+                    color: 'red',
+                    items: [
+                        { id: 1, text: '<span class="text-red-600">الشَّ</span>مْسُ' },
+                        { id: 2, text: '<span class="text-red-600">النَّ</span>وْمُ' },
+                        { id: 3, text: '<span class="text-red-600">الصَّ</span>يْفُ' },
+                        { id: 4, text: '<span class="text-red-600">الشِّ</span>تَاءُ' }
+                    ]
+                },
+                {
+                    id: 2,
+                    header: '(ال) الْقَمَرِيَّة',
+                    color: 'green',
+                    items: [
+                        { id: 1, text: '<span class="text-green-600">الْ</span>قَمَرُ' },
+                        { id: 2, text: '<span class="text-green-600">الْ</span>بَصَلُ' },
+                        { id: 3, text: '<span class="text-green-600">الْ</span>حُوتُ' },
+                        { id: 4, text: '<span class="text-green-600">الْ</span>جَمَلُ' }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 13,
+            title: t('First Spelling Diagnosis'),
+            subtitle: t('I write what is dictated to me'),
+            type: 'dictation',
+            items: [
+                { id: 1, text: '' }, { id: 2, text: '' },
+                { id: 3, text: '' }, { id: 4, text: '' },
+                { id: 5, text: '' }, { id: 6, text: '' },
+                { id: 7, text: '' }, { id: 8, text: '' },
+                { id: 9, text: '' }, { id: 10, text: '' }
+            ]
         }
     ];
 

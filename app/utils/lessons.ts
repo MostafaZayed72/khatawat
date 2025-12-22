@@ -54,7 +54,7 @@ export interface Lesson {
     title: string;
     subtitle?: string;
     description?: string;
-    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes' | 'letterExamples' | 'readWriteReview' | 'alphabetChart' | 'unitIntro' | 'readWriteRows' | 'assembleWrite' | 'arrangeWrite' | 'readGrid' | 'ovalGrid';
+    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes' | 'letterExamples' | 'readWriteReview' | 'alphabetChart' | 'unitIntro' | 'readWriteRows' | 'assembleWrite' | 'arrangeWrite' | 'readGrid' | 'ovalGrid' | 'tanweenTable' | 'dictation';
     items?: LessonItem[];
     distinguish?: DistinguishItem[];
     writingPractice?: WritingPracticeItem[];
@@ -78,6 +78,7 @@ export interface Lesson {
     assemble?: { id: number; letters: string[]; word: string }[];
     assembleAudio?: string;
     colorTheme?: string;
+    columns?: { id: number; header: string; color: string; items: { id: number; text: string; highlight?: string }[] }[];
 }
 
 export interface Part {

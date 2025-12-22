@@ -9,14 +9,14 @@
 
     <div v-if="lesson" v-show="!isLoading" class="flex flex-col relative z-10 pb-10">
       <!-- Header Section -->
-      <div class="flex flex-col md:flex-row justify-between items-center mb-2 shrink-0 relative">
+      <div class="flex flex-col md:flex-row justify-center items-center mb-8 shrink-0 relative w-full min-h-[60px]">
         <!-- Top Right Label -->
-        <div v-if="lesson.subtitle && partId !== 2" class="mb-2 md:mb-0 border border-red-200 bg-red-50 text-gray-800 px-3 py-1 rounded-lg shadow-sm">
+        <div v-if="lesson.subtitle && partId !== 2" class="mb-4 md:mb-0 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 border border-red-200 bg-red-50 text-gray-800 px-3 py-1 rounded-lg shadow-sm z-20">
           <span class="font-bold text-xs md:text-sm">{{ lesson.subtitle }}</span>
         </div>
         
         <!-- Title & Navigation -->
-        <div class="relative md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:top-0 z-50 flex items-center gap-4">
+        <div class="relative z-50 flex items-center gap-4 mx-auto">
            
            <!-- Previous Button (Right side in RTL) -->
            <NuxtLink 
@@ -38,14 +38,14 @@
                @click="showDropdown = !showDropdown"
                class="bg-gradient-to-b from-red-600 to-red-500 text-white px-8 py-1 rounded-full shadow-lg border-2 border-yellow-200 flex items-center gap-2 hover:scale-105 transition-transform"
              >
-               <h1 class="text-xl md:text-2xl font-bold">{{ lesson.title }}</h1>
+               <h1 class="text-xl md:text-2xl font-bold px-2 py-1 max-w-[80vw] md:max-w-max text-center">{{ lesson.title }}</h1>
                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform" :class="{ 'rotate-180': showDropdown }" viewBox="0 0 20 20" fill="currentColor">
                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                </svg>
              </button>
 
             <!-- Dropdown Menu -->
-            <div v-if="showDropdown" class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-64 max-h-80 overflow-y-auto bg-white rounded-xl shadow-2xl border border-gray-100 py-2">
+            <div v-if="showDropdown" class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-96 max-h-80 overflow-y-auto bg-white rounded-xl shadow-2xl border border-gray-100 py-2">
               <div v-for="l in partLessons" :key="l.id">
                 <NuxtLink 
                   :to="`/part/${partId}/lesson/${l.id}`" 
@@ -434,6 +434,63 @@
                    ]">
                   <span class="text-3xl md:text-5xl font-black text-gray-800 font-amiri leading-normal" v-html="item.text"></span>
               </div>
+          </div>
+      </div>
+
+      <!-- Tanween Table Type Lesson (3 Columns with headers) -->
+      <div v-else-if="lesson.type === 'tanweenTable'" class="w-full max-w-6xl mx-auto p-8 z-10 relative mt-8">
+          <div class="flex flex-col md:flex-row gap-8 justify-center min-h-[600px]" dir="rtl">
+              <div v-for="(col, index) in lesson.columns" :key="col.id" 
+                   class="flex-1 flex flex-col relative"
+                   :class="{'border-l-2 border-dashed border-gray-300 pl-8': index !== lesson.columns.length - 1}">
+                   
+                   <!-- Header -->
+                   <div class="text-center mb-8">
+                       <h3 class="text-4xl md:text-5xl font-black font-amiri mb-2" 
+                           :class="[
+                               col.color === 'red' ? 'text-red-600' : 
+                               col.color === 'green' ? 'text-green-600' : 
+                               'text-blue-600'
+                           ]">
+                           {{ col.header }}
+                       </h3>
+                   </div>
+
+                   <!-- Items List -->
+                   <div class="flex flex-col gap-6 items-center w-full">
+                       <div v-for="item in col.items" :key="item.id" class="text-center w-full">
+                           <span class="text-4xl md:text-6xl font-bold font-amiri" v-html="item.text"></span>
+                       </div>
+                   </div>
+
+              </div>
+          </div>
+      </div>
+
+      <!-- Dictation Type Lesson (Two Columns of Input Fields) -->
+      <div v-else-if="lesson.type === 'dictation'" class="w-full max-w-4xl mx-auto p-4 z-10">
+          <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-6 md:p-8 border border-white">
+              
+              <!-- Description/Instructions -->
+              <div v-if="lesson.subtitle" class="text-center mb-8">
+                  <h3 class="text-xl md:text-2xl font-bold text-red-600 font-amiri leading-relaxed" dir="rtl">
+                      <span class="inline-block ml-2 text-2xl">🛑</span>
+                      {{ lesson.subtitle }}
+                  </h3>
+              </div>
+
+              <!-- Input Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6" dir="rtl">
+                  <div v-for="item in lesson.items" :key="item.id" class="flex items-center justify-center">
+                      <div class="w-full relative group">
+                          <input type="text" 
+                                 class="w-full text-center text-3xl font-amiri py-4 px-4 border-b-2 border-cyan-400 focus:border-cyan-600 focus:outline-none bg-transparent transition-colors placeholder-gray-300"
+                          />
+                          <div class="absolute bottom-0 left-0 w-full h-0.5 bg-cyan-100 -z-10"></div>
+                      </div>
+                  </div>
+              </div>
+
           </div>
       </div>
 
