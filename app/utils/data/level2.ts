@@ -14,7 +14,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     text2: t('By opening the mouth')
                 },
             ],
-            audioUrl: '/level2/1/1.wav',
+            audioUrl: '/level2/1/1.mp3',
         },
         {
             id: 2,
@@ -28,7 +28,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     text2: t('By lowering the lower jaw')
                 },
             ],
-            audioUrl: '/level2/2/2.wav',
+            audioUrl: '/level2/1/2.mp3',
         },
         {
             id: 3,
@@ -42,7 +42,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     text2: t('By rounding the lips')
                 },
             ],
-            audioUrl: '/level2/3/3.wav',
+            audioUrl: '/level2/1/3.mp3',
         },
         {
             id: 4,
@@ -79,7 +79,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     shadowColor: '#388E3C'
                 },
             ],
-            audioUrl: '/level2/4/4.wav',
+            audioUrl: '/level2/4/4.mp3',
         },
         {
             id: 5,
@@ -124,10 +124,10 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             watchAudio: '/level2/5/1.mp3',
             listenAudio: '/level2/5/2.mp3',
             readAudio: '/level2/5/3.mp3',
-            writeAudio: '/level2/5/4.mp3',
             distinguishAudio: '/level2/5/5.mp3',
-            thinkAudio: '/level2/5/7.mp3',
+            writeAudio: '/level2/5/4.mp3',
             circleAudio: '/level2/5/6.mp3',
+            thinkAudio: '/level2/5/7.mp3',
             writingImage: '/level2/5/write_full.png',
         },
         {
@@ -169,24 +169,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Orange')
                 }
             ],
-            audioUrl: '/level2/6/6.wav',
+            audioUrl: '/level2/6/title.mp3',
             watchAudio: '/level2/6/1.mp3',
             listenAudio: '/level2/6/2.mp3',
             readAudio: '/level2/6/3.mp3',
-            writeAudio: '/level2/6/4.mp3',
-            distinguishAudio: '/level2/6/5.mp3',
-            thinkAudio: '/level2/6/7.mp3',
+            distinguishAudio: '/level2/6/4.mp3',
+            writeAudio: '/level2/6/5.mp3',
             circleAudio: '/level2/6/6.mp3',
+            thinkAudio: '/level2/6/7.mp3',
             writingImages: ['/level2/6/write_1.png', '/level2/6/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ'],
-            rememberAudio: '/level2/6/remember.mp3',
+            rememberAudio: '/level2/6/8.mp3',
             assemble: [
                 { id: 1, letters: ['أَ', 'ب'], word: 'أَب' },
                 { id: 2, letters: ['بُ', 'ن'], word: 'بُن' },
                 { id: 3, letters: ['بَ', 'ا', 'ب'], word: 'بَاب' },
                 { id: 4, letters: ['بِ', 'نْ', 'ت'], word: 'بِنْت' }
             ],
-            assembleAudio: '/level2/6/assemble.mp3',
+            assembleAudio: '/level2/6/9.mp3',
         },
         {
             id: 7,
@@ -227,23 +227,23 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Apple').replace('Apple', 'تُفَّاح')
                 }
             ],
-            audioUrl: '/level2/7/7.wav',
+            audioUrl: '/level2/7/title.mp3',
             watchAudio: '/level2/7/1.mp3',
             listenAudio: '/level2/7/2.mp3',
             readAudio: '/level2/7/3.mp3',
-            writeAudio: '/level2/7/4.mp3',
-            distinguishAudio: '/level2/7/5.mp3',
-            thinkAudio: '/level2/7/7.mp3',
+            distinguishAudio: '/level2/7/4.mp3',
+            writeAudio: '/level2/7/5.mp3',
             circleAudio: '/level2/7/6.mp3',
+            thinkAudio: '/level2/7/7.mp3',
             writingImages: ['/level2/7/write_1.png', '/level2/7/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ'],
-            rememberAudio: '/level2/7/remember.mp3',
+            rememberAudio: '/level2/7/8.mp3',
             assemble: [
                 { id: 1, letters: ['تَا', 'بَ'], word: 'تَابَ' },
                 { id: 2, letters: ['تُو', 'تُ'], word: 'تُوتُ' },
                 { id: 3, letters: ['بَ', 'ا', 'تَ', 'تْ'], word: 'بَاتَتْ' }
             ],
-            assembleAudio: '/level2/7/assemble.mp3',
+            assembleAudio: '/level2/7/9.mp3',
         },
 
         {
@@ -285,23 +285,23 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Thobe')
                 }
             ],
-            audioUrl: '/level2/8/8.wav',
+            audioUrl: '/level2/8/title.mp3',
             watchAudio: '/level2/8/1.mp3',
             listenAudio: '/level2/8/2.mp3',
             readAudio: '/level2/8/3.mp3',
-            writeAudio: '/level2/8/4.mp3',
-            distinguishAudio: '/level2/8/5.mp3',
-            thinkAudio: '/level2/8/7.mp3',
+            distinguishAudio: '/level2/8/4.mp3',
+            writeAudio: '/level2/8/5.mp3',
             circleAudio: '/level2/8/6.mp3',
+            thinkAudio: '/level2/8/7.mp3',
             writingImages: ['/level2/8/write_1.png', '/level2/8/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ'],
-            rememberAudio: '/level2/8/remember.mp3',
+            rememberAudio: '/level2/8/8.mp3',
             assemble: [
                 { id: 1, letters: ['ثَ', 'بَ', 'تَ'], word: 'ثَبَتَ' },
                 { id: 2, letters: ['ثَا', 'بَ'], word: 'ثَابَ' },
                 { id: 3, letters: ['بَ', 'ثَّ'], word: 'بَثَّ' }
             ],
-            assembleAudio: '/level2/8/assemble.mp3',
+            assembleAudio: '/level2/8/9.mp3',
         },
         {
             id: 9,
@@ -312,7 +312,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, text: '', words: ['بَاتَ', 'تُوت', 'تَابَ'] },
                 { id: 3, text: '', words: ['بَثَّ', 'ثَابَ', 'ثَبَتَ'] },
             ],
-            audioUrl: '/level2/9/9.wav',
+            audioUrl: '/level2/9/9.mp3',
         },
         {
             id: 10,
@@ -342,7 +342,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     shadowColor: '#689F38'
                 },
             ],
-            audioUrl: '/level2/10/10.wav',
+            audioUrl: '/level2/10/10.mp3',
         },
         {
             id: 11,
@@ -390,23 +390,23 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: 'تَاج' // Taaj
                 }
             ],
-            audioUrl: '/level2/11/11.wav',
-            watchAudio: '/level2/11/1.mp3',
-            listenAudio: '/level2/11/2.mp3',
-            readAudio: '/level2/11/3.mp3',
-            writeAudio: '/level2/11/4.mp3',
-            distinguishAudio: '/level2/11/5.mp3',
-            thinkAudio: '/level2/11/7.mp3',
-            circleAudio: '/level2/11/6.mp3',
+            audioUrl: '/level2/11/title.mp3',
+            watchAudio: '/level2/11/أُشَاهِدْ.mp3',
+            listenAudio: '/level2/11/أَسْتَمِعْ.mp3',
+            readAudio: '/level2/11/أَقْرَأُ.mp3',
+            distinguishAudio: '/level2/11/أُمَيِّزُ.mp3',
+            writeAudio: '/level2/11/أَكْتُبُ.mp3',
+            circleAudio: '/level2/11/أَضَعُ.mp3',
+            thinkAudio: '/level2/11/أُفَكِّرُ.mp3',
             writingImages: ['/level2/11/write_1.png', '/level2/11/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ'],
-            rememberAudio: '/level2/11/remember.mp3',
+            rememberAudio: '/level2/11/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['تَا', 'ج'], word: 'تَاج' },
                 { id: 2, letters: ['جُ', 'بّ'], word: 'جُبّ' },
                 { id: 3, letters: ['جَا', 'بَ'], word: 'جَابَ' }
             ],
-            assembleAudio: '/level2/11/assemble.mp3',
+            assembleAudio: '/level2/11/أركبُ.mp3',
         },
         {
             id: 12,
@@ -455,24 +455,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: 'حَلِيب'
                 }
             ],
-            audioUrl: '/level2/12/12.wav',
-            watchAudio: '/level2/12/1.mp3',
-            listenAudio: '/level2/12/2.mp3',
-            readAudio: '/level2/12/3.mp3',
-            writeAudio: '/level2/12/4.mp3',
-            distinguishAudio: '/level2/12/5.mp3',
-            thinkAudio: '/level2/12/7.mp3',
-            circleAudio: '/level2/12/6.mp3',
+            audioUrl: '/level2/12/title.mp3',
+            watchAudio: '/level2/12/أُشَاهِدْ.mp3',
+            listenAudio: '/level2/12/أَسْتَمِعْ.mp3',
+            readAudio: '/level2/12/أَقْرَأُ.mp3',
+            distinguishAudio: '/level2/12/أُمَيِّزُ.mp3',
+            writeAudio: '/level2/12/أَكْتُبُ.mp3',
+            circleAudio: '/level2/12/أَضَعُ.mp3',
+            thinkAudio: '/level2/12/أُفَكِّرُ.mp3',
             writingImages: ['/level2/12/write_1.png', '/level2/12/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ'],
-            rememberAudio: '/level2/12/remember.mp3',
+            rememberAudio: '/level2/12/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['أُ', 'حِ', 'بُّ'], word: 'أُحِبُّ' },
                 { id: 2, letters: ['بَ', 'حْ', 'ر'], word: 'بَحْر' },
                 { id: 3, letters: ['حَ', 'بِي', 'ب'], word: 'حَبِيب' },
                 { id: 4, letters: ['حَ', 'جَ', 'بَ'], word: 'حَجَبَ' }
             ],
-            assembleAudio: '/level2/12/assemble.mp3',
+            assembleAudio: '/level2/12/أركبُ.mp3',
         },
         {
             id: 13,
@@ -521,24 +521,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: 'خَوْخ'
                 }
             ],
-            audioUrl: '/level2/13/13.wav',
-            watchAudio: '/level2/13/1.mp3',
-            listenAudio: '/level2/13/2.mp3',
-            readAudio: '/level2/13/3.mp3',
-            writeAudio: '/level2/13/4.mp3',
-            distinguishAudio: '/level2/13/5.mp3',
-            thinkAudio: '/level2/13/7.mp3',
-            circleAudio: '/level2/13/6.mp3',
+            audioUrl: '/level2/13/title.mp3',
+            watchAudio: '/level2/13/أُشَاهِدْ.mp3',
+            listenAudio: '/level2/13/أَسْتَمِعْ.mp3',
+            readAudio: '/level2/13/أَقْرَأُ.mp3',
+            distinguishAudio: '/level2/13/أُمَيِّزُ.mp3',
+            writeAudio: '/level2/13/أَكْتُبُ.mp3',
+            circleAudio: '/level2/13/أَضَعُ.mp3',
+            thinkAudio: '/level2/13/أُفَكِّرُ.mp3',
             writingImages: ['/level2/13/write_1.png', '/level2/13/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ'],
-            rememberAudio: '/level2/13/remember.mp3',
+            rememberAudio: '/level2/13/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['أَ', 'خ'], word: 'أَخ' },
                 { id: 2, letters: ['أُ', 'خْ', 'ت'], word: 'أُخْت' },
                 { id: 3, letters: ['خَا', 'بَ'], word: 'خَابَ' },
                 { id: 4, letters: ['بَ', 'خْ', 'ت'], word: 'بَخْت' }
             ],
-            assembleAudio: '/level2/13/assemble.mp3',
+            assembleAudio: '/level2/13/أركبُ.mp3',
         },
         {
             id: 14,
@@ -549,7 +549,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, text: '', words: ['حَجَبَ', 'حَبِيب', 'بَحْر', 'أُحِبُّ'] },
                 { id: 3, text: '', words: ['بَخْت', 'خَابَ', 'أُخْت', 'أَخ'] },
             ],
-            audioUrl: '/level2/14/14.wav',
+            audioUrl: '/level2/14/14.mp3',
         },
         {
             id: 15,
@@ -586,7 +586,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     shadowColor: '#388E3C'
                 },
             ],
-            audioUrl: '/level2/15/15.wav',
+            audioUrl: '/level2/15/15.mp3',
         },
         {
             id: 16,
@@ -635,24 +635,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: 'دُبّ'
                 }
             ],
-            audioUrl: '/level2/16/16.wav',
-            watchAudio: '/level2/16/1.mp3',
-            listenAudio: '/level2/16/2.mp3',
-            readAudio: '/level2/16/3.mp3',
-            writeAudio: '/level2/16/4.mp3',
-            distinguishAudio: '/level2/16/5.mp3',
-            thinkAudio: '/level2/16/7.mp3',
-            circleAudio: '/level2/16/6.mp3',
+            audioUrl: '/level2/16/title.mp3',
+            watchAudio: '/level2/16/أُشَاهِدْ.mp3',
+            listenAudio: '/level2/16/أَسْتَمِعْ.mp3',
+            readAudio: '/level2/16/أَقْرَأُ.mp3',
+            distinguishAudio: '/level2/16/أُمَيِّزُ.mp3',
+            writeAudio: '/level2/16/أَكْتُبُ.mp3',
+            circleAudio: '/level2/16/أَضَعُ.mp3',
+            thinkAudio: '/level2/16/أُفَكِّرُ.mp3',
             writingImages: ['/level2/16/write_1.png', '/level2/16/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ'],
-            rememberAudio: '/level2/16/remember.mp3',
+            rememberAudio: '/level2/16/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['دُ', 'ب'], word: 'دُبّ' },
                 { id: 2, letters: ['ب', 'دَ', 'أَ'], word: 'أَدَب' },
                 { id: 3, letters: ['د', 'جَ'], word: 'جَد' },
                 { id: 4, letters: ['د', 'دِي', 'حَ'], word: 'حَدِيد' }
             ],
-            assembleAudio: '/level2/16/assemble.mp3',
+            assembleAudio: '/level2/16/أركبُ.mp3',
         },
         {
             id: 17,
@@ -701,22 +701,22 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: 'ذَيْل'
                 }
             ],
-            audioUrl: '/level2/17/17.wav',
-            watchAudio: '/level2/17/1.mp3',
-            listenAudio: '/level2/17/2.mp3',
-            readAudio: '/level2/17/3.mp3',
-            writeAudio: '/level2/17/4.mp3',
-            distinguishAudio: '/level2/17/5.mp3',
-            thinkAudio: '/level2/17/7.mp3',
-            circleAudio: '/level2/17/6.mp3',
+            audioUrl: '/level2/17/title.mp3',
+            watchAudio: '/level2/17/أُشَاهِدْ.mp3',
+            listenAudio: '/level2/17/أَسْتَمِعْ.mp3',
+            readAudio: '/level2/17/أَقْرَأُ.mp3',
+            distinguishAudio: '/level2/17/أُمَيِّزُ.mp3',
+            writeAudio: '/level2/17/أَكْتُبُ.mp3',
+            circleAudio: '/level2/17/أَضَعُ.mp3',
+            thinkAudio: '/level2/17/أُفَكِّرُ.mp3',
             writingImages: ['/level2/17/write_1.png', '/level2/17/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ'],
-            rememberAudio: '/level2/17/remember.mp3',
+            rememberAudio: '/level2/17/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['ذِ', 'ئْـ', 'ب'], word: 'ذِئْب' },
                 { id: 2, letters: ['ذُ', 'بَ', 'ا', 'ب'], word: 'ذُبَاب' },
             ],
-            assembleAudio: '/level2/17/assemble.mp3',
+            assembleAudio: '/level2/17/أركبُ.mp3',
         },
         {
             id: 18,
@@ -765,24 +765,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: 'زَرَافَة' // Zaraafa
                 }
             ],
-            audioUrl: '/level2/18/18.wav',
-            watchAudio: '/level2/18/1.mp3',
-            listenAudio: '/level2/18/2.mp3',
-            readAudio: '/level2/18/3.mp3',
-            writeAudio: '/level2/18/4.mp3',
-            distinguishAudio: '/level2/18/5.mp3',
-            thinkAudio: '/level2/18/7.mp3',
-            circleAudio: '/level2/18/6.mp3',
+            audioUrl: '/level2/18/title.mp3',
+            watchAudio: '/level2/18/أُشَاهِدْ.mp3',
+            listenAudio: '/level2/18/أَسْتَمِعْ.mp3',
+            readAudio: '/level2/18/أَقْرَأُ.mp3',
+            distinguishAudio: '/level2/18/أُمَيِّزُ.mp3',
+            writeAudio: '/level2/18/أَكْتُبُ.mp3',
+            circleAudio: '/level2/18/أَضَعُ.mp3',
+            thinkAudio: '/level2/18/أُفَكِّرُ.mp3',
             writingImages: ['/level2/18/write_1.png', '/level2/18/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ'],
-            rememberAudio: '/level2/18/remember.mp3',
+            rememberAudio: '/level2/18/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['رَ', 'حَ', 'بَ'], word: 'رَحَبَ' },
                 { id: 2, letters: ['خَ', 'بَ', 'ر'], word: 'خَبَر' },
                 { id: 3, letters: ['جَ', 'ا', 'بِ', 'ر'], word: 'جَابِر' },
                 { id: 4, letters: ['حِ', 'بْ', 'ر'], word: 'حِبْر' }
             ],
-            assembleAudio: '/level2/18/assemble.mp3',
+            assembleAudio: '/level2/18/أركبُ.mp3',
         },
         {
             id: 19,
@@ -831,24 +831,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: 'مَوْز' // Mawz
                 }
             ],
-            audioUrl: '/level2/19/19.wav',
-            watchAudio: '/level2/19/1.mp3',
-            listenAudio: '/level2/19/2.mp3',
-            readAudio: '/level2/19/3.mp3',
-            writeAudio: '/level2/19/4.mp3',
-            distinguishAudio: '/level2/19/5.mp3',
-            thinkAudio: '/level2/19/7.mp3',
-            circleAudio: '/level2/19/6.mp3',
+            audioUrl: '/level2/19/title.mp3',
+            watchAudio: '/level2/19/أُشَاهِدْ.mp3',
+            listenAudio: '/level2/19/أَسْتَمِعْ.mp3',
+            readAudio: '/level2/19/أَقْرَأُ.mp3',
+            distinguishAudio: '/level2/19/أُمَيِّزُ.mp3',
+            writeAudio: '/level2/19/أَكْتُبُ.mp3',
+            circleAudio: '/level2/19/أَضَعُ.mp3',
+            thinkAudio: '/level2/19/أُفَكِّرُ.mp3',
             writingImages: ['/level2/19/write_1.png', '/level2/19/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ'],
-            rememberAudio: '/level2/19/remember.mp3',
+            rememberAudio: '/level2/19/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['زَ', 'أَ', 'رَ'], word: 'زَأَرَ' },
                 { id: 2, letters: ['جَ', 'زَ', 'ر'], word: 'جَزَر' },
                 { id: 3, letters: ['زُ', 'جَا', 'ج'], word: 'زُجَاج' },
                 { id: 4, letters: ['بَ', 'رَ', 'زَ'], word: 'بَرَزَ' }
             ],
-            assembleAudio: '/level2/19/assemble.mp3',
+            assembleAudio: '/level2/19/أركبُ.mp3',
         },
         {
             id: 20,
@@ -861,7 +861,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 3, text: '', words: ['رَحَبَ', 'جَابِر', 'حِبْر', 'خَبَر'] },
                 { id: 4, text: '', words: ['زَأَرَ', 'جَزَر', 'زُجَاج', 'بَرَزَ'] },
             ],
-            audioUrl: '/level2/20/20.wav',
+            audioUrl: '/level2/20/20.mp3',
         },
         {
             id: 21,
@@ -898,7 +898,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     shadowColor: '#558B2F'
                 },
             ],
-            audioUrl: '/level2/21/21.wav',
+            audioUrl: '/level2/21/21.mp3',
         },
         {
             id: 22,
@@ -940,24 +940,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Cloud')
                 }
             ],
-            audioUrl: '/level2/22/22.wav',
-            watchAudio: '/level2/22/1.mp3',
-            listenAudio: '/level2/22/2.mp3',
-            readAudio: '/level2/22/3.mp3',
-            writeAudio: '/level2/22/4.mp3',
-            distinguishAudio: '/level2/22/5.mp3',
-            thinkAudio: '/level2/22/7.mp3',
-            circleAudio: '/level2/22/6.mp3',
+            audioUrl: '/level2/22/title.mp3',
+            watchAudio: '/level2/22/أُشَاهِدْ.mp3',
+            listenAudio: '/level2/22/أَسْتَمِعْ.mp3',
+            readAudio: '/level2/22/أَقْرَأُ.mp3',
+            distinguishAudio: '/level2/22/أُمَيِّزُ.mp3',
+            writeAudio: '/level2/22/أَكْتُبُ.mp3',
+            circleAudio: '/level2/22/أَضَعُ.mp3',
+            thinkAudio: '/level2/22/أُفَكِّرُ.mp3',
             writingImages: ['/level2/22/write_1.png', '/level2/22/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ'],
-            rememberAudio: '/level2/22/remember.mp3',
+            rememberAudio: '/level2/22/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['سَ', 'جَ', 'دَ'], word: 'سَجَدَ' },
                 { id: 2, letters: ['سَ', 'تَ', 'رَ'], word: 'سَتَرَ' },
                 { id: 3, letters: ['سَ', 'حَ', 'بَ'], word: 'سَحَبَ' },
                 { id: 4, letters: ['سَ', 'بَ', 'حَ'], word: 'سَبَحَ' }
             ],
-            assembleAudio: '/level2/22/assemble.mp3',
+            assembleAudio: '/level2/22/أركبُ.mp3',
         },
         {
             id: 23,
@@ -999,24 +999,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Butterfly')
                 }
             ],
-            audioUrl: '/level2/23/23.wav',
-            watchAudio: '/level2/23/1.mp3',
-            listenAudio: '/level2/23/2.mp3',
-            readAudio: '/level2/23/3.mp3',
-            writeAudio: '/level2/23/4.mp3',
-            distinguishAudio: '/level2/23/5.mp3',
-            thinkAudio: '/level2/23/7.mp3',
-            circleAudio: '/level2/23/6.mp3',
+            audioUrl: '/level2/23/title.mp3',
+            watchAudio: '/level2/23/أُشَاهِدْ.mp3',
+            listenAudio: '/level2/23/أَسْتَمِعْ.mp3',
+            readAudio: '/level2/23/أَقْرَأُ.mp3',
+            distinguishAudio: '/level2/23/أُمَيِّزُ.mp3',
+            writeAudio: '/level2/23/أَكْتُبُ.mp3',
+            circleAudio: '/level2/23/أَضَعُ.mp3',
+            thinkAudio: '/level2/23/أُفَكِّرُ.mp3',
             writingImages: ['/level2/23/write_1.png', '/level2/23/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ'],
-            rememberAudio: '/level2/23/remember.mp3',
+            rememberAudio: '/level2/23/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['شَ', 'رِ', 'بَ'], word: 'شَرِبَ' },
                 { id: 2, letters: ['شَ', 'رَ', 'حَ'], word: 'شَرَحَ' },
                 { id: 3, letters: ['حَ', 'شَ', 'رَ'], word: 'حَشَرَ' },
                 { id: 4, letters: ['رَ', 'شَ', 'دَ'], word: 'رَشَدَ' }
             ],
-            assembleAudio: '/level2/23/assemble.mp3',
+            assembleAudio: '/level2/23/أركبُ.mp3',
         },
         {
             id: 24,
@@ -1058,24 +1058,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Box')
                 }
             ],
-            audioUrl: '/level2/24/24.wav',
-            watchAudio: '/level2/24/1.mp3',
-            listenAudio: '/level2/24/2.mp3',
-            readAudio: '/level2/24/3.mp3',
-            writeAudio: '/level2/24/4.mp3',
-            distinguishAudio: '/level2/24/5.mp3',
-            thinkAudio: '/level2/24/7.mp3',
-            circleAudio: '/level2/24/6.mp3',
+            audioUrl: '/level2/24/title.mp3',
+            watchAudio: '/level2/24/أُشَاهِدْ.mp3',
+            listenAudio: '/level2/24/أَسْتَمِعْ.mp3',
+            readAudio: '/level2/24/أَقْرَأُ.mp3',
+            distinguishAudio: '/level2/24/أُمَيِّزُ.mp3',
+            writeAudio: '/level2/24/أَكْتُبُ.mp3',
+            circleAudio: '/level2/24/أَضَعُ.mp3',
+            thinkAudio: '/level2/24/أُفَكِّرُ.mp3',
             writingImages: ['/level2/24/write_1.png', '/level2/24/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ'],
-            rememberAudio: '/level2/24/remember.mp3',
+            rememberAudio: '/level2/24/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['صَ', 'بَ', 'رَ'], word: 'صَبَرَ' },
                 { id: 2, letters: ['بَ', 'صَ', 'رَ'], word: 'بَصَرَ' },
                 { id: 3, letters: ['صَ', 'دَ', 'حَ'], word: 'صَدَحَ' },
                 { id: 4, letters: ['رَ', 'صَ', 'دَ'], word: 'رَصَدَ' }
             ],
-            assembleAudio: '/level2/24/assemble.mp3',
+            assembleAudio: '/level2/24/أركبُ.mp3',
         },
         {
             id: 25,
@@ -1117,24 +1117,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Eggs')
                 }
             ],
-            audioUrl: '/level2/25/25.wav',
-            watchAudio: '/level2/25/1.mp3',
-            listenAudio: '/level2/25/2.mp3',
-            readAudio: '/level2/25/3.mp3',
-            writeAudio: '/level2/25/4.mp3',
-            distinguishAudio: '/level2/25/5.mp3',
-            thinkAudio: '/level2/25/7.mp3',
-            circleAudio: '/level2/25/6.mp3',
+            audioUrl: '/level2/25/title.mp3',
+            watchAudio: '/level2/25/أُشَاهِدْ.mp3',
+            listenAudio: '/level2/25/أَسْتَمِعْ.mp3',
+            readAudio: '/level2/25/أَقْرَأُ.mp3',
+            distinguishAudio: '/level2/25/أُمَيِّزُ.mp3',
+            writeAudio: '/level2/25/أَكْتُبُ.mp3',
+            circleAudio: '/level2/25/أَضَعُ.mp3',
+            thinkAudio: '/level2/25/أُفَكِّرُ.mp3',
             writingImages: ['/level2/25/write_1.png', '/level2/25/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ'],
-            rememberAudio: '/level2/25/remember.mp3',
+            rememberAudio: '/level2/25/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['ضَ', 'رَ', 'بَ'], word: 'ضَرَبَ' },
                 { id: 2, letters: ['حَ', 'ضَ', 'رَ'], word: 'حَضَرَ' },
                 { id: 3, letters: ['رَ', 'ضَ', 'خَ'], word: 'رَضَخَ' },
                 { id: 4, letters: ['ضِ', 'ر', 'س'], word: 'ضِرْس' }
             ],
-            assembleAudio: '/level2/25/assemble.mp3',
+            assembleAudio: '/level2/25/أركبُ.mp3',
         },
         {
             id: 26,
@@ -1147,7 +1147,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 3, text: '', words: ['صَبَرَ', 'بَصَرَ', 'صَدَحَ', 'رَصَدَ'] },
                 { id: 4, text: '', words: ['حَضَرَ', 'ضَرَبَ', 'رَضَخَ', 'ضِرْس'] },
             ],
-            audioUrl: '/level2/26/26.wav',
+            audioUrl: '/level2/26/26.mp3',
         },
         {
             id: 27,
@@ -1184,7 +1184,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     shadowColor: '#558B2F'
                 },
             ],
-            audioUrl: '/level2/27/27.wav',
+            audioUrl: '/level2/27/27.mp3',
         },
         {
             id: 28,
@@ -1226,24 +1226,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Table')
                 }
             ],
-            audioUrl: '/level2/28/28.wav',
+            audioUrl: '/level2/28/title.mp3',
             watchAudio: '/level2/28/1.mp3',
             listenAudio: '/level2/28/2.mp3',
             readAudio: '/level2/28/3.mp3',
-            writeAudio: '/level2/28/4.mp3',
-            distinguishAudio: '/level2/28/5.mp3',
-            thinkAudio: '/level2/28/7.mp3',
+            distinguishAudio: '/level2/28/4.mp3',
+            writeAudio: '/level2/28/5.mp3',
             circleAudio: '/level2/28/6.mp3',
+            thinkAudio: '/level2/28/7.mp3',
             writingImages: ['/level2/28/write_1.png', '/level2/28/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ'],
-            rememberAudio: '/level2/28/remember.mp3',
+            rememberAudio: '/level2/28/8.mp3',
             assemble: [
                 { id: 1, letters: ['طَ', 'بَ', 'خَ'], word: 'طَبَخَ' },
                 { id: 2, letters: ['طَ', 'رَ', 'حَ'], word: 'طَرَحَ' },
                 { id: 3, letters: ['طَ', 'رَ', 'دَ'], word: 'طَرَدَ' },
                 { id: 4, letters: ['طُ', 'و', 'ب'], word: 'طُوب' }
             ],
-            assembleAudio: '/level2/28/assemble.mp3',
+            assembleAudio: '/level2/28/9.mp3',
         },
         {
             id: 29,
@@ -1285,24 +1285,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Glasses')
                 }
             ],
-            audioUrl: '/level2/29/29.wav',
+            audioUrl: '/level2/29/title.mp3',
             watchAudio: '/level2/29/1.mp3',
             listenAudio: '/level2/29/2.mp3',
             readAudio: '/level2/29/3.mp3',
-            writeAudio: '/level2/29/4.mp3',
-            distinguishAudio: '/level2/29/5.mp3',
-            thinkAudio: '/level2/29/7.mp3',
+            distinguishAudio: '/level2/29/4.mp3',
+            writeAudio: '/level2/29/5.mp3',
             circleAudio: '/level2/29/6.mp3',
+            thinkAudio: '/level2/29/7.mp3',
             writingImages: ['/level2/29/write_1.png', '/level2/29/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ'],
-            rememberAudio: '/level2/29/remember.mp3',
+            rememberAudio: '/level2/29/8.mp3',
             assemble: [
                 { id: 1, letters: ['حَ', 'ظَ', 'رَ'], word: 'حَظَرَ' },
                 { id: 2, letters: ['جَ', 'حَ', 'ظَ'], word: 'جَحَظَ' },
                 { id: 3, letters: ['ظُ', 'فْ', 'ر'], word: 'ظُفْر' },
                 { id: 4, letters: ['حَ', 'ا', 'فِ', 'ظ'], word: 'حَافِظ' }
             ],
-            assembleAudio: '/level2/29/assemble.mp3',
+            assembleAudio: '/level2/29/9.mp3',
         },
         {
             id: 30,
@@ -1344,24 +1344,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Box')
                 }
             ],
-            audioUrl: '/level2/30/30.wav',
+            audioUrl: '/level2/30/title.mp3',
             watchAudio: '/level2/30/1.mp3',
             listenAudio: '/level2/30/2.mp3',
             readAudio: '/level2/30/3.mp3',
-            writeAudio: '/level2/30/4.mp3',
-            distinguishAudio: '/level2/30/5.mp3',
-            thinkAudio: '/level2/30/7.mp3',
+            distinguishAudio: '/level2/30/4.mp3',
+            writeAudio: '/level2/30/5.mp3',
             circleAudio: '/level2/30/6.mp3',
+            thinkAudio: '/level2/30/7.mp3',
             writingImages: ['/level2/30/write_1.png', '/level2/30/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ'],
-            rememberAudio: '/level2/30/remember.mp3',
+            rememberAudio: '/level2/30/8.mp3',
             assemble: [
                 { id: 1, letters: ['عَ', 'بَ', 'دَ'], word: 'عَبَدَ' },
                 { id: 2, letters: ['عَ', 'بَ', 'رَ'], word: 'عَبَرَ' },
                 { id: 3, letters: ['بَ', 'رَ', 'عَ'], word: 'بَرَعَ' },
                 { id: 4, letters: ['عَ', 'بَ', 'سَ'], word: 'عَبَسَ' }
             ],
-            assembleAudio: '/level2/30/assemble.mp3',
+            assembleAudio: '/level2/30/9.mp3',
         },
         {
             id: 31,
@@ -1403,24 +1403,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Washing Machine')
                 }
             ],
-            audioUrl: '/level2/31/31.wav',
+            audioUrl: '/level2/31/title.mp3',
             watchAudio: '/level2/31/1.mp3',
             listenAudio: '/level2/31/2.mp3',
             readAudio: '/level2/31/3.mp3',
-            writeAudio: '/level2/31/4.mp3',
-            distinguishAudio: '/level2/31/5.mp3',
-            thinkAudio: '/level2/31/7.mp3',
+            distinguishAudio: '/level2/31/4.mp3',
+            writeAudio: '/level2/31/5.mp3',
             circleAudio: '/level2/31/6.mp3',
+            thinkAudio: '/level2/31/7.mp3',
             writingImages: ['/level2/31/write_1.png', '/level2/31/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ'],
-            rememberAudio: '/level2/31/remember.mp3',
+            rememberAudio: '/level2/31/8.mp3',
             assemble: [
                 { id: 1, letters: ['رَ', 'غِ', 'بَ'], word: 'رَغِبَ' },
                 { id: 2, letters: ['غَ', 'دَ', 'رَ'], word: 'غَدَرَ' },
                 { id: 3, letters: ['رَ', 'غَ', 'دَ'], word: 'رَغَدَ' },
                 { id: 4, letters: ['غَ', 'رْ', 'ب'], word: 'غَرْب' }
             ],
-            assembleAudio: '/level2/31/assemble.mp3',
+            assembleAudio: '/level2/31/9.mp3',
         },
         {
             id: 32,
@@ -1433,7 +1433,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 3, text: '', words: ['عَبَدَ', 'عَبَرَ', 'بَرَعَ', 'عَبَسَ'] },
                 { id: 4, text: '', words: ['رَغِبَ', 'غَدَرَ', 'رَغَدَ', 'غَرْب'] },
             ],
-            audioUrl: '/level2/32/32.wav',
+            audioUrl: '/level2/32/32.mp3',
             reviewAudio: '/level2/32/1.mp3'
         },
         {
@@ -1447,7 +1447,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 3, text: 'ك', colorFrom: '#00BFFF', colorTo: '#1E90FF', shadowColor: '#0000CD' }, // Blue
                 { id: 4, text: 'ل', colorFrom: '#9ACD32', colorTo: '#32CD32', shadowColor: '#006400' }, // Green
             ],
-            audioUrl: '/level2/33/33.wav',
+            audioUrl: '/level2/33/33.mp3',
         },
 
         {
@@ -1490,24 +1490,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Window')
                 }
             ],
-            audioUrl: '/level2/34/34.wav',
+            audioUrl: '/level2/34/title.mp3',
             watchAudio: '/level2/34/1.mp3',
             listenAudio: '/level2/34/2.mp3',
             readAudio: '/level2/34/3.mp3',
-            writeAudio: '/level2/34/4.mp3',
-            distinguishAudio: '/level2/34/5.mp3',
-            thinkAudio: '/level2/34/7.mp3',
+            distinguishAudio: '/level2/34/4.mp3',
+            writeAudio: '/level2/34/5.mp3',
             circleAudio: '/level2/34/6.mp3',
+            thinkAudio: '/level2/34/7.mp3',
             writingImages: ['/level2/34/write_1.png', '/level2/34/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ'],
-            rememberAudio: '/level2/34/remember.mp3',
+            rememberAudio: '/level2/34/8.mp3',
             assemble: [
                 { id: 1, letters: ['فَ', 'تَ', 'حَ'], word: 'فَتَحَ' },
                 { id: 2, letters: ['حَ', 'فَ', 'رَ'], word: 'حَفَرَ' },
                 { id: 3, letters: ['فَ', 'سَ', 'دَ'], word: 'فَسَدَ' },
                 { id: 4, letters: ['رَ', 'فَ', 'ضَ'], word: 'رَفَضَ' }
             ],
-            assembleAudio: '/level2/34/assemble.mp3',
+            assembleAudio: '/level2/34/9.mp3',
         },
         {
             id: 35,
@@ -1549,24 +1549,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Scissors')
                 }
             ],
-            audioUrl: '/level2/35/35.wav',
+            audioUrl: '/level2/35/title.mp3',
             watchAudio: '/level2/35/1.mp3',
             listenAudio: '/level2/35/2.mp3',
             readAudio: '/level2/35/3.mp3',
-            writeAudio: '/level2/35/4.mp3',
-            distinguishAudio: '/level2/35/5.mp3',
-            thinkAudio: '/level2/35/7.mp3',
+            distinguishAudio: '/level2/35/4.mp3',
+            writeAudio: '/level2/35/5.mp3',
             circleAudio: '/level2/35/6.mp3',
+            thinkAudio: '/level2/35/7.mp3',
             writingImages: ['/level2/35/write_1.png', '/level2/35/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ'],
-            rememberAudio: '/level2/35/remember.mp3',
+            rememberAudio: '/level2/35/8.mp3',
             assemble: [
                 { id: 1, letters: ['رَ', 'فَ', 'قَ'], word: 'رَفَقَ' },
                 { id: 2, letters: ['قَ', 'طَ', 'عَ'], word: 'قَطَعَ' },
                 { id: 3, letters: ['سَ', 'قَ', 'طَ'], word: 'سَقَطَ' },
                 { id: 4, letters: ['رَ', 'قَ', 'صَ'], word: 'رَقَصَ' }
             ],
-            assembleAudio: '/level2/35/assemble.mp3',
+            assembleAudio: '/level2/35/9.mp3',
         },
         {
             id: 36,
@@ -1608,17 +1608,17 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Cup')
                 }
             ],
-            audioUrl: '/level2/36/36.wav',
+            audioUrl: '/level2/36/title.mp3',
             watchAudio: '/level2/36/1.mp3',
             listenAudio: '/level2/36/2.mp3',
             readAudio: '/level2/36/3.mp3',
-            writeAudio: '/level2/36/4.mp3',
-            distinguishAudio: '/level2/36/5.mp3',
-            thinkAudio: '/level2/36/7.mp3',
+            distinguishAudio: '/level2/36/4.mp3',
+            writeAudio: '/level2/36/5.mp3',
             circleAudio: '/level2/36/6.mp3',
+            thinkAudio: '/level2/36/7.mp3',
             writingImages: ['/level2/36/write_1.png', '/level2/36/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ'],
-            rememberAudio: '/level2/36/remember.mp3',
+            rememberAudio: '/level2/36/8.mp3',
             assemble: [
                 { id: 1, letters: ['ك', 'تَ', 'بَ'], word: 'كَتَبَ' },
                 { id: 2, letters: ['ك', 'سَ', 'رَ'], word: 'كَسَرَ' },
@@ -1627,7 +1627,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 // Correction: Image showing assemble words: Ka Ta Ba - Kataba, Ka Sa Ra - Kasara, Ra Ka 'A - Raka'a, Ra Ki Ba - Rakiba (no Ma'ak in image)
                 { id: 4, letters: ['رَ', 'كِ', 'بَ'], word: 'رَكِبَ' }
             ],
-            assembleAudio: '/level2/36/assemble.mp3',
+            assembleAudio: '/level2/36/9.mp3',
         },
         {
             id: 37,
@@ -1669,24 +1669,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Laymoon')
                 }
             ],
-            audioUrl: '/level2/37/37.wav',
+            audioUrl: '/level2/37/title.mp3',
             watchAudio: '/level2/37/1.mp3',
             listenAudio: '/level2/37/2.mp3',
             readAudio: '/level2/37/3.mp3',
-            writeAudio: '/level2/37/4.mp3',
-            distinguishAudio: '/level2/37/5.mp3',
-            thinkAudio: '/level2/37/7.mp3',
+            distinguishAudio: '/level2/37/4.mp3',
+            writeAudio: '/level2/37/5.mp3',
             circleAudio: '/level2/37/6.mp3',
+            thinkAudio: '/level2/37/7.mp3',
             writingImages: ['/level2/37/write_1.png', '/level2/37/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ', 'لَ', 'لِ', 'لُ'],
-            rememberAudio: '/level2/37/remember.mp3',
+            rememberAudio: '/level2/37/8.mp3',
             assemble: [
                 { id: 1, letters: ['لَ', 'بَ', 'ن'], word: 'لَبَن' },
                 { id: 2, letters: ['طَ', 'لَ', 'بَ'], word: 'طَلَبَ' },
                 { id: 3, letters: ['طَ', 'ال', 'ب'], word: 'طَالِب' },
                 { id: 4, letters: ['غَ', 'سَ', 'لَ'], word: 'غَسَلَ' }
             ],
-            assembleAudio: '/level2/37/assemble.mp3',
+            assembleAudio: '/level2/37/9.mp3',
         },
         {
             id: 38,
@@ -1699,7 +1699,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 3, text: '', words: ['كَتَبَ', 'كَسَرَ', 'رَكَعَ', 'رَكِبَ'] },
                 { id: 4, text: '', words: ['لَبَن', 'طَلَبَ', 'طَالِب', 'غَسَلَ'] },
             ],
-            audioUrl: '/level2/38/38.wav',
+            audioUrl: '/level2/38/38.mp3',
             reviewAudio: '/level2/38/1.mp3'
         },
         {
@@ -1714,7 +1714,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 4, text: 'و', colorFrom: '#9ACD32', colorTo: '#32CD32', shadowColor: '#006400' }, // Green
                 { id: 5, text: 'ي', colorFrom: '#A1887F', colorTo: '#8D6E63', shadowColor: '#5D4037' }, // Brown
             ],
-            audioUrl: '/level2/39/39.wav',
+            audioUrl: '/level2/39/39.mp3',
         },
         {
             id: 40,
@@ -1757,24 +1757,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Pomegranate')
                 }
             ],
-            audioUrl: '/level2/40/40.wav',
+            audioUrl: '/level2/40/title.mp3',
             watchAudio: '/level2/40/1.mp3',
             listenAudio: '/level2/40/2.mp3',
             readAudio: '/level2/40/3.mp3',
-            writeAudio: '/level2/40/4.mp3',
-            distinguishAudio: '/level2/40/5.mp3',
-            thinkAudio: '/level2/40/7.mp3',
+            distinguishAudio: '/level2/40/4.mp3',
+            writeAudio: '/level2/40/5.mp3',
             circleAudio: '/level2/40/6.mp3',
+            thinkAudio: '/level2/40/7.mp3',
             writingImages: ['/level2/40/write_1.png', '/level2/40/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ', 'لَ', 'لِ', 'لُ', 'مَ', 'مِ', 'مُ'],
-            rememberAudio: '/level2/40/remember.mp3',
+            rememberAudio: '/level2/40/8.mp3',
             assemble: [
                 { id: 1, letters: ['رَ', 'سَ', 'مَ'], word: 'رَسَمَ' },
                 { id: 2, letters: ['سَ', 'مَ', 'حَ'], word: 'سَمَحَ' },
                 { id: 3, letters: ['حَ', 'سَ', 'مَ'], word: 'حَسَمَ' },
                 { id: 4, letters: ['مَ', 'ا', 'جِد'], word: 'مَاجِد' }
             ],
-            assembleAudio: '/level2/40/assemble.mp3',
+            assembleAudio: '/level2/40/9.mp3',
         },
         {
             id: 41,
@@ -1816,24 +1816,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Money')
                 }
             ],
-            audioUrl: '/level2/41/41.wav',
+            audioUrl: '/level2/41/title.mp3',
             watchAudio: '/level2/41/1.mp3',
             listenAudio: '/level2/41/2.mp3',
             readAudio: '/level2/41/3.mp3',
-            writeAudio: '/level2/41/4.mp3',
-            distinguishAudio: '/level2/41/5.mp3',
-            thinkAudio: '/level2/41/7.mp3',
+            distinguishAudio: '/level2/41/4.mp3',
+            writeAudio: '/level2/41/5.mp3',
             circleAudio: '/level2/41/6.mp3',
+            thinkAudio: '/level2/41/7.mp3',
             writingImages: ['/level2/41/write_1.png', '/level2/41/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ', 'لَ', 'لِ', 'لُ', 'مَ', 'مِ', 'مُ', 'نَ', 'نِ', 'نُ'],
-            rememberAudio: '/level2/41/remember.mp3',
+            rememberAudio: '/level2/41/8.mp3',
             assemble: [
                 { id: 1, letters: ['نَ', 'بِيـ', 'ـل'], word: 'نَبِيل' },
                 { id: 2, letters: ['نُ', 'مُ', 'ل'], word: 'نَمْل' },
                 { id: 3, letters: ['نُ', 'و', 'ر'], word: 'نُور' },
                 { id: 4, letters: ['هَ', 'نَ', 'اء'], word: 'هَنَاء' }
             ],
-            assembleAudio: '/level2/41/assemble.mp3',
+            assembleAudio: '/level2/41/9.mp3',
         },
         {
             id: 42,
@@ -1875,24 +1875,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Telephone')
                 }
             ],
-            audioUrl: '/level2/42/42.wav',
+            audioUrl: '/level2/42/title.mp3',
             watchAudio: '/level2/42/1.mp3',
             listenAudio: '/level2/42/2.mp3',
             readAudio: '/level2/42/3.mp3',
-            writeAudio: '/level2/42/4.mp3',
-            distinguishAudio: '/level2/42/5.mp3',
-            thinkAudio: '/level2/42/7.mp3',
+            distinguishAudio: '/level2/42/4.mp3',
+            writeAudio: '/level2/42/5.mp3',
             circleAudio: '/level2/42/6.mp3',
+            thinkAudio: '/level2/42/7.mp3',
             writingImages: ['/level2/42/write_1.png', '/level2/42/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ', 'لَ', 'لِ', 'لُ', 'مَ', 'مِ', 'مُ', 'نَ', 'نِ', 'نُ', 'هَ', 'هـِ', 'هُ'],
-            rememberAudio: '/level2/42/remember.mp3',
+            rememberAudio: '/level2/42/8.mp3',
             assemble: [
                 { id: 1, letters: ['نَ', 'هَ', 'لَ'], word: 'نَهَلَ' },
                 { id: 2, letters: ['هَ', 'دَ', 'مَ'], word: 'هَدَمَ' },
                 { id: 3, letters: ['هَ', 'زَ', 'مَ'], word: 'هَزَمَ' },
                 { id: 4, letters: ['هَ', 'ا', 'دٍ'], word: 'هَادٍ' }
             ],
-            assembleAudio: '/level2/42/assemble.mp3',
+            assembleAudio: '/level2/42/9.mp3',
         },
         {
             id: 43,
@@ -1934,24 +1934,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Banana')
                 }
             ],
-            audioUrl: '/level2/43/43.wav',
+            audioUrl: '/level2/43/title.mp3',
             watchAudio: '/level2/43/1.mp3',
             listenAudio: '/level2/43/2.mp3',
             readAudio: '/level2/43/3.mp3',
-            writeAudio: '/level2/43/4.mp3',
-            distinguishAudio: '/level2/43/5.mp3',
-            thinkAudio: '/level2/43/7.mp3',
+            distinguishAudio: '/level2/43/4.mp3',
+            writeAudio: '/level2/43/5.mp3',
             circleAudio: '/level2/43/6.mp3',
+            thinkAudio: '/level2/43/7.mp3',
             writingImages: ['/level2/43/write_1.png', '/level2/43/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ', 'لَ', 'لِ', 'لُ', 'مَ', 'مِ', 'مُ', 'نَ', 'نِ', 'نُ', 'هَ', 'هـِ', 'هُ', 'وَ', 'وِ', 'وُ'],
-            rememberAudio: '/level2/43/remember.mp3',
+            rememberAudio: '/level2/43/8.mp3',
             assemble: [
                 { id: 1, letters: ['و', 'ر', 'د'], word: 'وَرَد' },
                 { id: 2, letters: ['و', 'ص', 'ف'], word: 'وَصَفَ' },
                 { id: 3, letters: ['و', 'ص', 'ل'], word: 'وَصَلَ' },
                 { id: 4, letters: ['و', 'ر', 'ث'], word: 'وَرِثَ' }
             ],
-            assembleAudio: '/level2/43/assemble.mp3',
+            assembleAudio: '/level2/43/9.mp3',
         },
         {
             id: 44,
@@ -1993,24 +1993,24 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     answer: t('Riyal')
                 }
             ],
-            audioUrl: '/level2/44/44.wav',
+            audioUrl: '/level2/44/title.mp3',
             watchAudio: '/level2/44/1.mp3',
             listenAudio: '/level2/44/2.mp3',
             readAudio: '/level2/44/3.mp3',
-            writeAudio: '/level2/44/4.mp3',
-            distinguishAudio: '/level2/44/5.mp3',
-            thinkAudio: '/level2/44/7.mp3',
+            distinguishAudio: '/level2/44/4.mp3',
+            writeAudio: '/level2/44/5.mp3',
             circleAudio: '/level2/44/6.mp3',
+            thinkAudio: '/level2/44/7.mp3',
             writingImages: ['/level2/44/write_1.png', '/level2/44/write_2.png'],
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ', 'طَ', 'طِ', 'طُ', 'ظَ', 'ظِ', 'ظُ', 'عَ', 'عِ', 'عُ', 'غَ', 'غِ', 'غُ', 'فَ', 'فِ', 'فُ', 'قَ', 'قِ', 'قُ', 'كَ', 'كِ', 'كُ', 'لَ', 'لِ', 'لُ', 'مَ', 'مِ', 'مُ', 'نَ', 'نِ', 'نُ', 'هَ', 'هـِ', 'هُ', 'وَ', 'وِ', 'وُ', 'يَ', 'يِ', 'يُ'],
-            rememberAudio: '/level2/44/remember.mp3',
+            rememberAudio: '/level2/44/8.mp3',
             assemble: [
                 { id: 1, letters: ['ي', 'ح', 'ب'], word: 'يُحِبُّ' },
                 { id: 2, letters: ['ي', 'ا', 'س', 'ر'], word: 'يَاسِر' },
                 { id: 3, letters: ['ي', 'و', 'س', 'ف'], word: 'يُوسُف' },
                 { id: 4, letters: ['ر', 'ي', 'ح'], word: 'رِيح' }
             ],
-            assembleAudio: '/level2/44/assemble.mp3',
+            assembleAudio: '/level2/44/9.mp3',
         },
         {
             id: 45,
@@ -2024,7 +2024,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 4, text: '', words: ['وَرَدَ', 'وَصَفَ', 'وَصَلَ', 'وَرِثَ'] },
                 { id: 5, text: '', words: ['يُحِبُّ', 'يَاسِر', 'يُوسُف', 'رِيح'] },
             ],
-            audioUrl: '/level2/45/45.wav',
+            audioUrl: '/level2/45/45.mp3',
         },
         {
             id: 46,
@@ -2051,7 +2051,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 17, text: '<span class="text-red-500">كَلْ</span>ب', image: '/level2/46/dog.jpg' },
                 { id: 18, text: '<span class="text-red-500">فَهْ</span>د', image: '/level2/46/cheetah.jpg' },
             ],
-            audioUrl: '/level2/46/46.wav',
+            audioUrl: '/level2/46/46.mp3',
         },
         {
             id: 47,
@@ -2069,7 +2069,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 8, text: 'يُفَ<span class="text-red-500">كِّ</span>رُ', image: '/level2/47/thinks.jpg' },
                 { id: 9, text: 'يُغَ<span class="text-red-500">نِّ</span>ي', image: '/level2/47/sings.jpg' },
             ],
-            audioUrl: '/level2/47/47.wav',
+            audioUrl: '/level2/47/47.mp3',
         },
         {
             id: 48,
@@ -2082,7 +2082,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 'ضَ', 'طَ', 'ظَ', 'عَ', 'غَ', 'فَ', 'قَ',
                 'كَ', 'لَ', 'مَ', 'نَ', 'هَ', 'وَ', 'يَ'
             ],
-            audioUrl: '/level2/48/48.wav',
+            audioUrl: '/level2/48/48.mp3',
         },
         {
             id: 49,
@@ -2096,7 +2096,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 'ضِ', 'طِ', 'ظِ', 'عِ', 'غِ', 'فِ', 'قِ',
                 'كِ', 'لِ', 'مِ', 'نِ', 'هِ', 'وِ', 'يِ'
             ],
-            audioUrl: '/level2/49/49.wav',
+            audioUrl: '/level2/49/49.mp3',
         },
         {
             id: 50,
@@ -2110,7 +2110,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 'ضُ', 'طُ', 'ظُ', 'عُ', 'غُ', 'فُ', 'قُ',
                 'كُ', 'لُ', 'مُ', 'نُ', 'هُ', 'وُ', 'يُ'
             ],
-            audioUrl: '/level2/50/50.wav',
+            audioUrl: '/level2/50/50.mp3',
         },
 
     ];

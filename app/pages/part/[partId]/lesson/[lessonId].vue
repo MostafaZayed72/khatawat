@@ -554,14 +554,17 @@
       <!-- Short Vowels Type Lesson -->
       <!-- Cubes Type Lesson (3D Letter Cubes) -->
       <div v-else-if="lesson.type === 'cubes'" class="mt-16 flex flex-col items-center justify-center gap-8 p-4 max-w-6xl mx-auto z-10 relative w-full">
-         <!-- Badge with number -->
-         <div class="relative w-32 h-32 flex items-center justify-center">
-            <!-- Blue circle background -->
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full shadow-2xl"></div>
-            <!-- White inner circle -->
-            <div class="absolute inset-4 bg-white rounded-full shadow-inner"></div>
-            <!-- Number -->
-            <span class="relative z-10 text-6xl font-black text-blue-700 font-sans">{{ lesson.groupNumber }}</span>
+         <div class="flex items-center gap-6">
+             <!-- Badge with number -->
+             <div class="relative w-32 h-32 flex items-center justify-center">
+                <!-- Blue circle background -->
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full shadow-2xl"></div>
+                <!-- White inner circle -->
+                <div class="absolute inset-4 bg-white rounded-full shadow-inner"></div>
+                <!-- Number -->
+                <span class="relative z-10 text-6xl font-black text-blue-700 font-sans">{{ lesson.groupNumber }}</span>
+             </div>
+             <PlayAudioButton v-if="lesson.audioUrl" :audioUrl="lesson.audioUrl" />
          </div>
 
          <!-- Title -->
@@ -604,8 +607,9 @@
       <!-- Short Vowels Type Lesson -->
       <div v-else-if="lesson.type === 'shortVowels'" class="flex flex-col items-center justify-center gap-4 p-4 max-w-6xl mx-auto z-10 relative w-full">
          <div class="w-full flex justify-start max-w-4xl px-4">
-             <div class="bg-gradient-to-b from-gray-100 to-gray-200 border border-gray-300 rounded-lg px-6 py-1 shadow-sm">
+             <div class="bg-gradient-to-b from-gray-100 to-gray-200 border border-gray-300 rounded-lg px-6 py-1 shadow-sm flex items-center gap-4">
                  <span class="text-xl font-bold text-gray-800 font-arabic">{{ t('I watch') }}</span>
+                 <PlayAudioButton v-if="lesson.audioUrl" :audioUrl="lesson.audioUrl" />
              </div>
          </div>
          <div class="flex flex-col md:flex-row items-center justify-center gap-12 w-full">
@@ -1094,7 +1098,12 @@
       <!-- Read and Write Review Lesson Type -->
       <div v-else-if="lesson.type === 'readWriteReview'" class="flex flex-col w-full max-w-5xl mx-auto mt-8 gap-8 px-4">
            
-           <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-8 flex flex-col gap-12">
+           <div class="bg-white rounded-3xl shadow-lg border border-gray-100 p-8 flex flex-col gap-12 relative">
+               
+               <!-- Audio Button -->
+               <div class="absolute top-4 left-4" v-if="lesson.audioUrl">
+                   <PlayAudioButton :audioUrl="lesson.audioUrl" />
+               </div>
                
                <div v-for="item in lesson.items" :key="'review-' + item.id" class="flex flex-col gap-6">
                    <!-- Read Row -->
@@ -1107,7 +1116,7 @@
                        <!-- Words -->
                        <div class="flex-1 flex flex-wrap justify-center gap-4 items-center bg-orange-50/50 rounded-2xl p-4 border border-orange-100">
                            <template v-if="item.words">
-                               <template v-for="(word, wIdx) in item.words" :key="wIdx">
+                               <template v-for="(word, wIdx) in item.words.slice().reverse()" :key="wIdx">
                                    <span class="text-4xl md:text-6xl font-bold font-amiri text-gray-800">{{ word }}</span>
                                    <div v-if="wIdx < item.words.length - 1" class="w-px h-12 bg-orange-200 hidden md:block"></div>
                                </template>
