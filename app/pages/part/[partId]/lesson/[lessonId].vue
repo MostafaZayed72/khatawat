@@ -100,17 +100,19 @@
       </div>
 
       <!-- Gallery Type Lesson -->
-      <div v-else-if="lesson.type === 'gallery' && lesson.items" 
-           class="grid gap-6 p-4 max-w-4xl mx-auto z-10 relative mt-12"
+      <div v-else-if="lesson.type === 'gallery' && lesson.items" class="flex flex-col items-center gap-6 max-w-4xl mx-auto z-10 relative mt-12 w-full">
+        <PlayAudioButton v-if="lesson.audioUrl" :audioUrl="lesson.audioUrl" />
+        <div class="grid gap-6 p-4 w-full"
            :class="lesson.id === 3 ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-4'">
-        <div v-for="(item, index) in lesson.items" :key="index" class="flex flex-col items-center group cursor-pointer">
-          <div class="w-full h-64 bg-tranparent rounded-lg overflow-hidden mb-2 shadow-md transition-transform duration-300 transform group-hover:scale-105 group-hover:shadow-xl">
-            <img v-if="item.image" :src="item.image" :alt="item.text" class="w-full h-full object-contain" @load="handleImageLoad" @error="handleImageLoad" />
-            <div v-else class="w-full h-full flex items-center justify-center text-gray-400">
-              No Image
+            <div v-for="(item, index) in lesson.items" :key="index" class="flex flex-col items-center group cursor-pointer">
+            <div class="w-full h-64 bg-tranparent rounded-lg overflow-hidden mb-2 shadow-md transition-transform duration-300 transform group-hover:scale-105 group-hover:shadow-xl">
+                <img v-if="item.image" :src="item.image" :alt="item.text" class="w-full h-full object-contain" @load="handleImageLoad" @error="handleImageLoad" />
+                <div v-else class="w-full h-full flex items-center justify-center text-gray-400">
+                No Image
+                </div>
             </div>
-          </div>
-          <p class="text-xl font-bold text-gray-700 transition-colors group-hover:text-red-600 font-amiri text-3xl" v-html="item.text"></p>
+            <p class="text-xl font-bold text-gray-700 transition-colors group-hover:text-red-600 font-amiri text-3xl" v-html="item.text"></p>
+            </div>
         </div>
       </div>
 
@@ -1073,8 +1075,9 @@
       </div>
 
       <!-- Alphabet Chart Lesson Type -->
-      <div v-else-if="lesson.type === 'alphabetChart'" class="flex flex-col w-full max-w-6xl mx-auto mt-16 px-4">
-           <div class="grid grid-cols-4 md:grid-cols-7 gap-4 md:gap-6 border-2 border-gray-200 p-4 rounded-xl bg-white shadow-sm">
+      <div v-else-if="lesson.type === 'alphabetChart'" class="flex flex-col w-full max-w-6xl mx-auto mt-16 px-4 items-center gap-8">
+           <PlayAudioButton v-if="lesson.audioUrl" :audioUrl="lesson.audioUrl" />
+           <div class="grid grid-cols-4 md:grid-cols-7 gap-4 md:gap-6 border-2 border-gray-200 p-4 rounded-xl bg-white shadow-sm w-full">
                <div v-for="(char, index) in lesson.items" :key="index" 
                     class="aspect-square flex items-center justify-center border border-gray-100 rounded-lg transition-colors shadow-sm bg-white cursor-pointer transform hover:scale-105 duration-200"
                     :class="[
