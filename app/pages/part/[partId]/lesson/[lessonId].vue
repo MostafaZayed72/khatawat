@@ -163,7 +163,7 @@
               <!-- Grid -->
               <div class="grid gap-x-8 gap-y-12 dir-rtl"
                    :class="[
-                      lesson.gridCols === 3 ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-2 md:grid-cols-4'
+                      lesson.gridCols === 1 ? 'grid-cols-1 max-w-2xl mx-auto' : (lesson.gridCols === 3 ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-2 md:grid-cols-4')
                    ]">
                   <div v-for="item in lesson.items" :key="item.id" class="flex flex-col items-center group">
                       <!-- Reading Bubble -->
@@ -186,6 +186,37 @@
       </div>
 
 
+
+      <!-- Boxed Write Rows (New Blue Style) -->
+      <div v-else-if="lesson.type === 'boxedWriteRows'" class="w-full max-w-4xl mx-auto p-4 z-10">
+          <div class="flex flex-col gap-12 w-full">
+               <div v-for="item in lesson.items" :key="item.id" class="flex flex-col items-center w-full">
+                   
+                   <!-- The Blue Box -->
+                   <div class="relative w-full md:w-3/4 max-w-2xl">
+                       <!-- Stylish Border Container -->
+                       <div class="bg-white border-[3px] border-[#64B5F6] rounded-[2rem] shadow-[0_4px_10px_rgba(33,150,243,0.15)] px-8 py-6 relative z-10 flex items-center justify-center transform hover:scale-[1.02] transition-transform duration-300">
+                           <!-- Inner subtle border (optional for depth) -->
+                           <div class="absolute inset-1 border border-blue-50 rounded-[1.8rem] pointer-events-none"></div>
+                           
+                           <h2 class="text-3xl md:text-5xl font-bold font-amiri text-gray-800 leading-normal text-center" style="line-height: 1.6;">
+                               {{ item.text }}
+                           </h2>
+                       </div>
+                       
+                       <!-- Decorative side accents (pseudo-elements mimic) -->
+                       <div class="absolute top-1/2 -left-2 w-4 h-8 bg-[#64B5F6] rounded-l-full -translate-y-1/2 opacity-60"></div>
+                       <div class="absolute top-1/2 -right-2 w-4 h-8 bg-[#64B5F6] rounded-r-full -translate-y-1/2 opacity-60"></div>
+                   </div>
+
+                   <!-- Writing Line below -->
+                   <div class="w-full md:w-3/4 max-w-2xl mt-8 pt-8 relative">
+                       <div class="h-0.5 bg-gray-400 w-full rounded-full opacity-70"></div>
+                   </div>
+
+               </div>
+          </div>
+      </div>
 
       <!-- Assemble then Write Type logic -->
       <div v-else-if="lesson.type === 'assembleWrite'" class="w-full max-w-5xl mx-auto p-4 z-10">
@@ -493,6 +524,57 @@
                       </div>
                   </div>
               </div>
+         </div>
+      </div>
+
+      <!-- Sentence Arrange Type Lesson -->
+      <div v-else-if="lesson.type === 'sentenceArrange'" class="w-full max-w-5xl mx-auto p-4 z-10">
+          <!-- Main Card -->
+          <div class="bg-white/95 backdrop-blur-sm rounded-3xl shadow-xl p-6 md:p-10 border border-gray-100 flex flex-col gap-12 relative overflow-hidden">
+               
+               <!-- Decoration: Top Right Curve -->
+               <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-50 rounded-bl-full -z-10 opacity-60"></div>
+
+               <!-- Title -->
+               <div class="flex flex-col items-center gap-4 mb-4 mt-2">
+                   <h3 class="text-xl md:text-2xl text-gray-700 font-amiri font-bold text-center leading-relaxed">
+                       أُرَتِّبُ الْكَلِمَاتِ التَّالِيَةَ وَأُكَوِّنُ جُمْلَةً مُفِيدَةً :
+                   </h3>
+               </div>
+
+               <!-- Items Loop -->
+               <div class="flex flex-col gap-16" dir="rtl">
+                   <div v-for="(item, index) in lesson.items" :key="item.id" class="flex flex-col gap-6 relative">
+                       
+                       <!-- Number Badge (Absolute Right) -->
+                       <div class="absolute -right-4 -top-6 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center border-4 border-white shadow-md z-20">
+                           <span class="text-2xl font-bold text-white font-sans">{{ index + 1 }}</span>
+                       </div>
+
+                       <!-- Blue Frame Container for Words -->
+                       <div class="relative w-full bg-white border-4 border-cyan-400 rounded-2xl p-6 md:p-8 shadow-inner flex flex-wrap items-center justify-center gap-4 min-h-[100px]">
+                           <!-- Decorative side accents on frame -->
+                           <div class="absolute inset-y-4 right-0 w-2 bg-cyan-200 rounded-l-full"></div>
+                           <div class="absolute inset-y-4 left-0 w-2 bg-cyan-200 rounded-r-full"></div>
+
+                           <!-- Words List -->
+                           <div class="flex flex-wrap justify-center gap-2 items-center">
+                               <template v-for="(word, wIndex) in item.words" :key="wIndex">
+                                   <span class="text-3xl md:text-5xl font-bold text-black font-amiri">{{ word }}</span>
+                                   <!-- Comma separator (except last) -->
+                                   <span v-if="wIndex < (item.words?.length || 0) - 1" class="text-3xl md:text-5xl font-bold text-cyan-600 font-amiri ml-2">،</span>
+                               </template>
+                           </div>
+                       </div>
+
+                       <!-- Writing Line -->
+                       <div class="relative w-full h-16 md:h-20 mt-4">
+                           <!-- Line -->
+                           <div class="absolute bottom-4 left-0 right-0 border-b-2 border-gray-400 w-full"></div>
+                       </div>
+
+                   </div>
+               </div>
 
           </div>
       </div>

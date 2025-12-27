@@ -54,7 +54,7 @@ export interface Lesson {
     title: string;
     subtitle?: string;
     description?: string;
-    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes' | 'letterExamples' | 'readWriteReview' | 'alphabetChart' | 'unitIntro' | 'readWriteRows' | 'assembleWrite' | 'arrangeWrite' | 'readGrid' | 'ovalGrid' | 'tanweenTable' | 'dictation';
+    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes' | 'letterExamples' | 'readWriteReview' | 'alphabetChart' | 'unitIntro' | 'readWriteRows' | 'assembleWrite' | 'arrangeWrite' | 'readGrid' | 'ovalGrid' | 'tanweenTable' | 'dictation' | 'sentenceArrange' | 'boxedWriteRows';
     items?: LessonItem[];
     distinguish?: DistinguishItem[];
     writingPractice?: WritingPracticeItem[];
