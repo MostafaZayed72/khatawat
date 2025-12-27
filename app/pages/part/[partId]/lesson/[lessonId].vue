@@ -161,24 +161,25 @@
 
 
               <!-- Grid -->
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 dir-rtl">
+              <div class="grid gap-x-8 gap-y-12 dir-rtl"
+                   :class="[
+                      lesson.gridCols === 3 ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-2 md:grid-cols-4'
+                   ]">
                   <div v-for="item in lesson.items" :key="item.id" class="flex flex-col items-center group">
                       <!-- Reading Bubble -->
                       <div class="w-full bg-gradient-to-b from-[#008CBA] to-[#007095] text-white rounded-full py-4 px-2 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 mb-6 flex items-center justify-center border-2 border-[#005f7f]">
                           <span class="text-3xl md:text-5xl font-bold font-amiri leading-normal pt-2">{{ item.text }}</span>
                       </div>
 
-                      <!-- Writing Line -->
-                      <div class="relative w-full h-24 flex items-end justify-center">
-                          <!-- The Line -->
+                      <!-- Writing Line Removed as requested -->
+                      <!-- <div class="relative w-full h-24 flex items-end justify-center">
                           <div class="absolute bottom-4 left-0 right-0 h-0.5 bg-gray-400 w-full"></div>
                           
-                          <!-- The Tracing Text -->
                           <span class="text-5xl md:text-6xl font-black font-amiri text-gray-300 tracking-wide relative z-10 bottom-0 select-none pointer-events-none" 
                                 style="-webkit-text-stroke: 1px #9ca3af;">
                               {{ item.text }}
                           </span>
-                      </div>
+                      </div> -->
                   </div>
               </div>
           </div>

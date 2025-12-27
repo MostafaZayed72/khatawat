@@ -79,6 +79,7 @@ export interface Lesson {
     assembleAudio?: string;
     colorTheme?: string;
     columns?: { id: number; header: string; color: string; items: { id: number; text: string; highlight?: string }[] }[];
+    gridCols?: number;
 }
 
 export interface Part {
