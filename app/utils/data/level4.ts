@@ -373,6 +373,736 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
                     text: t('I am very happy about that.')
                 }
             ]
+        },
+        {
+            id: 7,
+            title: t('Lesson Seven'),
+            subtitle: t('Salem in the Airport'),
+            type: 'conversation',
+            items: [
+                {
+                    id: 1,
+                    speaker: t('Employee'),
+                    speakerColor: '#1976d2',
+                    text: t('Welcome Salem, how can I help you?')
+                },
+                {
+                    id: 2,
+                    speaker: t('Salem'),
+                    speakerColor: '#d32f2f',
+                    text: t('I want a ticket to London.')
+                },
+                {
+                    id: 3,
+                    speaker: t('Employee'),
+                    speakerColor: '#1976d2',
+                    text: t('Okay, give me your passport please.')
+                },
+                {
+                    id: 4,
+                    speaker: t('Salem'),
+                    speakerColor: '#d32f2f',
+                    text: t('Sure, here you go.')
+                },
+                {
+                    id: 5,
+                    speaker: t('Employee'),
+                    speakerColor: '#1976d2',
+                    text: t('There is a trip at one in the afternoon, would you like to book it?')
+                },
+                {
+                    id: 6,
+                    speaker: t('Salem'),
+                    speakerColor: '#d32f2f',
+                    text: t('The time doesn\'t suit me, are there other appointments?')
+                },
+                {
+                    id: 7,
+                    speaker: t('Employee'),
+                    speakerColor: '#1976d2',
+                    text: t('Yes, there is a trip at six in the evening and another at eleven in the morning.')
+                },
+                {
+                    id: 8,
+                    speaker: t('Salem'),
+                    speakerColor: '#d32f2f',
+                    text: t('Yes this is suitable, I want you to book me on the trip that takes off at six in the evening.')
+                },
+                {
+                    id: 9,
+                    speaker: t('Employee'),
+                    speakerColor: '#1976d2',
+                    text: t('Okay I will do that.')
+                },
+                {
+                    id: 10,
+                    speaker: t('Salem'),
+                    speakerColor: '#d32f2f',
+                    text: t('Thank you.')
+                }
+            ]
+        },
+        {
+            id: 8,
+            title: t('Lesson Eight'),
+            subtitle: t('Samir Visits his Sick Friend'),
+            type: 'conversation',
+            items: [
+                {
+                    id: 1,
+                    speaker: t('Samir'),
+                    speakerColor: '#d32f2f',
+                    text: t('How are you my friend?')
+                },
+                {
+                    id: 2,
+                    speaker: t('Ayman'),
+                    speakerColor: '#1976d2',
+                    text: t('Praise be to Allah fine.')
+                },
+                {
+                    id: 3,
+                    speaker: t('Samir'),
+                    speakerColor: '#d32f2f',
+                    text: t('Masha Allah your face is bright, it seems you improved.')
+                },
+                {
+                    id: 4,
+                    speaker: t('Ayman'),
+                    speakerColor: '#1976d2',
+                    text: t('Yes, I feel my health is good now.')
+                },
+                {
+                    id: 5,
+                    speaker: t('Samir'),
+                    speakerColor: '#d32f2f',
+                    text: t('Do not forget to drink the medicine on time.')
+                },
+                {
+                    id: 6,
+                    speaker: t('Ayman'),
+                    speakerColor: '#1976d2',
+                    text: t('I thank you for your concern.')
+                },
+                {
+                    id: 7,
+                    speaker: t('Samir'),
+                    speakerColor: '#d32f2f',
+                    text: t('No thanks for duty my friend, I wish you wellness and urgent healing.')
+                },
+                {
+                    id: 8,
+                    speaker: t('Ayman'),
+                    speakerColor: '#1976d2',
+                    text: t('I was very pleased with your visit.')
+                }
+            ]
+        },
+        {
+            id: 9,
+            title: t('Lesson Nine'),
+            subtitle: t('Suad in the Hospital'),
+            type: 'conversation',
+            items: [
+                {
+                    id: 1,
+                    speaker: t('Doctor_Male'),
+                    speakerColor: '#1976d2',
+                    text: t('What is your name?')
+                },
+                {
+                    id: 2,
+                    speaker: t('Suad'),
+                    speakerColor: '#d32f2f',
+                    text: t('Suad.')
+                },
+                {
+                    id: 3,
+                    speaker: t('Doctor_Male'),
+                    speakerColor: '#1976d2',
+                    text: t('What do you complain of Suad?')
+                },
+                {
+                    id: 4,
+                    speaker: t('Suad'),
+                    speakerColor: '#d32f2f',
+                    text: t('I feel severe pain in my belly.')
+                },
+                {
+                    id: 5,
+                    speaker: t('Doctor_Male'),
+                    speakerColor: '#1976d2',
+                    text: t('Put your hand on the pain place Suad.')
+                },
+                {
+                    id: 6,
+                    speaker: t('Suad'),
+                    speakerColor: '#d32f2f',
+                    text: t('Here, in the lower belly doctor.')
+                },
+                {
+                    id: 7,
+                    speaker: t('Doctor_Male'),
+                    speakerColor: '#1976d2',
+                    text: t('What did you eat today?')
+                },
+                {
+                    id: 8,
+                    speaker: t('Suad'),
+                    speakerColor: '#d32f2f',
+                    text: t('I ate a little eggs, and bought a piece of candy and I was on my way to the club.')
+                },
+                {
+                    id: 9,
+                    speaker: t('Doctor_Male'),
+                    speakerColor: '#1976d2',
+                    text: t('From where did you buy that candy?')
+                },
+                {
+                    id: 10,
+                    speaker: t('Suad'),
+                    speakerColor: '#d32f2f',
+                    text: t('From a street vendor standing in the street.')
+                },
+                {
+                    id: 11,
+                    speaker: t('Doctor_Male'),
+                    speakerColor: '#1976d2',
+                    text: t('This is the reason Suad, street vendors food is polluted and carries microbes.')
+                },
+                {
+                    id: 12,
+                    speaker: t('Suad'),
+                    speakerColor: '#d32f2f',
+                    text: t('I was wrong doctor, I will not do that again.')
+                },
+                {
+                    id: 13,
+                    speaker: t('Doctor_Male'),
+                    speakerColor: '#1976d2',
+                    text: t('You must take the medicine and rest for two days.')
+                },
+                {
+                    id: 14,
+                    speaker: t('Suad'),
+                    speakerColor: '#d32f2f',
+                    text: t('Thank you doctor.')
+                }
+            ]
+        },
+        {
+            id: 10,
+            title: t('Lesson Ten'),
+            subtitle: t('Karim in the Vegetable Market'),
+            type: 'conversation',
+            items: [
+                {
+                    id: 1,
+                    speaker: t('Karim'),
+                    speakerColor: '#d32f2f',
+                    text: t('Peace be upon you, how much is the tomato price?')
+                },
+                {
+                    id: 2,
+                    speaker: t('Seller'),
+                    speakerColor: '#1976d2',
+                    text: t('And upon you peace, the kilo is five riyals.')
+                },
+                {
+                    id: 3,
+                    speaker: t('Karim'),
+                    speakerColor: '#d32f2f',
+                    text: t('Okay, I want two kilos of tomatoes.')
+                },
+                {
+                    id: 4,
+                    speaker: t('Seller'),
+                    speakerColor: '#1976d2',
+                    text: t('Okay, do you want anything else?')
+                },
+                {
+                    id: 5,
+                    speaker: t('Karim'),
+                    speakerColor: '#d32f2f',
+                    text: t('Actually, I want also a kilo of potatoes, and a little of parsley if you please.')
+                },
+                {
+                    id: 6,
+                    speaker: t('Seller'),
+                    speakerColor: '#1976d2',
+                    text: t('I will prepare that for you now, please wait a little.')
+                },
+                {
+                    id: 7,
+                    speaker: t('Karim'),
+                    speakerColor: '#d32f2f',
+                    text: t('Okay.')
+                },
+                {
+                    id: 8,
+                    speaker: t('Seller'),
+                    speakerColor: '#1976d2',
+                    text: t('Here are your goods and their value is twenty riyals.')
+                },
+                {
+                    id: 9,
+                    speaker: t('Karim'),
+                    speakerColor: '#d32f2f',
+                    text: t('Here you go.')
+                },
+                {
+                    id: 10,
+                    speaker: t('Seller'),
+                    speakerColor: '#1976d2',
+                    text: t('Thank you, goodbye.')
+                }
+            ]
+        },
+        {
+            id: 11,
+            title: t('Lesson Eleven'),
+            subtitle: t('Adel in the Fruit Market'),
+            type: 'conversation',
+            items: [
+                {
+                    id: 1,
+                    speaker: t('Seller'),
+                    speakerColor: '#1976d2',
+                    text: t('Here you go, can I help you?')
+                },
+                {
+                    id: 2,
+                    speaker: t('Adel'),
+                    speakerColor: '#d32f2f',
+                    text: t('Do you have strawberries, and bananas?')
+                },
+                {
+                    id: 3,
+                    speaker: t('Seller'),
+                    speakerColor: '#1976d2',
+                    text: t('Yes, how much do you want of them?')
+                },
+                {
+                    id: 4,
+                    speaker: t('Adel'),
+                    speakerColor: '#d32f2f',
+                    text: t('I want a kilo of strawberries, and two kilos of bananas.')
+                },
+                {
+                    id: 5,
+                    speaker: t('Seller'),
+                    speakerColor: '#1976d2',
+                    text: t('I will prepare them for you now.')
+                },
+                {
+                    id: 6,
+                    speaker: t('Adel'),
+                    speakerColor: '#d32f2f',
+                    text: t('Waiting for you.')
+                },
+                {
+                    id: 7,
+                    speaker: t('Seller'),
+                    speakerColor: '#1976d2',
+                    text: t('Here you go, do you want anything else?')
+                },
+                {
+                    id: 8,
+                    speaker: t('Adel'),
+                    speakerColor: '#d32f2f',
+                    text: t('No, and thanks, how much is the total amount?')
+                },
+                {
+                    id: 9,
+                    speaker: t('Seller'),
+                    speakerColor: '#1976d2',
+                    text: t('Fifteen riyals.')
+                },
+                {
+                    id: 10,
+                    speaker: t('Adel'),
+                    speakerColor: '#d32f2f',
+                    text: t('Here is twenty riyals.')
+                },
+                {
+                    id: 11,
+                    speaker: t('Seller'),
+                    speakerColor: '#1976d2',
+                    text: t('Here is the change.')
+                },
+                {
+                    id: 12,
+                    speaker: t('Adel'),
+                    speakerColor: '#d32f2f',
+                    text: t('Thank you, goodbye.')
+                }
+            ]
+        },
+        {
+            id: 12,
+            title: t('Lesson Twelve'),
+            subtitle: t('Hamed in the Butchery'),
+            type: 'conversation',
+            items: [
+                {
+                    id: 1,
+                    speaker: t('Hamed'),
+                    speakerColor: '#d32f2f',
+                    text: t('How are you?')
+                },
+                {
+                    id: 2,
+                    speaker: t('Butcher'),
+                    speakerColor: '#1976d2',
+                    text: t('We have various meats at good prices.')
+                },
+                {
+                    id: 3,
+                    speaker: t('Hamed'),
+                    speakerColor: '#d32f2f',
+                    text: t('Do you sell fresh or frozen meats?')
+                },
+                {
+                    id: 4,
+                    speaker: t('Butcher'),
+                    speakerColor: '#1976d2',
+                    text: t('We have all types, which one do you want?')
+                },
+                {
+                    id: 5,
+                    speaker: t('Hamed'),
+                    speakerColor: '#d32f2f',
+                    text: t('I want a kilo of fresh meat.')
+                },
+                {
+                    id: 6,
+                    speaker: t('Butcher'),
+                    speakerColor: '#1976d2',
+                    text: t('Okay, wait just one minute please.')
+                },
+                {
+                    id: 7,
+                    speaker: t('Hamed'),
+                    speakerColor: '#d32f2f',
+                    text: t('Okay.')
+                },
+                {
+                    id: 8,
+                    speaker: t('Butcher'),
+                    speakerColor: '#1976d2',
+                    text: t('Here you go, do you want anything else?')
+                },
+                {
+                    id: 9,
+                    speaker: t('Hamed'),
+                    speakerColor: '#d32f2f',
+                    text: t('No, and thanks, what is the meat price?')
+                },
+                {
+                    id: 10,
+                    speaker: t('Butcher'),
+                    speakerColor: '#1976d2',
+                    text: t('Fifty riyals.')
+                },
+                {
+                    id: 11,
+                    speaker: t('Hamed'),
+                    speakerColor: '#d32f2f',
+                    text: t('Isn\'t the price a little high?')
+                },
+                {
+                    id: 12,
+                    speaker: t('Butcher'),
+                    speakerColor: '#1976d2',
+                    text: t('This is the price of fresh meats, but I will deduct ten riyals for you, so you become a permanent customer for us.')
+                },
+                {
+                    id: 13,
+                    speaker: t('Hamed'),
+                    speakerColor: '#d32f2f',
+                    text: t('Thank you, this is from your kindness, here is forty riyals.')
+                },
+                {
+                    id: 14,
+                    speaker: t('Butcher'),
+                    speakerColor: '#1976d2',
+                    text: t('With health and healing, I hope to see you again.')
+                },
+                {
+                    id: 15,
+                    speaker: t('Hamed'),
+                    speakerColor: '#d32f2f',
+                    text: t('I will do that later, goodbye now.')
+                },
+                {
+                    id: 16,
+                    speaker: t('Butcher'),
+                    speakerColor: '#1976d2',
+                    text: t('With safety.')
+                }
+            ]
+        },
+        {
+            id: 13,
+            title: t('Lesson Thirteen'),
+            subtitle: t('Wareef in the Restaurant'),
+            type: 'conversation',
+            items: [
+                {
+                    id: 1,
+                    speaker: t('Wareef'),
+                    speakerColor: '#d32f2f',
+                    text: t('Peace be upon you.')
+                },
+                {
+                    id: 2,
+                    speaker: t('Waitress'),
+                    speakerColor: '#1976d2',
+                    text: t('Welcome, here is the meal menu.')
+                },
+                {
+                    id: 3,
+                    speaker: t('Wareef'),
+                    speakerColor: '#d32f2f',
+                    text: t('Thank you, this is kind of you, I want a chicken sandwich and a cup of orange juice.')
+                },
+                {
+                    id: 4,
+                    speaker: t('Waitress'),
+                    speakerColor: '#1976d2',
+                    text: t('Anything else?')
+                },
+                {
+                    id: 5,
+                    speaker: t('Wareef'),
+                    speakerColor: '#d32f2f',
+                    text: t('No, and thanks.')
+                },
+                {
+                    id: 6,
+                    speaker: t('Waitress'),
+                    speakerColor: '#1976d2',
+                    text: t('I will bring it to you in a little while, you have to wait a little.')
+                },
+                {
+                    id: 7,
+                    speaker: t('Wareef'),
+                    speakerColor: '#d32f2f',
+                    text: t('Okay.')
+                },
+                {
+                    id: 8,
+                    speaker: t('Waitress'),
+                    speakerColor: '#1976d2',
+                    text: t('Here is what you ordered, bon appetit.')
+                },
+                {
+                    id: 9,
+                    speaker: t('Wareef'),
+                    speakerColor: '#d32f2f',
+                    text: t('Thank you.')
+                },
+                {
+                    id: 10,
+                    speaker: t('Waitress'),
+                    speakerColor: '#1976d2',
+                    text: t('Here is your invoice, is there any other service I can provide for you?')
+                },
+                {
+                    id: 11,
+                    speaker: t('Wareef'),
+                    speakerColor: '#d32f2f',
+                    text: t('No, thank you.')
+                }
+            ]
+        },
+        {
+            id: 14,
+            title: t('Lesson Fourteen'),
+            subtitle: t('Ali in the Hotel'),
+            type: 'conversation',
+            items: [
+                {
+                    id: 1,
+                    speaker: t('Ali'),
+                    speakerColor: '#d32f2f',
+                    text: t('Peace be upon you.')
+                },
+                {
+                    id: 2,
+                    speaker: t('Receptionist'),
+                    speakerColor: '#1976d2',
+                    text: t('Welcome, how can I help you?')
+                },
+                {
+                    id: 3,
+                    speaker: t('Ali'),
+                    speakerColor: '#d32f2f',
+                    text: t('I want to book a room please.')
+                },
+                {
+                    id: 4,
+                    speaker: t('Receptionist'),
+                    speakerColor: '#1976d2',
+                    text: t('How long do you want to spend with us in the hotel?')
+                },
+                {
+                    id: 5,
+                    speaker: t('Ali'),
+                    speakerColor: '#d32f2f',
+                    text: t('Three days only.')
+                },
+                {
+                    id: 6,
+                    speaker: t('Receptionist'),
+                    speakerColor: '#1976d2',
+                    text: t('Have you given me your ID card so I can execute the booking procedures for you?')
+                },
+                {
+                    id: 7,
+                    speaker: t('Ali'),
+                    speakerColor: '#d32f2f',
+                    text: t('Of course, here you go, how much is the cost please?')
+                },
+                {
+                    id: 8,
+                    speaker: t('Receptionist'),
+                    speakerColor: '#1976d2',
+                    text: t('Fifty riyals per night, so the total is one hundred and fifty riyals.')
+                },
+                {
+                    id: 9,
+                    speaker: t('Ali'),
+                    speakerColor: '#d32f2f',
+                    text: t('I have my bank card, do you deal with it?')
+                },
+                {
+                    id: 10,
+                    speaker: t('Receptionist'),
+                    speakerColor: '#1976d2',
+                    text: t('Of course, give it to me please.')
+                },
+                {
+                    id: 11,
+                    speaker: t('Ali'),
+                    speakerColor: '#d32f2f',
+                    text: t('Here you go.')
+                },
+                {
+                    id: 12,
+                    speaker: t('Receptionist'),
+                    speakerColor: '#1976d2',
+                    text: t('I finished the booking procedures, you can sign here.')
+                },
+                {
+                    id: 13,
+                    speaker: t('Ali'),
+                    speakerColor: '#d32f2f',
+                    text: t('Okay.')
+                },
+                {
+                    id: 14,
+                    speaker: t('Receptionist'),
+                    speakerColor: '#1976d2',
+                    text: t('Here are your cards, your room number is two hundred and one on the second floor, and this is your room key.')
+                },
+                {
+                    id: 15,
+                    speaker: t('Ali'),
+                    speakerColor: '#d32f2f',
+                    text: t('Thank you, is there someone to help me deliver the bags to the room?')
+                },
+                {
+                    id: 16,
+                    speaker: t('Receptionist'),
+                    speakerColor: '#1976d2',
+                    text: t('Yes my dear, the messenger will accompany you to the room and will deliver your bags to the room.')
+                },
+                {
+                    id: 17,
+                    speaker: t('Ali'),
+                    speakerColor: '#d32f2f',
+                    text: t('Thank you very much, let\'s go.')
+                },
+                {
+                    id: 18,
+                    speaker: t('Messenger'),
+                    speakerColor: '#1976d2',
+                    text: t('Here you go sir, I wish you times full of comfort and happiness in this hotel.')
+                },
+                {
+                    id: 19,
+                    speaker: t('Ali'),
+                    speakerColor: '#d32f2f',
+                    text: t('I hope so.')
+                },
+                {
+                    id: 20,
+                    speaker: t('Messenger'),
+                    speakerColor: '#1976d2',
+                    text: t('Here we have arrived at the room, do you want anything else my dear?')
+                },
+                {
+                    id: 21,
+                    speaker: t('Ali'),
+                    speakerColor: '#d32f2f',
+                    text: t('Thank you, I appreciate your good treatment and your kindness.')
+                },
+                {
+                    id: 22,
+                    speaker: t('Messenger'),
+                    speakerColor: '#1976d2',
+                    text: t('Okay my dear, if you need anything do not hesitate to call the hotel phone, goodbye.')
+                },
+                {
+                    id: 23,
+                    speaker: t('Ali'),
+                    speakerColor: '#d32f2f',
+                    text: t('I will do that when needed, goodbye.')
+                }
+            ]
+        },
+        {
+            id: 15,
+            title: t('Language Skills Lessons'),
+            subtitle: t('Lesson One: The Sun'),
+            type: 'contentWithExercises',
+            readImage: '/level4/lesson15/sun.png',
+            readImage2: '/level4/lesson15/solar_panels.png',
+            readingText: [
+                t('The Sun is one of the blessings that Allah has bestowed upon us, for it is one of the stars that radiates light and warmth for us during the day, and it is beneficial for the human body, and the sun is considered one of the important factors in the life of plants, as its rays are a source of their growth, just as it is one of the main sources of energy, and it can be used to generate electricity, so did we know how essential it is for life? And did we praise Allah for it?')
+            ],
+            grammarRules: [
+                t('(Al) The Solar'),
+                t('1. It is the (Al) that comes at the beginning of the word.'),
+                t('2. We write the solar (Al) and do not pronounce it during reading, and the letter Lam does not show any diacritic.'),
+                t('3. The letter that comes after it is always stressed (Mushaddad).'),
+                t('4. The solar (Al) comes with the following letters: (14 letters)'),
+                t('T, Th, D, Dh, R, Z, S, Sh, S, D, T, Z, L, N')
+            ],
+            tableData: {
+                headers: [t('These words appeared in the lesson, re-read them observing the pronunciation and writing of (Al) Solar:')],
+                rows: [
+                    [t('The Blessings'), t('The Energy')],
+                    [t('The Stars'), t('The Clean')],
+                    [t('The Light'), t('The Boss')],
+                    [t('The Warmth'), t('The World')],
+                    [t('The Food'), t('The Winds')]
+                ]
+            },
+            exercisesTitle: t('Mention a number of words starting with (Al) Solar other than the words found in the lesson.'),
+            exercises: [
+                { id: 1, type: 'input', title: '' },
+                { id: 2, type: 'input', title: '' },
+                { id: 3, type: 'input', title: '' },
+                { id: 4, type: 'input', title: '' },
+                { id: 5, type: 'input', title: '' },
+                { id: 6, type: 'input', title: '' },
+                { id: 7, type: 'input', title: '' },
+                { id: 8, type: 'input', title: '' },
+                { id: 9, type: 'input', title: '' },
+                { id: 10, type: 'input', title: '' }
+            ]
         }
     ];
 

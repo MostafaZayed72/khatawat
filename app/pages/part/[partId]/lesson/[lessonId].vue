@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen w-screen bg-white p-2 font-sans flex flex-col" dir="rtl">
+  <div class="min-h-screen w-screen bg-white p-2 font-sans flex flex-col" :dir="locale === 'ar' ? 'rtl' : 'ltr'">
     
     <!-- Loading Spinner -->
     <div v-if="isLoading" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white/90 backdrop-blur-sm">
@@ -1155,6 +1155,90 @@
                </div>
 
           </div>
+      </div>
+
+      <!-- Content With Exercises Lesson Type (Lesson 15) -->
+      <div v-else-if="lesson.type === 'contentWithExercises'" class="flex flex-col w-full max-w-6xl mx-auto mt-8 gap-8 px-4">
+           
+           <!-- Reading Section -->
+           <div v-if="lesson.readingText" class="flex flex-col gap-6 bg-white p-6 rounded-3xl shadow-md border border-gray-200">
+               <div class="flex items-center gap-4 justify-between border-b border-gray-100 pb-4" v-if="lesson.readAudio">
+                    <PlayAudioButton :audioUrl="lesson.readAudio" />
+               </div>
+               
+               <div class="flex flex-col md:flex-row gap-8 items-center justify-between mb-6">
+                   <!-- Text Container (Right in RTL due to order) -->
+                   <div class="flex flex-col gap-4 text-center md:text-start w-full md:w-2/3 order-1">
+                       <p v-for="(line, idx) in lesson.readingText" :key="idx" class="text-4xl md:text-5xl font-bold font-amiri text-gray-800 leading-relaxed">
+                           {{ t(line) }}
+                       </p>
+                   </div>
+
+                   <!-- Images Container (Left in RTL due to order) -->
+                   <div class="flex flex-col gap-6 items-center justify-center w-full md:w-1/3 order-2">
+                       <div v-if="lesson.readImage" class="w-full">
+                           <img :src="lesson.readImage" class="w-full h-auto object-contain rounded-xl" />
+                       </div>
+                        <div v-if="lesson.readImage2" class="w-full">
+                           <img :src="lesson.readImage2" class="w-full h-auto object-contain rounded-xl" />
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+           <!-- Grammar Rules Section -->
+           <div v-if="lesson.grammarRules" class="flex flex-col gap-6 bg-yellow-50 p-6 rounded-3xl shadow-md border border-yellow-200">
+               <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
+                    <!-- Diagram Image -->
+                    <div v-if="lesson.mainImage" class="w-full md:w-1/2 max-w-md">
+                        <img :src="lesson.mainImage" class="w-full h-auto object-contain" />
+                    </div>
+
+                    <!-- Rules List -->
+                    <div class="flex flex-col gap-4 w-full md:w-1/2">
+                         <div v-for="(rule, idx) in lesson.grammarRules" :key="idx" class="flex items-start gap-4">
+                             <div class="w-4 h-4 mt-3 bg-red-500 rounded-full shrink-0"></div>
+                             <p class="text-3xl md:text-4xl font-bold font-amiri text-gray-800 leading-relaxed">{{ t(rule) }}</p>
+                         </div>
+                    </div>
+               </div>
+           </div>
+
+           <!-- Tables Section -->
+           <div v-if="lesson.tableData" class="flex flex-col gap-6 bg-green-50 p-6 rounded-3xl shadow-md border border-green-200">
+               <div class="overflow-x-auto">
+                   <table class="w-full min-w-[600px] border-collapse">
+                       <thead>
+                           <tr>
+                               <th v-for="(header, idx) in lesson.tableData.headers" :key="idx" class="p-4 text-3xl font-bold text-green-800 bg-green-100 border border-green-300 rounded-t-xl">
+                                   {{ t(header) }}
+                               </th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr v-for="(row, rIdx) in lesson.tableData.rows" :key="rIdx" class="bg-white hover:bg-green-50 transition-colors">
+                               <td v-for="(cell, cIdx) in row" :key="cIdx" class="p-4 text-center border border-green-200">
+                                   <span class="text-3xl md:text-5xl font-bold font-amiri text-gray-800" v-html="cell"></span>
+                               </td>
+                           </tr>
+                       </tbody>
+                   </table>
+               </div>
+           </div>
+
+           <!-- Exercises Section (Input) -->
+           <div v-if="lesson.exercises && lesson.exercises[0].type === 'input'" class="flex flex-col gap-6 bg-purple-50 p-6 rounded-3xl shadow-md border border-purple-200">
+               <div class="flex items-center justify-center border-b border-purple-200 pb-4">
+                    <p class="text-2xl md:text-3xl font-bold text-gray-700 font-arabic">{{ lesson.exercisesTitle ? t(lesson.exercisesTitle) : t('Mention words starting with sun letter and moon letter from the text') }}</p>
+               </div>
+
+               <div class="grid grid-cols-2 gap-4">
+                   <div v-for="exercise in lesson.exercises" :key="exercise.id" class="flex flex-col">
+                       <input type="text" class="w-full p-4 rounded-xl border-2 border-purple-200 focus:border-purple-500 focus:outline-none text-2xl font-amiri text-center text-gray-800 shadow-sm" placeholder="..." />
+                   </div>
+               </div>
+           </div>
+
       </div>
 
       <!-- Alphabet Chart Lesson Type -->

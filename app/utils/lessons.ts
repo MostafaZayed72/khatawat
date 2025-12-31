@@ -19,6 +19,7 @@ export interface LessonItem {
     words?: string[];
     listenImage?: string;
     readImage?: string;
+    readImage2?: string;
     letters?: string[];
     word?: string;
 }
@@ -42,7 +43,7 @@ export interface WritingPracticeItem {
 
 export interface ExerciseItem {
     id: number;
-    type: 'circle' | 'think';
+    type: 'circle' | 'think' | 'input';
     title?: string;
     letter?: string;
     words?: (string | { id: number; text: string })[]; // keys for translations or objects
@@ -55,15 +56,19 @@ export interface Lesson {
     title: string;
     subtitle?: string;
     description?: string;
-    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes' | 'letterExamples' | 'readWriteReview' | 'alphabetChart' | 'unitIntro' | 'readWriteRows' | 'assembleWrite' | 'arrangeWrite' | 'readGrid' | 'ovalGrid' | 'tanweenTable' | 'dictation' | 'sentenceArrange' | 'boxedWriteRows';
+    type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes' | 'letterExamples' | 'readWriteReview' | 'alphabetChart' | 'unitIntro' | 'readWriteRows' | 'assembleWrite' | 'arrangeWrite' | 'readGrid' | 'ovalGrid' | 'tanweenTable' | 'dictation' | 'sentenceArrange' | 'boxedWriteRows' | 'contentWithExercises';
     items?: LessonItem[];
     distinguish?: DistinguishItem[];
     writingPractice?: WritingPracticeItem[];
+    writingPractice?: WritingPracticeItem[];
     exercises?: ExerciseItem[];
+    exercisesTitle?: string;
     audioUrl?: string; // Legacy/Fallback
     watchAudio?: string;
     listenAudio?: string;
     readAudio?: string;
+    readImage?: string;
+    readImage2?: string;
     writeAudio?: string;
     distinguishAudio?: string;
     thinkAudio?: string;
@@ -81,6 +86,9 @@ export interface Lesson {
     colorTheme?: string;
     columns?: { id: number; header: string; color: string; items: { id: number; text: string; highlight?: string }[] }[];
     gridCols?: number;
+    readingText?: string[];
+    grammarRules?: string[];
+    tableData?: { headers: string[]; rows: string[][] };
 }
 
 export interface Part {
