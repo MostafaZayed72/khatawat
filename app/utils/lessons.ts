@@ -1,6 +1,7 @@
 import { getLevel1Lessons } from './data/level1';
 import { getLevel2Lessons } from './data/level2';
 import { getLevel3Lessons } from './data/level3';
+import { getLevel4Lessons } from './data/level4';
 
 export interface LessonItem {
     id: number;
@@ -129,7 +130,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             videoUrl: '',
             image: '/parts/4.png',
             pdfUrl: 'https://drive.google.com/file/d/1IfVNk1ne8EtEHjuvAQ-33TiGG-C-8G-e/view?usp=sharing',
-            lessons: []
+            lessons: getLevel4Lessons(t)
         }
     ];
 };
