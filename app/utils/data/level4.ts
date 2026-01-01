@@ -1103,6 +1103,130 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 9, type: 'input', title: '' },
                 { id: 10, type: 'input', title: '' }
             ]
+        },
+        {
+            id: 16,
+            title: t('Lesson Sixteen'),
+            subtitle: t('Lesson Two: The Sea'),
+            type: 'contentWithExercises',
+            readImage: '/level4/lesson16/sea.png',
+            readingText: [
+                t('The sea and the ocean are the largest sources of water in life, and water covers three-quarters of the Earth, and they contain many great secrets that have not been discovered until now, as man has discovered space and has not reached the rest of the secrets of the seas. Seas are a route for international trade, and they are an important source of food, and a source of salts and hidden treasures; so glory be to Him whose creation this is.')
+            ],
+            grammarRules: [
+                t('(Al) The Moon'),
+                t('1. It is the (Al) that comes at the beginning of the word.'),
+                t('2. We write the moon (Al) and pronounce it during reading, and the letter Lam movement is always Sukun.'),
+                t('3. The letter Lam movement is always Sukun.'),
+                t('4. The moon (Al) comes with the following letters: (14 letters)')
+            ],
+            grammarImage: '/level4/lesson16/moon_letters.png',
+            tableData: {
+                headers: [t('These words appeared in the lesson, re-read them observing the pronunciation and writing of (Al) Moon:')],
+                rows: [
+                    [t('The Sea'), t('The Life')],
+                    [t('The Ocean'), t('The Earth')]
+                ]
+            },
+            exercisesTitle: t('Mention a number of words starting with (Al) Moon other than the words found in the lesson.'),
+            exercises: Array.from({ length: 20 }, (_, i) => ({ id: i + 1, type: 'input', title: '' })),
+            tableData2: {
+                headers: [t('Training')],
+                rows: [
+                    [t('Search for words like in the previous training.')]
+                ]
+            }
+        },
+        {
+            id: 17,
+            title: t('Language Skills Lessons'),
+            subtitle: t('Lesson Three: My House'),
+            type: 'contentWithExercises',
+            readImage: '/level4/lesson17/house.png',
+            readingText: [
+                t('In my house, there is a large mulberry tree, a small fig tree, a pomegranate tree, and many roses. Birds stand on the trees and sing: I love the garden.')
+            ],
+            grammarTitle: t('Madd Letters Title'),
+            grammarRules: [
+                t('Madd letters are three, and they are: (Alif), (Waw), (Yaa), and they do not accept vowels.'),
+                t('The letter that precedes the Madd letter is called (the lengthened letter).'),
+                t('The vowel of the lengthened letter that precedes Alif is (the Fatha).'),
+                t('The vowel of the lengthened letter that precedes Waw is (the Damma).'),
+                t('The vowel of the lengthened letter that precedes Yaa is (the Kasra).'),
+                t('The Madd letter and the lengthened letter together are called (the Madd syllable).')
+            ],
+            maddDiagram: {
+                items: [
+                    {
+                        word: t('Suad'),
+                        madd: { text: t('ا'), label: t('Madd Letter') },
+                        mamdooh: { text: t('عَـ'), label: t('Lengthened Letter') }
+                    },
+                    {
+                        word: t('Saud'),
+                        madd: { text: t('و'), label: t('Madd Letter') },
+                        mamdooh: { text: t('عُـ'), label: t('Lengthened Letter') }
+                    },
+                    {
+                        word: t('Saeed'),
+                        madd: { text: t('ي'), label: t('Madd Letter') },
+                        mamdooh: { text: t('عِـ'), label: t('Lengthened Letter') }
+                    }
+                ]
+            },
+            tableData: {
+                headers: [t('Madd (Al-Alif)'), t('Madd (Al-Waw)'), t('Madd (Al-Yaa)')],
+                rows: [
+                    [t('Pomegranate'), t('Mulberry'), t('In')],
+                    [t('Trees'), t('Roses'), t('My House')],
+                    [t('Birds-Sparrows'), t('Birds-General'), t('Big')],
+                    [t('Returned'), '', t('Small')],
+                    [t('I (Ana)'), '', t('Garden')]
+                ]
+            },
+            tableData2: {
+                headers: [t('Madd (Al-Alif)'), t('Madd (Al-Waw)'), t('Madd (Al-Yaa)')],
+                rows: [
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', '']
+                ]
+            },
+            tableData3: {
+                headers: ['', t('Syllable'), ''],
+                rows: [
+                    [t('Qa-la'), t('لَ'), t('Said')],
+                    [t('Nu-ru'), t('رُ'), t('Noor')],
+                    [t('Ti-nu'), t('نُ'), t('Teen')],
+                    [t('Fi-lu'), t('لُ'), t('Feel')],
+                    [t('Na-ru'), t('رُ'), t('Fire')],
+                    [t('Su-ru'), t('رُ'), t('Soor')]
+                ]
+            },
+            tableData4: {
+                headers: [t('Madd (Al-Alif)'), t('Madd (Al-Waw)'), t('Madd (Al-Yaa)')],
+                rows: [
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', '']
+                ]
+            },
+            exercisesTitle: t('Categorize the following words according to the type of Madd letter.'),
+            exercises: [
+                { id: 1, type: 'text', title: t('Seas') + ' - ' + t('Figs') + ' - ' + t('Elephants') + ' - ' + t('Won') + ' - ' + t('Says') + ' - ' + t('Said') + ' - ' + t('Beans') + ' - ' + t('Reem') + ' - ' + t('Fire') },
+                { id: 2, type: 'input', title: '' },
+                { id: 3, type: 'input', title: '' },
+                { id: 4, type: 'input', title: '' },
+                { id: 5, type: 'input', title: '' },
+                { id: 6, type: 'input', title: '' },
+                { id: 7, type: 'input', title: '' },
+                { id: 8, type: 'input', title: '' },
+                { id: 9, type: 'input', title: '' },
+                { id: 10, type: 'input', title: '' }
+            ]
         }
     ];
 

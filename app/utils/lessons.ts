@@ -43,7 +43,7 @@ export interface WritingPracticeItem {
 
 export interface ExerciseItem {
     id: number;
-    type: 'circle' | 'think' | 'input';
+    type: 'circle' | 'think' | 'input' | 'text';
     title?: string;
     letter?: string;
     words?: (string | { id: number; text: string })[]; // keys for translations or objects
@@ -59,7 +59,6 @@ export interface Lesson {
     type: 'text' | 'gallery' | 'numbers' | 'diagram' | 'hijri' | 'weekDays' | 'drops' | 'textGrid' | 'opposites' | 'conversation' | 'shortVowels' | 'cubes' | 'letterExamples' | 'readWriteReview' | 'alphabetChart' | 'unitIntro' | 'readWriteRows' | 'assembleWrite' | 'arrangeWrite' | 'readGrid' | 'ovalGrid' | 'tanweenTable' | 'dictation' | 'sentenceArrange' | 'boxedWriteRows' | 'contentWithExercises';
     items?: LessonItem[];
     distinguish?: DistinguishItem[];
-    writingPractice?: WritingPracticeItem[];
     writingPractice?: WritingPracticeItem[];
     exercises?: ExerciseItem[];
     exercisesTitle?: string;
@@ -87,8 +86,20 @@ export interface Lesson {
     columns?: { id: number; header: string; color: string; items: { id: number; text: string; highlight?: string }[] }[];
     gridCols?: number;
     readingText?: string[];
+    grammarTitle?: string;
     grammarRules?: string[];
+    grammarImage?: string;
     tableData?: { headers: string[]; rows: string[][] };
+    tableData2?: { headers: string[]; rows: string[][] };
+    tableData3?: { headers: string[]; rows: string[][] };
+    tableData4?: { headers: string[]; rows: string[][] };
+    maddDiagram?: {
+        items: {
+            word: string;
+            madd: { text: string; label: string };
+            mamdooh: { text: string; label: string };
+        }[];
+    };
 }
 
 export interface Part {

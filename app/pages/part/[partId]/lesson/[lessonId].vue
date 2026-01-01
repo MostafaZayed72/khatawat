@@ -1157,86 +1157,295 @@
           </div>
       </div>
 
-      <!-- Content With Exercises Lesson Type (Lesson 15) -->
+      <!-- Content With Exercises Lesson Type (Lesson 15 & 16 & 17) -->
       <div v-else-if="lesson.type === 'contentWithExercises'" class="flex flex-col w-full max-w-6xl mx-auto mt-8 gap-8 px-4">
            
            <!-- Reading Section -->
-           <div v-if="lesson.readingText" class="flex flex-col gap-6 bg-white p-6 rounded-3xl shadow-md border border-gray-200">
-               <div class="flex items-center gap-4 justify-between border-b border-gray-100 pb-4" v-if="lesson.readAudio">
-                    <PlayAudioButton :audioUrl="lesson.readAudio" />
-               </div>
-               
-               <div class="flex flex-col md:flex-row gap-8 items-center justify-between mb-6">
-                   <!-- Text Container (Right in RTL due to order) -->
-                   <div class="flex flex-col gap-4 text-center md:text-start w-full md:w-2/3 order-1">
-                       <p v-for="(line, idx) in lesson.readingText" :key="idx" class="text-4xl md:text-5xl font-bold font-amiri text-gray-800 leading-relaxed">
-                           {{ t(line) }}
-                       </p>
-                   </div>
-
-                   <!-- Images Container (Left in RTL due to order) -->
-                   <div class="flex flex-col gap-6 items-center justify-center w-full md:w-1/3 order-2">
-                       <div v-if="lesson.readImage" class="w-full">
-                           <img :src="lesson.readImage" class="w-full h-auto object-contain rounded-xl" />
-                       </div>
-                        <div v-if="lesson.readImage2" class="w-full">
-                           <img :src="lesson.readImage2" class="w-full h-auto object-contain rounded-xl" />
-                       </div>
-                   </div>
-               </div>
+           <div v-if="lesson.readingText" class="flex flex-col gap-6 bg-white p-6 md:p-10 rounded-[3rem] shadow-xl border-4 border-gray-100 relative overflow-hidden">
+                <div class="absolute -right-10 top-0 w-32 h-64 bg-green-50 rounded-full opacity-40 -z-10 rotate-12"></div>
+                <div class="flex items-center gap-4 justify-between" v-if="lesson.readAudio">
+                     <PlayAudioButton :audioUrl="lesson.readAudio" />
+                </div>
+                <div class="flex flex-col md:flex-row gap-8 items-center justify-between">
+                    <div class="flex flex-col gap-4 text-center md:text-start w-full md:w-3/5 order-2 md:order-1">
+                        <p v-for="(line, idx) in lesson.readingText" :key="idx" class="text-3xl md:text-5xl font-bold font-amiri text-gray-800 leading-relaxed md:leading-[1.8]">
+                            {{ t(line) }}
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-6 items-center justify-center w-full md:w-2/5 order-1 md:order-2">
+                        <div v-if="lesson.readImage" class="w-full max-w-[400px] border-4 border-white shadow-2xl rounded-3xl overflow-hidden transform md:-rotate-2">
+                            <img :src="lesson.readImage" class="w-full h-auto object-contain" />
+                        </div>
+                    </div>
+                </div>
            </div>
 
            <!-- Grammar Rules Section -->
-           <div v-if="lesson.grammarRules" class="flex flex-col gap-6 bg-yellow-50 p-6 rounded-3xl shadow-md border border-yellow-200">
-               <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
-                    <!-- Diagram Image -->
-                    <div v-if="lesson.mainImage" class="w-full md:w-1/2 max-w-md">
-                        <img :src="lesson.mainImage" class="w-full h-auto object-contain" />
-                    </div>
+           <div v-if="lesson.grammarRules" class="flex flex-col gap-8 bg-pink-50/30 p-8 md:p-12 rounded-[3.5rem] shadow-sm border-2 border-pink-100/50">
+                <!-- Optional Grammar Section Title -->
+                <div v-if="lesson.grammarTitle" class="flex justify-center mb-4">
+                     <div class="bg-orange-500 text-white px-10 py-2 rounded-full shadow-lg border-2 border-orange-200">
+                          <h2 class="text-2xl md:text-3xl font-bold font-amiri">{{ t(lesson.grammarTitle) }}</h2>
+                     </div>
+                </div>
 
-                    <!-- Rules List -->
-                    <div class="flex flex-col gap-4 w-full md:w-1/2">
-                         <div v-for="(rule, idx) in lesson.grammarRules" :key="idx" class="flex items-start gap-4">
-                             <div class="w-4 h-4 mt-3 bg-red-500 rounded-full shrink-0"></div>
-                             <p class="text-3xl md:text-4xl font-bold font-amiri text-gray-800 leading-relaxed">{{ t(rule) }}</p>
-                         </div>
-                    </div>
-               </div>
+                <!-- Special Header for Madd rules (Main Rule) -->
+                <div v-if="lesson.id === 17" class="bg-pink-500 text-white px-8 py-4 rounded-full shadow-lg border-2 border-pink-200 mb-2 text-center">
+                     <h2 class="text-2xl md:text-3xl font-bold font-amiri leading-relaxed">
+                          {{ lesson.grammarRules[0] }}
+                     </h2>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                     <div class="flex flex-col gap-6 w-full" :class="{'md:w-1/2': lesson.id === 16 || lesson.grammarImage}">
+                          <div v-for="(rule, index) in (lesson.id === 17 ? lesson.grammarRules.slice(1) : lesson.grammarRules)" :key="index" class="flex gap-4 items-center group">
+                               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-110 transition-transform">
+                                    {{ index + 1 }}
+                               </div>
+                               <p class="text-xl md:text-2xl font-bold font-amiri text-gray-800 leading-normal">
+                                    {{ rule }}
+                               </p>
+                          </div>
+                          <div v-if="lesson.grammarImage" class="mt-4 p-4 bg-white/60 rounded-2xl border-2 border-dashed border-blue-200 flex justify-center shadow-inner">
+                               <img :src="lesson.grammarImage" class="max-w-full h-auto" />
+                          </div>
+                     </div>
+                     <div v-if="lesson.id === 16" class="w-full md:w-1/2 flex flex-col gap-4 items-center">
+                          <div class="grid grid-cols-5 gap-3">
+                               <div v-for="char in ['أ', 'ب', 'ج', 'ح', 'خ', 'ع', 'غ', 'ف', 'ق', 'ك', 'م', 'ه', 'و', 'ي']" :key="char" 
+                                    class="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-orange-500 flex items-center justify-center bg-white shadow-sm hover:scale-110 transition-transform">
+                                    <span class="text-2xl md:text-3xl font-bold text-gray-800 font-amiri">{{ char }}</span>
+                               </div>
+                          </div>
+                     </div>
+                </div>
+           </div>
+
+           <!-- Madd Diagram Section -->
+           <div v-if="lesson.maddDiagram" class="flex flex-col gap-10 bg-white p-8 md:p-12 rounded-[3.5rem] shadow-xl border-4 border-gray-100 items-center">
+                <div class="flex flex-wrap justify-center gap-16 md:gap-24">
+                     <div v-for="(item, idx) in lesson.maddDiagram.items" :key="idx" class="flex flex-col items-center gap-6 group">
+                          <div class="bg-blue-50 px-10 py-4 rounded-2xl shadow-md border-2 border-blue-200 group-hover:bg-blue-100 transition-colors">
+                               <span class="text-4xl md:text-5xl font-bold font-amiri text-gray-800">{{ item.word }}</span>
+                          </div>
+                          <div class="flex gap-16 relative">
+                               <div class="absolute inset-0 flex justify-center -top-8 pointer-events-none">
+                                    <svg width="140" height="60" viewBox="0 0 140 60" class="overflow-visible">
+                                         <line x1="45" y1="0" x2="30" y2="40" stroke="#9ca3af" stroke-width="2" />
+                                         <line x1="95" y1="0" x2="110" y2="40" stroke="#9ca3af" stroke-width="2" />
+                                    </svg>
+                               </div>
+                               <div class="flex flex-col items-center gap-2 mt-4 relative z-10">
+                                    <div class="w-16 h-16 rounded-xl bg-blue-100 border-2 border-blue-400 flex items-center justify-center shadow-sm">
+                                         <span class="text-3xl font-bold text-blue-800 font-amiri">{{ item.mamdooh.text }}</span>
+                                    </div>
+                                    <div class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-bold shadow-sm whitespace-nowrap">{{ item.mamdooh.label }}</div>
+                               </div>
+                               <div class="flex flex-col items-center gap-2 mt-4 relative z-10">
+                                    <div class="w-16 h-16 rounded-xl bg-red-100 border-2 border-red-400 flex items-center justify-center shadow-sm">
+                                         <span class="text-3xl font-bold text-red-800 font-amiri">{{ item.madd.text }}</span>
+                                    </div>
+                                    <div class="bg-red-600 text-white px-3 py-1 rounded-lg text-xs font-bold shadow-sm whitespace-nowrap text-center">{{ item.madd.label }}</div>
+                          </div>
+                     </div>
+                </div>
            </div>
 
            <!-- Tables Section -->
-           <div v-if="lesson.tableData" class="flex flex-col gap-6 bg-green-50 p-6 rounded-3xl shadow-md border border-green-200">
-               <div class="overflow-x-auto">
-                   <table class="w-full min-w-[600px] border-collapse">
-                       <thead>
-                           <tr>
-                               <th v-for="(header, idx) in lesson.tableData.headers" :key="idx" class="p-4 text-3xl font-bold text-green-800 bg-green-100 border border-green-300 rounded-t-xl">
-                                   {{ t(header) }}
-                               </th>
-                           </tr>
-                       </thead>
-                       <tbody>
-                           <tr v-for="(row, rIdx) in lesson.tableData.rows" :key="rIdx" class="bg-white hover:bg-green-50 transition-colors">
-                               <td v-for="(cell, cIdx) in row" :key="cIdx" class="p-4 text-center border border-green-200">
-                                   <span class="text-3xl md:text-5xl font-bold font-amiri text-gray-800" v-html="cell"></span>
-                               </td>
-                           </tr>
-                       </tbody>
-                   </table>
+           <div v-if="lesson.tableData" class="flex flex-col gap-6 bg-blue-50/50 p-6 md:p-10 rounded-[3rem] shadow-lg border-4 border-blue-100">
+               <div class="text-center mb-6">
+                    <p class="text-2xl md:text-3xl font-bold text-gray-700 font-amiri bg-white/80 py-4 px-8 rounded-full shadow-sm inline-block">
+                        {{ t(lesson.tableData.headers[0]) }}
+                    </p>
+               </div>
+               
+               <div class="overflow-x-auto rounded-3xl border-2 border-blue-200 bg-white">
+                    <table class="w-full border-collapse">
+                        <tbody>
+                            <tr v-for="(row, rIdx) in lesson.tableData.rows" :key="rIdx" class="border-b last:border-0 border-blue-100">
+                                <td v-for="(cell, cIdx) in row" :key="cIdx" class="p-6 text-center border-l last:border-0 border-blue-100">
+                                    <span class="text-3xl md:text-5xl font-bold font-amiri text-blue-800" v-html="cell"></span>
+                                </td>
+                            </tr>
+                            <!-- Special row for s-sukuun info as in image page 28 -->
+                            <tr v-if="lesson.id === 16" class="bg-blue-50/30">
+                                 <td colspan="2" class="p-8 text-center border-t-2 border-blue-200">
+                                      <p class="text-2xl md:text-3xl font-bold font-amiri text-gray-700 leading-relaxed">
+                                          {{ t('Notice that the letter Lam in these words is written and pronounced, and its movement is always Sukun.') }}
+                                      </p>
+                                 </td>
+                            </tr>
+                        </tbody>
+                    </table>
                </div>
            </div>
 
-           <!-- Exercises Section (Input) -->
-           <div v-if="lesson.exercises && lesson.exercises[0].type === 'input'" class="flex flex-col gap-6 bg-purple-50 p-6 rounded-3xl shadow-md border border-purple-200">
-               <div class="flex items-center justify-center border-b border-purple-200 pb-4">
-                    <p class="text-2xl md:text-3xl font-bold text-gray-700 font-arabic">{{ lesson.exercisesTitle ? t(lesson.exercisesTitle) : t('Mention words starting with sun letter and moon letter from the text') }}</p>
-               </div>
+           <!-- Table 3 (Pronunciation Guide) -->
+           <div v-if="lesson.tableData3" class="flex flex-col gap-6 bg-orange-50/30 p-6 md:p-10 rounded-[3rem] shadow-lg border-4 border-orange-100">
+                <div class="text-center mb-6" v-if="lesson.tableData3.headers && lesson.tableData3.headers[0]">
+                     <p class="text-2xl md:text-3xl font-bold text-gray-700 font-amiri bg-white/80 py-4 px-8 rounded-full shadow-sm inline-block">
+                        {{ t(lesson.tableData3.headers[0]) }}
+                     </p>
+                </div>
+                
+                <div class="overflow-x-auto rounded-3xl border-2 border-orange-200 bg-white">
+                     <table class="w-full border-collapse">
+                          <thead v-if="lesson.tableData3.headers && lesson.tableData3.headers.some(h => h)">
+                               <tr class="bg-orange-100 text-orange-800 text-2xl font-bold font-amiri">
+                                    <th v-for="(header, idx) in lesson.tableData3.headers.slice(1)" :key="idx" class="p-4 border-l last:border-0 border-orange-200">
+                                         {{ t(header) }}
+                                    </th>
+                               </tr>
+                          </thead>
+                         <tbody>
+                             <tr v-for="(row, rIdx) in lesson.tableData3.rows" :key="rIdx" class="border-b last:border-0 border-orange-100 hover:bg-orange-50/10 transition-colors">
+                                 <td v-for="(cell, cIdx) in row" :key="cIdx" class="p-4 md:p-6 text-center border-l last:border-0 border-orange-100">
+                                     <span class="text-3xl md:text-5xl font-bold font-amiri text-gray-800" v-html="cell"></span>
+                                 </td>
+                             </tr>
+                         </tbody>
+                     </table>
+                </div>
+           </div>
 
-               <div class="grid grid-cols-2 gap-4">
-                   <div v-for="exercise in lesson.exercises" :key="exercise.id" class="flex flex-col">
-                       <input type="text" class="w-full p-4 rounded-xl border-2 border-purple-200 focus:border-purple-500 focus:outline-none text-2xl font-amiri text-center text-gray-800 shadow-sm" placeholder="..." />
-                   </div>
+           <!-- Exercises Section (Input) -->
+           <div v-if="lesson.exercises && lesson.exercises[0].type === 'input'" class="flex flex-col gap-8 bg-gradient-to-br from-gray-50 to-white p-8 md:p-12 rounded-[3.5rem] shadow-xl border-4 border-gray-100">
+               <div class="flex items-center justify-center p-4 bg-white rounded-2xl border-2 border-gray-200 shadow-inner mb-4">
+                    <p class="text-2xl md:text-3xl font-bold text-red-600 font-amiri text-center leading-relaxed">
+                         <span class="inline-block text-3xl ml-3">✍️</span>
+                         {{ lesson.exercisesTitle ? t(lesson.exercisesTitle) : t('Mention words starting with sun letter and moon letter from the text') }}
+                    </p>
                </div>
+                <div class="grid grid-cols-2 gap-x-12 gap-y-6">
+                    <template v-for="(exercise, idx) in lesson.exercises" :key="exercise.id">
+                        <div v-if="exercise.type === 'input'" class="flex items-center gap-4">
+                            <span class="text-xl font-bold text-gray-400 w-8">{{ idx + 1 }}</span>
+                            <div class="flex-grow relative">
+                                <input type="text" class="w-full p-4 bg-transparent border-b-2 border-blue-300 focus:border-blue-600 focus:outline-none text-2xl md:text-3xl font-amiri text-center text-gray-800" />
+                                <div class="absolute bottom-0 left-0 w-full h-0.5 bg-blue-50 -z-10"></div>
+                            </div>
+                        </div>
+                        <div v-else-if="exercise.type === 'text'" class="col-span-2 flex justify-center p-4 bg-blue-50 rounded-xl border border-blue-100 mb-2">
+                             <p class="text-2xl md:text-3xl font-bold font-amiri text-blue-800">{{ exercise.title }}</p>
+                        </div>
+                    </template>
+                </div>
+           </div>
+
+           <!-- Training / Comparison Table -->
+           <div v-if="lesson.tableData2" class="flex flex-col gap-8 mt-12">
+                <!-- Training Header -->
+                <div class="flex justify-center">
+                     <div class="bg-gradient-to-r from-red-600 to-red-500 text-white px-16 py-3 rounded-full shadow-2xl border-2 border-yellow-200">
+                          <h2 class="text-3xl md:text-4xl font-bold font-amiri">{{ t('Training') }}</h2>
+                     </div>
+                </div>
+
+                <!-- Comparison Table Structure Page 30-31 -->
+                <div class="bg-white rounded-[3rem] shadow-2xl border-4 border-blue-200 overflow-hidden">
+                     <table class="w-full border-collapse">
+                          <thead>
+                               <tr class="bg-blue-600 text-white text-3xl font-bold font-amiri">
+                                    <th colspan="2" class="p-4 border-l-4 border-white">{{ t('The Moon Lam') }}</th>
+                                    <th colspan="2" class="p-4">{{ t('The Sun Lam') }}</th>
+                               </tr>
+                               <tr class="bg-blue-100 text-gray-800 text-2xl font-bold font-amiri border-b-4 border-blue-600">
+                                    <th class="p-3 border-l-4 border-blue-600">{{ t('The Letter') }}</th>
+                                    <th class="p-3 border-l-4 border-blue-600">{{ t('The Example') }}</th>
+                                    <th class="p-3 border-l-2 border-blue-200">{{ t('The Letter') }}</th>
+                                    <th class="p-3">{{ t('The Example') }}</th>
+                               </tr>
+                          </thead>
+                          <tbody>
+                               <tr v-for="(row, idx) in [
+                                   { moonL: 'أ', moonE: 'الأَبُ', sunL: 'ت', sunE: 'التَّمْرُ' },
+                                   { moonL: 'ب', moonE: 'الْبِنْتُ', sunL: 'ث', sunE: 'الثَّوْبُ' },
+                                   { moonL: 'ج', moonE: 'الْجَدُّ', sunL: 'د', sunE: 'الدِّينُ' },
+                                   { moonL: 'ح', moonE: 'الْحَلْوَى', sunL: 'ذ', sunE: 'الذَّهَبُ' },
+                                   { moonL: 'خ', moonE: 'الْخَرُوفُ', sunL: 'ر', sunE: 'الرَّأْسُ' },
+                                   { moonL: 'ع', moonE: 'الْعِيدُ', sunL: 'ز', sunE: 'الزَّمَانُ' },
+                                   { moonL: 'غ', moonE: 'الْغَزَالُ', sunL: 'س', sunE: 'السُّكَّرُ' },
+                                   { moonL: 'ف', moonE: 'الْفِيلُ', sunL: 'ش', sunE: 'الشَّمْسُ' },
+                                   { moonL: 'ق', moonE: 'الْقَمَرُ', sunL: 'ص', sunE: 'الصُّبْحُ' },
+                                   { moonL: 'ك', moonE: 'الْكِتَابُ', sunL: 'ض', sunE: 'الضَّوْءُ' },
+                                   { moonL: 'م', moonE: 'الْمَسْجِدُ', sunL: 'ط', sunE: 'الطَّبِيبُ' },
+                                   { moonL: 'هـ', moonE: 'الْهِلَالُ', sunL: 'ظ', sunE: 'الظُّهْرُ' },
+                                   { moonL: 'و', moonE: 'الْوَرْدُ', sunL: 'ل', sunE: 'اللَّوْنُ' },
+                                   { moonL: 'ي', moonE: 'الْيَدُ', sunL: 'ن', sunE: 'النُّورُ' }
+                               ]" :key="idx" class="text-2xl md:text-3xl font-bold font-amiri hover:bg-blue-50 transition-colors">
+                                    <td class="p-3 border-l-4 border-blue-600 text-center text-blue-600">{{ row.moonL }}</td>
+                                    <td class="p-3 border-l-4 border-blue-600 text-center">{{ t(row.moonE) }}</td>
+                                    <td class="p-3 border-l-2 border-blue-200 text-center text-red-600">{{ row.sunL }}</td>
+                                    <td class="p-3 text-center">{{ t(row.sunE) }}</td>
+                               </tr>
+                          </tbody>
+                     </table>
+                </div>
+
+                <!-- Final Exercise Table Page 31 -->
+                <div class="mt-12 flex flex-col gap-6">
+                     <div class="flex items-center justify-center p-6 bg-yellow-50 rounded-3xl border-4 border-yellow-200 shadow-lg mb-4">
+                        <p class="text-3xl md:text-4xl font-bold text-red-600 font-amiri text-center leading-relaxed">
+                            {{ t('Search for words like in the previous training.') }}
+                        </p>
+                    </div>
+
+                    <div class="bg-white rounded-[3.5rem] shadow-2xl border-4 border-blue-400 overflow-hidden">
+                         <table class="w-full border-collapse">
+                              <thead>
+                                   <tr class="bg-blue-400 text-white text-3xl font-bold font-amiri">
+                                        <th colspan="2" class="p-4 border-l-4 border-white">{{ t('The Moon Lam') }}</th>
+                                        <th colspan="2" class="p-4">{{ t('The Sun Lam') }}</th>
+                                   </tr>
+                                   <tr class="bg-blue-50 text-gray-800 text-2xl font-bold font-amiri border-b-4 border-blue-400">
+                                        <th class="p-3 border-l-4 border-blue-400">{{ t('The Letter') }}</th>
+                                        <th class="p-3 border-l-4 border-blue-400">{{ t('The Example') }}</th>
+                                        <th class="p-3 border-l-2 border-blue-200">{{ t('The Letter') }}</th>
+                                        <th class="p-3">{{ t('The Example') }}</th>
+                                   </tr>
+                              </thead>
+                              <tbody>
+                                   <tr v-for="letter in [
+                                        { moon: 'أ', sun: 'ت' }, { moon: 'ب', sun: 'ث' }, { moon: 'ج', sun: 'د' }, { moon: 'ح', sun: 'ذ' },
+                                        { moon: 'خ', sun: 'ر' }, { moon: 'ع', sun: 'ز' }, { moon: 'غ', sun: 'س' }, { moon: 'ف', sun: 'ش' },
+                                        { moon: 'ق', sun: 'ص' }, { moon: 'ك', sun: 'ض' }, { moon: 'م', sun: 'ط' }, { moon: 'هـ', sun: 'ظ' },
+                                        { moon: 'و', sun: 'ل' }, { moon: 'ي', sun: 'ن' }
+                                   ]" :key="letter.moon" class="h-16">
+                                        <td class="border-l-4 border-blue-400 p-2 text-center font-amiri text-3xl font-bold text-blue-600">{{ letter.moon }}</td>
+                                        <td class="border-l-4 border-blue-400 p-2">
+                                             <input type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none" />
+                                        </td>
+                                        <td class="border-l-2 border-blue-100 p-2 text-center font-amiri text-3xl font-bold text-red-600">{{ letter.sun }}</td>
+                                        <td class="p-2">
+                                             <input type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none" />
+                                        </td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                    </div>
+                </div>
+
+                <!-- Table 4 (Classification Exercise Table) -->
+                <div v-if="lesson.tableData4" class="mt-8 flex flex-col gap-6">
+                     <div class="bg-white rounded-[3.5rem] shadow-2xl border-4 border-blue-400 overflow-hidden">
+                          <table class="w-full border-collapse">
+                               <thead>
+                                    <tr class="bg-blue-400 text-white text-3xl font-bold font-amiri">
+                                         <th v-for="(header, idx) in lesson.tableData4.headers" :key="idx" class="p-4 border-l last:border-0 border-white">
+                                              {{ t(header) }}
+                                         </th>
+                                    </tr>
+                               </thead>
+                               <tbody>
+                                    <tr v-for="(row, rIdx) in lesson.tableData4.rows" :key="rIdx" class="h-16 border-b last:border-0 border-blue-100">
+                                         <td v-for="(cell, cIdx) in row" :key="cIdx" class="border-l last:border-0 border-blue-400 p-2">
+                                              <input type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none" />
+                                         </td>
+                                    </tr>
+                               </tbody>
+                          </table>
+                     </div>
+                </div>
            </div>
 
       </div>
