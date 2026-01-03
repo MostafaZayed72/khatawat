@@ -1227,6 +1227,62 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 9, type: 'input', title: '' },
                 { id: 10, type: 'input', title: '' }
             ]
+        },
+        {
+            id: 18,
+            title: t('Language Skills Lessons'),
+            subtitle: t('Lesson Four: The Duck Noura'),
+            type: 'contentWithExercises',
+            readImage: '/level4/lesson18/noura.png',
+            readingText: [
+                t('It is a small duck, but strong, swimming in a northern lake.'),
+                t('She heard the chick shouting loudly: Save me, save me...'),
+                t('So she hurried to him and saved him; he said to her: Thank you, thank you, Noura.')
+            ],
+            tableData: {
+                headers: [t('Classification of Nouns according to numbering:')],
+                rows: [
+                    [t('The Singular'), t('The Dual'), t('The Plural')],
+                    ['بِئْرٌ', 'بِئْرَانِ', 'آبَارٌ'],
+                    ['شَجَرَةٌ', 'شَجَرَتَانِ', 'أَشْجَارٌ'],
+                    ['الْبَطَّةُ', 'الْبَطَّتَانِ', 'الْبَطَّاتُ']
+                ]
+            },
+            grammarTitle: t('Grammar Header: Words ending with Taa and Ha'),
+            grammarRules: [
+                t('Open Taa Rule'),
+                t('Marbuta Taa Rule 1'),
+                t('Marbuta Taa Rule 2'),
+                t('Ha Rule 1'),
+                t('Ha Rule 2')
+            ],
+            tableData3: {
+                headers: [t('Words appeared in the previous text, classify them according to the following schedule:')],
+                rows: [
+                    [t('Open Taa Header'), t('Marbuta Taa Header'), t('Ha Header')],
+                    ['سَمِعَتْ', 'الْبَطَّةُ', 'إِلَيْهِ'],
+                    ['فَأَسْرَعَتْ', 'نُورَةُ', 'أَنْقَذَتْهُ'],
+                    ['', 'صَغِيرَةٌ', ''],
+                    ['', 'قَوِيَّةٌ', '']
+                ]
+            },
+            exercisesTitle: t('Classify the following words according to the following table:'),
+            exercises: [
+                {
+                    id: 1,
+                    type: 'text',
+                    title: '( وَرَقَة - بِنْت - سَلَّة - هَذِهِ - كُرَات - فَاطِمَة - حَبِيبَة - لَهُ - سَيَّارَات - وَرْدَة - كَتَبَتْ - رِحْلَة - مِيَاه )'
+                }
+            ],
+            tableData4: {
+                headers: [t('(Ta - T)'), t('(Ta_marbuta - Ta_marbuta)'), t('(Ha - Ha)')],
+                rows: [
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', '']
+                ]
+            }
         }
     ];
 

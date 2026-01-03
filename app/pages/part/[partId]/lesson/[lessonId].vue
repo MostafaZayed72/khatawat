@@ -1181,7 +1181,7 @@
            </div>
 
            <!-- Grammar Rules Section -->
-           <div v-if="lesson.grammarRules" class="flex flex-col gap-8 bg-pink-50/30 p-8 md:p-12 rounded-[3.5rem] shadow-sm border-2 border-pink-100/50">
+           <div v-if="false" style="display: none;" class="flex flex-col gap-8 bg-pink-50/30 p-8 md:p-12 rounded-[3.5rem] shadow-sm border-2 border-pink-100/50">
                 <!-- Optional Grammar Section Title -->
                 <div v-if="lesson.grammarTitle" class="flex justify-center mb-4">
                      <div class="bg-orange-500 text-white px-10 py-2 rounded-full shadow-lg border-2 border-orange-200">
@@ -1246,6 +1246,7 @@
                                          <span class="text-3xl font-bold text-red-800 font-amiri">{{ item.madd.text }}</span>
                                     </div>
                                     <div class="bg-red-600 text-white px-3 py-1 rounded-lg text-xs font-bold shadow-sm whitespace-nowrap text-center">{{ item.madd.label }}</div>
+                               </div>
                           </div>
                      </div>
                 </div>
@@ -1305,6 +1306,48 @@
                              </tr>
                          </tbody>
                      </table>
+                </div>
+           </div>
+
+
+           <!-- Grammar Rules Section (Moved) -->
+           <div v-if="lesson.grammarRules" class="flex flex-col gap-8 bg-pink-50/30 p-8 md:p-12 rounded-[3.5rem] shadow-sm border-2 border-pink-100/50">
+                <!-- Optional Grammar Section Title -->
+                <div v-if="lesson.grammarTitle" class="flex justify-center mb-4">
+                     <div class="bg-orange-500 text-white px-10 py-2 rounded-full shadow-lg border-2 border-orange-200">
+                          <h2 class="text-2xl md:text-3xl font-bold font-amiri">{{ t(lesson.grammarTitle) }}</h2>
+                     </div>
+                </div>
+
+                <!-- Special Header for Madd rules (Main Rule) -->
+                <div v-if="lesson.id === 17" class="bg-pink-500 text-white px-8 py-4 rounded-full shadow-lg border-2 border-pink-200 mb-2 text-center">
+                     <h2 class="text-2xl md:text-3xl font-bold font-amiri leading-relaxed">
+                          {{ lesson.grammarRules[0] }}
+                     </h2>
+                </div>
+                
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                     <div class="flex flex-col gap-6 w-full" :class="{'md:w-1/2': lesson.id === 16 || lesson.grammarImage}">
+                          <div v-for="(rule, index) in (lesson.id === 17 ? lesson.grammarRules.slice(1) : lesson.grammarRules)" :key="index" class="flex gap-4 items-center group">
+                               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-110 transition-transform">
+                                    {{ index + 1 }}
+                               </div>
+                               <p class="text-xl md:text-2xl font-bold font-amiri text-gray-800 leading-normal">
+                                    {{ rule }}
+                               </p>
+                          </div>
+                          <div v-if="lesson.grammarImage" class="mt-4 p-4 bg-white/60 rounded-2xl border-2 border-dashed border-blue-200 flex justify-center shadow-inner">
+                               <img :src="lesson.grammarImage" class="max-w-full h-auto" />
+                          </div>
+                     </div>
+                     <div v-if="lesson.id === 16" class="w-full md:w-1/2 flex flex-col gap-4 items-center">
+                          <div class="grid grid-cols-5 gap-3">
+                               <div v-for="(char) in ['أ', 'ب', 'ج', 'ح', 'خ', 'ع', 'غ', 'ف', 'ق', 'ك', 'م', 'ه', 'و', 'ي']" :key="char" 
+                                    class="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-orange-500 flex items-center justify-center bg-white shadow-sm hover:scale-110 transition-transform">
+                                    <span class="text-2xl md:text-3xl font-bold text-gray-800 font-amiri">{{ char }}</span>
+                               </div>
+                          </div>
+                     </div>
                 </div>
            </div>
 
