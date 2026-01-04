@@ -1160,8 +1160,29 @@
       <!-- Content With Exercises Lesson Type (Lesson 15 & 16 & 17) -->
       <div v-else-if="lesson.type === 'contentWithExercises'" class="flex flex-col w-full max-w-6xl mx-auto mt-8 gap-8 px-4">
            
+           <!-- Story Mode (Interleaved Text & Images) -->
+           <div v-if="lesson.story" class="flex flex-col gap-12 bg-white p-6 md:p-10 rounded-[3rem] shadow-xl border-4 border-gray-100 relative overflow-hidden">
+                <div class="absolute -right-10 top-0 w-32 h-64 bg-green-50 rounded-full opacity-40 -z-10 rotate-12"></div>
+                 <div class="flex items-center gap-4 justify-between" v-if="lesson.readAudio">
+                     <PlayAudioButton :audioUrl="lesson.readAudio" />
+                </div>
+                
+                <div v-for="(item, idx) in lesson.story" :key="idx" class="flex flex-col md:flex-row gap-8 items-center justify-between border-b last:border-0 border-gray-100 pb-8 last:pb-0">
+                    <div class="w-full md:w-3/5 text-center md:text-start order-2 md:order-1">
+                         <p class="text-3xl md:text-5xl font-bold font-amiri text-gray-800 leading-relaxed md:leading-[1.8]">
+                             {{ t(item.text) }}
+                         </p>
+                    </div>
+                    <div class="w-full md:w-2/5 order-1 md:order-2 flex justify-center">
+                         <div class="w-full max-w-[400px] border-4 border-white shadow-xl rounded-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                             <img :src="item.image" class="w-full h-auto object-contain" @load="handleImageLoad" @error="handleImageLoad" />
+                         </div>
+                    </div>
+                </div>
+           </div>
+
            <!-- Reading Section -->
-           <div v-if="lesson.readingText" class="flex flex-col gap-6 bg-white p-6 md:p-10 rounded-[3rem] shadow-xl border-4 border-gray-100 relative overflow-hidden">
+           <div v-else-if="lesson.readingText" class="flex flex-col gap-6 bg-white p-6 md:p-10 rounded-[3rem] shadow-xl border-4 border-gray-100 relative overflow-hidden">
                 <div class="absolute -right-10 top-0 w-32 h-64 bg-green-50 rounded-full opacity-40 -z-10 rotate-12"></div>
                 <div class="flex items-center gap-4 justify-between" v-if="lesson.readAudio">
                      <PlayAudioButton :audioUrl="lesson.readAudio" />
@@ -1252,66 +1273,8 @@
                 </div>
            </div>
 
-           <!-- Tables Section -->
-           <div v-if="lesson.tableData" class="flex flex-col gap-6 bg-blue-50/50 p-6 md:p-10 rounded-[3rem] shadow-lg border-4 border-blue-100">
-               <div class="text-center mb-6">
-                    <p class="text-2xl md:text-3xl font-bold text-gray-700 font-amiri bg-white/80 py-4 px-8 rounded-full shadow-sm inline-block">
-                        {{ t(lesson.tableData.headers[0]) }}
-                    </p>
-               </div>
-               
-               <div class="overflow-x-auto rounded-3xl border-2 border-blue-200 bg-white">
-                    <table class="w-full border-collapse">
-                        <tbody>
-                            <tr v-for="(row, rIdx) in lesson.tableData.rows" :key="rIdx" class="border-b last:border-0 border-blue-100">
-                                <td v-for="(cell, cIdx) in row" :key="cIdx" class="p-6 text-center border-l last:border-0 border-blue-100">
-                                    <span class="text-3xl md:text-5xl font-bold font-amiri text-blue-800" v-html="cell"></span>
-                                </td>
-                            </tr>
-                            <!-- Special row for s-sukuun info as in image page 28 -->
-                            <tr v-if="lesson.id === 16" class="bg-blue-50/30">
-                                 <td colspan="2" class="p-8 text-center border-t-2 border-blue-200">
-                                      <p class="text-2xl md:text-3xl font-bold font-amiri text-gray-700 leading-relaxed">
-                                          {{ t('Notice that the letter Lam in these words is written and pronounced, and its movement is always Sukun.') }}
-                                      </p>
-                                 </td>
-                            </tr>
-                        </tbody>
-                    </table>
-               </div>
-           </div>
-
-           <!-- Table 3 (Pronunciation Guide) -->
-           <div v-if="lesson.tableData3" class="flex flex-col gap-6 bg-orange-50/30 p-6 md:p-10 rounded-[3rem] shadow-lg border-4 border-orange-100">
-                <div class="text-center mb-6" v-if="lesson.tableData3.headers && lesson.tableData3.headers[0]">
-                     <p class="text-2xl md:text-3xl font-bold text-gray-700 font-amiri bg-white/80 py-4 px-8 rounded-full shadow-sm inline-block">
-                        {{ t(lesson.tableData3.headers[0]) }}
-                     </p>
-                </div>
-                
-                <div class="overflow-x-auto rounded-3xl border-2 border-orange-200 bg-white">
-                     <table class="w-full border-collapse">
-                          <thead v-if="lesson.tableData3.headers && lesson.tableData3.headers.some(h => h)">
-                               <tr class="bg-orange-100 text-orange-800 text-2xl font-bold font-amiri">
-                                    <th v-for="(header, idx) in lesson.tableData3.headers.slice(1)" :key="idx" class="p-4 border-l last:border-0 border-orange-200">
-                                         {{ t(header) }}
-                                    </th>
-                               </tr>
-                          </thead>
-                         <tbody>
-                             <tr v-for="(row, rIdx) in lesson.tableData3.rows" :key="rIdx" class="border-b last:border-0 border-orange-100 hover:bg-orange-50/10 transition-colors">
-                                 <td v-for="(cell, cIdx) in row" :key="cIdx" class="p-4 md:p-6 text-center border-l last:border-0 border-orange-100">
-                                     <span class="text-3xl md:text-5xl font-bold font-amiri text-gray-800" v-html="cell"></span>
-                                 </td>
-                             </tr>
-                         </tbody>
-                     </table>
-                </div>
-           </div>
-
-
-           <!-- Grammar Rules Section (Moved) -->
-           <div v-if="lesson.grammarRules" class="flex flex-col gap-8 bg-pink-50/30 p-8 md:p-12 rounded-[3.5rem] shadow-sm border-2 border-pink-100/50">
+           <!-- Grammar Rules Section (Moved Up) -->
+           <div v-if="lesson.grammarRules && lesson.id !== 20" class="flex flex-col gap-8 bg-pink-50/30 p-8 md:p-12 rounded-[3.5rem] shadow-sm border-2 border-pink-100/50">
                 <!-- Optional Grammar Section Title -->
                 <div v-if="lesson.grammarTitle" class="flex justify-center mb-4">
                      <div class="bg-orange-500 text-white px-10 py-2 rounded-full shadow-lg border-2 border-orange-200">
@@ -1342,7 +1305,7 @@
                      </div>
                      <div v-if="lesson.id === 16" class="w-full md:w-1/2 flex flex-col gap-4 items-center">
                           <div class="grid grid-cols-5 gap-3">
-                               <div v-for="(char) in ['أ', 'ب', 'ج', 'ح', 'خ', 'ع', 'غ', 'ف', 'ق', 'ك', 'م', 'ه', 'و', 'ي']" :key="char" 
+                               <div v-for="char in ['أ', 'ب', 'ج', 'ح', 'خ', 'ع', 'غ', 'ف', 'ق', 'ك', 'م', 'ه', 'و', 'ي']" :key="char" 
                                     class="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-orange-500 flex items-center justify-center bg-white shadow-sm hover:scale-110 transition-transform">
                                     <span class="text-2xl md:text-3xl font-bold text-gray-800 font-amiri">{{ char }}</span>
                                </div>
@@ -1350,6 +1313,102 @@
                      </div>
                 </div>
            </div>
+
+           <!-- Tables Section -->
+           <div v-if="lesson.tableData" class="flex flex-col gap-6" :class="lesson.id === 20 ? 'bg-white' : 'bg-blue-50/50 p-6 md:p-10 rounded-[3rem] shadow-lg border-4 border-blue-100'">
+                <!-- Lesson 20 Specific Title Style -->
+                <div v-if="lesson.id === 20" class="flex flex-col gap-6 mb-8 text-right">
+                     <h2 class="text-3xl md:text-4xl font-bold font-amiri text-red-600 mb-4">{{ t('Question Formation Title') }}</h2>
+                     <ul class="list-disc list-inside text-xl md:text-2xl font-amiri text-gray-800 leading-loose">
+                         <li v-for="(rule, idx) in lesson.grammarRules" :key="idx" class="mb-2">
+                             {{ rule }}
+                         </li>
+                     </ul>
+                </div>
+
+                <div class="text-center mb-6" v-else>
+                     <p class="text-2xl md:text-3xl font-bold text-gray-700 font-amiri bg-white/80 py-4 px-8 rounded-full shadow-sm inline-block">
+                         {{ lesson.tableData.title ? t(lesson.tableData.title) : t(lesson.tableData.headers[0] || '') }}
+                     </p>
+                </div>
+                
+                <div class="overflow-x-auto rounded-3xl border-2 border-blue-400 bg-white">
+                     <table class="w-full border-collapse">
+                         <thead v-if="lesson.id === 20 || lesson.id === 21">
+                             <tr class="bg-white text-3xl font-bold font-amiri border-b-2 border-blue-400 text-red-600">
+                                 <th v-for="(header, idx) in lesson.tableData.headers" :key="idx" class="p-4 border-l-2 last:border-0 border-blue-400">
+                                     {{ t(header) }}
+                                 </th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr v-for="(row, rIdx) in lesson.tableData.rows" :key="rIdx" 
+                                 class="border-b-2 last:border-0 border-blue-400 h-16"
+                                 :class="(lesson.id === 20 || lesson.id === 21) ? (rIdx % 2 === 0 ? 'bg-blue-50' : 'bg-white') : 'bg-white'">
+                                 <td v-for="(cell, cIdx) in row" :key="cIdx" 
+                                     class="p-4 text-center border-l-2 last:border-0 border-blue-400"
+                                     :class="(lesson.id === 20 || lesson.id === 21) ? ((lesson.id === 20 && cIdx === 0) ? 'text-red-600' : 'text-gray-800') : 'text-blue-800'">
+                                     <span class="text-2xl md:text-3xl font-bold font-amiri" v-html="t(cell)"></span>
+                                 </td>
+                             </tr>
+                             <tr v-if="lesson.id === 16" class="bg-blue-50/30">
+                                 <td colspan="2" class="p-8 text-center border-t-2 border-blue-200">
+                                      <p class="text-2xl md:text-3xl font-bold font-amiri text-gray-700 leading-relaxed">
+                                          {{ t('Notice that the letter Lam in these words is written and pronounced, and its movement is always Sukun.') }}
+                                      </p>
+                                 </td>
+                             </tr>
+                         </tbody>
+                     </table>
+                </div>
+           </div>
+
+           <!-- Table 3 (Pronunciation Guide / Classification) -->
+           <div v-if="lesson.tableData3" class="flex flex-col gap-6 bg-orange-50/30 p-6 md:p-10 rounded-[3rem] shadow-lg border-4 border-orange-100">
+                <div class="text-center mb-2" v-if="lesson.tableData3.title">
+                     <p class="text-2xl md:text-3xl font-bold text-red-600 font-amiri bg-white/80 py-4 px-8 rounded-full shadow-sm inline-block">
+                        {{ t(lesson.tableData3.title) }}
+                     </p>
+                </div>
+
+                <div class="text-center mb-6" v-if="lesson.tableData3.description">
+                     <p class="text-xl md:text-2xl font-bold text-gray-700 font-amiri leading-loose bg-white p-6 rounded-3xl border-2 border-orange-200 shadow-sm">
+                        {{ t(lesson.tableData3.description) }}
+                     </p>
+                </div>
+                
+                <div class="text-center mb-6" v-else-if="lesson.tableData3.headers && lesson.tableData3.headers[0]">
+                     <p class="text-2xl md:text-3xl font-bold text-gray-700 font-amiri bg-white/80 py-4 px-8 rounded-full shadow-sm inline-block">
+                        {{ t(lesson.tableData3.headers[0]) }}
+                     </p>
+                </div>
+                
+                <div class="overflow-hidden rounded-3xl border-2 border-orange-200 bg-white">
+                     <table class="w-full border-collapse">
+                          <thead v-if="lesson.tableData3.headers && lesson.tableData3.headers.some(h => h && h !== lesson.tableData3?.headers[0])">
+                               <tr class="bg-gray-50 text-gray-800 text-2xl font-bold font-amiri border-b-2 border-orange-200">
+                                    <th v-for="(header, idx) in lesson.tableData3.headers" :key="idx" 
+                                        class="p-4 border-l last:border-0 border-orange-200"
+                                        :class="{'text-red-600': idx === 0, 'text-green-600': idx === 1, 'text-blue-600': idx === 2}">
+                                         {{ t(header) }}
+                                    </th>
+                               </tr>
+                          </thead>
+                         <tbody>
+                             <tr v-for="(row, rIdx) in lesson.tableData3.rows" :key="rIdx" class="border-b last:border-0 border-orange-100 hover:bg-orange-50/10 transition-colors h-16">
+                                 <td v-for="(cell, cIdx) in row" :key="cIdx" class="p-2 md:p-4 text-center border-l last:border-0 border-orange-100 relative">
+                                     <span v-if="cell" class="text-3xl md:text-5xl font-bold font-amiri text-gray-800" v-html="cell"></span>
+                                     <input v-else type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none absolute inset-0" />
+                                 </td>
+                             </tr>
+                         </tbody>
+                     </table>
+                </div>
+           </div>
+
+
+
+
 
            <!-- Exercises Section (Input) -->
            <div v-if="lesson.exercises && lesson.exercises[0].type === 'input'" class="flex flex-col gap-8 bg-gradient-to-br from-gray-50 to-white p-8 md:p-12 rounded-[3.5rem] shadow-xl border-4 border-gray-100">
@@ -1467,34 +1526,126 @@
                          </table>
                     </div>
                 </div>
+           </div>
 
-                <!-- Table 4 (Classification Exercise Table) -->
-                <div v-if="lesson.tableData4" class="mt-8 flex flex-col gap-6">
-                     <div class="bg-white rounded-[3.5rem] shadow-2xl border-4 border-blue-400 overflow-hidden">
-                          <table class="w-full border-collapse">
-                               <thead>
-                                    <tr class="bg-blue-400 text-white text-3xl font-bold font-amiri">
-                                         <th v-for="(header, idx) in lesson.tableData4.headers" :key="idx" class="p-4 border-l last:border-0 border-white">
-                                              {{ t(header) }}
-                                         </th>
-                                    </tr>
-                               </thead>
-                               <tbody>
-                                    <tr v-for="(row, rIdx) in lesson.tableData4.rows" :key="rIdx" class="h-16 border-b last:border-0 border-blue-100">
-                                         <td v-for="(cell, cIdx) in row" :key="cIdx" class="border-l last:border-0 border-blue-400 p-2">
-                                              <input type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none" />
-                                         </td>
-                                    </tr>
-                               </tbody>
-                          </table>
-                     </div>
+           <!-- Table 4 (Classification Exercise Table) -->
+           <div v-if="lesson.tableData4" class="mt-8 flex flex-col gap-6">
+                <!-- New Title Section for Table 4 -->
+                <div v-if="lesson.tableData4.title" class="flex items-center justify-center p-6 bg-yellow-50 rounded-3xl border-4 border-yellow-200 shadow-lg mb-4">
+                   <p class="text-3xl md:text-4xl font-bold text-red-600 font-amiri text-center leading-relaxed">
+                       {{ t(lesson.tableData4.title) }}
+                   </p>
+                </div>
+
+                <div class="text-center mb-6" v-if="lesson.tableData4.description">
+                     <p class="text-xl md:text-2xl font-bold text-gray-700 font-amiri leading-loose bg-white p-6 rounded-3xl border-2 border-yellow-200 shadow-sm">
+                        {{ t(lesson.tableData4.description) }}
+                     </p>
+                </div>
+
+                <div class="bg-white rounded-[3.5rem] shadow-2xl border-4 border-blue-400 overflow-hidden">
+                     <table class="w-full border-collapse">
+                          <thead>
+                               <tr class="bg-blue-400 text-white text-3xl font-bold font-amiri" :class="{'!bg-white !text-red-600 border-b-2 border-blue-400': lesson.id === 20}">
+                                    <th v-for="(header, idx) in lesson.tableData4.headers" :key="idx" 
+                                        class="p-4 border-l last:border-0 border-white"
+                                        :class="{'!border-blue-400 border-l-2': lesson.id === 20}">
+                                         {{ t(header) }}
+                                    </th>
+                               </tr>
+                          </thead>
+                          <tbody>
+                               <tr v-for="(row, rIdx) in lesson.tableData4.rows" :key="rIdx" 
+                                   class="h-16 border-b last:border-0 border-blue-100"
+                                   :class="{'!border-blue-400 border-b-2': lesson.id === 20, 'bg-blue-50': lesson.id === 20 && rIdx % 2 === 0}">
+                                    <td v-for="(cell, cIdx) in row" :key="cIdx" 
+                                        class="border-l last:border-0 border-blue-400 p-2"
+                                        :class="{'!border-blue-400 border-l-2': lesson.id === 20}">
+                                         <!-- If Lesson 20 or 21, Column 0 is Text. Column 1 is Input only if empty -->
+                                         <span v-if="((lesson.id === 20 || lesson.id === 21) && cIdx === 0) || (lesson.id === 21 && cell)" class="text-2xl md:text-3xl font-bold font-amiri text-gray-800">
+                                              {{ t(cell) }}
+                                         </span>
+                                         <input v-else type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none" />
+                                    </td>
+                               </tr>
+                          </tbody>
+                     </table>
                 </div>
            </div>
 
-      </div>
+           <!-- Table 5 (Reverse: Form Question for Answer) -->
+           <div v-if="lesson.tableData5" class="mt-8 flex flex-col gap-6">
+                <div v-if="lesson.tableData5.title" class="flex items-center justify-center p-6 bg-yellow-50 rounded-3xl border-4 border-yellow-200 shadow-lg mb-4">
+                   <p class="text-3xl md:text-4xl font-bold text-red-600 font-amiri text-center leading-relaxed">
+                       {{ t(lesson.tableData5.title) }}
+                   </p>
+                </div>
 
-      <!-- Alphabet Chart Lesson Type -->
-      <div v-else-if="lesson.type === 'alphabetChart'" class="flex flex-col w-full max-w-6xl mx-auto mt-16 px-4 items-center gap-8">
+                <div class="bg-white rounded-[3.5rem] shadow-2xl border-4 border-blue-400 overflow-hidden">
+                     <table class="w-full border-collapse">
+                          <thead>
+                               <tr class="bg-white text-3xl font-bold font-amiri border-b-2 border-blue-400 text-red-600">
+                                    <th v-for="(header, idx) in lesson.tableData5.headers" :key="idx" 
+                                        class="p-4 border-l-2 last:border-0 border-blue-400">
+                                         {{ t(header) }}
+                                    </th>
+                               </tr>
+                          </thead>
+                          <tbody>
+                               <tr v-for="(row, rIdx) in lesson.tableData5.rows" :key="rIdx" 
+                                   class="h-16 border-b-2 last:border-0 border-blue-400"
+                                   :class="rIdx % 2 === 0 ? 'bg-blue-50' : 'bg-white'">
+                                    <td v-for="(cell, cIdx) in row" :key="cIdx" 
+                                        class="border-l-2 last:border-0 border-blue-400 p-2">
+                                         <!-- Column 0 is Answer (Text), Column 1 is Question (Input) -->
+                                         <span v-if="cIdx === 0" class="text-2xl md:text-3xl font-bold font-amiri text-gray-800">
+                                              {{ t(cell) }}
+                                         </span>
+                                         <input v-else type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none" />
+                                    </td>
+                               </tr>
+                          </tbody>
+                     </table>
+                </div>
+           </div>
+
+           <!-- Table 6 (Both Inputs: Form Questions and Answer Myself) -->
+           <div v-if="lesson.tableData6" class="mt-8 flex flex-col gap-6">
+                <div v-if="lesson.tableData6.title" class="flex items-center justify-center p-6 bg-yellow-50 rounded-3xl border-4 border-yellow-200 shadow-lg mb-4">
+                   <p class="text-3xl md:text-4xl font-bold text-red-600 font-amiri text-center leading-relaxed">
+                       {{ t(lesson.tableData6.title) }}
+                   </p>
+                </div>
+
+                <div class="bg-white rounded-[3.5rem] shadow-2xl border-4 border-blue-400 overflow-hidden">
+                     <table class="w-full border-collapse">
+                          <thead>
+                               <tr class="bg-white text-3xl font-bold font-amiri border-b-2 border-blue-400 text-red-600">
+                                    <th v-for="(header, idx) in lesson.tableData6.headers" :key="idx" 
+                                        class="p-4 border-l-2 last:border-0 border-blue-400">
+                                         {{ t(header) }}
+                                    </th>
+                               </tr>
+                          </thead>
+                          <tbody>
+                               <tr v-for="(row, rIdx) in lesson.tableData6.rows" :key="rIdx" 
+                                   class="h-16 border-b-2 last:border-0 border-blue-400"
+                                   :class="rIdx % 2 === 0 ? 'bg-blue-50' : 'bg-white'">
+                                    <td v-for="(cell, cIdx) in row" :key="cIdx" 
+                                        class="border-l-2 last:border-0 border-blue-400 p-2">
+                                         <!-- Both Columns are Inputs -->
+                                         <input type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none" />
+                                    </td>
+                               </tr>
+                          </tbody>
+                     </table>
+                </div>
+           </div>
+       </div>
+
+
+       <!-- Alphabet Chart Lesson Type -->
+       <div v-else-if="lesson.type === 'alphabetChart'" class="flex flex-col w-full max-w-6xl mx-auto mt-16 px-4 items-center gap-8">
            <PlayAudioButton v-if="lesson.audioUrl" :audioUrl="lesson.audioUrl" />
            <div class="grid grid-cols-4 md:grid-cols-7 gap-4 md:gap-6 border-2 border-gray-200 p-4 rounded-xl bg-white shadow-sm w-full">
                <div v-for="(char, index) in lesson.items" :key="index" 

@@ -1283,6 +1283,202 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
                     ['', '', '']
                 ]
             }
+        },
+        {
+            id: 19,
+            title: t('Language Skills Lessons'),
+            subtitle: t('Lesson Five: The Angry Rabbit'),
+            type: 'contentWithExercises',
+            story: [
+                { text: t('The Angry Rabbit 1') + ' ' + t('The Angry Rabbit 2'), image: '/level4/lesson19/rabbit_1.png' },
+                { text: t('The Angry Rabbit 3') + ' ' + t('The Angry Rabbit 4'), image: '/level4/lesson19/rabbit_2.png' },
+                { text: t('The Angry Rabbit 5'), image: '/level4/lesson19/rabbit_3.png' },
+                { text: t('The Angry Rabbit 6'), image: '/level4/lesson19/rabbit_4.png' },
+                { text: t('The Angry Rabbit 7'), image: '/level4/lesson19/rabbit_5.png' }
+            ],
+            grammarTitle: t('Tanween Title'),
+            grammarRules: [
+                t('Tanween Rule 1'),
+                t('Tanween Rule 2'),
+                t('Tanween Rule 3'),
+                t('Tanween Rule 4'),
+                t('Tanween Rule 5'),
+                t('Tanween Rule 6'),
+                t('Tanween Rule 7')
+            ],
+            tableData: {
+                headers: [t('Review of The Angry Rabbit Words')],
+                rows: [
+                    [t('Tanween Fath'), t('Tanween Damm'), t('Tanween Kasr')],
+                    ['جَائِعًا', 'جَائِعٌ', 'يَوْمٍ'],
+                    ['خَسًّا', 'خَسٌّ', 'بَدِيلٍ'],
+                    ['جَزَرًا', 'جَزَرٌ', 'سُرُورٍ'],
+                    ['شَجَرَةً', 'شَجَرَةٌ', 'عَمِيلٍ']
+                ]
+            },
+            exercisesTitle: t('Classify Tanween Words'),
+            exercises: [
+                {
+                    id: 1,
+                    type: 'text',
+                    title: '( صُورَةً - رَجُلٍ - مُسْلِمٌ - قَرْيَةٌ - أَسَدٌ - طَعَامٍ - مَرِيضٌ - هَوَاءً - زَهْرَةٍ - صَفٍ - مُعَلِّمٌ - جَدِيدًا - جَمِيلَةٌ - مُضِيئًا - كُرَةً - شَجَرًا )'
+                }
+            ],
+
+            tableData3: {
+                title: t('Classify Tanween Words Title'),
+                description: t('Classify Tanween Words List'),
+                headers: [t('Tanween Fath'), t('Tanween Damm'), t('Tanween Kasr')],
+                rows: [
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', '']
+                ]
+            },
+            tableData4: {
+                title: t('Rabbit Exercise Words'),
+                description: t('Rabbit Exercise List'),
+                headers: [t('Tanween Fath'), t('Tanween Damm'), t('Tanween Kasr')],
+                rows: [
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', ''],
+                    ['', '', '']
+                ]
+            }
+        },
+        {
+            id: 20,
+            title: t('Language Skills Lessons'),
+            subtitle: t('Lesson Six: My Favorite Hobby'),
+            type: 'contentWithExercises',
+            story: [
+                { text: t('Hobby Story 1'), image: '/level4/lesson20/hobby_1.png' },
+                { text: t('Hobby Story 3') + ' ' + t('Hobby Story 4'), image: '/level4/lesson20/hobby_3.png' }
+            ],
+            grammarTitle: t('Question Formation Title'),
+            grammarRules: [
+                'السُّؤَالُ هُوَ طَلَبُ الْمَعْرِفَةِ بِالشَّيْءِ الَّذِي يَجْهَلُهُ السَّائِلُ، وَالْبَحْثُ عَنْ إِجَابَةٍ مَجْهُولَةٍ.',
+                'بِاسْتِخْدَامِ عَدَدٍ مِنَ الْأَدَوَاتِ وَتُسَمَّى أَدَوَاتُ الْاسْتِفْهَامِ، وَلِكُلِّ أَدَاةٍ هَدَفٌ وَغَرَضٌ مُعَيَّنٌ حَسَبَ الْجَدْوَلِ التَّالِي:',
+                'كَيْفَ أُكَوِّنُ جُملَةَ السُّؤَال ؟',
+                'لِتَكْوِينِ سُؤَالٍ نَسْتَعْمِلُ الْأَدَوَاتِ الْآتِيَةَ :'
+            ],
+            tableData: {
+                headers: [t('Question Tool'), t('Question Function'), t('Question Example'), t('Question Answer')],
+                rows: [
+                    [t('Tool Where'), t('Func Place'), t('Ex Where'), t('Ans Place')],
+                    [t('Tool How'), t('Func Method'), t('Ex How'), t('Ans Method')],
+                    [t('Tool Who'), t('Func Person'), t('Ex Who'), t('Ans Person')],
+                    [t('Tool What'), t('Func Thing'), t('Ex What'), t('Ans Thing')],
+                    [t('Tool Why'), t('Func Reason'), t('Ex Why'), t('Ans Reason')],
+                    [t('Tool How Many'), t('Func Number'), t('Ex How Many'), t('Ans Number')],
+                    [t('Tool When'), t('Func Time'), t('Ex When'), t('Ans Time')],
+                    [t('Tool Do'), t('Func Content'), t('Ex Do'), t('Ans Do')],
+                    [t('Tool Do A'), t('Func Content Or Choice'), t('Ex Do A'), t('Ans Do A')]
+                ]
+            },
+            tableData4: {
+                title: t('Form Answer Title'),
+                headers: [t('Question Header'), t('Answer Header')],
+                rows: [
+                    [t('Q1'), ''],
+                    [t('Q2'), ''],
+                    [t('Q3'), ''],
+                    [t('Q4'), ''],
+                    [t('Q5'), ''],
+                    [t('Q6'), ''],
+                    [t('Q7'), ''],
+                    [t('Q8'), ''],
+                    [t('Q9'), ''],
+                    [t('Q10'), ''],
+                    [t('Q11'), ''],
+                    [t('Q12'), '']
+                ]
+            },
+            tableData5: {
+                title: t('Form Question Title'),
+                headers: [t('Answer Header'), t('Question Header')],
+                rows: [
+                    [t('Ans1'), ''],
+                    [t('Ans2'), ''],
+                    [t('Ans3'), ''],
+                    [t('Ans4'), ''],
+                    [t('Ans5'), ''],
+                    [t('Ans6'), ''],
+                    [t('Ans7'), ''],
+                    [t('Ans8'), ''],
+                    [t('Ans9'), ''],
+                    [t('Ans10'), ''],
+                    [t('Ans11'), ''],
+                    [t('Ans12'), '']
+                ]
+            },
+            tableData6: {
+                title: t('Form Question Answer Title'),
+                headers: [t('Answer Header'), t('Question Header')],
+                rows: [
+                    ['', ''], ['', ''], ['', ''], ['', ''],
+                    ['', ''], ['', ''], ['', ''], ['', ''],
+                    ['', ''], ['', ''], ['', ''], ['', '']
+                ]
+            }
+        },
+        {
+            id: 21,
+            title: t('Lesson Seven: The Arab Doctor'),
+            // Using standard 'contentWithExercises' type
+            type: 'contentWithExercises',
+            story: [
+                { text: t('Doctor Story'), image: '/level4/lesson21/doctor_1.png' }
+            ],
+            // Grammar Table: Relative Pronouns
+            // Reusing tableData for the main grammar table
+            tableData: {
+                title: t('Relative Pronouns Title'),
+                headers: [t('Rel Name'), t('Rel Usage'), t('Rel Example')],
+                rows: [
+                    [t('Rel 1'), t('Rel 1 Usage'), t('Rel 1 Ex')],
+                    [t('Rel 2'), t('Rel 2 Usage'), t('Rel 2 Ex')],
+                    [t('Rel 3'), t('Rel 3 Usage'), t('Rel 3 Ex')],
+                    [t('Rel 4'), t('Rel 4 Usage'), t('Rel 4 Ex')],
+                    [t('Rel 5'), t('Rel 5 Usage'), t('Rel 5 Ex')],
+                    [t('Rel 6'), t('Rel 6 Usage'), t('Rel 6 Ex')]
+                ]
+            },
+            // Exercise Table: Connect 
+            // Using tableData4 for the exercise table
+            tableData4: {
+                title: t('Connect Relative Pronouns Title'),
+                headers: [t('Rel Name'), t('Connect Header Sentence')], // "Relative Pronoun", "Sentence"
+                rows: [
+                    [t('Rel 1'), t('Connect 1 Sent')], // الذي - ... مريم ...
+                    [t('Rel 2'), t('Connect 2 Sent')], // التي - ... عمر ...
+                    [t('Rel 3'), t('Connect 3 Sent')], // اللذان - ... المهندسون ...
+                    [t('Rel 4'), t('Connect 4 Sent')], // اللتان - ... أنا ...
+                    [t('Rel 5'), t('Connect 5 Sent')], // الذين - ... ذهبت ...
+                    [t('Rel 6'), t('Connect 6 Sent')], // اللائي - ... الفتاتان ...
+                    [t('Rel 6'), t('Connect 7 Sent')]  // اللاتي - ... أنتن ...
+                ]
+            },
+            // Final Section: Place Sentences
+            // structure: [Pronoun, Input]
+            tableData5: {
+                title: t('Place Sentences Title'),
+                headers: [t('Rel Name'), t('Connect Header Sentence')],
+                rows: [
+                    [t('Rel 1'), ''],
+                    [t('Rel 2'), ''],
+                    [t('Rel 3'), ''],
+                    [t('Rel 4'), ''],
+                    [t('Rel 5'), ''],
+                    [t('Rel 6'), '']
+                ]
+            }
         }
     ];
 

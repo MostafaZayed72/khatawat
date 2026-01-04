@@ -89,10 +89,13 @@ export interface Lesson {
     grammarTitle?: string;
     grammarRules?: string[];
     grammarImage?: string;
-    tableData?: { headers: string[]; rows: string[][] };
-    tableData2?: { headers: string[]; rows: string[][] };
-    tableData3?: { headers: string[]; rows: string[][] };
-    tableData4?: { headers: string[]; rows: string[][] };
+    tableData?: { title?: string; headers: string[]; rows: string[][] };
+    tableData2?: { title?: string; headers: string[]; rows: string[][] };
+    tableData3?: { title?: string; description?: string; headers: string[]; rows: string[][] };
+    tableData4?: { title?: string; description?: string; headers: string[]; rows: string[][] };
+    tableData5?: { title?: string; description?: string; headers: string[]; rows: string[][] };
+    tableData6?: { title?: string; description?: string; headers: string[]; rows: string[][] };
+    story?: { text: string; image: string }[];
     maddDiagram?: {
         items: {
             word: string;
