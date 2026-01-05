@@ -158,7 +158,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             id: 1,
             title: t('Part One'),
             description: t('Basics and Daily Life'),
-            videoUrl: 'https://www.youtube.com/embed/lTZBNRYJzi4',
+            videoUrl: 'CPAuON_5d4I',
             image: '/parts/1.png',
             pdfUrl: 'https://drive.google.com/file/d/1nYdgUosHeyyZNPMG8vrOPGakUA7oUZrE/view?usp=sharing',
             lessons: getLevel1Lessons(t)
@@ -167,7 +167,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             id: 2,
             title: t('Part Two'),
             description: t('Coming Soon'),
-            videoUrl: '',
+            videoUrl: '-oulNG9AriU',
             image: '/parts/2.png',
             pdfUrl: 'https://drive.google.com/file/d/1IfVNk1ne8EtEHjuvAQ-33TiGG-C-8G-e/view?usp=sharing',
             lessons: getLevel2Lessons(t)
@@ -176,7 +176,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             id: 3,
             title: t('Part Three'),
             description: t('Coming Soon'),
-            videoUrl: '',
+            videoUrl: 'z1WJUYE397s',
             image: '/parts/3.png',
             pdfUrl: 'https://drive.google.com/file/d/1qHlC5N6G1qJ6Q0Zp0yv_V4Z4QdC7q_J/view?usp=sharing',
             lessons: getLevel3Lessons(t)
@@ -186,7 +186,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             id: 4,
             title: t('Part Four'),
             description: t('Coming Soon'),
-            videoUrl: '',
+            videoUrl: 'OGA-lTea-5w',
             image: '/parts/4.png',
             pdfUrl: 'https://drive.google.com/file/d/1IC6svlKgNDBB-4Vtc24mAUA_-xTkRG7m/view?usp=sharing',
             lessons: getLevel4Lessons(t)

@@ -13,17 +13,16 @@
 
       <!-- Video Section (Restored) -->
       <div class="w-full mt-12 flex flex-col items-center">
-  <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">
-    {{ t('About the Level') }}
-  </h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 text-center">
+          {{ t('About the Level') }}
+        </h2>
 
-  <div class="w-full max-w-xl bg-transparent rounded-2xl overflow-hidden shadow-2xl border-4 border-white p-4">
-    <audio controls class="w-full">
-      <source src="/nabza1.mp3" type="audio/mpeg">
-      {{ t('Your browser does not support the audio tag.') }}
-    </audio>
-  </div>
-</div>
+        <div class="w-full max-w-4xl mx-auto">
+          <div class="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+            <YouTubePlayer v-if="part.videoUrl" :videoId="part.videoUrl" />
+          </div>
+        </div>
+      </div>
 
       <!-- Level Image -->
       <div class="w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
