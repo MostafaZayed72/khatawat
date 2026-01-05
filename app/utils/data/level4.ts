@@ -1750,29 +1750,112 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
                     { title: t('Noun Type Plural Name'), text: t('Noun Type Plural Definition') }
                 ]
             }
-        }
-    ,
-    {
-        id: 26,
-        title: t('Work Title'),
+        },
+        {
+            id: 26,
+            title: t('Work Title'),
             subtitle: t('Work Subtitle'),
-                type: 'story',
-                    story: [
-                        {
-                            text: t('Work Story Part 1'),
-                            image: '/level4/lesson26/work_1.png'
-                        },
-                        {
-                            text: t('Work Story Part 2'),
-                            image: '/level4/lesson26/work_2.png'
-                        },
-                        {
-                            text: t('Work Story Part 3'),
-                            image: ''
-                        }
+            type: 'contentWithExercises',
+            story: [
+                {
+                    text: t('Work Story Part 1'),
+                    image: '/level4/lesson26/work_1.png'
+                },
+                {
+                    text: t('Work Story Part 2'),
+                    image: '/level4/lesson26/work_2.png'
+                },
+                {
+                    text: t('Work Story Part 3'),
+                    image: ''
+                }
+            ],
+            tableData6: {
+                title: t('Work Extraction Title'),
+                headers: [t('Work Extraction Header')],
+                rows: [
+                    [t('Work Extraction 1')],
+                    [t('Work Extraction 2')],
+                    [t('Work Extraction 3')],
+                    [t('Work Extraction 4')],
+                    [t('Work Extraction 5')],
+                    [t('Work Extraction 6')]
+                ]
+            },
+            verbDefinition: {
+                title: t('Work Verb Past Title'),
+                text: t('Work Verb Past Definition')
+            },
+            verbDefinition2: {
+                title: t('Work Verb Present Title'),
+                text: t('Work Verb Present Definition')
+            },
+            verbDefinition3: {
+                title: t('Work Verb Imperative Title'),
+                text: t('Work Verb Imperative Definition')
+            },
+            verbalSentenceParsing: {
+                title: t('Work Verbal Structure Title'),
+                points: [
+                    t('Work Verbal Point 1'),
+                    t('Work Verbal Point 2')
+                ],
+                thirdComponent: {
+                    title: t('Work Verbal Third Component Title'),
+                    content: t('Work Verbal Third Component Text')
+                },
+                parsingTitle: t('Work Verbal Parsing Model Title'),
+                parsingSentences: [
+                    t('Work Verbal Parsing Sentence 1'),
+                    t('Work Verbal Parsing Sentence 2'),
+                    t('Work Verbal Parsing Sentence 3'),
+                    t('Work Verbal Parsing Sentence 4')
+                ],
+                table: {
+                    headers: [t('Work Verbal Parsing Header Word'), t('Work Verbal Parsing Header Parsing')],
+                    rows: [
+                        [t('Work Verbal Parsing Row 1 Word'), t('Work Verbal Parsing Row 1 Text')],
+                        [t('Work Verbal Parsing Row 2 Word'), t('Work Verbal Parsing Row 2 Text')],
+                        [t('Work Verbal Parsing Row 3 Word'), t('Work Verbal Parsing Row 3 Text')],
+                        [t('Work Verbal Parsing Row 4 Word'), t('Work Verbal Parsing Row 4 Text')],
+                        [t('Work Verbal Parsing Row 5 Word'), t('Work Verbal Parsing Row 5 Text')]
                     ]
-    }
-];
+                }
+            },
+            verbalSentenceWriting: {
+                title: t('Work Verbal Writing Title'),
+                count: 4
+            },
+            verbalSentenceConstruction: {
+                title: t('Work Verbal Construction Title'),
+                models: [
+                    {
+                        components: [
+                            { label: t('Work Verbal Label Verb'), color: 'orange' },
+                            { label: t('Work Verbal Label Doer'), color: 'green' }
+                        ],
+                        example: t('Work Verbal Construction Example 1')
+                    },
+                    {
+                        components: [
+                            { label: t('Work Verbal Label Verb'), color: 'orange' },
+                            { label: t('Work Verbal Label Doer'), color: 'green' },
+                            { label: t('Work Verbal Label Object'), color: 'blue' }
+                        ],
+                        example: t('Work Verbal Construction Example 2')
+                    }
+                ]
+            },
+            verbalSentenceSummary: {
+                points: [
+                    t('Work Verbal Summary Point 1'),
+                    t('Work Verbal Summary Point 2'),
+                    t('Work Verbal Summary Point 3')
+                ]
+            }
+        }
 
-return part4Lessons;
+    ];
+
+    return part4Lessons;
 };

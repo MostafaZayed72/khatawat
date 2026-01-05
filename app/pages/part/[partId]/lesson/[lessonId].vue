@@ -1417,6 +1417,29 @@
 
 
 
+           <!-- Table 6 (Extraction List - Lesson 12) -->
+           <div v-if="lesson.tableData6" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-12 mt-8">
+                <div class="text-center mb-4">
+                     <p class="text-2xl md:text-3xl font-bold text-red-600 font-amiri bg-yellow-50 py-4 px-8 rounded-full shadow-sm inline-block border-2 border-yellow-200">
+                        {{ t(lesson.tableData6.title) }}
+                     </p>
+                </div>
+                
+                <div class="bg-white rounded-[2rem] shadow-lg border-2 border-blue-200 overflow-hidden">
+                     <div class="bg-blue-50 p-4 text-center border-b-2 border-blue-200">
+                         <h3 class="text-2xl md:text-3xl font-bold font-amiri text-red-600">{{ t(lesson.tableData6.headers[0]) }}</h3>
+                     </div>
+                     <div class="divide-y divide-blue-100">
+                         <div v-for="(row, idx) in lesson.tableData6.rows" :key="idx" 
+                              class="p-4 text-center hover:bg-blue-50/30 transition-colors">
+                              <span class="text-xl md:text-3xl font-bold font-amiri text-blue-900 leading-relaxed">
+                                  {{ t(row[0]) }}
+                              </span>
+                         </div>
+                     </div>
+                </div>
+           </div>
+
            <!-- Parts of Speech Tree Diagram -->
            <div v-if="lesson.partsOfSpeech" class="flex flex-col items-center gap-8 mt-12 mb-12">
                 <div class="bg-green-100 border-4 border-green-500 rounded-2xl px-12 py-4 shadow-lg">
@@ -1494,6 +1517,178 @@
                      </p>
                 </div>
            </div>
+
+           <!-- Verb Definition 2 (Present) -->
+           <div v-if="lesson.verbDefinition2" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-12">
+                <div v-if="lesson.verbDefinition2.title" class="text-center">
+                     <span class="bg-blue-100 text-blue-800 border-2 border-blue-300 px-6 py-3 rounded-full text-2xl md:text-3xl font-bold font-amiri inline-block shadow-sm">
+                          {{ t(lesson.verbDefinition2.title) }}
+                     </span>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-r-4 border-blue-500 shadow-sm flex gap-4 items-start">
+                     <div class="w-2 h-2 rounded-full bg-blue-500 mt-4 shrink-0"></div>
+                     <p class="text-2xl md:text-4xl font-bold font-amiri text-gray-800 leading-loose whitespace-pre-line">
+                          {{ t(lesson.verbDefinition2.text) }}
+                     </p>
+                </div>
+           </div>
+
+           <!-- Verb Definition 3 (Imperative) -->
+           <div v-if="lesson.verbDefinition3" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-12">
+                <div v-if="lesson.verbDefinition3.title" class="text-center">
+                     <span class="bg-green-100 text-green-800 border-2 border-green-300 px-6 py-3 rounded-full text-2xl md:text-3xl font-bold font-amiri inline-block shadow-sm whitespace-pre-line">
+                          {{ t(lesson.verbDefinition3.title) }}
+                     </span>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-r-4 border-green-500 shadow-sm flex gap-4 items-start">
+                     <div class="w-2 h-2 rounded-full bg-green-500 mt-4 shrink-0"></div>
+                     <p class="text-2xl md:text-4xl font-bold font-amiri text-gray-800 leading-loose">
+                          {{ t(lesson.verbDefinition3.text) }}
+                     </p>
+                </div>
+           </div>
+
+           <!-- Verbal Sentence Parsing (Parsing of Verb + Doer) -->
+           <div v-if="lesson.verbalSentenceParsing" class="flex flex-col gap-8 w-full max-w-4xl mx-auto mb-16 mt-12 bg-white p-6 md:p-8 rounded-[2rem] shadow-xl border-2 border-red-50">
+                <!-- Main Title -->
+                <div class="text-center mb-4">
+                     <h3 class="text-2xl md:text-3xl font-bold font-amiri text-red-600 inline-block">
+                         {{ t(lesson.verbalSentenceParsing.title) }}
+                     </h3>
+                </div>
+
+                <!-- Points 1 & 2 -->
+                <div class="flex flex-col gap-6 pr-4">
+                    <div v-for="(point, idx) in lesson.verbalSentenceParsing.points" :key="idx" 
+                         class="text-xl md:text-2xl font-bold font-amiri text-gray-800 leading-relaxed">
+                         <span v-html="formatVerbalParsing(t(point))"></span>
+                    </div>
+                </div>
+
+                <!-- Third Component (Green Section) -->
+                <div v-if="lesson.verbalSentenceParsing.thirdComponent" class="flex flex-col gap-4 mt-4">
+                    <div class="pr-4">
+                        <h4 class="text-xl md:text-2xl font-bold font-amiri text-green-600">
+                            {{ t(lesson.verbalSentenceParsing.thirdComponent.title) }}
+                        </h4>
+                    </div>
+                    <div class="text-xl md:text-2xl font-bold font-amiri text-gray-800 leading-relaxed pr-8">
+                        <span v-html="formatVerbalParsing(t(lesson.verbalSentenceParsing.thirdComponent.content))"></span>
+                    </div>
+                </div>
+
+                <!-- Parsing Model Section -->
+                <div class="flex flex-col gap-6 mt-8">
+                    <div class="text-center">
+                        <h3 class="text-2xl md:text-3xl font-bold font-amiri text-red-600">
+                            {{ t(lesson.verbalSentenceParsing.parsingTitle) }}
+                        </h3>
+                    </div>
+
+                    <!-- Parsing Sentences List -->
+                    <div class="flex flex-col gap-2 pr-4">
+                        <div v-for="(sentence, idx) in lesson.verbalSentenceParsing.parsingSentences" :key="idx" 
+                             class="text-xl md:text-2xl font-bold font-amiri text-gray-800">
+                             {{ t(sentence) }}
+                        </div>
+                    </div>
+
+                    <!-- Parsing Table -->
+                    <div class="overflow-x-auto rounded-xl border-2 border-blue-400 bg-white shadow-md mt-4">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="bg-orange-100 text-2xl md:text-3xl font-bold font-amiri text-red-600 border-b-2 border-blue-400">
+                                    <th v-for="(header, idx) in lesson.verbalSentenceParsing.table.headers" :key="idx" 
+                                        class="p-3 border-l-2 last:border-0 border-blue-400 w-1/3 text-center">
+                                        {{ t(header) }}
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(row, rIdx) in lesson.verbalSentenceParsing.table.rows" :key="rIdx" 
+                                    class="border-b-2 last:border-0 border-blue-300 h-14"
+                                    :class="rIdx % 2 === 0 ? 'bg-blue-50' : 'bg-white'">
+                                    <td v-for="(cell, cIdx) in row" :key="cIdx" 
+                                        class="p-3 text-center border-l-2 last:border-0 border-blue-300 text-xl md:text-2xl font-bold font-amiri text-gray-800">
+                                        {{ t(cell) }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+           </div>
+
+
+            <!-- Verbal Sentence Writing (New Section) -->
+            <div v-if="lesson.verbalSentenceWriting" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-12 mt-8">
+                 <div class="bg-gray-50 rounded-[2rem] p-8 border-2 border-gray-200 shadow-sm">
+                      <h3 class="text-2xl md:text-3xl font-bold font-amiri text-red-600 mb-6 text-right">
+                          {{ t(lesson.verbalSentenceWriting.title) }}
+                      </h3>
+                      <div class="flex flex-col gap-6">
+                           <div v-for="i in lesson.verbalSentenceWriting.count" :key="i" class="flex items-end gap-4">
+                                <span class="text-xl font-bold text-gray-400 font-amiri">{{ i }} -</span>
+                                <div class="flex-grow border-b-2 border-dotted border-gray-400 h-8"></div>
+                           </div>
+                      </div>
+                 </div>
+            </div>
+
+            <!-- Verbal Sentence Construction Diagram (New Section) -->
+            <div v-if="lesson.verbalSentenceConstruction" class="flex flex-col gap-8 w-full max-w-4xl mx-auto mb-12">
+                 <div class="text-center mb-4">
+                      <h3 class="text-2xl md:text-3xl font-bold font-amiri text-red-600 inline-block">
+                          {{ t(lesson.verbalSentenceConstruction.title) }}
+                      </h3>
+                 </div>
+                 
+                 <div class="flex flex-col gap-12">
+                      <div v-for="(model, idx) in lesson.verbalSentenceConstruction.models" :key="idx" class="flex flex-col items-center gap-4">
+                           <!-- Boxes -->
+                           <div class="flex gap-4 md:gap-8 justify-center flex-wrap">
+                                <template v-for="(comp, cIdx) in model.components" :key="cIdx">
+                                     <div class="relative group">
+                                         <!-- Box -->
+                                         <div class="px-6 py-3 rounded-xl border-2 shadow-md min-w-[100px] text-center"
+                                              :class="[
+                                                  comp.color === 'orange' ? 'bg-orange-100 border-orange-400 text-orange-700' :
+                                                  comp.color === 'green' ? 'bg-green-100 border-green-500 text-green-700' :
+                                                  'bg-blue-100 border-blue-400 text-blue-700'
+                                              ]">
+                                              <span class="text-xl md:text-2xl font-bold font-amiri">{{ comp.label }}</span>
+                                         </div>
+                                         <!-- Arrow -->
+                                         <div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400">
+                                              <svg width="20" height="30" viewBox="0 0 20 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                  <path d="M10 0V25M10 25L5 20M10 25L15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                              </svg>
+                                         </div>
+                                     </div>
+                                </template>
+                           </div>
+                           
+                           <!-- Target Sentence -->
+                           <div class="mt-4 pt-4">
+                                <span class="text-2xl md:text-3xl font-bold font-amiri text-gray-800 border-b-2 border-gray-200 pb-2">
+                                     {{ model.example }}
+                                </span>
+                           </div>
+                      </div>
+                 </div>
+            </div>
+
+            <!-- Verbal Sentence Summary Points (New Section) -->
+            <div v-if="lesson.verbalSentenceSummary" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-16 px-4">
+                 <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg border-2 border-green-100">
+                      <div class="flex flex-col gap-6">
+                           <div v-for="(point, idx) in lesson.verbalSentenceSummary.points" :key="idx" 
+                                class="text-xl md:text-2xl font-bold font-amiri text-gray-800 leading-loose">
+                                <span v-html="formatVerbalParsing(t(point))"></span>
+                           </div>
+                      </div>
+                 </div>
+            </div>
 
            <!-- Verb Examples Grid -->
            <div v-if="lesson.verbExamples" class="flex flex-col gap-8 w-full max-w-4xl mx-auto mb-16">
@@ -1840,7 +2035,7 @@
            </div>
 
            <!-- Table 6 (Both Inputs: Form Questions and Answer Myself) -->
-           <div v-if="lesson.tableData6" class="mt-8 flex flex-col gap-6">
+           <div v-if="lesson.tableData6 && lesson.id !== 26" class="mt-8 flex flex-col gap-6">
                 <div v-if="lesson.tableData6.title" class="flex items-center justify-center p-6 bg-yellow-50 rounded-3xl border-4 border-yellow-200 shadow-lg mb-4">
                    <p class="text-3xl md:text-4xl font-bold text-red-600 font-amiri text-center leading-relaxed">
                        {{ t(lesson.tableData6.title) }}
@@ -2140,6 +2335,14 @@ const PlayAudioButton = defineComponent({
 });
 
 const { t, locale } = useI18n();
+const formatVerbalParsing = (text: string) => {
+    if (!text) return '';
+    return text
+        .replace(/\[red\](.*?)\[\/red\]/g, '<span class="text-red-600 font-bold">$1</span>')
+        .replace(/\[green\](.*?)\[\/green\]/g, '<span class="text-green-600 font-bold">$1</span>')
+        .replace(/\[blue\](.*?)\[\/blue\]/g, '<span class="text-blue-600 font-bold">$1</span>');
+};
+
 const route = useRoute();
 const partId = computed(() => parseInt(route.params.partId as string));
 const lessonId = computed(() => parseInt(route.params.lessonId as string));
