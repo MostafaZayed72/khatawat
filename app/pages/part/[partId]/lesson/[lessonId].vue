@@ -114,6 +114,8 @@
             <p class="text-xl font-bold text-gray-700 transition-colors group-hover:text-red-600 font-amiri text-3xl" v-html="item.text"></p>
             </div>
         </div>
+
+
       </div>
 
       <!-- Unit Intro Type -->
@@ -1315,7 +1317,7 @@
            </div>
 
            <!-- Tables Section -->
-           <div v-if="lesson.tableData" class="flex flex-col gap-6" :class="lesson.id === 20 ? 'bg-white' : 'bg-blue-50/50 p-6 md:p-10 rounded-[3rem] shadow-lg border-4 border-blue-100'">
+           <div v-if="lesson.tableData && lesson.id !== 25" class="flex flex-col gap-6" :class="lesson.id === 20 ? 'bg-white' : 'bg-blue-50/50 p-6 md:p-10 rounded-[3rem] shadow-lg border-4 border-blue-100'">
                 <!-- Lesson 20 Specific Title Style -->
                 <div v-if="lesson.id === 20" class="flex flex-col gap-6 mb-8 text-right">
                      <h2 class="text-3xl md:text-4xl font-bold font-amiri text-red-600 mb-4">{{ t('Question Formation Title') }}</h2>
@@ -1327,14 +1329,18 @@
                 </div>
 
                 <div class="text-center mb-6" v-else>
-                     <p class="text-2xl md:text-3xl font-bold text-gray-700 font-amiri bg-white/80 py-4 px-8 rounded-full shadow-sm inline-block">
+                    
+                     <p v-if="lesson.tableData.description" class="text-2xl font-bold text-gray-800 font-amiri mt-6 px-4 leading-relaxed max-w-4xl mx-auto">
+                        {{ t(lesson.tableData.description) }}
+                     </p>
+                    <p class="mt-20 text-2xl md:text-3xl font-bold text-gray-700 font-amiri bg-white/80 py-4 px-8 rounded-full shadow-sm inline-block">
                          {{ lesson.tableData.title ? t(lesson.tableData.title) : t(lesson.tableData.headers[0] || '') }}
                      </p>
                 </div>
                 
                 <div class="overflow-x-auto rounded-3xl border-2 border-blue-400 bg-white">
                      <table class="w-full border-collapse">
-                         <thead v-if="lesson.id === 20 || lesson.id === 21">
+                         <thead v-if="lesson.id === 20 || lesson.id === 21 || lesson.id === 23">
                              <tr class="bg-white text-3xl font-bold font-amiri border-b-2 border-blue-400 text-red-600">
                                  <th v-for="(header, idx) in lesson.tableData.headers" :key="idx" class="p-4 border-l-2 last:border-0 border-blue-400">
                                      {{ t(header) }}
@@ -1344,10 +1350,10 @@
                          <tbody>
                              <tr v-for="(row, rIdx) in lesson.tableData.rows" :key="rIdx" 
                                  class="border-b-2 last:border-0 border-blue-400 h-16"
-                                 :class="(lesson.id === 20 || lesson.id === 21) ? (rIdx % 2 === 0 ? 'bg-blue-50' : 'bg-white') : 'bg-white'">
+                                 :class="(lesson.id === 20 || lesson.id === 21 || lesson.id === 23) ? (rIdx % 2 === 0 ? 'bg-blue-50' : 'bg-white') : 'bg-white'">
                                  <td v-for="(cell, cIdx) in row" :key="cIdx" 
                                      class="p-4 text-center border-l-2 last:border-0 border-blue-400"
-                                     :class="(lesson.id === 20 || lesson.id === 21) ? ((lesson.id === 20 && cIdx === 0) ? 'text-red-600' : 'text-gray-800') : 'text-blue-800'">
+                                     :class="(lesson.id === 20 || lesson.id === 21 || lesson.id === 23) ? ((lesson.id === 20 && cIdx === 0) ? 'text-red-600' : 'text-gray-800') : 'text-blue-800'">
                                      <span class="text-2xl md:text-3xl font-bold font-amiri" v-html="t(cell)"></span>
                                  </td>
                              </tr>
@@ -1407,6 +1413,230 @@
            </div>
 
 
+
+
+
+
+           <!-- Parts of Speech Tree Diagram -->
+           <div v-if="lesson.partsOfSpeech" class="flex flex-col items-center gap-8 mt-12 mb-12">
+                <div class="bg-green-100 border-4 border-green-500 rounded-2xl px-12 py-4 shadow-lg">
+                     <h3 class="text-3xl md:text-5xl font-bold font-amiri text-green-700">{{ t(lesson.partsOfSpeech.title) }}</h3>
+                </div>
+                
+                <!-- Arrows SVG -->
+                <div class="w-full max-w-2xl h-16 relative hidden md:block">
+                     <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 60" preserveAspectRatio="none">
+                          <path d="M200 0 L200 20 L50 40" fill="none" stroke="#374151" stroke-width="3" />
+                          <path d="M200 0 L200 40" fill="none" stroke="#374151" stroke-width="3" />
+                          <path d="M200 0 L200 20 L350 40" fill="none" stroke="#374151" stroke-width="3" />
+                          <!-- Arrow heads -->
+                          <path d="M45 35 L50 45 L55 35" fill="#374151" />
+                          <path d="M195 35 L200 45 L205 35" fill="#374151" />
+                          <path d="M345 35 L350 45 L355 35" fill="#374151" />
+                     </svg>
+                </div>
+
+                <div class="flex gap-4 md:gap-16 items-start justify-center flex-wrap">
+                     <div class="bg-orange-100 border-4 border-orange-400 rounded-2xl px-8 py-4 shadow-md w-32 md:w-40 text-center">
+                          <span class="text-2xl md:text-4xl font-bold font-amiri text-orange-700">{{ t(lesson.partsOfSpeech.branches[0]) }}</span>
+                     </div>
+                     <div class="bg-red-100 border-4 border-red-400 rounded-2xl px-8 py-4 shadow-md w-32 md:w-40 text-center">
+                          <span class="text-2xl md:text-4xl font-bold font-amiri text-red-700">{{ t(lesson.partsOfSpeech.branches[1]) }}</span>
+                     </div>
+                     <div class="bg-blue-100 border-4 border-blue-400 rounded-2xl px-8 py-4 shadow-md w-32 md:w-40 text-center">
+                          <span class="text-2xl md:text-4xl font-bold font-amiri text-blue-700">{{ t(lesson.partsOfSpeech.branches[2]) }}</span>
+                     </div>
+                </div>
+           </div>
+
+           <!-- Noun Definition Section -->
+           <div v-if="lesson.nounDefinition" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-12">
+                <div class="text-center">
+                     <span class="bg-blue-100 text-blue-800 border-2 border-blue-300 px-6 py-3 rounded-full text-2xl md:text-3xl font-bold font-amiri inline-block shadow-sm">
+                          {{ t(lesson.nounDefinition.title) }}
+                     </span>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-r-4 border-blue-500 shadow-sm flex gap-4 items-start">
+                     <div class="w-2 h-2 rounded-full bg-red-500 mt-4 shrink-0"></div>
+                     <p class="text-2xl md:text-4xl font-bold font-amiri text-gray-800 leading-loose">
+                          {{ t(lesson.nounDefinition.text) }}
+                     </p>
+                </div>
+           </div>
+
+           <!-- Noun Examples Grid -->
+           <div v-if="lesson.nounExamples" class="flex flex-col gap-8 w-full max-w-5xl mx-auto mb-16">
+                <div class="text-center">
+                     <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-10 py-3 rounded-2xl shadow-lg inline-block transform hover:scale-105 transition-transform">
+                          <h3 class="text-2xl md:text-3xl font-bold font-amiri">{{ t(lesson.nounExamples.title) }}</h3>
+                     </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                     <div v-for="(item, idx) in lesson.nounExamples.items" :key="idx" 
+                          class="bg-cyan-50 border-2 border-cyan-300 rounded-xl p-4 flex items-center justify-center min-h-[5rem] shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                          <span class="text-2xl md:text-3xl font-bold font-amiri text-gray-800">{{ t(item) }}</span>
+                     </div>
+                </div>
+           </div>
+
+           <!-- Verb Definition Section -->
+           <div v-if="lesson.verbDefinition" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-12">
+                <div class="text-center">
+                     <span class="bg-red-100 text-red-800 border-2 border-red-300 px-6 py-3 rounded-full text-2xl md:text-3xl font-bold font-amiri inline-block shadow-sm">
+                          {{ t(lesson.verbDefinition.title) }}
+                     </span>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-r-4 border-red-500 shadow-sm flex gap-4 items-start">
+                     <div class="w-2 h-2 rounded-full bg-red-500 mt-4 shrink-0"></div>
+                     <p class="text-2xl md:text-4xl font-bold font-amiri text-gray-800 leading-loose">
+                          {{ t(lesson.verbDefinition.text) }}
+                     </p>
+                </div>
+           </div>
+
+           <!-- Verb Examples Grid -->
+           <div v-if="lesson.verbExamples" class="flex flex-col gap-8 w-full max-w-4xl mx-auto mb-16">
+                <div class="text-center">
+                     <div class="bg-gradient-to-r from-blue-700 to-blue-900 text-white px-10 py-3 rounded-2xl shadow-lg inline-block transform hover:scale-105 transition-transform">
+                          <h3 class="text-2xl md:text-3xl font-bold font-amiri">{{ t(lesson.verbExamples.title) }}</h3>
+                     </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                     <div v-for="(col, idx) in lesson.verbExamples.columns" :key="idx" class="flex flex-col gap-4">
+                          <div class="bg-green-600 text-white p-3 rounded-xl text-center shadow-md">
+                               <h4 class="text-xl md:text-2xl font-bold font-amiri">{{ t(col.title) }}</h4>
+                          </div>
+                          <div class="bg-green-50 border-2 border-green-200 p-6 rounded-xl text-center shadow-sm h-full flex items-center justify-center">
+                               <span class="text-3xl md:text-4xl font-bold font-amiri text-gray-800">{{ t(col.item) }}</span>
+                          </div>
+                     </div>
+                </div>
+           </div>
+
+           <!-- Particle Definition Section -->
+           <div v-if="lesson.particleDefinition" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-12">
+                <div class="text-center">
+                     <span class="bg-orange-100 text-orange-800 border-2 border-orange-300 px-6 py-3 rounded-full text-2xl md:text-3xl font-bold font-amiri inline-block shadow-sm">
+                          {{ t(lesson.particleDefinition.title) }}
+                     </span>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-r-4 border-orange-500 shadow-sm flex gap-4 items-start">
+                     <div class="w-2 h-2 rounded-full bg-red-500 mt-4 shrink-0"></div>
+                     <p class="text-2xl md:text-4xl font-bold font-amiri text-gray-800 leading-loose">
+                          {{ t(lesson.particleDefinition.text) }}
+                     </p>
+                </div>
+           </div>
+
+           <!-- Particle Examples Grid (Diamond Shape) -->
+           <div v-if="lesson.particleExamples" class="flex flex-col gap-8 w-full max-w-4xl mx-auto mb-16">
+                <div class="text-center">
+                     <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-10 py-3 rounded-2xl shadow-lg inline-block transform hover:scale-105 transition-transform">
+                          <h3 class="text-2xl md:text-3xl font-bold font-amiri">{{ t(lesson.particleExamples.title) }}</h3>
+                     </div>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8 px-4">
+                     <div v-for="(item, idx) in lesson.particleExamples.items" :key="idx" 
+                          class="w-20 h-20 md:w-24 md:h-24 bg-gray-100 rotate-45 border-4 border-yellow-400 shadow-md flex items-center justify-center transform hover:scale-110 transition-transform hover:bg-yellow-50 hover:border-yellow-500">
+                          <span class="text-2xl md:text-3xl font-bold font-amiri text-gray-800 -rotate-45">{{ t(item) }}</span>
+                     </div>
+                </div>
+           </div>
+
+           <!-- Nominal Sentence Intro List -->
+           <div v-if="lesson.nominalSentenceIntro" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-12">
+                <div class="text-right mb-4">
+                     <h3 class="text-2xl md:text-3xl font-bold font-amiri text-red-600 border-r-4 border-red-500 pr-4">{{ t(lesson.nominalSentenceIntro.title) }}</h3>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-6 md:p-8 flex flex-col gap-4 shadow-sm border border-gray-200">
+                     <p v-for="(sentence, idx) in lesson.nominalSentenceIntro.sentences" :key="idx" 
+                        class="text-xl md:text-3xl font-bold font-amiri text-gray-800 leading-loose">
+                          {{ idx + 1 }}- {{ t(sentence) }}
+                     </p>
+                </div>
+           </div>
+
+           <!-- Nominal Sentence Definition -->
+           <div v-if="lesson.nominalSentenceDefinition" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-12 text-center">
+                <div class="bg-white rounded-2xl shadow-lg border-2 border-red-100 p-8 md:p-10 relative overflow-hidden">
+                     <div class="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-bl-[100px] -z-10"></div>
+                     <h3 class="text-2xl md:text-3xl font-bold font-amiri text-red-600 mb-6 leading-relaxed">
+                          - {{ t(lesson.nominalSentenceDefinition.title) }}
+                     </h3>
+                     <p class="text-xl md:text-2xl font-bold font-amiri text-gray-700 leading-loose mb-8">
+                          {{ t(lesson.nominalSentenceDefinition.text) }}
+                     </p>
+                     <div class="inline-block border-t-2 border-dashed border-red-300 pt-4">
+                          <p class="text-xl md:text-2xl font-bold font-amiri text-red-500">
+                               {{ t(lesson.nominalSentenceDefinition.footer) }}
+                          </p>
+                     </div>
+                </div>
+           </div>
+
+           <!-- Nominal Sentence Diagram (Tree) -->
+           <div v-if="lesson.nominalSentenceDiagram" class="flex flex-col items-center gap-8 w-full max-w-5xl mx-auto mb-16">
+                <div class="bg-gradient-to-b from-gray-100 to-white px-10 py-4 rounded-2xl shadow-md border border-gray-200">
+                     <h3 class="text-2xl md:text-4xl font-bold font-amiri text-gray-800">{{ t(lesson.nominalSentenceDiagram.title) }}</h3>
+                </div>
+
+                <!-- Arrows SVG -->
+                <div class="w-full max-w-3xl h-20 relative hidden md:block">
+                     <svg class="absolute inset-0 w-full h-full" viewBox="0 0 600 80" preserveAspectRatio="none">
+                          <!-- Center line down -->
+                          <path d="M300 0 L300 20" fill="none" stroke="#6B7280" stroke-width="3" />
+                          <!-- Left branch -->
+                          <path d="M300 20 L150 60" fill="none" stroke="#2563EB" stroke-width="3" /> <!-- Blue to Left (Khabar) -->
+                          <!-- Right branch -->
+                          <path d="M300 20 L450 60" fill="none" stroke="#22C55E" stroke-width="3" /> <!-- Green to Right (Mubtada) -->
+                          
+                          <!-- Arrow heads -->
+                          <path d="M145 55 L150 65 L155 55" fill="#2563EB" />
+                          <path d="M445 55 L450 65 L455 55" fill="#22C55E" />
+                     </svg>
+                </div>
+
+                <div class="flex gap-4 md:gap-12 items-start justify-center w-full">
+                     <!-- Right Box (Mubtada - Green) -->
+                     <div class="flex-1 max-w-sm bg-green-50 border-4 border-green-500 rounded-3xl p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                          <h4 class="text-2xl md:text-3xl font-bold font-amiri text-green-700 mb-2">{{ t(lesson.nominalSentenceDiagram.branches[1].title) }}</h4>
+                          <p class="text-lg md:text-xl font-bold font-amiri text-gray-600 leading-relaxed">{{ t(lesson.nominalSentenceDiagram.branches[1].text) }}</p>
+                     </div>
+
+                     <!-- Left Box (Khabar - Blue) -->
+                     <div class="flex-1 max-w-sm bg-blue-50 border-4 border-blue-400 rounded-3xl p-6 text-center shadow-lg transform hover:-translate-y-2 transition-transform">
+                          <h4 class="text-2xl md:text-3xl font-bold font-amiri text-blue-700 mb-2">{{ t(lesson.nominalSentenceDiagram.branches[0].title) }}</h4>
+                          <p class="text-lg md:text-xl font-bold font-amiri text-gray-600 leading-relaxed">{{ t(lesson.nominalSentenceDiagram.branches[0].text) }}</p>
+                     </div>
+                </div>
+           </div>
+
+
+
+           <!-- Parsing Table (Lesson 25 Specific Location) -->
+           <div v-if="lesson.tableData && lesson.id === 25" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-16">
+                 <div class="overflow-x-auto rounded-3xl border-2 border-green-400 bg-white shadow-lg">
+                      <table class="w-full border-collapse">
+                          <thead>
+                              <tr class="bg-gray-50 text-3xl font-bold font-amiri border-b-2 border-green-400">
+                                  <th v-for="(header, idx) in lesson.tableData.headers" :key="idx" class="p-4 border-l-2 last:border-0 border-green-400 text-green-700">
+                                      {{ t(header) }}
+                                  </th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr v-for="(row, rIdx) in lesson.tableData.rows" :key="rIdx" class="border-b-2 last:border-0 border-green-200 h-16 hover:bg-green-50/20 transition-colors">
+                                  <td v-for="(cell, cIdx) in row" :key="cIdx" class="p-4 text-center border-l-2 last:border-0 border-green-200">
+                                      <span class="text-2xl md:text-3xl font-bold font-amiri text-gray-800" v-html="t(cell)"></span>
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                 </div>
+           </div>
 
 
 
@@ -1562,7 +1792,7 @@
                                         class="border-l last:border-0 border-blue-400 p-2"
                                         :class="{'!border-blue-400 border-l-2': lesson.id === 20}">
                                          <!-- If Lesson 20 or 21, Column 0 is Text. Column 1 is Input only if empty -->
-                                         <span v-if="((lesson.id === 20 || lesson.id === 21) && cIdx === 0) || (lesson.id === 21 && cell)" class="text-2xl md:text-3xl font-bold font-amiri text-gray-800">
+                                         <span v-if="((lesson.id === 20 || lesson.id === 21 || lesson.id === 22 || lesson.id === 23) && cIdx === 0) || ((lesson.id === 21 || lesson.id === 22 || lesson.id === 23) && cell)" class="text-2xl md:text-3xl font-bold font-amiri text-gray-800">
                                               {{ t(cell) }}
                                          </span>
                                          <input v-else type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none" />
@@ -1597,8 +1827,8 @@
                                    :class="rIdx % 2 === 0 ? 'bg-blue-50' : 'bg-white'">
                                     <td v-for="(cell, cIdx) in row" :key="cIdx" 
                                         class="border-l-2 last:border-0 border-blue-400 p-2">
-                                         <!-- Column 0 is Answer (Text), Column 1 is Question (Input) -->
-                                         <span v-if="cIdx === 0" class="text-2xl md:text-3xl font-bold font-amiri text-gray-800">
+                                         <!-- Column 0 is Answer (Text), Column 1 is Question (Input) - UNLESS cell has text -->
+                                         <span v-if="cIdx === 0 || cell" class="text-2xl md:text-3xl font-bold font-amiri text-gray-800">
                                               {{ t(cell) }}
                                          </span>
                                          <input v-else type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none" />
@@ -1633,8 +1863,46 @@
                                    :class="rIdx % 2 === 0 ? 'bg-blue-50' : 'bg-white'">
                                     <td v-for="(cell, cIdx) in row" :key="cIdx" 
                                         class="border-l-2 last:border-0 border-blue-400 p-2">
-                                         <!-- Both Columns are Inputs -->
-                                         <input type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none" />
+                                         <!-- Both Columns are Inputs - UNLESS cell has text -->
+                                         <span v-if="cell" class="text-2xl md:text-3xl font-bold font-amiri text-gray-800">
+                                              {{ t(cell) }}
+                                         </span>
+                                         <input v-else type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none" />
+                                    </td>
+                               </tr>
+                          </tbody>
+                     </table>
+                </div>
+           </div>
+
+           <!-- Table 7 (Additional Input/Text Table) -->
+           <div v-if="lesson.tableData7" class="mt-8 flex flex-col gap-6">
+                <div v-if="lesson.tableData7.title" class="flex items-center justify-center p-6 bg-yellow-50 rounded-3xl border-4 border-yellow-200 shadow-lg mb-4">
+                   <p class="text-3xl md:text-4xl font-bold text-red-600 font-amiri text-center leading-relaxed">
+                       {{ t(lesson.tableData7.title) }}
+                   </p>
+                </div>
+
+                <div class="bg-white rounded-[3.5rem] shadow-2xl border-4 border-blue-400 overflow-hidden">
+                     <table class="w-full border-collapse">
+                          <thead>
+                               <tr class="bg-white text-3xl font-bold font-amiri border-b-2 border-blue-400 text-red-600">
+                                    <th v-for="(header, idx) in lesson.tableData7.headers" :key="idx" 
+                                        class="p-4 border-l-2 last:border-0 border-blue-400">
+                                         {{ t(header) }}
+                                    </th>
+                               </tr>
+                          </thead>
+                          <tbody>
+                               <tr v-for="(row, rIdx) in lesson.tableData7.rows" :key="rIdx" 
+                                   class="h-16 border-b-2 last:border-0 border-blue-400"
+                                   :class="rIdx % 2 === 0 ? 'bg-blue-50' : 'bg-white'">
+                                    <td v-for="(cell, cIdx) in row" :key="cIdx" 
+                                        class="border-l-2 last:border-0 border-blue-400 p-2">
+                                         <span v-if="cell" class="text-2xl md:text-3xl font-bold font-amiri text-gray-800">
+                                              {{ t(cell) }}
+                                         </span>
+                                         <input v-else type="text" class="w-full h-full bg-transparent text-center font-amiri text-2xl font-bold focus:outline-none" />
                                     </td>
                                </tr>
                           </tbody>
@@ -1643,6 +1911,86 @@
            </div>
        </div>
 
+
+       <!-- Noun Benefit Section (Final Location) -->
+       <div v-if="lesson.nounBenefit" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-16 mt-16">
+            <div class="text-center mb-6">
+                 <span class="bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-3 rounded-tr-3xl rounded-bl-3xl shadow-lg text-2xl md:text-3xl font-bold font-amiri inline-block">
+                      {{ t(lesson.nounBenefit.title) }}
+                 </span>
+            </div>
+            
+            <div class="bg-white rounded-[2rem] border-2 border-teal-500 p-8 shadow-xl relative overflow-hidden">
+                 <div class="text-center mb-8">
+                      <h3 class="text-2xl md:text-3xl font-bold font-amiri text-red-600">{{ t(lesson.nounBenefit.subtitle) }}</h3>
+                 </div>
+
+                 <div class="flex flex-col gap-6">
+                      <div v-for="(example, idx) in lesson.nounBenefit.examples" :key="idx" 
+                           class="flex items-start gap-4 text-xl md:text-2xl font-bold font-amiri text-gray-800 leading-loose">
+                           <p v-html="t(example.text).replace(/\*(.*?)\*/g, '<span class=\'text-red-500 font-bold\'>$1</span>')"></p>
+                      </div>
+                  </div>
+
+                  <div class="mt-8 pt-6 border-t-2 border-dashed border-teal-200 text-center">
+                       <p class="text-xl md:text-2xl font-bold font-amiri text-purple-700">
+                            {{ t(lesson.nounBenefit.footer) }}
+                       </p>
+                  </div>
+            </div>
+       </div>
+
+
+
+
+       <!-- Noun Division Section (Final Location) -->
+       <div v-if="lesson.nounDivision" class="flex flex-col gap-6 w-full max-w-4xl mx-auto mb-16 mt-16">
+            <div class="text-center mb-6">
+                 <span class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-3 rounded-tr-3xl rounded-bl-3xl shadow-lg text-2xl md:text-3xl font-bold font-amiri inline-block">
+                      {{ t(lesson.nounDivision.title) }}
+                 </span>
+            </div>
+            
+            <div class="bg-white rounded-[2rem] border-2 border-blue-500 p-8 shadow-xl relative overflow-hidden">
+                 <div class="text-center mb-12">
+                      <h3 class="text-2xl md:text-3xl font-bold font-amiri text-gray-700">{{ t(lesson.nounDivision.subtitle) }}</h3>
+                 </div>
+
+                 <!-- Diamond Layout for Types -->
+                 <div class="flex flex-wrap justify-center gap-8 mb-12 relative">
+                     <!-- Arrows (SVG or CSS lines could be enhanced here, simplistic representation for now) -->
+                     
+                     <div v-for="type in lesson.nounDivision.types" :key="type.id" 
+                          class="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+                          <!-- Diamond Shape bg -->
+                          <div class="absolute inset-0 transform rotate-45 rounded-2xl shadow-lg border-4"
+                               :class="[
+                                   type.color === 'yellow' ? 'bg-yellow-100 border-yellow-400' : 
+                                   type.color === 'blue' ? 'bg-blue-100 border-blue-400' : 'bg-orange-100 border-orange-400'
+                               ]"></div>
+                          <!-- Content -->
+                          <div class="relative z-10 text-center transform">
+                               <span class="block text-3xl md:text-4xl font-bold font-amiri text-gray-800">
+                                   {{ type.id }} <br/>
+                                   {{ t(type.name) }}
+                               </span>
+                          </div>
+                          <!-- Decorative Dots/Points on Diamond Tips could be added here -->
+                     </div>
+                 </div>
+
+                 <!-- Definitions List -->
+                 <div class="flex flex-col gap-8">
+                      <div v-for="(def, idx) in lesson.nounDivision.definitions" :key="idx" 
+                           class="flex items-start gap-4 text-xl md:text-2xl font-bold font-amiri text-gray-800 leading-loose">
+                           <span class="text-blue-600 shrink-0">{{ idx + 1 }}-</span>
+                           <p>
+                               <span class="text-blue-700">{{ t(def.title) }}</span>: <span v-html="t(def.text).replace(/\*(.*?)\*/g, '<span class=\'text-red-500 font-bold\'>$1</span>')"></span>
+                           </p>
+                      </div>
+                  </div>
+            </div>
+       </div>
 
        <!-- Alphabet Chart Lesson Type -->
        <div v-else-if="lesson.type === 'alphabetChart'" class="flex flex-col w-full max-w-6xl mx-auto mt-16 px-4 items-center gap-8">

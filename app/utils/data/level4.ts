@@ -1479,8 +1479,300 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
                     [t('Rel 6'), '']
                 ]
             }
+        },
+        {
+            id: 22,
+            title: t('Lesson Eight'),
+            subtitle: t('The Western Doctor'),
+            type: 'contentWithExercises',
+            story: [
+                { text: t('Western Doctor Story Full'), image: '/level4/lesson22/doctor_western.png' }
+            ],
+            // Grammar Table: Demonstrative Pronouns
+            tableData: {
+                title: t('Demonstrative Pronouns Title'),
+                headers: [t('Dem Name'), t('Dem Usage'), t('Dem Example')],
+                rows: [
+                    [t('Dem 1'), t('Dem 1 Usage'), t('Dem 1 Ex')],
+                    [t('Dem 2'), t('Dem 2 Usage'), t('Dem 2 Ex')],
+                    [t('Dem 3'), t('Dem 3 Usage'), t('Dem 3 Ex')],
+                    [t('Dem 4'), t('Dem 4 Usage'), t('Dem 4 Ex')],
+                    [t('Dem 5'), t('Dem 5 Usage'), t('Dem 5 Ex')],
+                    [t('Dem 6'), t('Dem 6 Usage'), t('Dem 6 Ex')],
+                    [t('Dem 7'), t('Dem 7 Usage'), t('Dem 7 Ex')]
+                ]
+            },
+            // Exercise 1: Write Sentences (Now First -> tableData4)
+            tableData4: {
+                title: t('Sentences Exercise Title'),
+                headers: [t('Dem Name'), t('Dem Example')],
+                rows: [
+                    [t('Dem 1'), ''],
+                    [t('Dem 2'), ''],
+                    [t('Dem 3'), ''],
+                    [t('Dem 4'), ''],
+                    [t('Dem 5'), '']
+                ]
+            },
+            // Exercise 2: Connect (Now Second -> tableData5)
+            tableData5: {
+                title: t('Connect Exercise Title'),
+                headers: [t('Dem Name'), t('Suitable Usage')],
+                rows: [
+                    [t('Dem 1'), t('Use Plural')],        // This -> Plural (Scrambled)
+                    [t('Dem 5'), t('Use Dual')],          // These -> Dual
+                    [t('Dem 3'), t('Use Singular Masc')], // These two (m) -> Singular Masc
+                    [t('Dem 2'), t('Use Singular Fem')],  // This (f) -> Singular Fem
+                    [t('Dem 7'), t('Use Distant Masc')],  // That (f) -> Distant Masc
+                    [t('Dem 6'), t('Use Distant Fem')]    // That (m) -> Distant Fem
+                ]
+            },
+            // Exercise 3: Connect Sentences (New -> tableData6)
+            tableData6: {
+                title: t('Connect Sentences Title'),
+                headers: [t('Dem Name'), t('Suitable Usage')], // Reusing headers
+                rows: [
+                    [t('Dem 1'), t('Sent 1')], // This (m) -> Two students (Mismatch)
+                    [t('Dem 5'), t('Sent 2')], // These (pl) -> Doctor (Mismatch)
+                    [t('Dem 3'), t('Sent 3')], // These two (m) -> Player (Mismatch)
+                    [t('Dem 2'), t('Sent 4')], // This (f) -> Engineers (Mismatch)
+                    [t('Dem 2'), t('Sent 5')], // This (f) -> Big Cloud (Mismatch/Match?)
+                    [t('Dem 7'), t('Sent 6')]  // That (f) -> Beautiful Rose (Match?)
+                ]
+            }
+        },
+        {
+            id: 23,
+            title: t('Lesson Nine'),
+            subtitle: t('The Champions Team'),
+            type: 'contentWithExercises',
+            story: [
+                { text: t('Champions Team Story'), image: '/level4/lesson23/champions_team.png' }
+            ],
+            // Table 1: Third Person Pronouns
+            tableData: {
+                title: t('Third Person Pronouns Title'),
+                headers: [t('The Pronoun'), t('The Usage'), t('The Example')],
+                rows: [
+                    [t('He'), t('Usage Sing Masc Absent'), t('He Example')],
+                    [t('She'), t('Usage Sing Fem Absent'), t('She Example')],
+                    [t('They Dual'), t('Usage Dual Absent'), t('They Dual Example')],
+                    [t('They Plural Masc'), t('Usage Plural Masc Absent'), t('They Plural Masc Example')],
+                    [t('They Plural Fem'), t('Usage Plural Fem Absent'), t('They Plural Fem Example')]
+                ]
+            },
+            // Table 2: First Person Pronouns (using tableData4 logic)
+            tableData4: {
+                title: t('First Person Pronouns Title'),
+                headers: [t('The Pronoun'), t('The Usage'), t('The Example')],
+                rows: [
+                    [t('I Pronoun'), t('Usage Sing Speaker'), t('I Example')],
+                    [t('We Pronoun'), t('Usage Plural Speaker'), t('We Example')]
+                ]
+            },
+            // Exercise: Connect Pronouns (tableData5)
+            tableData5: {
+                title: t('Connect Pronouns Exercise Title'),
+                headers: [t('Column A'), t('Column B')],
+                rows: [
+                    [t('He'), t('Sent Scientists')],      // He -> Scientists (Mismatch)
+                    [t('She'), t('Sent Doctors')],        // She -> Doctors (Mismatch)
+                    [t('They Dual'), t('Sent Worker')],   // They (Dual) -> Worker (Mismatch)
+                    [t('They Plural Masc'), t('Sent Two Students')], // They (Plural M) -> Two Students (Mismatch)
+                    [t('They Plural Fem'), t('Sent Mother')],        // They (Plural F) -> Mother (Mismatch)
+                    [t('I Pronoun'), t('Sent We Love Science')],     // I -> We love science (Mismatch)
+                    [t('We Pronoun'), t('Sent I Love Reading')]      // We -> I love reading (Mismatch)
+                ]
+            },
+            // Table 3: Second Person Pronouns (Using tableData6)
+            tableData6: {
+                title: t('Second Person Pronouns Title'),
+                headers: [t('The Pronoun'), t('The Usage'), t('The Example')],
+                rows: [
+                    [t('You Masc'), t('Usage Sing Masc Addressee'), t('You Masc Example')],
+                    [t('You Fem'), t('Usage Sing Fem Addressee'), t('You Fem Example')],
+                    [t('You Dual'), t('Usage Dual Addressee'), t('You Dual Example')],
+                    [t('You Plural Masc'), t('Usage Plural Masc Addressee'), t('You Plural Masc Example')],
+                    [t('You Plural Fem'), t('Usage Plural Fem Addressee'), t('You Plural Fem Example')]
+                ]
+            },
+            // Exercise: Make Sentences (Using tableData7)
+            tableData7: {
+                title: t('Make Sentences Exercise Title'),
+                headers: [t('The Pronoun'), t('Useful Sentence')],
+                rows: [
+                    [t('He'), ''],
+                    [t('She'), ''],
+                    [t('They Dual'), ''],
+                    [t('They Plural Masc'), ''],
+                    [t('They Plural Fem'), ''],
+                    [t('I Pronoun'), ''],
+                    [t('We Pronoun'), '']
+                ]
+            }
+        },
+        {
+            id: 24,
+            title: t('Lesson Ten'),
+            subtitle: t('Grandpa Omar Title'),
+            type: 'contentWithExercises',
+            story: [
+                { text: t('Grandpa Omar Story'), image: '/level4/lesson24/1.png' }
+            ],
+            tableData: {
+                title: t('Prepositions Table Title'),
+                description: t('Prepositions Description'),
+                headers: [t('The Particle'), t('The Usage'), t('The Example')],
+                rows: [
+                    [t('Particle Fi'), t('Usage Containment'), t('Ex Fi')],
+                    [t('Particle Ala'), t('Usage Elevation'), t('Ex Ala')],
+                    [t('Particle Min'), t('Usage Beginning'), t('Ex Min')],
+                    [t('Particle Ila'), t('Usage End'), t('Ex Ila')],
+                    [t('Particle An'), t('Usage About'), t('Ex An')],
+                    [t('Particle Ka'), t('Usage Simile'), t('Ex Ka')],
+                    [t('Particle Li'), t('Usage Possession'), t('Ex Li')],
+                    [t('Particle Bi'), t('Usage Instrument'), t('Ex Bi')]
+                ]
+            },
+            tableData6: {
+                title: t('Extract Prepositions Title'),
+                headers: [t('The Sentence')],
+                rows: [
+                    [''],
+                    [''],
+                    [''],
+                    [''],
+                    [''],
+                    ['']
+                ]
+            }
+        },
+        {
+            id: 25,
+            title: t('Lesson Eleven'),
+            subtitle: t('The Roses Title'),
+            type: 'contentWithExercises',
+            story: [
+                { text: t('Roses Story Part 1'), image: '/level4/lesson25/rose_1.png' },
+                { text: t('Roses Story Part 2'), image: '/level4/lesson25/rose_2.png' },
+                { text: t('Roses Story Part 3'), image: '/level4/lesson25/rose_3.png' }
+            ],
+            partsOfSpeech: {
+                title: t('Parts of Speech Title'),
+                branches: [t('Part Noun'), t('Part Verb'), t('Part Particle')]
+            },
+            nounDefinition: {
+                title: t('First Noun Title'),
+                text: t('Noun Definition Text')
+            },
+            nounExamples: {
+                title: t('Noun Examples Title'),
+                items: [
+                    t('Ex Lion'), t('Ex Animal'), t('Ex Brave'), t('Ex Human'), t('Ex Khalid'), t('Ex Falcon'),
+                    t('Ex Bird'), t('Ex Day'), t('Ex Adjective'), t('Ex Time'), t('Ex Phone'), t('Ex Machine')
+                ]
+            },
+            verbDefinition: {
+                title: t('Second Verb Title'),
+                text: t('Verb Definition Text')
+            },
+            verbExamples: {
+                title: t('Verb Examples Title'),
+                columns: [
+                    { title: t('Verb Past'), item: t('Ex Reads Past') },
+                    { title: t('Verb Present'), item: t('Ex Reads Present') },
+                    { title: t('Verb Imperative'), item: t('Ex Read Imperative') }
+                ]
+            },
+            particleDefinition: {
+                title: t('Third Particle Title'),
+                text: t('Particle Definition Text')
+            },
+            particleExamples: {
+                title: t('Particle Examples Title'),
+                items: [
+                    t('Particle Min'), t('Particle Ila'), t('Particle An'), t('Particle Ala'),
+                    t('Particle Fi'), t('Particle Bi'), t('Particle Li'), t('Particle Ka')
+                ]
+            },
+            nominalSentenceIntro: {
+                title: t('Nominal Sentence Intro Title'),
+                sentences: [t('Intro Sent 1'), t('Intro Sent 2'), t('Intro Sent 3'), t('Intro Sent 4')]
+            },
+            nominalSentenceDefinition: {
+                title: t('Nominal Definition Title'),
+                text: t('Nominal Definition Text'),
+                footer: t('Parsing Definition Footer')
+            },
+            nominalSentenceDiagram: {
+                title: t('Nominal Diagram Title'),
+                branches: [
+                    { title: t('Diagram Khabar Title'), text: t('Diagram Khabar Text'), color: 'blue' },
+                    { title: t('Diagram Mubtada Title'), text: t('Diagram Mubtada Text'), color: 'green' }
+                ]
+            },
+            tableData: {
+                headers: [t('Table Word'), t('Table Parsing')],
+                rows: [
+                    [t('The Roses Title'), t('Parse Wurood')],
+                    [t('Types'), t('Parse Anwa')],
+                    [t('Violet'), t('Parse Banafsaj')],
+                    [t('Flower'), t('Parse Zahra')]
+                ]
+            },
+            tableData6: {
+                title: t('Extract Noun Sentences Title'),
+                headers: [''],
+                rows: [[''], [''], [''], ['']]
+            },
+            nounBenefit: {
+                title: t('Noun Benefit Title'),
+                subtitle: t('Noun Benefit Subtitle'),
+                examples: [
+                    { text: t('Noun Sign 1'), highlight: 'green' },
+                    { text: t('Noun Sign 2'), highlight: 'blue' },
+                    { text: t('Noun Sign 3'), highlight: 'red' },
+                    { text: t('Noun Sign 4'), highlight: 'purple' }
+                ],
+                footer: t('Noun Benefit Footer')
+            },
+            nounDivision: {
+                title: t('Noun Division Title'),
+                subtitle: t('Noun Division Subtitle'),
+                types: [
+                    { id: 1, name: t('Noun Type Singular Name'), color: 'yellow' },
+                    { id: 2, name: t('Noun Type Dual Name'), color: 'blue' },
+                    { id: 3, name: t('Noun Type Plural Name'), color: 'orange' }
+                ],
+                definitions: [
+                    { title: t('Noun Type Singular Name'), text: t('Noun Type Singular Definition') },
+                    { title: t('Noun Type Dual Name'), text: t('Noun Type Dual Definition') },
+                    { title: t('Noun Type Plural Name'), text: t('Noun Type Plural Definition') }
+                ]
+            }
         }
-    ];
+    ,
+    {
+        id: 26,
+        title: t('Work Title'),
+            subtitle: t('Work Subtitle'),
+                type: 'story',
+                    story: [
+                        {
+                            text: t('Work Story Part 1'),
+                            image: '/level4/lesson26/work_1.png'
+                        },
+                        {
+                            text: t('Work Story Part 2'),
+                            image: '/level4/lesson26/work_2.png'
+                        },
+                        {
+                            text: t('Work Story Part 3'),
+                            image: ''
+                        }
+                    ]
+    }
+];
 
-    return part4Lessons;
+return part4Lessons;
 };

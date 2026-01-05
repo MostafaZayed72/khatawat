@@ -89,12 +89,13 @@ export interface Lesson {
     grammarTitle?: string;
     grammarRules?: string[];
     grammarImage?: string;
-    tableData?: { title?: string; headers: string[]; rows: string[][] };
+    tableData?: { title?: string; description?: string; headers: string[]; rows: string[][] };
     tableData2?: { title?: string; headers: string[]; rows: string[][] };
     tableData3?: { title?: string; description?: string; headers: string[]; rows: string[][] };
     tableData4?: { title?: string; description?: string; headers: string[]; rows: string[][] };
     tableData5?: { title?: string; description?: string; headers: string[]; rows: string[][] };
     tableData6?: { title?: string; description?: string; headers: string[]; rows: string[][] };
+    tableData7?: { title?: string; description?: string; headers: string[]; rows: string[][] };
     story?: { text: string; image: string }[];
     maddDiagram?: {
         items: {
@@ -102,6 +103,23 @@ export interface Lesson {
             madd: { text: string; label: string };
             mamdooh: { text: string; label: string };
         }[];
+        partsOfSpeech?: { title: string; branches: string[] };
+        nounDefinition?: { title: string; text: string };
+        nounExamples?: { title: string; items: string[] };
+        verbDefinition?: { title: string; text: string };
+        verbExamples?: { title: string; columns: { title: string; item: string }[] };
+        particleDefinition?: { title: string; text: string };
+        particleExamples?: { title: string; items: string[] };
+        nominalSentenceIntro?: { title: string; sentences: string[] };
+        nominalSentenceDefinition?: { title: string; text: string; footer: string };
+        nominalSentenceDiagram?: { title: string; branches: { title: string; text: string; color: string }[] };
+        nounBenefit?: { title: string; subtitle: string; examples: { text: string; highlight: string }[]; footer: string };
+        nounDivision?: {
+            title: string;
+            subtitle: string;
+            types: { id: number; name: string; color: string }[];
+            definitions: { title: string; text: string }[];
+        };
     };
 }
 
