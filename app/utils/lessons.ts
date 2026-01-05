@@ -83,7 +83,7 @@ export interface Lesson {
     assemble?: { id: number; letters: string[]; word: string }[];
     assembleAudio?: string;
     colorTheme?: string;
-    columns?: { id: number; header: string; color: string; items: { id: number; text: string; highlight?: string }[] }[];
+    columns?: { id: number; header: string; color: string; audioUrl?: string; items: { id: number; text: string; highlight?: string }[] }[];
     gridCols?: number;
     readingText?: string[];
     grammarTitle?: string;

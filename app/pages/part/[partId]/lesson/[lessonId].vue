@@ -59,6 +59,13 @@
             </div>
            </div>
 
+           <!-- Audio Button (New) -->
+           <PlayAudioButton 
+             v-if="lesson.audioUrl" 
+             :audioUrl="lesson.audioUrl" 
+             class="mx-2 shrink-0" 
+           />
+
            <!-- Next Button (Left side in RTL) -->
            <NuxtLink 
              v-if="nextLessonId"
@@ -481,7 +488,7 @@
                    :class="{'border-l-2 border-dashed border-gray-300 pl-8': index !== lesson.columns.length - 1}">
                    
                    <!-- Header -->
-                   <div class="text-center mb-8">
+                   <div class="flex items-center justify-center gap-4 mb-8">
                        <h3 class="text-4xl md:text-5xl font-black font-amiri mb-2" 
                            :class="[
                                col.color === 'red' ? 'text-red-600' : 
@@ -490,6 +497,7 @@
                            ]">
                            {{ col.header }}
                        </h3>
+                       <PlayAudioButton v-if="col.audioUrl" :audioUrl="col.audioUrl" />
                    </div>
 
                    <!-- Items List -->

@@ -7,7 +7,8 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
             title: t('Unit One'),
             subtitle: t('Words with Three Letters'),
             type: 'unitIntro',
-            items: []
+            items: [],
+            audioUrl: '/level3/1/title.mp3'
         },
         {
             id: 2,
@@ -34,7 +35,8 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 49, text: 'قَمَر' }, { id: 50, text: 'كَأْس' }, { id: 51, text: 'لَيْث' }, { id: 52, text: 'مَوْز' },
                 { id: 53, text: 'نَجْم' }, { id: 54, text: 'كُتُب' }, { id: 55, text: 'وَرْد' }, { id: 56, text: 'يَد' },
                 { id: 57, text: 'عِنَب' }, { id: 58, text: 'وَرَق' }, { id: 59, text: 'بَاع' }, { id: 60, text: 'قَمَر' }
-            ]
+            ],
+            audioUrl: '/level3/2/title.mp3'
         },
         {
             id: 3,
@@ -77,31 +79,32 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 27, letters: ['هَ', 'دَ', 'ى'], word: 'هَدَى' },
                 { id: 28, letters: ['وَ', 'صَ', 'لَ'], word: 'وَصَلَ' },
                 { id: 29, letters: ['يَ', 'فَ', 'عَ'], word: 'يَفَعَ' },
-                { id: 30, letters: ['قَ', 'صَّ'], word: 'قَصَّ' }, // Assuming separate letters show sad with shadda or repeated? Image shows 3 circles for most. Row 5 has 3 circles: q, s, s. So letters: qa, sa, sa.
+                { id: 30, letters: ['قَ', 'صَّ'], word: 'قَصَّ' },
                 // Page 19
                 { id: 31, letters: ['دَ', 'رَ', 'بَ'], word: 'دَرَبَ' },
                 { id: 32, letters: ['ضَ', 'حِ', 'كَ'], word: 'ضَحِكَ' },
                 { id: 33, letters: ['قَ', 'رُ', 'بَ'], word: 'قَرُبَ' },
-                { id: 34, letters: ['عَ', 'دَّ'], word: 'عَدَّ' }, // Image has 3 circles: 'a', 'd', 'd'.
+                { id: 34, letters: ['عَ', 'دَّ'], word: 'عَدَّ' },
                 { id: 35, letters: ['مَ', 'زَ', 'قَ'], word: 'مَزَقَ' }
-            ]
+            ],
+            audioUrl: '/level3/2/title.mp3'
         },
-
         {
             id: 4,
             title: t('I Arrange then I Write'),
             description: t('(تَرْتِيبُ كَلِمَةٍ ذَاتِ مَعْنًى مُكَوَّنَةٍ مِنْ ثَلَاثَةِ أَحْرُفٍ غَيْرِ مُرَتَّبَةٍ مَعَ كِتَابَتِهَا عَلَى غِرَارِ الْمِثَالِ الْأَوَّلِ)'),
             type: 'arrangeWrite',
+            audioUrl: '/level3/4/title.mp3',
             items: [
                 // Page 20
                 { id: 1, letters: ['أَ', 'قَ', 'رَ'], word: 'قَرَأَ' },
                 { id: 2, letters: ['بَ', 'عَ', 'رَ'], word: 'عَبَرَ' },
                 { id: 3, letters: ['سَ', 'رَ', 'تَ'], word: 'سَتَرَ' },
-                { id: 4, letters: ['ثَ', 'وِ', 'رَ'], word: 'وَرِثَ' },
+                { id: 4, letters: ['ثَ', 'وَ', 'ب َ'], word: 'وَرِثَ' },
                 { id: 5, letters: ['حَ', 'نَ', 'جَ'], word: 'نَجَحَ' },
                 // Page 21
                 { id: 6, letters: ['حَ', 'رَ', 'ثَ'], word: 'حَرَثَ' },
-                { id: 7, letters: ['هَ', 'فِ', 'مَ'], word: 'فَهِمَ' },
+                { id: 7, letters: ['هِ', 'فَ', 'مَ'], word: 'فَهِمَ' },
                 { id: 8, letters: ['مَ', 'جَ', 'عَ'], word: 'جَمَعَ' },
                 { id: 9, letters: ['جَ', 'لَ', 'مَ'], word: 'جَمَل' },
                 { id: 10, letters: ['كَ', 'رَ', 'ذَ'], word: 'ذَكَرَ' },
@@ -133,6 +136,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 5,
+            audioUrl: '/level3/5/title.mp3',
             title: t('I Construct then I Write'),
             description: t('(تَكْوِينُ كَلِمَةٍ ذَاتِ مَعْنًى مِنَ الْحُرُوفِ الْمُخْتَارَةِ مَعَ وَضْعِ الْحَرَكَاتِ الْمُنَاسِبَةِ عَلَى غِرَارِ الْمِثَالِ الْأَوَّلِ)'),
             type: 'arrangeWrite',
@@ -189,6 +193,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 6,
+            audioUrl: '/level3/6/title.mp3',
             title: t('I Read'),
             type: 'readGrid',
             items: [
@@ -252,6 +257,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 7,
+            audioUrl: '/level3/7/title.mp3',
             title: t('الكلمات الثلاثية التي تحوي على مقطع ساكن'),
             description: t('لمحة مختصرة لقراءة بعض الكلمات التي تحتوي على عدد من المهارات اللغوية'),
             type: 'ovalGrid',
@@ -277,6 +283,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 8,
+            audioUrl: '/level3/8/title.mp3',
             title: t('الكلمات الثلاثية التي تحوي على مقطع المد'),
             type: 'ovalGrid',
             colorTheme: 'green',
@@ -302,6 +309,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 9,
+            audioUrl: '/level3/9/title.mp3',
             title: t('الكلمات الثلاثية التي تحوي على الحروف المُشَدَّدَة'),
             type: 'ovalGrid',
             colorTheme: 'orange',
@@ -356,6 +364,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                     id: 1,
                     header: 'تَنَوِينُ ضَمٍّ',
                     color: 'red',
+                    audioUrl: '/level3/10/damm.mp3',
                     items: [
                         { id: 1, text: 'وَاقِ<span class="text-red-600">فٌ</span>' },
                         { id: 2, text: 'طَالِ<span class="text-red-600">بٌ</span>' },
@@ -367,6 +376,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                     id: 2,
                     header: 'تَنَوِينُ كَسْرٍ',
                     color: 'green',
+                    audioUrl: '/level3/10/kasr.mp3',
                     items: [
                         { id: 1, text: 'وَاقِ<span class="text-green-600">فٍ</span>' },
                         { id: 2, text: 'طَالِ<span class="text-green-600">بٍ</span>' },
@@ -378,6 +388,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                     id: 3,
                     header: 'تَنَوِينُ فَتْحٍ',
                     color: 'blue',
+                    audioUrl: '/level3/10/fath.mp3',
                     items: [
                         { id: 1, text: 'وَا<span class="text-blue-600">قِفًا</span>' },
                         { id: 2, text: 'طَالِ<span class="text-blue-600">بًا</span>' },
@@ -396,6 +407,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                     id: 1,
                     header: 'كَلِمَاتٌ مَخْتُومَةٌ بِتَاءٍ مَفْتُوحَةٍ',
                     color: 'red',
+                    audioUrl: '/level3/11/open_taa.mp3',
                     items: [
                         { id: 1, text: 'أَكَلَ<span class="text-red-600">تْ</span>' },
                         { id: 2, text: 'ذَهَبَ<span class="text-red-600">تْ</span>' },
@@ -407,6 +419,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                     id: 2,
                     header: 'كَلِمَاتٌ مَخْتُومَةٌ بِتَاءٍ مَرْبُوطَةٍ',
                     color: 'green',
+                    audioUrl: '/level3/11/marbuta_taa.mp3',
                     items: [
                         { id: 1, text: 'حَدِيقَ<span class="text-green-600">ةٌ</span>' },
                         { id: 2, text: 'مُعَلِّمَ<span class="text-green-600">ةٌ</span>' },
@@ -418,6 +431,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                     id: 3,
                     header: 'كَلِمَاتٌ مَخْتُومَةٌ بِهَاءٍ',
                     color: 'blue',
+                    audioUrl: '/level3/11/haa.mp3',
                     items: [
                         { id: 1, text: 'مِيَا<span class="text-blue-600">هٌ</span>' },
                         { id: 2, text: 'وُجُو<span class="text-blue-600">هٌ</span>' },
@@ -429,6 +443,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 12,
+            audioUrl: '/level3/12/title.mp3',
             title: t('Reading words containing Sun Lam and Moon Lam'),
             type: 'tanweenTable',
             columns: [
@@ -458,6 +473,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 13,
+            audioUrl: '/level3/13/title.mp3',
             title: t('First Spelling Diagnosis'),
             subtitle: t('I write what is dictated to me'),
             type: 'dictation',
@@ -471,6 +487,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 14,
+            audioUrl: '/level3/14/title.mp3',
             title: t('Unit Two'),
             subtitle: t('Words consisting of four letters and more'),
             type: 'unitIntro',
@@ -478,6 +495,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 15,
+            audioUrl: '/level3/15/title.mp3',
             title: t('I Read and Write'),
             type: 'readWriteRows',
             gridCols: 3,
@@ -534,6 +552,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 16,
+            audioUrl: '/level3/16/title.mp3',
             title: t('Arrange Sentence'),
             type: 'sentenceArrange',
             items: [
@@ -572,6 +591,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 17,
+            audioUrl: '/level3/17/title.mp3',
             title: t('Second Spelling Diagnosis'),
             subtitle: t('Second Diagnosis Subtitle'),
             type: 'dictation',
@@ -585,6 +605,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 18,
+            audioUrl: '/level3/18/title.mp3',
             title: t('Unit Three'),
             subtitle: t('Short Sentences'),
             type: 'unitIntro',
@@ -592,6 +613,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 19,
+            audioUrl: '/level3/19/title.mp3',
             title: t('I Read and Write'),
             type: 'readWriteRows',
             gridCols: 1,
@@ -642,6 +664,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 20,
+            audioUrl: '/level3/20/title.mp3',
             title: t('Third Spelling Diagnosis'),
             subtitle: t('Third Diagnosis Subtitle'),
             type: 'dictation',
@@ -649,6 +672,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 21,
+            audioUrl: '/level3/21/title.mp3',
             title: t('Unit Four'),
             subtitle: t('Long Sentences'),
             type: 'unitIntro',
@@ -656,6 +680,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 22,
+            audioUrl: '/level3/22/title.mp3',
             title: t('I Read and Write'),
             type: 'boxedWriteRows',
             items: [
@@ -705,6 +730,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 23,
+            audioUrl: '/level3/23/title.mp3',
             title: t('Fourth Spelling Diagnosis'),
             subtitle: t('Fourth Diagnosis Subtitle'),
             type: 'dictation',
@@ -712,6 +738,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 24,
+            audioUrl: '/level3/24/title.mp3',
             title: t('Unit Five'),
             subtitle: t('Short Texts'),
             type: 'unitIntro',
@@ -719,6 +746,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 25,
+            audioUrl: '/level3/25/title.mp3',
             title: t('I Read and Write'),
             type: 'boxedWriteRows',
             items: [
@@ -738,6 +766,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 26,
+            audioUrl: '/level3/26/title.mp3',
             title: t('Fifth Spelling Diagnosis'),
             subtitle: t('Fifth Diagnosis Subtitle'),
             type: 'dictation',
