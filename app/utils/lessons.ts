@@ -103,43 +103,43 @@ export interface Lesson {
             madd: { text: string; label: string };
             mamdooh: { text: string; label: string };
         }[];
-        partsOfSpeech?: { title: string; branches: string[] };
-        nounDefinition?: { title: string; text: string };
-        nounExamples?: { title: string; items: string[] };
-        verbDefinition?: { title: string; text: string };
-        verbDefinition2?: { title: string; text: string };
-        verbDefinition3?: { title: string; text: string };
-        verbalSentenceParsing?: {
-            title: string;
-            points: string[];
-            thirdComponent?: { title: string; content: string };
-            parsingTitle: string;
-            parsingSentences: string[];
-            table: { headers: string[]; rows: string[][] };
-        };
-        verbExamples?: { title: string; columns: { title: string; item: string }[] };
-        particleDefinition?: { title: string; text: string };
-        particleExamples?: { title: string; items: string[] };
-        nominalSentenceIntro?: { title: string; sentences: string[] };
-        nominalSentenceDefinition?: { title: string; text: string; footer: string };
-        nominalSentenceDiagram?: { title: string; branches: { title: string; text: string; color: string }[] };
-        nounBenefit?: { title: string; subtitle: string; examples: { text: string; highlight: string }[]; footer: string };
-        nounDivision?: {
-            title: string;
-            subtitle: string;
-            types: { id: number; name: string; color: string }[];
-            definitions: { title: string; text: string }[];
-        };
-        verbalSentenceWriting?: { title: string; count: number };
-        verbalSentenceConstruction?: {
-            title: string;
-            models: {
-                components: { label: string; color: 'orange' | 'green' | 'blue' }[];
-                example: string;
-            }[];
-        };
-        verbalSentenceSummary?: { points: string[] };
     };
+    partsOfSpeech?: { title: string; branches: string[] };
+    nounDefinition?: { title: string; text: string };
+    nounExamples?: { title: string; items: string[] };
+    verbDefinition?: { title: string; text: string };
+    verbDefinition2?: { title: string; text: string };
+    verbDefinition3?: { title: string; text: string };
+    verbalSentenceParsing?: {
+        title: string;
+        points: string[];
+        thirdComponent?: { title: string; content: string };
+        parsingTitle: string;
+        parsingSentences: string[];
+        table: { headers: string[]; rows: string[][] };
+    };
+    verbExamples?: { title: string; columns: { title: string; item: string }[] };
+    particleDefinition?: { title: string; text: string };
+    particleExamples?: { title: string; items: string[] };
+    nominalSentenceIntro?: { title: string; sentences: string[] };
+    nominalSentenceDefinition?: { title: string; text: string; footer: string };
+    nominalSentenceDiagram?: { title: string; branches: { title: string; text: string; color: string }[] };
+    nounBenefit?: { title: string; subtitle: string; examples: { text: string; highlight: string }[]; footer: string };
+    nounDivision?: {
+        title: string;
+        subtitle: string;
+        types: { id: number; name: string; color: string }[];
+        definitions: { title: string; text: string }[];
+    };
+    verbalSentenceWriting?: { title: string; count: number };
+    verbalSentenceConstruction?: {
+        title: string;
+        models: {
+            components: { label: string; color: 'orange' | 'green' | 'blue' }[];
+            example: string;
+        }[];
+    };
+    verbalSentenceSummary?: { points: string[] };
 }
 
 export interface Part {

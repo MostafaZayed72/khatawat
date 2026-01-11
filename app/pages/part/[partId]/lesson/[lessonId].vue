@@ -108,7 +108,7 @@
 
       <!-- Gallery Type Lesson -->
       <div v-else-if="lesson.type === 'gallery' && lesson.items" class="flex flex-col items-center gap-6 max-w-4xl mx-auto z-10 relative mt-12 w-full">
-        <PlayAudioButton v-if="lesson.audioUrl" :audioUrl="lesson.audioUrl" />
+
         <div class="grid gap-6 p-4 w-full"
            :class="lesson.id === 3 ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-4'">
             <div v-for="(item, index) in lesson.items" :key="index" class="flex flex-col items-center group cursor-pointer">
@@ -1302,9 +1302,7 @@
                 <div class="flex flex-col md:flex-row gap-8 items-start">
                      <div class="flex flex-col gap-6 w-full" :class="{'md:w-1/2': lesson.id === 16 || lesson.grammarImage}">
                           <div v-for="(rule, index) in (lesson.id === 17 ? lesson.grammarRules.slice(1) : lesson.grammarRules)" :key="index" class="flex gap-4 items-center group">
-                               <div class="flex-shrink-0 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-110 transition-transform">
-                                    {{ index + 1 }}
-                               </div>
+                               <div class="flex-shrink-0 w-4 h-4 rounded-full bg-yellow-400 shadow-sm group-hover:scale-110 transition-transform mt-2"></div>
                                <p class="text-xl md:text-2xl font-bold font-amiri text-gray-800 leading-normal">
                                     {{ rule }}
                                </p>

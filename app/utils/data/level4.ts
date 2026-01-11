@@ -5,6 +5,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 1,
             title: t('Lesson One'),
+            audioUrl: '/audio/الدرس الأول.mp3',
             subtitle: t('Hassan in the Library'),
             type: 'conversation',
             items: [
@@ -61,6 +62,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 2,
             title: t('Lesson Two'),
+            audioUrl: '/audio/الدرس الثاني.mp3',
             subtitle: t('Meeting of two friends'),
             type: 'conversation',
             items: [
@@ -153,6 +155,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 3,
             title: t('Lesson Three'),
+            audioUrl: '/audio/الدرس الثالث.mp3',
             subtitle: t('Mohamed in School'),
             type: 'conversation',
             items: [
@@ -203,6 +206,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 4,
             title: t('Lesson Four'),
+            audioUrl: '/audio/الدرس الرابع.mp3',
             subtitle: t('Saeed in the Pharmacy'),
             type: 'conversation',
             items: [
@@ -271,6 +275,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 5,
             title: t('Lesson Five'),
+            audioUrl: '/audio/الدرس الخامس.mp3',
             subtitle: t('Alaa applies for a job'),
             type: 'conversation',
             items: [
@@ -327,6 +332,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 6,
             title: t('Lesson Six'),
+            audioUrl: '/audio/الدرس السادس.mp3',
             subtitle: t('Saleh at the bus station'),
             type: 'conversation',
             items: [
@@ -377,6 +383,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 7,
             title: t('Lesson Seven'),
+            audioUrl: '/audio/الدرس السابع.mp3',
             subtitle: t('Salem in the Airport'),
             type: 'conversation',
             items: [
@@ -445,6 +452,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 8,
             title: t('Lesson Eight'),
+            audioUrl: '/audio/الدرس الثامن.mp3',
             subtitle: t('Samir Visits his Sick Friend'),
             type: 'conversation',
             items: [
@@ -501,6 +509,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 9,
             title: t('Lesson Nine'),
+            audioUrl: '/audio/الدرس التاسع.mp3',
             subtitle: t('Suad in the Hospital'),
             type: 'conversation',
             items: [
@@ -593,6 +602,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 10,
             title: t('Lesson Ten'),
+            audioUrl: '/audio/الدرس العاشر.mp3',
             subtitle: t('Karim in the Vegetable Market'),
             type: 'conversation',
             items: [
@@ -661,6 +671,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 11,
             title: t('Lesson Eleven'),
+            audioUrl: '/audio/الدرس الحادي عشر.mp3',
             subtitle: t('Adel in the Fruit Market'),
             type: 'conversation',
             items: [
@@ -741,6 +752,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 12,
             title: t('Lesson Twelve'),
+            audioUrl: '/audio/الدرس الثاني عشر.mp3',
             subtitle: t('Hamed in the Butchery'),
             type: 'conversation',
             items: [
@@ -845,6 +857,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 13,
             title: t('Lesson Thirteen'),
+            audioUrl: '/audio/الدرس الثالث عشر.mp3',
             subtitle: t('Wareef in the Restaurant'),
             type: 'conversation',
             items: [
@@ -919,6 +932,7 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         {
             id: 14,
             title: t('Lesson Fourteen'),
+            audioUrl: '/audio/الدرس الرابع عشر.mp3',
             subtitle: t('Ali in the Hotel'),
             type: 'conversation',
             items: [
@@ -1064,8 +1078,9 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 15,
-            title: t('Language Skills Lessons'),
-            subtitle: t('Lesson One: The Sun'),
+            title: t('Skills Lessons') + ': ' + t('Lesson One'),
+            audioUrl: '/skills/الدرس الأول.mp3',
+            subtitle: t('The Sun'),
             type: 'contentWithExercises',
             readImage: '/level4/lesson15/sun.png',
             readImage2: '/level4/lesson15/solar_panels.png',
@@ -1106,8 +1121,9 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 16,
-            title: t('Lesson Sixteen'),
-            subtitle: t('Lesson Two: The Sea'),
+            title: t('Skills Lessons') + ': ' + t('Lesson Two'),
+            audioUrl: '/skills/الدرس الثاني.mp3',
+            subtitle: t('The Sea'),
             type: 'contentWithExercises',
             readImage: '/level4/lesson16/sea.png',
             readingText: [
@@ -1139,8 +1155,9 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 17,
-            title: t('Language Skills Lessons'),
-            subtitle: t('Lesson Three: My House'),
+            title: t('Skills Lessons') + ': ' + t('Lesson Three'),
+            audioUrl: '/skills/الدرس الثالث.mp3',
+            subtitle: t('My House'),
             type: 'contentWithExercises',
             readImage: '/level4/lesson17/house.png',
             readingText: [
@@ -1230,8 +1247,9 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 18,
-            title: t('Language Skills Lessons'),
-            subtitle: t('Lesson Four: The Duck Noura'),
+            title: t('Skills Lessons') + ': ' + t('Lesson Four'),
+            audioUrl: '/skills/الدرس الرابع.mp3',
+            subtitle: t('The Duck Noura'),
             type: 'contentWithExercises',
             readImage: '/level4/lesson18/noura.png',
             readingText: [
@@ -1286,8 +1304,9 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 19,
-            title: t('Language Skills Lessons'),
-            subtitle: t('Lesson Five: The Angry Rabbit'),
+            title: t('Skills Lessons') + ': ' + t('Lesson Five'),
+            audioUrl: '/skills/الدرس الخامس.mp3',
+            subtitle: t('The Angry Rabbit'),
             type: 'contentWithExercises',
             story: [
                 { text: t('The Angry Rabbit 1') + ' ' + t('The Angry Rabbit 2'), image: '/level4/lesson19/rabbit_1.png' },
@@ -1354,8 +1373,9 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 20,
-            title: t('Language Skills Lessons'),
-            subtitle: t('Lesson Six: My Favorite Hobby'),
+            title: t('Skills Lessons') + ': ' + t('Lesson Six'),
+            audioUrl: '/skills/الدرس السادس.mp3',
+            subtitle: t('My Favorite Hobby'),
             type: 'contentWithExercises',
             story: [
                 { text: t('Hobby Story 1'), image: '/level4/lesson20/hobby_1.png' },
@@ -1430,7 +1450,9 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 21,
-            title: t('Lesson Seven: The Arab Doctor'),
+            title: t('Skills Lessons') + ': ' + t('Lesson Seven'),
+            audioUrl: '/skills/الدرس السابع.mp3',
+            subtitle: t('The Arab Doctor'),
             // Using standard 'contentWithExercises' type
             type: 'contentWithExercises',
             story: [
@@ -1482,7 +1504,8 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 22,
-            title: t('Lesson Eight'),
+            title: t('Skills Lessons') + ': ' + t('Lesson Eight'),
+            audioUrl: '/skills/الدرس الثامن.mp3',
             subtitle: t('The Western Doctor'),
             type: 'contentWithExercises',
             story: [
@@ -1543,7 +1566,8 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 23,
-            title: t('Lesson Nine'),
+            title: t('Skills Lessons') + ': ' + t('Lesson Nine'),
+            audioUrl: '/skills/الدرس التاسع.mp3',
             subtitle: t('The Champions Team'),
             type: 'contentWithExercises',
             story: [
@@ -1613,7 +1637,8 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 24,
-            title: t('Lesson Ten'),
+            title: t('Skills Lessons') + ': ' + t('Lesson Ten'),
+            audioUrl: '/skills/الدرس العاشر.mp3',
             subtitle: t('Grandpa Omar Title'),
             type: 'contentWithExercises',
             story: [
@@ -1649,7 +1674,8 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 25,
-            title: t('Lesson Eleven'),
+            title: t('Skills Lessons') + ': ' + t('Lesson Eleven'),
+            audioUrl: '/skills/الدرس الحادي عشر.mp3',
             subtitle: t('The Roses Title'),
             type: 'contentWithExercises',
             story: [
@@ -1753,7 +1779,8 @@ export const getLevel4Lessons = (t: (key: string) => string): Lesson[] => {
         },
         {
             id: 26,
-            title: t('Work Title'),
+            title: t('Skills Lessons') + ': ' + t('Lesson Twelve'),
+            audioUrl: '/skills/الدرس الثاني عشر.mp3',
             subtitle: t('Work Subtitle'),
             type: 'contentWithExercises',
             story: [

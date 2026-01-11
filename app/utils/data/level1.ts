@@ -24,7 +24,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 1000000000, digit: '1,000,000,000', text: t('Billion'), colorFrom: '#9C27B0', colorTo: '#AB47BC', shadowColor: '#4A148C' },
                 { id: 1000000000, digit: '1,000,000,000', text: t('Billion'), colorFrom: '#9C27B0', colorTo: '#AB47BC', shadowColor: '#4A148C' },
             ],
-            audioUrl: '/numbers.wav'
+            audioUrl: '/audio1/المجموعة 1.mp3'
         },
         {
             id: 2,
@@ -43,7 +43,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/2/9.jpg', text: t('Man') },
                 { id: 2, image: '/2/10.jpg', text: t('Woman') },
             ],
-            audioUrl: '/2/2.wav',
+            audioUrl: '/audio1/المجموعة 2.mp3',
         },
         {
             id: 3,
@@ -70,7 +70,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/3/17.jpg', text: t('Two Pens') },
                 { id: 2, image: '/3/18.jpg', text: t('Pens') },
             ],
-            audioUrl: '/3/3.wav',
+            audioUrl: '/audio1/المجموعة 3.mp3',
         },
         {
             id: 4,
@@ -86,7 +86,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/4/6.jpg', text: t('Woman') },
                 { id: 2, image: '/4/7.jpeg', text: t('Old Man') },
             ],
-            audioUrl: '/4/4.wav',
+            audioUrl: '/audio1/المجموعة 4.mp3',
         },
         {
             id: 5,
@@ -101,7 +101,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/5/5.jpg', text: t('Son') },
                 { id: 2, image: '/5/6.jpg', text: t('Daughter') },
             ],
-            audioUrl: '/5/5.wav',
+            audioUrl: '/audio1/المجموعة 5.mp3',
         },
         {
             id: 6,
@@ -131,7 +131,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 19, text: t('Ankle') },
                 { id: 20, text: t('Foot') },
             ],
-            audioUrl: '/6/6.wav',
+            audioUrl: '/audio1/المجموعة 6.mp3',
         },
         {
             id: 7,
@@ -151,7 +151,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/7/10.jpg', text: t('Orange') },
                 { id: 2, image: '/7/11.jpg', text: t('Grey') },
             ],
-            audioUrl: '/7/7.wav',
+            audioUrl: '/audio1/المجموعة 7.mp3',
         },
         {
             id: 8,
@@ -169,7 +169,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/8/8.jpg', text: t('Socks') },
                 { id: 2, image: '/8/9.jpg', text: t('Sneakers') },
             ],
-            audioUrl: '/8/8.wav',
+            audioUrl: '/audio1/المجموعة 8.mp3',
         },
         {
             id: 9,
@@ -188,7 +188,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/9/9.jpg', text: t('Protractor') },
                 { id: 2, image: '/9/10.jpg', text: t('Colored Pencils') },
             ],
-            audioUrl: '/9/9.wav',
+            audioUrl: '/audio1/المجموعة 9.mp3',
         },
         {
             id: 10,
@@ -202,7 +202,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/10/4.jpeg', text: t('Stadium') },
                 { id: 2, image: '/10/5.jpeg', text: t('Zoo') },
             ],
-            audioUrl: '/10/10.wav',
+            audioUrl: '/audio1/المجموعة 10.mp3',
         },
         {
             id: 11,
@@ -217,7 +217,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/11/5.jpg', text: t('College') },
                 { id: 2, image: '/11/6.jpg', text: t('University') },
             ],
-            audioUrl: '/11/11.wav',
+            audioUrl: '/audio1/المجموعة 11.mp3',
         },
         {
             id: 12,
@@ -232,7 +232,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/12/5.jpeg', text: t('Kitchen') },
                 { id: 2, image: '/12/6.jpeg', text: t('Kids Room') },
             ],
-            audioUrl: '/12/12.wav',
+            audioUrl: '/audio1/المجموعة 12.mp3',
         },
         {
             id: 13,
@@ -251,7 +251,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/13/9.jpg', text: t('Carrot') },
                 { id: 2, image: '/13/10.jpg', text: t('Lettuce') },
             ],
-            audioUrl: '/13/13.wav',
+            audioUrl: '/audio1/المجموعة 13.mp3',
         },
         {
             id: 14,
@@ -273,7 +273,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/14/12.jpg', text: t('Peach') },
                 { id: 2, image: '/14/13.jpg', text: t('Apricot') },
             ],
-            audioUrl: '/14/14.wav',
+            audioUrl: '/audio1/المجموعة 14.mp3',
         },
         {
             id: 15,
@@ -293,7 +293,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/15/10.png', text: t('Eggs') },
                 { id: 2, image: '/15/11.jpg', text: t('Salad') },
             ],
-            audioUrl: '/15/15.wav',
+            audioUrl: '/audio1/المجموعة 15.mp3',
         },
         {
             id: 16,
@@ -305,7 +305,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/16/2.jpg', text: t('Coffee') },
                 { id: 2, image: '/16/3.jpg', text: t('Milk') },
             ],
-            audioUrl: '/16/16.wav',
+            audioUrl: '/audio1/المجموعة 16.mp3',
         },
         {
             id: 17,
@@ -317,7 +317,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/17/2.jpg', text: t('Juice') },
                 { id: 2, image: '/17/3.jpg', text: t('Soft Drink') },
             ],
-            audioUrl: '/17/17.wav',
+            audioUrl: '/audio1/المجموعة 17.mp3',
         },
         {
             id: 18,
@@ -336,7 +336,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/18/9.jpg', text: t('Carpet') },
                 { id: 2, image: '/18/10.jpg', text: t('Curtain') },
             ],
-            audioUrl: '/18/18.wav',
+            audioUrl: '/audio1/المجموعة 18.mp3',
         },
         {
             id: 19,
@@ -358,7 +358,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 12, image: '/19/11.jpg', text: t('Kettle') },
                 { id: 13, image: '/19/12.jpg', text: t('Ladle') },
             ],
-            audioUrl: '/19/19.wav',
+            audioUrl: '/audio1/المجموعة 19.mp3',
         },
         {
             id: 20,
@@ -379,7 +379,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 11, image: '/20/11.jpg', text: t('Electric Heater') },
                 { id: 12, image: '/20/12.jpg', text: t('Oven') },
             ],
-            audioUrl: '/20/20.wav',
+            audioUrl: '/audio1/المجموعة 20.mp3',
         },
         {
             id: 21,
@@ -398,7 +398,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 9, image: '/21/9.jpg', text: t('Truck') },
                 { id: 10, image: '/21/10.jpg', text: t('Hot Air Balloon') },
             ],
-            audioUrl: '/21/21.wav',
+            audioUrl: '/audio1/المجموعة 21.mp3',
         },
 
         {
@@ -417,7 +417,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/22/8.jpg', text: t('Billboard') },
                 { id: 2, image: '/22/9.jpg', text: t('Parking Lot') },
             ],
-            audioUrl: '/22/22.wav',
+            audioUrl: '/audio1/المجموعة 22.mp3',
         },
         {
             id: 23,
@@ -437,7 +437,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/23/10.jpg', text: t('Blacksmith') },
                 { id: 2, image: '/23/11.jpg', text: t('Carpenter') },
             ],
-            audioUrl: '/23/23.wav',
+            audioUrl: '/audio1/المجموعة 23.mp3',
         },
         {
             id: 24,
@@ -460,7 +460,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/24/13.jpeg', text: t('Dog') },
                 { id: 2, image: '/24/14.jpeg', text: t('Tiger') },
             ],
-            audioUrl: '/24/24.wav',
+            audioUrl: '/audio1/المجموعة 24.mp3',
         },
         {
             id: 25,
@@ -482,7 +482,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/25/12.jpeg', text: t('Eagle') },
                 { id: 2, image: '/25/13.jpeg', text: t('Owl') },
             ],
-            audioUrl: '/25/25.wav',
+            audioUrl: '/audio1/المجموعة 25.mp3',
         },
         {
             id: 26,
@@ -495,7 +495,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/26/3.jpeg', text: t('Snake') },
                 { id: 2, image: '/26/4.jpeg', text: t('Frog') },
             ],
-            audioUrl: '/26/26.wav',
+            audioUrl: '/audio1/المجموعة 26.mp3',
         },
         {
             id: 27,
@@ -511,7 +511,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 2, image: '/27/6.jpeg', text: t('Spider') },
                 { id: 2, image: '/27/7.jpeg', text: t('Scorpion') },
             ],
-            audioUrl: '/27/27.wav',
+            audioUrl: '/audio1/المجموعة 27.mp3',
         },
         {
             id: 28,
@@ -524,7 +524,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 3, image: '/28/3.svg', text: t('East') },
                 { id: 4, image: '/28/4.svg', text: t('West') },
             ],
-            audioUrl: '/28/28.wav',
+            audioUrl: '/audio1/المجموعة 28.mp3',
         },
         {
             id: 29,
@@ -537,7 +537,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 3, image: '/29/3.svg', text: t('Winter') },
                 { id: 4, image: '/29/4.svg', text: t('Autumn') },
             ],
-            audioUrl: '/29/29.wav',
+            audioUrl: '/audio1/المجموعة 29.mp3',
         },
         {
             id: 30,
@@ -552,7 +552,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 5, image: '/30/5.jpg', text: t('Cold') },
                 { id: 6, image: '/30/6.jpg', text: t('Stormy') },
             ],
-            audioUrl: '/30/30.wav',
+            audioUrl: '/audio1/المجموعة 30.mp3',
         },
         {
             id: 31,
@@ -573,7 +573,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 11, text: t('Dhu Al-Qidah') },
                 { id: 12, text: t('Dhu Al-Hijjah') },
             ],
-            audioUrl: '/31/31.wav',
+            audioUrl: '/audio1/المجموعة 31.mp3',
         },
         {
             id: 32,
@@ -589,7 +589,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 6, text: t('Thursday'), colorFrom: '#70ad47' },
                 { id: 7, text: t('Friday'), colorFrom: '#9e480e' }, // Using a placeholder color, will adjust in Vue if needed or use this property
             ],
-            audioUrl: '/32/32.wav',
+            audioUrl: '/audio1/المجموعة 32.mp3',
         },
         {
             id: 33,
@@ -604,7 +604,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 5, text: t('Maghrib'), colorFrom: '#4472c4' },
                 { id: 6, text: t('Isha'), colorFrom: '#70ad47' },
             ],
-            audioUrl: '/33/33.wav',
+            audioUrl: '/audio1/المجموعة 33.mp3',
         },
         {
             id: 34,
@@ -619,7 +619,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 5, text: t('Minute') },
                 { id: 6, text: t('Second') },
             ],
-            audioUrl: '/34/34.wav',
+            audioUrl: '/audio1/المجموعة 34.mp3',
         },
         {
             id: 35,
@@ -638,7 +638,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 9, image: '/35/9.jpeg', text: t('Gulf') },
                 { id: 10, image: '/35/10.jpeg', text: t('Lake') },
             ],
-            audioUrl: '/35/35.wav',
+            audioUrl: '/audio1/المجموعة 35.mp3',
         },
         {
             id: 36,
@@ -654,7 +654,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 6, image: '/36/6.jpeg', text: t('Comet') },
                 { id: 7, image: '/36/7.jpeg', text: t('Galaxy') },
             ],
-            audioUrl: '/36/36.wav',
+            audioUrl: '/audio1/المجموعة 36.mp3',
         },
         {
             id: 37,
@@ -669,7 +669,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 5, image: '/37/5.jpeg', text: t('Oval') },
                 { id: 6, image: '/37/6.jpeg', text: t('Rhombus') },
             ],
-            audioUrl: '/37/37.wav',
+            audioUrl: '/audio1/المجموعة 37.mp3',
         },
         {
             id: 38,
@@ -702,7 +702,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 23, text: t('Love') },
                 { id: 24, text: t('Hate') },
             ],
-            audioUrl: '/38/38.wav',
+            audioUrl: '/audio1/المجموعة 38.mp3',
         },
         {
             id: 39,
@@ -736,7 +736,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 24, text: t('Clean'), text2: t('Dirty') },
                 { id: 25, text: t('Beginning'), text2: t('End') },
             ],
-            audioUrl: '/39/39.wav',
+            audioUrl: '/audio1/المجموعة 39.mp3',
         },
         {
             id: 40,
@@ -749,7 +749,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 3, speaker: t('Ahmed'), text: t('How are you Mohamed?'), speakerColor: '#1565C0' }, // Blue
                 { id: 4, speaker: t('Mohamed'), text: t('Fine'), speakerColor: '#C62828' }, // Red
             ],
-            audioUrl: '/40/40.wav',
+            audioUrl: '/audio1/conversations/محادثة رقم 1.mp3',
         },
         {
             id: 41,
@@ -766,7 +766,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 7, speaker: t('Heba'), text: t('Goodbye Sarah.'), speakerColor: '#1565C0' }, // Blue
                 { id: 8, speaker: t('Sarah'), text: t('Goodbye.'), speakerColor: '#C62828' }, // Red
             ],
-            audioUrl: '/41/41.wav',
+            audioUrl: '/audio1/conversations/محادثة رقم 2.mp3',
         },
         {
             id: 42,
@@ -783,7 +783,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 7, speaker: t('Mona'), text: t('I will prepare that for you right away.'), speakerColor: '#C62828' }, // Red
                 { id: 8, speaker: t('Youssef'), text: t('Thank you.'), speakerColor: '#4CAF50' }, // Green
             ],
-            audioUrl: '/42/42.wav',
+            audioUrl: '/audio1/conversations/محادثة رقم 3.mp3',
         },
         {
             id: 43,
@@ -798,7 +798,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 5, speaker: t('The Son'), text: t('You made me eager to visit it, father.'), speakerColor: '#1565C0' }, // Blue
                 { id: 6, speaker: t('The Father'), text: t('We will go there in the summer vacation.'), speakerColor: '#C62828' }, // Red
             ],
-            audioUrl: '/43/43.wav',
+            audioUrl: '/audio1/conversations/محادثة رقم 4.mp3',
         },
         {
             id: 44,
@@ -815,7 +815,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 7, speaker: t('The Seller'), text: t('Thank you, Samir, see you later.'), speakerColor: '#4CAF50' }, // Green
                 { id: 8, speaker: t('Samir'), text: t('See you later.'), speakerColor: '#1565C0' }, // Blue
             ],
-            audioUrl: '/44/44.wav',
+            audioUrl: '/audio1/conversations/محادثة رقم 5.mp3',
         },
         {
             id: 45,
@@ -829,7 +829,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 4, speaker: t('Mahmoud'), text: t('Indeed, my teacher, it is the cheetah.'), speakerColor: '#4CAF50' }, // Green
                 { id: 5, speaker: t('The Teacher'), text: t('Very excellent, Mahmoud.'), speakerColor: '#C62828' }, // Red
             ],
-            audioUrl: '/45/45.wav',
+            audioUrl: '/audio1/conversations/محادثة رقم 6.mp3',
         },
         {
             id: 46,
@@ -845,7 +845,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 6, speaker: t('Ali'), text: t("Great idea, let's go immediately."), speakerColor: '#1565C0' }, // Blue
                 { id: 7, speaker: t('Raed'), text: t("Let's go, Ali."), speakerColor: '#C62828' }, // Red
             ],
-            audioUrl: '/46/46.wav',
+            audioUrl: '/audio1/conversations/محادثة رقم 7.mp3',
         },
         {
             id: 47,
@@ -860,7 +860,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 5, speaker: t('The Manager'), text: t('Monday, at nine in the morning.'), speakerColor: '#C62828' }, // Red
                 { id: 6, speaker: t('Salem'), text: t('Okay, I will do that now.'), speakerColor: '#4CAF50' }, // Green
             ],
-            audioUrl: '/47/47.wav',
+            audioUrl: '/audio1/conversations/محادثة رقم 8.mp3',
         },
         {
             id: 48,
@@ -876,7 +876,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 6, speaker: t('Saeed'), text: t('Oval.'), speakerColor: '#C62828' }, // Red
                 { id: 7, speaker: t('Salma'), text: t('Well done, Saeed.'), speakerColor: '#1565C0' }, // Blue
             ],
-            audioUrl: '/48/48.wav',
+            audioUrl: '/audio1/conversations/محادثة رقم 9.mp3',
         },
         {
             id: 49,
@@ -892,7 +892,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 6, speaker: t('Sawsan'), text: t('Indeed, I learned that from you, thank you for the information.'), speakerColor: '#4CAF50' }, // Green
                 { id: 7, speaker: t('Saleh'), text: t('You are welcome.'), speakerColor: '#C62828' }, // Red
             ],
-            audioUrl: '/49/49.wav',
+            audioUrl: '/audio1/conversations/محادثة رقم 10.mp3',
         },
         {
             id: 50,
@@ -908,7 +908,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 6, speaker: t('Mariam'), text: t('Good morning, Jassem, I will leave now.'), speakerColor: '#C62828' }, // Red
                 { id: 7, speaker: t('Jassem'), text: t('Goodbye.'), speakerColor: '#1565C0' }, // Blue
             ],
-            audioUrl: '/50/50.wav',
+            audioUrl: '/audio1/conversations/محادثة رقم 11.mp3',
         },
         {
             id: 51,
@@ -925,7 +925,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 7, speaker: t('The Grandfather'), text: t('Good luck to you, my daughter.'), speakerColor: '#C62828' }, // Red
                 { id: 8, speaker: t('Wasan'), text: t('Thank you, grandfather.'), speakerColor: '#4CAF50' }, // Green
             ],
-            audioUrl: '/51/51.wav',
+            audioUrl: '/audio1/conversations/محادثة رقم 12.mp3',
         },
     ];
 
