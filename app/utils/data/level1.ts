@@ -584,13 +584,14 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('Group Thirty-Two'),
             type: 'weekDays',
             items: [
-                { id: 1, text: t('Saturday'), colorFrom: '#5c9ad5' },
                 { id: 2, text: t('Sunday'), colorFrom: '#ed7d31' },
                 { id: 3, text: t('Monday'), colorFrom: '#a5a5a5' },
                 { id: 4, text: t('Tuesday'), colorFrom: '#ffc000' },
                 { id: 5, text: t('Wednesday'), colorFrom: '#4472c4' },
                 { id: 6, text: t('Thursday'), colorFrom: '#70ad47' },
-                { id: 7, text: t('Friday'), colorFrom: '#9e480e' }, // Using a placeholder color, will adjust in Vue if needed or use this property
+                { id: 7, text: t('Friday'), colorFrom: '#9e480e' },
+                { id: 1, text: t('Saturday'), colorFrom: '#5c9ad5' },
+
             ],
             audioUrl: '/audio1/المجموعة 32.mp3',
         },

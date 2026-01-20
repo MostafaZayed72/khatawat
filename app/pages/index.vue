@@ -15,7 +15,7 @@
 
  <div class="w-full max-w-4xl mx-auto">
     <div class="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
-      <YouTubePlayer videoId="SLBDpvUAsQw" />
+      <YouTubePlayer videoId="PkamS1m5nB4" />
     </div>
   </div>
 </div>
