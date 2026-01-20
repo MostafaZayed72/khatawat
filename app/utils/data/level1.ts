@@ -344,8 +344,9 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('Group Nineteen'),
             type: 'gallery',
             items: [
-                { id: 1, image: '/19/1.jpg', text: t('Cup') },
-                { id: 2, image: '/19/2.jpg', text: t('Plate') },
+                { id: 1, image: '/19/2.jpg', text: t('Plate') },
+                { id: 2, image: '/19/1.jpg', text: t('Cup') },
+
                 { id: 3, image: '/19/3.jpg', text: t('Knife') },
                 { id: 4, image: '/19/4.jpg', text: t('Fork') },
                 { id: 5, image: '/19/5.jpg', text: t('Spoon') },
@@ -447,8 +448,9 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
             items: [
                 { id: 1, image: '/24/1.jpeg', text: t('Camel') },
                 { id: 2, image: '/24/2.jpeg', text: t('Monkey') },
-                { id: 2, image: '/24/3.jpeg', text: t('Cat') },
                 { id: 2, image: '/24/4.jpeg', text: t('Rabbit') },
+
+                { id: 2, image: '/24/3.jpeg', text: t('Cat') },
                 { id: 2, image: '/24/5.jpeg', text: t('Cow') },
                 { id: 2, image: '/24/6.jpeg', text: t('Lion') },
                 { id: 2, image: '/24/7.jpeg', text: t('Donkey') },
@@ -520,8 +522,9 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
             type: 'gallery',
             items: [
                 { id: 1, image: '/28/1.svg', text: t('North') },
-                { id: 2, image: '/28/2.svg', text: t('South') },
                 { id: 3, image: '/28/3.svg', text: t('East') },
+
+                { id: 2, image: '/28/2.svg', text: t('South') },
                 { id: 4, image: '/28/4.svg', text: t('West') },
             ],
             audioUrl: '/audio1/المجموعة 28.mp3',
@@ -678,29 +681,29 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
             type: 'textGrid',
             items: [
                 { id: 1, text: t('Affection') },
-                { id: 2, text: t('Anger') },
                 { id: 3, text: t('Boredom') },
-                { id: 4, text: t('Trust') },
                 { id: 5, text: t('Creativity') },
-                { id: 6, text: t('Curiosity') },
                 { id: 7, text: t('Despair') },
-                { id: 8, text: t('Depression') },
                 { id: 9, text: t('Danger') },
+                { id: 2, text: t('Anger') },
+                { id: 4, text: t('Confidence') },
+                { id: 6, text: t('Curiosity') },
+                { id: 8, text: t('Depression') },
                 { id: 10, text: t('Disappointment') },
                 { id: 11, text: t('Doubt') },
-                { id: 12, text: t('Betrayal') },
                 { id: 13, text: t('Sadness') },
-                { id: 14, text: t('Joy') },
                 { id: 15, text: t('Fatigue') },
-                { id: 16, text: t('Dream') },
                 { id: 17, text: t('Pressure') },
-                { id: 18, text: t('Optimism') },
                 { id: 19, text: t('Satisfaction') },
-                { id: 20, text: t('Shock') },
                 { id: 21, text: t('Humanity') },
-                { id: 22, text: t('Thinking') },
                 { id: 23, text: t('Love') },
-                { id: 24, text: t('Hate') },
+                { id: 12, text: t('Betrayal') },
+                { id: 14, text: t('Joy') },
+                { id: 16, text: t('Dream') },
+                { id: 18, text: t('Optimism') },
+                { id: 20, text: t('Shock') },
+                { id: 22, text: t('Thinking') },
+                { id: 24, text: t('Hatered') },
             ],
             audioUrl: '/audio1/المجموعة 38.mp3',
         },
@@ -925,7 +928,7 @@ export const getLevel1Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 7, speaker: t('The Grandfather'), text: t('Good luck to you, my daughter.'), speakerColor: '#C62828' }, // Red
                 { id: 8, speaker: t('Wasan'), text: t('Thank you, grandfather.'), speakerColor: '#4CAF50' }, // Green
             ],
-            audioUrl: '/audio1/conversations/محادثة رقم 12.mp3',
+            audioUrl: '/audio1/conversations/محادثة رقم 12 .mp3',
         },
     ];
 
