@@ -178,7 +178,7 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Coming Soon'),
             videoUrl: 'z1WJUYE397s',
             image: '/parts/3.png',
-            pdfUrl: 'https://drive.google.com/file/d/1qHlC5N6G1qJ6Q0Zp0yv_V4Z4QdC7q_J/view?usp=sharing',
+            pdfUrl: 'https://drive.google.com/file/d/15rGfTtD8Akg0IKIN_t0JjAA2b6LfyCK6/view?usp=sharing',
             lessons: getLevel3Lessons(t)
 
         },
