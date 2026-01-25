@@ -107,8 +107,8 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     letter: 'أ',
                     title: t('Exercise: Circle Letter Alif'),
                     words: [
-                        'أَسَد', 'سَأَلَ', 'فَأْر',
-                        'بَاسِم', 'أَجَابَ', 'أَرْنَب',
+                        'أَسَد', 'سَأَلَ', 'قَرَأَ',
+                        'بَاسِم', 'أَجَابَ', 'فَأْر',
                         'زَأَرَ', 'مَاء', 'كَأْس'
                     ]
                 },
@@ -156,9 +156,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     letter: 'ب',
                     title: t('Exercise: Circle Letter Baa'),
                     words: [
-                        'بُرْج', 'بَطِيخ', 'بَط',
-                        'أَب', 'بَاب', 'بِنْت',
-                        'بَيْت', 'كِتَاب', 'عِنَب'
+                        'أَبْيَض', 'ثَعْلَب', 'إِبْرَاهِيم',
+                        'بَوَّابَة', 'ذُبَابَة', 'سَبْعَة',
+                        'بِئْر', 'حَلِيب', 'يَثْرِب'
                     ]
                 },
                 {
@@ -371,15 +371,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                     letter: 'ج',
                     title: t('Exercise: Circle Letter Jeem'),
                     words: [
-                        { id: 1, text: 'مَعْجُون' }, // Maajoon
-                        { id: 2, text: 'جَمَل' }, // Jamal
-                        { id: 3, text: 'جِسْر' }, // Jisr
-                        { id: 4, text: 'بُرْج' }, // Burj
-                        { id: 5, text: 'جَرَادَة' }, // Jaraada
-                        { id: 6, text: 'نُجُود' }, // Nujuud
-                        { id: 7, text: 'جَمِيلَة' }, // Jameela
-                        { id: 8, text: 'أَمْجَد' }, // Amjad
-                        { id: 9, text: 'سَجَّادَة' }, // Sajjada
+                        'جَمَل', 'مَعْجُون', 'جِسْر',
+                        'بُرْج', 'جَرَادَة', 'نُجُود',
+                        'جَمِيلَة', 'أَمْجَد', 'سَجَّادَة'
                     ]
                 },
                 {
@@ -714,7 +708,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             rememberAudio: '/level2/17/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['ذِ', 'ئْـ', 'ب'], word: 'ذِئْب' },
-                { id: 2, letters: ['ذُ', 'بَ', 'ا', 'ب'], word: 'ذُبَاب' },
+                { id: 2, letters: ['جَ', 'ذَ', 'بَ'], word: 'جَذَبَ' },
+                { id: 3, letters: ['ذَا', 'بَ'], word: 'ذَابَ' },
+                { id: 4, letters: ['حَ', 'بَّ', 'ذَ'], word: 'حَبَّذَ' }
             ],
             assembleAudio: '/level2/17/أركبُ.mp3',
         },
@@ -778,9 +774,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             rememberAudio: '/level2/18/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['رَ', 'حَ', 'بَ'], word: 'رَحَبَ' },
-                { id: 2, letters: ['خَ', 'بَ', 'ر'], word: 'خَبَر' },
-                { id: 3, letters: ['جَ', 'ا', 'بِ', 'ر'], word: 'جَابِر' },
-                { id: 4, letters: ['حِ', 'بْ', 'ر'], word: 'حِبْر' }
+                { id: 2, letters: ['جَ', 'ا', 'بِ', 'ر'], word: 'جَابِر' },
+                { id: 3, letters: ['حِ', 'بْ', 'ر'], word: 'حِبْر' },
+                { id: 4, letters: ['خَ', 'بَ', 'ر'], word: 'خَبَر' },
             ],
             assembleAudio: '/level2/18/أركبُ.mp3',
         },
@@ -856,10 +852,10 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('Read and Write'),
             type: 'readWriteReview',
             items: [
-                { id: 1, text: '', words: ['دُبّ', 'أَدَب', 'جَدّ', 'حَدِيد'] },
-                { id: 2, text: '', words: ['ذِئْب', 'جَذَبَ', 'ذَابَ', 'حَبَّذَا'] },
-                { id: 3, text: '', words: ['رَحَبَ', 'جَابِر', 'حِبْر', 'خَبَر'] },
-                { id: 4, text: '', words: ['زَأَرَ', 'جَزَر', 'زُجَاج', 'بَرَزَ'] },
+                { id: 1, text: '', words: ['حَدِيد', 'جَد', 'أَدَب', 'دُبّ'] },
+                { id: 2, text: '', words: ['حَبَّذَ', 'ذَابَ', 'جَذَبَ', 'ذِئْب'] },
+                { id: 3, text: '', words: ['خَبَر', 'حِبْر', 'جَابِر', 'رَحَبَ'] },
+                { id: 4, text: '', words: ['بَرَزَ', 'زُجَاج', 'جَزَر', 'زَأَرَ'] },
             ],
             audioUrl: '/level2/20/20.mp3',
         },
@@ -953,9 +949,10 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             rememberAudio: '/level2/22/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['سَ', 'جَ', 'دَ'], word: 'سَجَدَ' },
+                { id: 4, letters: ['سَ', 'بَ', 'حَ'], word: 'سَبَحَ' },
                 { id: 2, letters: ['سَ', 'تَ', 'رَ'], word: 'سَتَرَ' },
-                { id: 3, letters: ['سَ', 'حَ', 'بَ'], word: 'سَحَبَ' },
-                { id: 4, letters: ['سَ', 'بَ', 'حَ'], word: 'سَبَحَ' }
+                { id: 3, letters: ['سَ', 'حَ', 'بَ'], word: 'سَحَبَ' }
+
             ],
             assembleAudio: '/level2/22/أركبُ.mp3',
         },
@@ -1129,8 +1126,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             remember: ['أَ', 'إِ', 'أُ', 'بَ', 'بِ', 'بُ', 'تَ', 'تِ', 'تُ', 'ثَ', 'ثِ', 'ثُ', 'جَ', 'جِ', 'جُ', 'حَ', 'حِ', 'حُ', 'خَ', 'خِ', 'خُ', 'دَ', 'دِ', 'دُ', 'ذَ', 'ذِ', 'ذُ', 'رَ', 'رِ', 'رُ', 'زَ', 'زِ', 'زُ', 'سَ', 'سِ', 'سُ', 'شَ', 'شِ', 'شُ', 'صَ', 'صِ', 'صُ', 'ضَ', 'ضِ', 'ضُ'],
             rememberAudio: '/level2/25/أتذكرُ.mp3',
             assemble: [
-                { id: 1, letters: ['ضَ', 'رَ', 'بَ'], word: 'ضَرَبَ' },
                 { id: 2, letters: ['حَ', 'ضَ', 'رَ'], word: 'حَضَرَ' },
+
+                { id: 1, letters: ['ضَ', 'رَ', 'بَ'], word: 'ضَرَبَ' },
                 { id: 3, letters: ['رَ', 'ضَ', 'خَ'], word: 'رَضَخَ' },
                 { id: 4, letters: ['ضِ', 'ر', 'س'], word: 'ضِرْس' }
             ],
@@ -1142,10 +1140,10 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('Read and Write'),
             type: 'readWriteReview',
             items: [
-                { id: 1, text: '', words: ['سَجَدَ', 'سَبَحَ', 'سَتَرَ', 'سَحَبَ'] },
-                { id: 2, text: '', words: ['شَرِبَ', 'شَرَحَ', 'حَشَرَ', 'رَشَدَ'] },
-                { id: 3, text: '', words: ['صَبَرَ', 'بَصَرَ', 'صَدَحَ', 'رَصَدَ'] },
-                { id: 4, text: '', words: ['حَضَرَ', 'ضَرَبَ', 'رَضَخَ', 'ضِرْس'] },
+                { id: 1, text: '', words: ['سَحَبَ', 'سَتَرَ', 'سَبَحَ', 'سَجَدَ'] },
+                { id: 2, text: '', words: ['رَشَدَ', 'حَشَرَ', 'شَرَحَ', 'شَرِبَ'] },
+                { id: 3, text: '', words: ['رَصَدَ', 'صَدَحَ', 'بَصَرَ', 'صَبَرَ'] },
+                { id: 4, text: '', words: ['ضِرْس', 'رَضَخَ', 'ضَرَبَ', 'حَضَرَ'] },
             ],
             audioUrl: '/level2/26/26.mp3',
         },
@@ -1428,10 +1426,10 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('Group Five'),
             type: 'readWriteReview',
             items: [
-                { id: 1, text: '', words: ['طَبَخَ', 'طَرَحَ', 'طَرَدَ', 'طُوبَ'] },
-                { id: 2, text: '', words: ['حَظَرَ', 'جَحَظَ', 'ظُفْر', 'حَافِظ'] },
-                { id: 3, text: '', words: ['عَبَدَ', 'عَبَرَ', 'بَرَعَ', 'عَبَسَ'] },
-                { id: 4, text: '', words: ['رَغِبَ', 'غَدَرَ', 'رَغَدَ', 'غَرْب'] },
+                { id: 1, text: '', words: ['طُوبَ', 'طَرَدَ', 'طَرَحَ', 'طَبَخَ'] },
+                { id: 2, text: '', words: ['حَافِظ', 'ظُفْر', 'جَحَظَ', 'حَظَرَ'] },
+                { id: 3, text: '', words: ['عَبَسَ', 'بَرَعَ', 'عَبَرَ', 'عَبَدَ'] },
+                { id: 4, text: '', words: ['غَرْب', 'رَغَدَ', 'غَدَرَ', 'رَغِبَ'] },
             ],
             audioUrl: '/level2/32/32.mp3',
             reviewAudio: '/level2/32/1.mp3'
@@ -1623,8 +1621,6 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 1, letters: ['ك', 'تَ', 'بَ'], word: 'كَتَبَ' },
                 { id: 2, letters: ['ك', 'سَ', 'رَ'], word: 'كَسَرَ' },
                 { id: 3, letters: ['رَ', 'ك', 'عَ'], word: 'رَكَعَ' },
-                { id: 4, letters: ['مَ', 'عَ', 'ك'], word: 'مَعَكَ' }, // Using 'Ma'ak' as a placeholder or inferred from 'Rakiba' in image context but let's check assemble image again. Image shows: ر ك ب -> Rakiba
-                // Correction: Image showing assemble words: Ka Ta Ba - Kataba, Ka Sa Ra - Kasara, Ra Ka 'A - Raka'a, Ra Ki Ba - Rakiba (no Ma'ak in image)
                 { id: 4, letters: ['رَ', 'كِ', 'بَ'], word: 'رَكِبَ' }
             ],
             assembleAudio: '/level2/36/أركبُ.mp3',
@@ -1684,7 +1680,7 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 1, letters: ['لَ', 'بَ', 'ن'], word: 'لَبَن' },
                 { id: 2, letters: ['طَ', 'لَ', 'بَ'], word: 'طَلَبَ' },
                 { id: 3, letters: ['طَ', 'ال', 'ب'], word: 'طَالِب' },
-                { id: 4, letters: ['غَ', 'سَ', 'لَ'], word: 'غَسَلَ' }
+                { id: 4, letters: ['عَ', 'سَ', 'ل'], word: 'عَسَل' }
             ],
             assembleAudio: '/level2/37/أركبُ.mp3',
         },
@@ -1694,10 +1690,10 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             subtitle: t('Group Six'),
             type: 'readWriteReview',
             items: [
-                { id: 1, text: '', words: ['فَتَحَ', 'حَفَرَ', 'فَسَدَ', 'رَفَضَ'] },
-                { id: 2, text: '', words: ['رَفَقَ', 'قَطَعَ', 'سَقَطَ', 'رَقَصَ'] },
-                { id: 3, text: '', words: ['كَتَبَ', 'كَسَرَ', 'رَكَعَ', 'رَكِبَ'] },
-                { id: 4, text: '', words: ['لَبَن', 'طَلَبَ', 'طَالِب', 'غَسَلَ'] },
+                { id: 1, text: '', words: ['رَفَضَ', 'فَسَدَ', 'حَفَرَ', 'فَتَحَ'] },
+                { id: 2, text: '', words: ['رَقَصَ', 'سَقَطَ', 'قَطَعَ', 'رَفَقَ'] },
+                { id: 3, text: '', words: ['رَكِبَ', 'رَكَعَ', 'كَسَرَ', 'كَتَبَ'] },
+                { id: 4, text: '', words: ['غَسَلَ', 'طَالِب', 'طَلَبَ', 'لَبَن'] },
             ],
             audioUrl: '/level2/38/38.mp3',
             reviewAudio: '/level2/38/1.mp3'
@@ -1829,9 +1825,9 @@ export const getLevel2Lessons = (t: (key: string) => string): Lesson[] => {
             rememberAudio: '/level2/41/أتذكرُ.mp3',
             assemble: [
                 { id: 1, letters: ['نَ', 'بِيـ', 'ـل'], word: 'نَبِيل' },
-                { id: 2, letters: ['نُ', 'مُ', 'ل'], word: 'نَمْل' },
-                { id: 3, letters: ['نُ', 'و', 'ر'], word: 'نُور' },
-                { id: 4, letters: ['هَ', 'نَ', 'اء'], word: 'هَنَاء' }
+                { id: 2, letters: ['نَ', 'مْ', 'ل'], word: 'نَمْل' },
+                { id: 4, letters: ['هَ', 'نَ', 'اء'], word: 'هَنَاء' },
+                { id: 3, letters: ['نُ', 'و', 'ر'], word: 'نُور' }
             ],
             assembleAudio: '/level2/41/أركبُ.mp3',
         },
