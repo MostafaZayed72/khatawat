@@ -46,46 +46,47 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
             items: [
                 // Page 13
                 { id: 1, letters: ['أَ', 'خَ', 'ذَ'], word: 'أَخَذَ' },
-                { id: 2, letters: ['بَ', 'دَ', 'أَ'], word: 'بَدَأَ' },
+                { id: 2, letters: ['بَ', 'رَ', 'عَ'], word: 'بَرَعَ' },
                 { id: 3, letters: ['تَ', 'رَ', 'كَ'], word: 'تَرَكَ' },
                 { id: 4, letters: ['ثَ', 'بَ', 'تَ'], word: 'ثَبَتَ' },
-                { id: 5, letters: ['جَ', 'لَ', 'سَ'], word: 'جَلَسَ' },
+                { id: 5, letters: ['جَ', 'رَ', 'حَ'], word: 'جَرَحَ' },
                 // Page 14
-                { id: 6, letters: ['حَ', 'صَ', 'دَ'], word: 'حَصَدَ' },
-                { id: 7, letters: ['خَ', 'بَ', 'زَ'], word: 'خَبَزَ' },
-                { id: 8, letters: ['دَ', 'خَ', 'لَ'], word: 'دَخَلَ' },
+                { id: 6, letters: ['حَ', 'رَ', 'ثَ'], word: 'حَرَثَ' },
+                { id: 7, letters: ['خَ', 'رَ', 'جَ'], word: 'خَرَجَ' },
+                { id: 8, letters: ['دَ', 'فَ', 'عَ'], word: 'دَفَعَ' },
                 { id: 9, letters: ['ذَ', 'هَ', 'بَ'], word: 'ذَهَبَ' },
-                { id: 10, letters: ['رَ', 'حَ', 'لَ'], word: 'رَحَلَ' },
+                { id: 10, letters: ['رَ', 'جَ', 'عَ'], word: 'رَجَعَ' },
                 // Page 15
-                { id: 11, letters: ['زَ', 'رَ', 'عَ'], word: 'زَرَعَ' },
-                { id: 12, letters: ['سَ', 'بَ', 'قَ'], word: 'سَبَقَ' },
-                { id: 13, letters: ['شَ', 'كَ', 'رَ'], word: 'شَكَرَ' },
-                { id: 14, letters: ['صَ', 'نَ', 'عَ'], word: 'صَنَعَ' },
-                { id: 15, letters: ['ضَ', 'حِ', 'كَ'], word: 'ضَحِكَ' },
+                { id: 11, letters: ['زَ', 'أَ', 'رَ'], word: 'زَأَرَ' },
+                { id: 12, letters: ['ضَ', 'غَ', 'طَ'], word: 'ضَغَطَ' },
+                { id: 13, letters: ['سَ', 'مَ', 'حَ'], word: 'سَمَحَ' },
+                { id: 14, letters: ['شَ', 'رَ', 'حَ'], word: 'شَرَحَ' },
+                { id: 15, letters: ['صَ', 'رَ', 'خَ'], word: 'صَرَخَ' },
                 // Page 16
-                { id: 16, letters: ['طَ', 'بَ', 'عَ'], word: 'طَبَعَ' },
-                { id: 17, letters: ['ظَ', 'هَ', 'رَ'], word: 'ظَهَرَ' },
-                { id: 18, letters: ['عَ', 'لِ', 'مَ'], word: 'عَلِمَ' },
-                { id: 19, letters: ['غَ', 'رَ', 'سَ'], word: 'غَرَسَ' },
-                { id: 20, letters: ['فَ', 'تَ', 'حَ'], word: 'فَتَحَ' },
+                { id: 16, letters: ['لَ', 'عِ', 'بَ'], word: 'لَعِبَ' },
+                { id: 17, letters: ['طَ', 'لَ', 'بَ'], word: 'طَلَبَ' },
+                // Page 16 (تكملة)
+                { id: 18, letters: ['ظَ', 'لَ', 'مَ'], word: 'ظَلَمَ' },
+                { id: 19, letters: ['عَ', 'بَ', 'دَ'], word: 'عَبَدَ' },
+                { id: 20, letters: ['غَ', 'زَ', 'لَ'], word: 'غَزَلَ' },
                 // Page 17
-                { id: 21, letters: ['قَ', 'صَ', 'دَ'], word: 'قَصَدَ' },
-                { id: 22, letters: ['ك', 'تَ', 'بَ'], word: 'كَتَبَ' },
-                { id: 23, letters: ['لَ', 'حِ', 'قَ'], word: 'لَحِقَ' },
-                { id: 24, letters: ['مَ', 'نَ', 'عَ'], word: 'مَنَعَ' },
-                { id: 25, letters: ['نَ', 'بَ', 'عَ'], word: 'نَبَعَ' },
+                { id: 21, letters: ['فَ', 'رَ', 'حَ'], word: 'فَرَحَ' },
+                { id: 22, letters: ['قَ', 'نَ', 'صَ'], word: 'قَنَصَ' },
+                { id: 23, letters: ['كَ', 'سَ', 'رَ'], word: 'كَسَرَ' },
+                { id: 24, letters: ['لَ', 'مَ', 'عَ'], word: 'لَمَعَ' },
+                { id: 25, letters: ['مَ', 'رَ', 'حُ'], word: 'مَرَحُ' },
                 // Page 18
-                { id: 26, letters: ['تَ', 'ا', 'بَ'], word: 'تَابَ' },
-                { id: 27, letters: ['هَ', 'دَ', 'ى'], word: 'هَدَى' },
+                { id: 26, letters: ['نَ', 'بَ', 'تَ'], word: 'نَبَتَ' },
+                { id: 27, letters: ['هَ', 'لَ', 'عَ'], word: 'هَلَعَ' },
                 { id: 28, letters: ['وَ', 'صَ', 'لَ'], word: 'وَصَلَ' },
-                { id: 29, letters: ['يَ', 'فَ', 'عَ'], word: 'يَفَعَ' },
-                { id: 30, letters: ['قَ', 'صَّ'], word: 'قَصَّ' },
+                { id: 29, letters: ['يَ', 'فْ', 'رَ', 'حُ'], word: 'يَفرَحُ' },
+                { id: 30, letters: ['قِ', 'صَ', 'صُ'], word: 'قِصَصُ' },
                 // Page 19
-                { id: 31, letters: ['دَ', 'رَ', 'بَ'], word: 'دَرَبَ' },
+                { id: 31, letters: ['دَ', 'رَّ', 'بَ'], word: 'دَرَّبَ' },
                 { id: 32, letters: ['ضَ', 'حِ', 'كَ'], word: 'ضَحِكَ' },
                 { id: 33, letters: ['قَ', 'رُ', 'بَ'], word: 'قَرُبَ' },
-                { id: 34, letters: ['عَ', 'دَّ'], word: 'عَدَّ' },
-                { id: 35, letters: ['مَ', 'زَ', 'قَ'], word: 'مَزَقَ' }
+                { id: 34, letters: ['عَ', 'دَّ', 'دَ'], word: 'عَدَّدَ' },
+                { id: 35, letters: ['مَ', 'زَّ', 'قَ'], word: 'مَزَّقَ' }
             ],
             audioUrl: '/level3/2/title.mp3'
         },
@@ -113,7 +114,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 12, letters: ['عَ', 'زَ', 'رَ'], word: 'زَرَعَ' },
                 { id: 13, letters: ['دَ', 'رَ', 'سَ'], word: 'دَرَسَ' },
                 { id: 14, letters: ['شَ', 'طَ', 'رَ'], word: 'شَرَطَ' },
-                { id: 15, letters: ['نَ', 'عَ', 'صَ'], word: 'صَعِدَ' },
+                { id: 15, letters: ['نَ', 'صَ', 'عَ'], word: 'صَعِدَ' },
                 // Page 23
                 { id: 16, letters: ['ضَ', 'رَ', 'عَ'], word: 'عَرَضَ' },
                 { id: 17, letters: ['حَ', 'مَ', 'طَ'], word: 'طَمَحَ' },
@@ -148,22 +149,22 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 5, letters: ['ظ', 'ن', 'ر'], word: 'نَظَرَ' },
                 // Page 27
                 { id: 6, letters: ['ف', 'ر', 'ع'], word: 'عَرَفَ' },
-                { id: 7, letters: ['ل', 'ب', 'غ'], word: 'بَلَغَ' },
-                { id: 8, letters: ['ف', 'ص', 'ل'], word: 'فَصَلَ' },
-                { id: 9, letters: ['ع', 'ل', 'ق'], word: 'قَلَعَ' },
-                { id: 10, letters: ['ف', 'ر', 'ك'], word: 'فَرَكَ' },
+                { id: 7, letters: ['غ', 'ب', 'ل'], word: 'بَلَغَ' },
+                { id: 8, letters: ['ل', 'ص', 'ف'], word: 'فَصَلَ' },
+                { id: 9, letters: ['ق', 'ع', 'ل'], word: 'قَلَعَ' },
+                { id: 10, letters: ['ك', 'ر', 'ف'], word: 'فَرَكَ' },
                 // Page 28
-                { id: 11, letters: ['س', 'ل', 'م'], word: 'لَمَسَ' },
+                { id: 11, letters: ['م', 'ل', 'س'], word: 'لَمَسَ' },
                 { id: 12, letters: ['ل', 'ن', 'ق'], word: 'نَقَلَ' }, // Image 2 Row 2. Right L Mid N Left Q.
                 { id: 13, letters: ['ر', 'م', 'ه'], word: 'هَرَمَ' },
                 { id: 14, letters: ['ض', 'و', 'ح'], word: 'وَضُحَ' },
                 { id: 15, letters: ['ن', 'ل', 'ز'], word: 'نَزَلَ' },
                 // Page 29
-                { id: 16, letters: ['د', 'ر', 'س'], word: 'دَرَسَ' },
+                { id: 16, letters: ['س', 'ر', 'د'], word: 'دَرَسَ' },
                 { id: 17, letters: ['س', 'ر', 'م'], word: 'رَسَمَ' }, // Verified Page 29 Row 2: Right S Mid R Left M.
                 { id: 18, letters: ['ح', 'ب', 'س'], word: 'سَبَحَ' },
                 { id: 19, letters: ['ح', 'س', 'ب'], word: 'سَحَبَ' },
-                { id: 20, letters: ['ح', 'ب', 'ص'], word: 'صَحِبَ' }, // Verified Page 29 Row 5: Right H Mid B Left Saad.
+                { id: 20, letters: ['س', 'ب', 'ح'], word: 'صَحِبَ' }, // Verified Page 29 Row 5: Right H Mid B Left Saad.
                 // Page 30
                 { id: 21, letters: ['س', 'د', 'ر'], word: 'سَرَدَ' },
                 { id: 22, letters: ['ص', 'ر', 'د'], word: 'رَصَدَ' },
@@ -175,7 +176,7 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 26, letters: ['ص', 'و', 'ل'], word: 'وَصَلَ' },
                 { id: 27, letters: ['م', 'ج', 'ع'], word: 'جَمَعَ' },
                 { id: 28, letters: ['م', 'ح', 'ل'], word: 'حَمَلَ' },
-                { id: 29, letters: ['ل', 'م', 'ح'], word: 'لَمَحَ' },
+                { id: 29, letters: ['ح', 'م', 'ل'], word: 'لَمَحَ' },
                 { id: 30, letters: ['ت', 'ك', 'ب'], word: 'كَتَبَ' },
                 // Page 32
                 { id: 31, letters: ['خ', 'ل', 'د'], word: 'دَخَلَ' },
@@ -263,21 +264,21 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
             type: 'ovalGrid',
             items: [
                 // Page 41 (Images converted to text)
-                // Row 1 (R->L): Nimr, Habl, Jubn, Fasl
-                { id: 1, text: 'نِمْرُ' }, { id: 2, text: 'حَبْلُ' }, { id: 3, text: 'جُبْنُ' }, { id: 4, text: 'فَصْلُ' },
-                // Row 2: Kalb, Tabl, Raml, Qufl
+                // Row 1 (R->L): نَمِرُ، جُبْنُ، حَبْلُ، فَصْلُ
+                { id: 1, text: 'نَمِرُ' }, { id: 2, text: 'جُبْنُ' }, { id: 3, text: 'حَبْلُ' }, { id: 4, text: 'فَصْلُ' },
+                // Row 2 (R->L): كَلْبُ، طَبْلُ، رَمْلُ، قُفْلُ
                 { id: 5, text: 'كَلْبُ' }, { id: 6, text: 'طَبْلُ' }, { id: 7, text: 'رَمْلُ' }, { id: 8, text: 'قُفْلُ' },
-                // Row 3: Anf, Ayn, Zhufr, Rijl
+                // Row 3 (R->L): أَنْفُ، عَيْنُ، ظُفْرُ، رِجْلُ
                 { id: 9, text: 'أَنْفُ' }, { id: 10, text: 'عَيْنُ' }, { id: 11, text: 'ظُفْرُ' }, { id: 12, text: 'رِجْلُ' },
 
                 // Page 42 (Pink Ovals)
-                // Row 1: Wazn, Sam, Ilm, Rasm
+                // Row 1 (R->L): وَزْنُ، سَمْعُ، عِلْمُ، رَسْمُ
                 { id: 13, text: 'وَزْنُ' }, { id: 14, text: 'سَمْعُ' }, { id: 15, text: 'عِلْمُ' }, { id: 16, text: 'رَسْمُ' },
-                // Row 2: Qaml, Lawh, Adl, Misk
+                // Row 2 (R->L): قَمْلُ، لَوْحُ، عَدْلُ، مِسْكُ
                 { id: 17, text: 'قَمْلُ' }, { id: 18, text: 'لَوْحُ' }, { id: 19, text: 'عَدْلُ' }, { id: 20, text: 'مِسْكُ' },
-                // Row 3: Ta'm, Qird, Bayt, Aql
+                // Row 3 (R->L): طَعْمُ، قِرْدُ، بَيْتُ، عَقْلُ
                 { id: 21, text: 'طَعْمُ' }, { id: 22, text: 'قِرْدُ' }, { id: 23, text: 'بَيْتُ' }, { id: 24, text: 'عَقْلُ' },
-                // Row 4: Barq, Naml, Kasr, Akl
+                // Row 4 (R->L): بَرْقُ، نَمْلُ، كَسْرُ، أَكْلُ
                 { id: 25, text: 'بَرْقُ' }, { id: 26, text: 'نَمْلُ' }, { id: 27, text: 'كَسْرُ' }, { id: 28, text: 'أَكْلُ' }
             ]
         },
