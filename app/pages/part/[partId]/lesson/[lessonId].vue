@@ -468,14 +468,30 @@
           </div>
 
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8" dir="rtl">
-              <div v-for="item in lesson.items" :key="item.id" 
-                   :class="[
-                     'border-2 rounded-full shadow-sm flex items-center justify-center py-6 md:py-8 group hover:shadow-md hover:scale-105 transition-all duration-300',
-                     lesson.colorTheme === 'green' ? 'bg-[#dcedc8] border-[#c5e1a5]' : 
-                     lesson.colorTheme === 'orange' ? 'bg-[#ffe0b2] border-[#ffcc80]' :
-                     'bg-pink-100 border-pink-200'
-                   ]">
-                  <span class="text-3xl md:text-5xl font-black text-gray-800 font-amiri leading-normal" v-html="item.text"></span>
+              <div v-for="item in lesson.items" :key="item.id">
+                 <!-- Case 1: Item has Image (Image Circle + Text) -->
+                 <div v-if="item.image" class="flex flex-col items-center gap-3 group cursor-pointer hover:scale-105 transition-transform duration-300">
+                     <div class="w-32 h-32 rounded-full border-4 bg-white flex items-center justify-center overflow-hidden shadow-md group-hover:shadow-lg"
+                          :class="[
+                            lesson.colorTheme === 'green' ? 'border-[#c5e1a5]' : 
+                            lesson.colorTheme === 'orange' ? 'border-[#ffcc80]' :
+                            'border-pink-200'
+                          ]">
+                         <img :src="item.image" :alt="item.text" class="w-full h-full object-cover">
+                     </div>
+                     <span class="text-3xl md:text-5xl font-black text-gray-800 font-amiri leading-normal" v-html="item.text"></span>
+                 </div>
+
+                 <!-- Case 2: No Image (Standard Pill) -->
+                 <div v-else
+                    :class="[
+                      'border-2 rounded-full shadow-sm flex items-center justify-center py-6 md:py-8 group hover:shadow-md hover:scale-105 transition-all duration-300 w-full',
+                      lesson.colorTheme === 'green' ? 'bg-[#dcedc8] border-[#c5e1a5]' : 
+                      lesson.colorTheme === 'orange' ? 'bg-[#ffe0b2] border-[#ffcc80]' :
+                      'bg-pink-100 border-pink-200'
+                    ]">
+                    <span class="text-3xl md:text-5xl font-black text-gray-800 font-amiri leading-normal" v-html="item.text"></span>
+                 </div>
               </div>
           </div>
       </div>

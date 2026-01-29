@@ -200,11 +200,11 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
             items: [
                 // Page 34
                 { id: 1, text: 'مَدَحَ' }, { id: 2, text: 'غَرَسَ' }, { id: 3, text: 'سَهِرَ' },
-                { id: 4, text: 'فَرِحَ' }, { id: 5, text: 'سَمَكَ' }, { id: 6, text: 'بَغِضَ' },
-                { id: 7, text: 'جَبُلُ' }, { id: 8, text: 'قَمَرُ' }, { id: 9, text: 'نَزَلَ' },
+                { id: 4, text: 'فَرِحَ' }, { id: 5, text: 'سَمَكُ' }, { id: 6, text: 'بَغِضَ' },
+                { id: 7, text: 'جَبَلُ' }, { id: 8, text: 'قَمَرُ' }, { id: 9, text: 'نَزَلَ' },
                 { id: 10, text: 'جَلَسَ' }, { id: 11, text: 'غَسَلَ' }, { id: 12, text: 'رَدَمَ' },
                 { id: 13, text: 'صَرَفَ' }, { id: 14, text: 'صَلُحَ' }, { id: 15, text: 'عَنِبُ' },
-                { id: 16, text: 'لَبِنُ' }, { id: 17, text: 'نَفَرَ' }, { id: 18, text: 'صَفِقَ' },
+                { id: 16, text: 'لَبَنُ' }, { id: 17, text: 'نَفَرَ' }, { id: 18, text: 'صَفِقَ' },
 
                 // Page 35
                 { id: 19, text: 'سَعِدَ' }, { id: 20, text: 'عَصَرَ' }, { id: 21, text: 'حَرَصَ' },
@@ -219,15 +219,15 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 37, text: 'بَذَرَ' }, { id: 38, text: 'نَفَذَ' }, { id: 39, text: 'يَزِنُ' },
                 { id: 40, text: 'سَكَنُ' }, { id: 41, text: 'يَدِي' }, { id: 42, text: 'نَثَرَ' },
                 { id: 43, text: 'حَدَثَ' }, { id: 44, text: 'هَرَبَ' }, { id: 45, text: 'بَيِضُ' },
-                { id: 46, text: 'نَبَهَ' }, { id: 47, text: 'نَظَرَ' }, { id: 48, text: 'حَفِظَ' },
-                { id: 49, text: 'أَسُدُ' }, { id: 50, text: 'فَتَحَ' }, { id: 51, text: 'نَصَتَ' },
-                { id: 52, text: 'بَطَلُ' }, { id: 53, text: 'أُذُنُ' }, { id: 54, text: 'زَأَرَ' },
+                { id: 46, text: 'نَبُهَ' }, { id: 47, text: 'نَظَرَ' }, { id: 48, text: 'حَفِظَ' },
+                { id: 49, text: 'أَسَدُ' }, { id: 50, text: 'فَتَحَ' }, { id: 51, text: 'نَصَتَ' },
+                { id: 52, text: 'بَطَل' }, { id: 53, text: 'أُذُنُ' }, { id: 54, text: 'زَأَرَ' },
 
                 // Page 37
                 { id: 55, text: 'سَأَلَ' }, { id: 56, text: 'قَرَأَ' }, { id: 57, text: 'نَمِرُ' },
                 { id: 58, text: 'فَرَشَ' }, { id: 59, text: 'جَمَلُ' }, { id: 60, text: 'نَزَلَ' },
                 { id: 61, text: 'فَرَزَ' }, { id: 62, text: 'نَشَرَ' }, { id: 63, text: 'بَلَعَ' },
-                { id: 64, text: 'وَصَفَ' }, { id: 65, text: 'صَعَدَ' }, { id: 66, text: 'بَدَأَ' },
+                { id: 64, text: 'وَصَفَ' }, { id: 65, text: 'صَعِدَ' }, { id: 66, text: 'بَدَأَ' },
                 { id: 67, text: 'رَكِبَ' }, { id: 68, text: 'أَسِفَ' }, { id: 69, text: 'صَمَتَ' },
                 { id: 70, text: 'قَدَمُ' }, { id: 71, text: 'طَلَبَ' }, { id: 72, text: 'سَمِعَ' },
 
@@ -240,20 +240,20 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
                 { id: 88, text: 'نَدِمَ' }, { id: 89, text: 'قَرُبَ' }, { id: 90, text: 'زَرَعَ' },
 
                 // Page 39
-                { id: 91, text: 'أَذِنَ' }, { id: 92, text: 'دَعَمَ' }, { id: 93, text: 'كَسُرَ' },
-                { id: 94, text: 'بَلُدَ' }, { id: 95, text: 'فَرُسَ' }, { id: 96, text: 'رَفَدَ' },
+                { id: 91, text: 'أَذِنَ' }, { id: 92, text: 'دَعَمَ' }, { id: 93, text: 'كُسِرَ' },
+                { id: 94, text: 'بَلَدُ' }, { id: 95, text: 'فَرَسُ' }, { id: 96, text: 'رَفَدَ' },
                 { id: 97, text: 'لَزِمَ' }, { id: 98, text: 'رَكَلَ' }, { id: 99, text: 'فَرِحَ' },
-                { id: 100, text: 'عَرَفَ' }, { id: 101, text: 'غَرَفَ' }, { id: 102, text: 'فَرُحَ' },
+                { id: 100, text: 'فَرَحُ' }, { id: 101, text: 'غَرَفَ' }, { id: 102, text: 'عَرَفَ' },
                 { id: 103, text: 'طَلَعَ' }, { id: 104, text: 'وَرَقُ' }, { id: 105, text: 'صَفَحَ' },
-                { id: 106, text: 'سَمَحَ' }, { id: 107, text: 'فَهِمَ' }, { id: 108, text: 'بَصُلَ' },
+                { id: 106, text: 'سَمَحَ' }, { id: 107, text: 'فَهِمَ' }, { id: 108, text: 'بَصَلُ' },
 
                 // Page 40
                 { id: 109, text: 'وَصَلَ' }, { id: 110, text: 'وَقَعَ' }, { id: 111, text: 'أَمَرَ' },
                 { id: 112, text: 'نَهَضَ' }, { id: 113, text: 'نَظَمَ' }, { id: 114, text: 'نُظُمُ' },
                 { id: 115, text: 'لَمَعَ' }, { id: 116, text: 'فَرَدَ' }, { id: 117, text: 'ذَهَبَ' },
-                { id: 118, text: 'حَسَبَ' }, { id: 119, text: 'حَرَفُ' }, { id: 120, text: 'رَأَسَ' },
+                { id: 118, text: 'حَسَبَ' }, { id: 119, text: 'حِرَفُ' }, { id: 120, text: 'رَأَسَ' },
                 { id: 121, text: 'أَكَلَ' }, { id: 122, text: 'طَمِعَ' }, { id: 123, text: 'رَأَفَ' },
-                { id: 124, text: 'عَبَرَ' }, { id: 125, text: 'كَرُمَ' }, { id: 126, text: 'نَسِيَ' }
+                { id: 124, text: 'عَبَرَ' }, { id: 125, text: 'كَرَمُ' }, { id: 126, text: 'نَسِيَ' }
             ]
         },
         {
@@ -265,11 +265,11 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
             items: [
                 // Page 41 (Images converted to text)
                 // Row 1 (R->L): نَمِرُ، جُبْنُ، حَبْلُ، فَصْلُ
-                { id: 1, text: 'نَمِرُ' }, { id: 2, text: 'جُبْنُ' }, { id: 3, text: 'حَبْلُ' }, { id: 4, text: 'فَصْلُ' },
+                { id: 1, text: 'نَمِرُ', image: '/level3/7/1.png' }, { id: 2, text: 'جُبْنُ', image: '/level3/7/2.png' }, { id: 3, text: 'حَبْلُ', image: '/level3/7/3.png' }, { id: 4, text: 'فَصْلُ', image: '/level3/7/4.png' },
                 // Row 2 (R->L): كَلْبُ، طَبْلُ، رَمْلُ، قُفْلُ
-                { id: 5, text: 'كَلْبُ' }, { id: 6, text: 'طَبْلُ' }, { id: 7, text: 'رَمْلُ' }, { id: 8, text: 'قُفْلُ' },
+                { id: 5, text: 'كَلْبُ', image: '/level3/7/5.png' }, { id: 6, text: 'طَبْلُ', image: '/level3/7/6.png' }, { id: 7, text: 'رَمْلُ', image: '/level3/7/7.png' }, { id: 8, text: 'قُفْلُ', image: '/level3/7/8.png' },
                 // Row 3 (R->L): أَنْفُ، عَيْنُ، ظُفْرُ، رِجْلُ
-                { id: 9, text: 'أَنْفُ' }, { id: 10, text: 'عَيْنُ' }, { id: 11, text: 'ظُفْرُ' }, { id: 12, text: 'رِجْلُ' },
+                { id: 9, text: 'أَنْفُ', image: '/level3/7/9.png' }, { id: 10, text: 'عَيْنُ', image: '/level3/7/10.png' }, { id: 11, text: 'ظُفْرُ', image: '/level3/7/11.png' }, { id: 12, text: 'رِجْلُ', image: '/level3/7/12.png' },
 
                 // Page 42 (Pink Ovals)
                 // Row 1 (R->L): وَزْنُ، سَمْعُ، عِلْمُ، رَسْمُ
@@ -291,11 +291,11 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
             items: [
                 // Page 43 (Images converted to text)
                 // Row 1 (R->L): Ful, Mal, Fil, Bab
-                { id: 1, text: 'فُولُ' }, { id: 2, text: 'مَالُ' }, { id: 3, text: 'فِيلُ' }, { id: 4, text: 'بَابُ' },
+                { id: 1, text: 'فُولُ', image: '/level3/8/1.png' }, { id: 2, text: 'مَالُ', image: '/level3/8/2.png' }, { id: 3, text: 'فِيلُ', image: '/level3/8/3.png' }, { id: 4, text: 'بَابُ', image: '/level3/8/4.png' },
                 // Row 2 (R->L): Kub, Hut, Dud, Sur
-                { id: 5, text: 'كُوبُ' }, { id: 6, text: 'حُوتُ' }, { id: 7, text: 'دُودُ' }, { id: 8, text: 'سُورُ' },
+                { id: 5, text: 'كُوبُ', image: '/level3/8/5.png' }, { id: 6, text: 'حُوتُ', image: '/level3/8/6.png' }, { id: 7, text: 'دُودُ', image: '/level3/8/7.png' }, { id: 8, text: 'سُورُ', image: '/level3/8/8.png' },
                 // Row 3 (R->L): Tut, Dik, Zir, Tin
-                { id: 9, text: 'تُوتُ' }, { id: 10, text: 'دِيكُ' }, { id: 11, text: 'زِيرُ' }, { id: 12, text: 'تِينُ' },
+                { id: 9, text: 'تُوتُ', image: '/level3/8/9.png' }, { id: 10, text: 'دِيكُ', image: '/level3/8/10.png' }, { id: 11, text: 'زِيرُ', image: '/level3/8/11.png' }, { id: 12, text: 'تِينُ', image: '/level3/8/12.png' },
 
                 // Page 44 (Green Ovals)
                 // Row 1: Zar, Eid, Kaf, Qal
@@ -316,19 +316,19 @@ export const getLevel3Lessons = (t: (key: string) => string): Lesson[] => {
             colorTheme: 'orange',
             items: [
 
-                { id: 1, text: 'مَ<span class="text-red-600">كَّ</span>ة' },
-                { id: 2, text: 'سُ<span class="text-red-600">كَّ</span>رُ' },
-                { id: 3, text: 'بَ<span class="text-red-600">طَّ</span>ة' },
+                { id: 1, text: 'مَ<span class="text-red-600">كَّ</span>ة', image: '/level3/9/1.png' },
+                { id: 2, text: 'سُ<span class="text-red-600">كَّ</span>رُ', image: '/level3/9/2.png' },
+                { id: 3, text: 'بَ<span class="text-red-600">طَّ</span>ة', image: '/level3/9/3.png' },
 
                 // Row 2 (R->L): Qittah, Wazzah, Jarrah
-                { id: 4, text: 'قِ<span class="text-red-600">طَّ</span>ة' },
-                { id: 5, text: 'وَ<span class="text-red-600">زَّ</span>ة' },
-                { id: 6, text: 'جَ<span class="text-red-600">رَّ</span>ة' },
+                { id: 4, text: 'قِ<span class="text-red-600">طَّ</span>ة', image: '/level3/9/4.png' },
+                { id: 5, text: 'وَ<span class="text-red-600">زَّ</span>ة', image: '/level3/9/5.png' },
+                { id: 6, text: 'جَ<span class="text-red-600">رَّ</span>ة', image: '/level3/9/6.png' },
 
                 // Row 3 (R->L): Samma'ah, Sabbah
                 // Samma'ah: S - M(Shadda) - A - 'A - H. Middle/Stressed is Mim.
-                { id: 7, text: 'سَ<span class="text-red-600">مَّ</span>اعَة' },
-                { id: 8, text: 'سَ<span class="text-red-600">بَّ</span>اح' },
+                { id: 7, text: 'سَ<span class="text-red-600">مَّ</span>اعَة', image: '/level3/9/7.png' },
+                { id: 8, text: 'سَ<span class="text-red-600">بَّ</span>اح', image: '/level3/9/8.png' },
 
                 // Page 46 (Green/Orange Ovals) - Verbs
                 // Row 1 (R->L): Baddala, Hassana, Wadd'a, Jarraba
