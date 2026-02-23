@@ -149,8 +149,11 @@ export interface Part {
     videoUrl: string;
     image: string;
     pdfUrl?: string;
+    examUrl?: string;
     lessons: Lesson[];
 }
+
+export const COMPREHENSIVE_EXAM_URL = 'https://drive.google.com/file/d/1UYuOeSdyNMJ5pzj-t1G73KD7HOSbEIe7/view?usp=sharing';
 
 export const getParts = (t: (key: string) => string): Part[] => {
     return [
@@ -160,7 +163,8 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Basics and Daily Life'),
             videoUrl: 'CPAuON_5d4I',
             image: '/parts/1.png',
-            pdfUrl: 'https://drive.google.com/file/d/1nYdgUosHeyyZNPMG8vrOPGakUA7oUZrE/view?usp=sharing',
+            pdfUrl: 'https://drive.google.com/file/d/1pVc-olXJToEcX-qzkYNCWxYzmKuJzs4p/view?usp=sharing',
+            examUrl: 'https://drive.google.com/file/d/1RBsiYex2G2u5ufxcXj9WhFoVrSgF-1zw/view?usp=sharing',
             lessons: getLevel1Lessons(t)
         },
         {
@@ -169,7 +173,8 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Coming Soon'),
             videoUrl: '-oulNG9AriU',
             image: '/parts/2.png',
-            pdfUrl: 'https://drive.google.com/file/d/1IfVNk1ne8EtEHjuvAQ-33TiGG-C-8G-e/view?usp=sharing',
+            pdfUrl: 'https://drive.google.com/file/d/1v0LQLMBDJkp4HwA66dqg3WQD5rpyJ8xI/view?usp=sharing',
+            examUrl: 'https://drive.google.com/file/d/1QbW6w8d_UHNev9mOBM9adiC2k3Y_mkHK/view?usp=sharing',
             lessons: getLevel2Lessons(t)
         },
         {
@@ -178,7 +183,8 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Coming Soon'),
             videoUrl: 'z1WJUYE397s',
             image: '/parts/3.png',
-            pdfUrl: 'https://drive.google.com/file/d/1RuFvD46Ku5cpOWYpuCgMr2OXSryLVIss/view?usp=sharing',
+            pdfUrl: 'https://drive.google.com/file/d/1RHTl7MPHu8IDiJNtafgXqKIK5MSDYt_C/view?usp=sharing',
+            examUrl: 'https://drive.google.com/file/d/13K8A4UJgzx-Iria4Gupyz8Z45lSGQqEQ/view?usp=sharing',
             lessons: getLevel3Lessons(t)
 
         },
@@ -188,7 +194,8 @@ export const getParts = (t: (key: string) => string): Part[] => {
             description: t('Coming Soon'),
             videoUrl: 'OGA-lTea-5w',
             image: '/parts/4.png',
-            pdfUrl: 'https://drive.google.com/file/d/1IC6svlKgNDBB-4Vtc24mAUA_-xTkRG7m/view?usp=sharing',
+            pdfUrl: 'https://drive.google.com/file/d/1HQddMY6kJ3Fhnfa9bzhUgWQY2MOsV6ly/view?usp=sharing',
+            examUrl: 'https://drive.google.com/file/d/14wqd9Som46CMZ3bjXSEJD74Ed5sv3lYY/view?usp=sharing',
             lessons: getLevel4Lessons(t)
         }
     ];

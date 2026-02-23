@@ -45,19 +45,33 @@
         </svg>
       </NuxtLink>
 
-      <!-- View PDF Button -->
-      <div v-if="part.pdfUrl" class="flex flex-col items-center mt-4">
-        <button 
-          @click="openPdfViewer"
-          class="bg-gradient-to-r from-blue-600 to-blue-500 text-white text-2xl font-bold py-4 px-12 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-          </svg>
-          <span>{{ t('Level Book', { number: part.id }) }}</span>
-        </button>
-        <p class="mt-2 text-gray-500 text-sm font-medium">({{ t('Book Note') }})</p>
+      <!-- PDF Buttons -->
+      <div class="flex flex-col md:flex-row gap-4 items-center mt-4">
+        <div v-if="part.pdfUrl" class="flex flex-col items-center">
+          <button 
+            @click="openPdfViewer(part.pdfUrl, t('Level Book', { number: part.id }))"
+            class="bg-gradient-to-r from-blue-600 to-blue-500 text-white text-xl md:text-2xl font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            <span>{{ t('Level Book', { number: part.id }) }}</span>
+          </button>
+        </div>
+
+        <div v-if="part.examUrl" class="flex flex-col items-center">
+          <button 
+            @click="openPdfViewer(part.examUrl, t('Level Exam'))"
+            class="bg-gradient-to-r from-orange-600 to-orange-500 text-white text-xl md:text-2xl font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>{{ t('Level Exam') }}</span>
+          </button>
+        </div>
       </div>
+      <p class="mt-2 text-gray-500 text-sm font-medium">({{ t('Book Note') }})</p>
 
       <!-- Back Home -->
       <NuxtLink to="/" class="text-gray-500 hover:text-red-600 transition-colors flex items-center gap-2 mt-2">
@@ -76,10 +90,10 @@
 
     <!-- PDF Viewer Component -->
     <PdfViewerSimple 
-      v-if="part?.pdfUrl"
+      v-if="currentPdfUrl"
       :is-open="isPdfViewerOpen"
-      :pdf-url="part.pdfUrl"
-      :title="part.title"
+      :pdf-url="currentPdfUrl"
+      :title="currentPdfTitle"
       @close="closePdfViewer"
     />
   </div>
@@ -100,8 +114,12 @@ const part = computed(() => parts.value.find(p => p.id === partId.value));
 
 // PDF Viewer state
 const isPdfViewerOpen = ref(false);
+const currentPdfUrl = ref('');
+const currentPdfTitle = ref('');
 
-const openPdfViewer = () => {
+const openPdfViewer = (url: string, title: string) => {
+  currentPdfUrl.value = url;
+  currentPdfTitle.value = title;
   isPdfViewerOpen.value = true;
 };
 
