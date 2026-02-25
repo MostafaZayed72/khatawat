@@ -1,8 +1,17 @@
 {
+  "Level 1 Name": "Level One",
+  "Level 2 Name": "Level Two",
+  "Level 3 Name": "Level Three",
+  "Level 4 Name": "Level Four",
+  "Browse Level Exam Label": "Browse {level} Exam",
+  "Download Level Exam Label": "Download {level} Exam",
   "Comprehensive Exam": "Comprehensive Exam",
   "Level Exams": "Level Exams",
   "Level Exam": "Level Exam",
-  "Level Exam Note": "You can browse and download the level exam from here",
+  "Diagnosis and Tests": "Diagnosis and Tests",
+  "Download Exam": "Download Exam",
+  "View Exam": "Browse Exam",
+  "Level Exam Note": "You can browse and download the exam from here",
   "Exams": "Exams",
   "leap": {
     "section1": {

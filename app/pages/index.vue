@@ -20,29 +20,6 @@
   </div>
 </div>
 
-      <!-- Exams Section -->
-      <div class="w-full flex flex-col md:flex-row gap-6 items-center justify-center mt-8 px-4">
-        <button 
-          @click="openComprehensiveExam"
-          class="w-full md:w-auto bg-gradient-to-r from-red-600 to-red-500 text-white text-xl md:text-2xl font-bold py-4 px-8 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 border-2 border-white/20"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-          <span>{{ t('Comprehensive Exam') }}</span>
-        </button>
-
-        <NuxtLink 
-          to="/exams"
-          class="w-full md:w-auto bg-gradient-to-r from-blue-600 to-blue-500 text-white text-xl md:text-2xl font-bold py-4 px-8 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 border-2 border-white/20"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-          </svg>
-          <span>{{ t('Level Exams') }}</span>
-        </NuxtLink>
-      </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
         <NuxtLink 
           v-for="part in parts" 
@@ -72,20 +49,25 @@
         </NuxtLink>
       </div>
 
-    </div>
+      <!-- Exams Section -->
+      <div class="w-full flex flex-col md:flex-row gap-6 items-center justify-center mt-12 mb-8 px-4">
+        <NuxtLink 
+          to="/exams"
+          class="w-full md:w-auto bg-gradient-to-r from-red-600 to-red-500 text-white text-xl md:text-2xl font-bold py-6 px-12 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-4 border-2 border-white/20"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          <span>{{ t('Diagnosis and Tests') }}</span>
+        </NuxtLink>
+      </div>
 
-    <!-- PDF Viewer Component -->
-    <PdfViewerSimple 
-      :is-open="isPdfViewerOpen"
-      :pdf-url="COMPREHENSIVE_EXAM_URL"
-      :title="t('Comprehensive Exam')"
-      @close="closePdfViewer"
-    />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { getParts, COMPREHENSIVE_EXAM_URL } from '~/utils/lessons';
+import { getParts } from '~/utils/lessons';
 
 const { t, locale } = useI18n();
 const parts = computed(() => {
@@ -93,17 +75,6 @@ const parts = computed(() => {
   const l = locale.value; 
   return getParts(t);
 });
-
-// PDF Viewer state
-const isPdfViewerOpen = ref(false);
-
-const openComprehensiveExam = () => {
-  isPdfViewerOpen.value = true;
-};
-
-const closePdfViewer = () => {
-  isPdfViewerOpen.value = false;
-};
 
 useHead({
   title: computed(() => t('Home')),

@@ -46,29 +46,41 @@
       </NuxtLink>
 
       <!-- PDF Buttons -->
-      <div class="flex flex-col md:flex-row gap-4 items-center mt-4">
-        <div v-if="part.pdfUrl" class="flex flex-col items-center">
+      <div class="flex flex-col gap-4 items-center mt-8 w-full max-w-2xl mx-auto px-2">
+        <div v-if="part.pdfUrl" class="w-full">
           <button 
             @click="openPdfViewer(part.pdfUrl, t('Level Book', { number: part.id }))"
-            class="bg-gradient-to-r from-blue-600 to-blue-500 text-white text-xl md:text-2xl font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3"
+            class="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white text-lg md:text-2xl font-bold py-4 px-4 rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 border-2 border-white/20 whitespace-nowrap overflow-hidden text-ellipsis"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
-            <span>{{ t('Level Book', { number: part.id }) }}</span>
+            <span class="truncate">{{ t('Level Book', { number: part.id }) }}</span>
           </button>
         </div>
 
-        <div v-if="part.examUrl" class="flex flex-col items-center">
+        <div v-if="part.examUrl" class="w-full flex flex-col gap-4">
           <button 
-            @click="openPdfViewer(part.examUrl, t('Level Exam'))"
-            class="bg-gradient-to-r from-orange-600 to-orange-500 text-white text-xl md:text-2xl font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-3"
+            @click="openPdfViewer(part.examUrl, t('Browse Level Exam Label', { level: t('Level ' + part.id + ' Name') }))"
+            class="w-full bg-white text-blue-600 border-2 md:border-4 border-blue-600 text-lg md:text-2xl font-bold py-4 px-4 rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 whitespace-nowrap overflow-hidden text-ellipsis"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
             </svg>
-            <span>{{ t('Level Exam') }}</span>
+            <span class="truncate">{{ t('Browse Level Exam Label', { level: t('Level ' + part.id + ' Name') }) }}</span>
           </button>
+          
+          <a 
+            :href="part.examUrl" 
+            target="_blank"
+            class="w-full bg-gradient-to-r from-orange-600 to-orange-500 text-white text-lg md:text-2xl font-bold py-4 px-4 rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 border-2 border-white/20 whitespace-nowrap overflow-hidden text-ellipsis"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span class="truncate">{{ t('Download Level Exam Label', { level: t('Level ' + part.id + ' Name') }) }}</span>
+          </a>
         </div>
       </div>
       <p class="mt-2 text-gray-500 text-sm font-medium">({{ t('Book Note') }})</p>
